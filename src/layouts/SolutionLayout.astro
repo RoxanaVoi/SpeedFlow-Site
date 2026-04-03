@@ -1,0 +1,198 @@
+---
+import Layout from './Layout.astro';
+import CTAFinal from '../components/CTAFinal.astro';
+import { getLocaleFromUrl, t, getLocalizedPath } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  heroTitle: string;
+  heroProblem: string;
+  heroResult: string;
+  forWhom: string;
+  forWhomItems: string[];
+  processes: string[];
+  howItWorks: { title: string; desc: string }[];
+  outputs: string[];
+  faq: { q: string; a: string }[];
+  demoAvailable?: boolean;
+  demoLabel?: string;
+  demoUrl?: string;
+}
+
+const {
+  title, description, heroTitle, heroProblem, heroResult,
+  forWhom, forWhomItems, processes, howItWorks, outputs, faq,
+  demoAvailable = false, demoLabel, demoUrl,
+} = Astro.props;
+
+const locale = getLocaleFromUrl(Astro.url);
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="pt-28 pb-16 lg:pt-36 lg:pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {demoAvailable && demoLabel && (
+        <span class="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-700 text-sm font-medium rounded-full mb-6">
+          {demoLabel}
+        </span>
+      )}
+      <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight mb-6">
+        {heroTitle}
+      </h1>
+      <p class="text-lg text-text-light leading-relaxed mb-4 max-w-2xl mx-auto">
+        {heroProblem}
+      </p>
+      <p class="text-lg text-text font-medium mb-8 max-w-2xl mx-auto">
+        {heroResult}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        {demoUrl && (
+          <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition-colors">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            {locale === 'ro' ? 'Deschide demo' : 'Open demo'}
+          </a>
+        )}
+        <a href={getLocalizedPath(locale, '/contact')} class={`inline-block px-7 py-3.5 font-semibold rounded-lg transition-colors ${demoUrl ? 'border-2 border-gray-200 text-navy hover:border-primary hover:text-primary' : 'bg-primary text-white hover:bg-primary-light'}`}>
+          {t(locale, 'hero.cta1')}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- For whom -->
+  <section class="py-16 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl lg:text-3xl font-bold text-navy mb-8">
+        {locale === 'ro' ? 'Pentru cine' : 'Who it\'s for'}
+      </h2>
+      <p class="text-text-light mb-6 leading-relaxed">{forWhom}</p>
+      <ul class="grid sm:grid-cols-2 gap-3">
+        {forWhomItems.map(item => (
+          <li class="flex items-start gap-3 p-4 bg-white rounded-xl">
+            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-text">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Processes -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl lg:text-3xl font-bold text-navy mb-8">
+        {locale === 'ro' ? 'Ce procese acopera' : 'What processes it covers'}
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {processes.map((proc, i) => (
+          <div class="flex items-start gap-4 p-5 bg-surface rounded-xl">
+            <div class="w-8 h-8 bg-primary text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">
+              {i + 1}
+            </div>
+            <p class="text-text leading-relaxed">{proc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-16 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl lg:text-3xl font-bold text-navy mb-8">
+        {locale === 'ro' ? 'Cum functioneaza' : 'How it works'}
+      </h2>
+      <div class="space-y-6">
+        {howItWorks.map((step, i) => (
+          <div class="flex items-start gap-5">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <span class="text-primary font-bold">{i + 1}</span>
+            </div>
+            <div>
+              <h3 class="font-heading font-semibold text-navy mb-1">{step.title}</h3>
+              <p class="text-text-light leading-relaxed">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Outputs -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl lg:text-3xl font-bold text-navy mb-8">
+        {locale === 'ro' ? 'Ce output produce' : 'What it produces'}
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {outputs.map(out => (
+          <div class="flex items-center gap-3 p-4 bg-surface rounded-xl">
+            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            <span class="text-text">{out}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo -->
+  {demoUrl && (
+    <section class="py-16 bg-navy">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-primary-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">
+          {locale === 'ro' ? 'Exploreaza demo-ul' : 'Explore the demo'}
+        </h2>
+        <p class="text-white/70 mb-8 max-w-xl mx-auto leading-relaxed">
+          {locale === 'ro'
+            ? 'Vezi cum functioneaza solutia intr-un mediu de test. Poti explora interfata si fluxurile fara nicio obligatie.'
+            : 'See how the solution works in a test environment. Explore the interface and workflows with no commitment.'}
+        </p>
+        <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition-colors text-lg">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+          {locale === 'ro' ? 'Deschide demo' : 'Open demo'}
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  {faq.length > 0 && (
+    <section class="py-16 bg-surface">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-heading text-2xl lg:text-3xl font-bold text-navy mb-8">FAQ</h2>
+        <div class="space-y-4">
+          {faq.map(item => (
+            <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
+              <summary class="flex items-center justify-between p-5 cursor-pointer font-medium text-navy hover:text-primary transition-colors">
+                {item.q}
+                <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 text-text-light leading-relaxed">{item.a}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <CTAFinal />
+</Layout>

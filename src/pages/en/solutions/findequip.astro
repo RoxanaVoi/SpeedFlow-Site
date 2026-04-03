@@ -1,0 +1,46 @@
+---
+import SolutionLayout from '../../../layouts/SolutionLayout.astro';
+---
+
+<SolutionLayout
+  title="FindEquip - Compliant equipment identification"
+  description="Solution for economic operators participating in public procurement procedures who need to identify equipment compliant with requirements."
+  heroTitle="Fast identification of compliant equipment"
+  heroProblem="Participating in public procurement procedures requires identifying equipment that meets technical requirements from the specifications."
+  heroResult="We search, filter and compare equipment based on technical specifications, with AI-generated compliance arguments."
+  forWhom="Economic operators participating in tenders and public procurement procedures who need to find equipment conforming to requirements."
+  forWhomItems={[
+    "Medical and laboratory equipment suppliers",
+    "Economic operators participating in SEAP tenders",
+    "Companies responding to requests from public institutions",
+    "Sales departments for the public sector",
+  ]}
+  processes={[
+    "Import technical requirements from specifications",
+    "Database equipment search by specifications",
+    "Compliant option filtering and comparison",
+    "Compliance argument generation per requirement",
+    "Proposed equipment list export",
+  ]}
+  howItWorks={[
+    { title: "Import requirements", desc: "Technical requirements from specifications are imported and automatically structured." },
+    { title: "Search and matching", desc: "The system searches for equipment matching the required technical specifications." },
+    { title: "Compliance analysis", desc: "AI analyzes the degree of compliance and generates arguments for each requirement." },
+    { title: "Export results", desc: "The list of compliant equipment is exported with details and compliance arguments." },
+  ]}
+  outputs={[
+    "Compliant equipment list with specifications",
+    "Compliance analysis per technical requirement",
+    "AI-generated compliance arguments",
+    "Comparison between available options",
+    "Structured export for technical offer",
+  ]}
+  faq={[
+    { q: "What types of equipment are in the database?", a: "Medical, laboratory and technical equipment, with detailed specifications from manufacturers." },
+    { q: "Is the database automatically updated?", a: "The database is periodically updated with new products and updated specifications." },
+    { q: "How are compliance arguments generated?", a: "AI compares equipment specifications with specification requirements and generates concrete arguments." },
+  ]}
+  demoAvailable={true}
+  demoLabel="Demo available"
+  demoUrl="https://findequip.bid-management.ro/dashboard"
+/>

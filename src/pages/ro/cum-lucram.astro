@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTAFinal from '../../components/CTAFinal.astro';
+import { getLocaleFromUrl, t } from '../../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+
+const steps = [
+  { titleKey: 'howWeWork.step1.title', descKey: 'howWeWork.step1.desc', icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' },
+  { titleKey: 'howWeWork.step2.title', descKey: 'howWeWork.step2.desc', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+  { titleKey: 'howWeWork.step3.title', descKey: 'howWeWork.step3.desc', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z' },
+  { titleKey: 'howWeWork.step4.title', descKey: 'howWeWork.step4.desc', icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15' },
+  { titleKey: 'howWeWork.step5.title', descKey: 'howWeWork.step5.desc', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+];
+
+const clientItems = ['howWeWork.client1', 'howWeWork.client2', 'howWeWork.client3', 'howWeWork.client4'];
+---
+
+<Layout title={t(locale, 'howWeWork.title')} description="Cum lucram: discovery, prototip, implementare si validare cu utilizatorii.">
+  <section class="pt-28 pb-16 lg:pt-36 lg:pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy text-center mb-16">
+        {t(locale, 'howWeWork.title')}
+      </h1>
+
+      <!-- Steps -->
+      <div class="space-y-8 mb-20">
+        {steps.map((step, i) => (
+          <div class="flex items-start gap-6 p-6 bg-surface rounded-2xl" data-animate data-animate-delay={String((i % 4) + 1)}>
+            <div class="flex flex-col items-center gap-2">
+              <div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-lg">
+                {i + 1}
+              </div>
+              {i < steps.length - 1 && <div class="w-0.5 h-8 bg-primary/20"/>}
+            </div>
+            <div>
+              <h3 class="font-heading text-xl font-semibold text-navy mb-2">{t(locale, step.titleKey)}</h3>
+              <p class="text-text-light leading-relaxed">{t(locale, step.descKey)}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- What we receive from client -->
+      <div class="bg-navy rounded-2xl p-8 lg:p-10">
+        <h2 class="font-heading text-2xl font-bold text-white mb-6">
+          {t(locale, 'howWeWork.clientTitle')}
+        </h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {clientItems.map(key => (
+            <div class="flex items-center gap-3 p-4 bg-white/5 rounded-xl">
+              <svg class="w-5 h-5 text-primary-light flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-white/80">{t(locale, key)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTAFinal />
+</Layout>

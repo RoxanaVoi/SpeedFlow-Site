@@ -1,0 +1,53 @@
+---
+import SolutionLayout from '../../../layouts/SolutionLayout.astro';
+---
+
+<SolutionLayout
+  title="ePaap - Achizitii publice digitale"
+  description="Platforma pentru institutii publice dedicata gestionarii fluxului de completare si validare a referatelor, construire dosar de achizitie, colectare a necesitartilor si generare / actualizare PAAP."
+  heroTitle="Platforma digitala pentru achizitii publice"
+  heroProblem="Fluxul de achizitii publice implica referate, validari intre departamente, dosare de achizitie cu documente obligatorii si generare PAAP."
+  heroResult="Digitalizam intregul flux: de la colectarea necesitarilor pana la finalizarea dosarului de achizitie."
+  forWhom="Institutii publice care gestioneaza achizitii directe, proceduri simplificate sau licitatii si au nevoie de un flux structurat si trasabil."
+  forWhomItems={[
+    "Departamente de achizitii publice",
+    "Compartimente financiar-contabile",
+    "Management si conducere (aprobari)",
+    "CFPP si secretariat",
+    "Initiatori de referate de necesitate",
+    "Responsabili de contract",
+  ]}
+  processes={[
+    "Colectare necesitati anuale cu linii detaliate si coduri CPV",
+    "Centralizare si generare plan anual de achizitii publice (PAAP)",
+    "Completare si validare referate de necesitate in flux multi-rol",
+    "Generare documente oficiale (referat PDF, document justificativ, comanda ferma)",
+    "Construire dosar de achizitie cu documente obligatorii per tip procedura",
+    "Monitorizare cumulari pe CPV, proiect si an bugetar",
+  ]}
+  howItWorks={[
+    { title: "Colectare necesitati", desc: "Initiatorii introduc necesitarile cu detalii tehnice, cantitati si estimari de pret." },
+    { title: "Validare si bugetare", desc: "Achizitiile adauga coduri CPV, financiar aloca articole bugetare, managementul aproba." },
+    { title: "Generare PAAP", desc: "Sistemul centralizeaza necesitarile validate si genereaza planul anual de achizitii." },
+    { title: "Flux referate", desc: "Referatele parcurg fluxul complet: initiere, achizitii, financiar, manager, CFPP, secretariat." },
+    { title: "Dosar achizitie", desc: "Dupa validarea documentului, se construieste dosarul cu toate documentele obligatorii." },
+  ]}
+  outputs={[
+    "Referat de necesitate PDF cu numar de inregistrare",
+    "Document justificativ generat automat",
+    "Comanda ferma diferentiata per tip contract",
+    "PAAP in format PDF si Excel",
+    "Centralizator necesitati per CPV si proiect",
+    "Nota de informare campanie colectare",
+    "Dosar de achizitie complet cu checklist documente",
+  ]}
+  faq={[
+    { q: "Ce roluri sunt implicate in flux?", a: "Initiator, Achizitii, Financiar, Manager, CFPP, Secretariat, Responsabil contract si Administrator." },
+    { q: "Se calculeaza automat procedura de achizitie?", a: "Da, pe baza pragurilor din L98/2016 si a cumulului pe CPV, proiect si an." },
+    { q: "Ce tipuri de proceduri sunt suportate?", a: "Achizitie directa (SEAP si intern), procedura simplificata, licitatie, cerere de oferte si Anexa 2." },
+    { q: "Se genereaza documente PDF?", a: "Da, toate documentele sunt generate cu fonturi corecte si diacritice, incluzand datele institutiei din setari." },
+  ]}
+  demoAvailable={true}
+  demoLabel="Demo disponibil"
+  demoUrl="https://demo-epaap.bid-management.ro/autentificare"
+/>

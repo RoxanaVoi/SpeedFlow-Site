@@ -1,0 +1,67 @@
+---
+import { getLocaleFromUrl, t, getLocalizedPath } from '../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-navy text-white/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-2 mb-4">
+          <svg class="w-7 h-7 text-primary-light" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="8" fill="currentColor"/>
+            <path d="M8 16L14 10L20 16L14 22Z" fill="white" opacity="0.9"/>
+            <path d="M14 16L20 10L26 16L20 22Z" fill="white" opacity="0.6"/>
+          </svg>
+          <span class="font-heading text-lg font-bold text-white">Speed Flow</span>
+        </div>
+        <p class="text-sm text-white/60 leading-relaxed">
+          {t(locale, 'footer.tagline')}
+        </p>
+      </div>
+
+      <!-- Solutions -->
+      <div>
+        <h4 class="font-heading font-semibold text-white mb-4">{t(locale, 'footer.solutions')}</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href={getLocalizedPath(locale, locale === 'en' ? '/solutions/cbam' : '/solutii/cbam')} class="hover:text-primary-light transition-colors">CBAM</a></li>
+          <li><a href={getLocalizedPath(locale, locale === 'en' ? '/solutions/eudr' : '/solutii/eudr')} class="hover:text-primary-light transition-colors">EUDR</a></li>
+          <li><a href={getLocalizedPath(locale, locale === 'en' ? '/solutions/epaap' : '/solutii/epaap')} class="hover:text-primary-light transition-colors">ePaap</a></li>
+          <li><a href={getLocalizedPath(locale, locale === 'en' ? '/solutions/findequip' : '/solutii/findequip')} class="hover:text-primary-light transition-colors">FindEquip</a></li>
+          <li><a href={getLocalizedPath(locale, locale === 'en' ? '/solutions/retail' : '/solutii/retail')} class="hover:text-primary-light transition-colors">Retail Reconciliation</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="font-heading font-semibold text-white mb-4">{t(locale, 'footer.company2')}</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href={getLocalizedPath(locale, locale === 'en' ? '/how-we-work' : '/cum-lucram')} class="hover:text-primary-light transition-colors">{t(locale, 'nav.howWeWork')}</a></li>
+          <li><a href={getLocalizedPath(locale, locale === 'en' ? '/about' : '/despre')} class="hover:text-primary-light transition-colors">{t(locale, 'nav.about')}</a></li>
+          <li><a href={getLocalizedPath(locale, '/contact')} class="hover:text-primary-light transition-colors">{t(locale, 'nav.contact')}</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-heading font-semibold text-white mb-4">{t(locale, 'footer.contact')}</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li>
+            <a href="mailto:contact@speed-flow.ai" class="hover:text-primary-light transition-colors">
+              contact@speed-flow.ai
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-white/40">
+        &copy; {year} {t(locale, 'footer.company')}. {t(locale, 'footer.rights')}
+      </p>
+    </div>
+  </div>
+</footer>

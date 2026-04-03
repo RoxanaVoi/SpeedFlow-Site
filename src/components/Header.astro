@@ -1,0 +1,119 @@
+---
+import { getLocaleFromUrl, t, getLocalizedPath, getNavItems } from '../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const navItems = getNavItems(locale);
+const otherLocale = locale === 'ro' ? 'en' : 'ro';
+const currentPath = Astro.url.pathname.replace(`/${locale}`, '');
+const switchUrl = `/${otherLocale}${currentPath || '/'}`;
+---
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href={getLocalizedPath(locale, '/')} class="flex items-center gap-2 font-heading text-xl font-bold text-navy">
+        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="currentColor"/>
+          <path d="M8 16L14 10L20 16L14 22Z" fill="white" opacity="0.9"/>
+          <path d="M14 16L20 10L26 16L20 22Z" fill="white" opacity="0.6"/>
+        </svg>
+        Speed Flow
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-1">
+        {navItems.map(item => (
+          item.hasDropdown ? (
+            <div class="relative group">
+              <button class="px-3 py-2 text-sm font-medium text-text hover:text-primary transition-colors flex items-center gap-1">
+                {item.label}
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[200px]">
+                  {item.children?.map(child => (
+                    <a href={child.href} class="block px-4 py-2.5 text-sm text-text hover:text-primary hover:bg-surface transition-colors">
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a href={item.href} class="px-3 py-2 text-sm font-medium text-text hover:text-primary transition-colors">
+              {item.label}
+            </a>
+          )
+        ))}
+
+        <!-- Language -->
+        <a href={switchUrl} class="ml-2 px-2.5 py-1.5 text-xs font-semibold text-text-light hover:text-primary border border-gray-200 rounded-lg transition-colors uppercase">
+          {otherLocale}
+        </a>
+
+        <!-- CTA -->
+        <a href={getLocalizedPath(locale, '/contact')} class="ml-3 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-light transition-colors">
+          {t(locale, 'nav.requestDemo')}
+        </a>
+      </nav>
+
+      <!-- Mobile toggle -->
+      <button id="mobile-toggle" class="lg:hidden p-2 text-navy" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-lg">
+    <div class="px-4 py-4 space-y-1">
+      {navItems.map(item => (
+        item.hasDropdown ? (
+          <>
+            <p class="px-3 py-2 text-xs font-semibold text-text-light uppercase tracking-wider">{item.label}</p>
+            {item.children?.map(child => (
+              <a href={child.href} class="block px-6 py-2.5 text-sm text-text hover:text-primary hover:bg-surface rounded-lg transition-colors">
+                {child.label}
+              </a>
+            ))}
+          </>
+        ) : (
+          <a href={item.href} class="block px-3 py-2.5 text-sm font-medium text-text hover:text-primary hover:bg-surface rounded-lg transition-colors">
+            {item.label}
+          </a>
+        )
+      ))}
+      <div class="pt-3 border-t border-gray-100 flex items-center gap-3">
+        <a href={switchUrl} class="px-3 py-2 text-xs font-semibold text-text-light border border-gray-200 rounded-lg uppercase">
+          {otherLocale}
+        </a>
+        <a href={getLocalizedPath(locale, '/contact')} class="flex-1 text-center px-4 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg">
+          {t(locale, 'nav.requestDemo')}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('site-header')!;
+  const toggle = document.getElementById('mobile-toggle')!;
+  const menu = document.getElementById('mobile-menu')!;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+    } else {
+      header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+    }
+  });
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>

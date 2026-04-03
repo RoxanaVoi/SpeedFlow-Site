@@ -1,0 +1,53 @@
+---
+import SolutionLayout from '../../../layouts/SolutionLayout.astro';
+---
+
+<SolutionLayout
+  title="ePaap - Digital public procurement"
+  description="Platform for public institutions dedicated to managing procurement document workflows, acquisition files, needs collection and PAAP generation."
+  heroTitle="Digital platform for public procurement"
+  heroProblem="Public procurement involves procurement documents, cross-department validations, acquisition files with mandatory documents and PAAP generation."
+  heroResult="We digitize the entire workflow: from needs collection to acquisition file completion."
+  forWhom="Public institutions managing direct acquisitions, simplified procedures or tenders that need a structured and traceable workflow."
+  forWhomItems={[
+    "Public procurement departments",
+    "Financial-accounting departments",
+    "Management (approvals)",
+    "Preventive financial control and secretariat",
+    "Procurement document initiators",
+    "Contract managers",
+  ]}
+  processes={[
+    "Annual needs collection with detailed lines and CPV codes",
+    "Centralization and annual procurement plan (PAAP) generation",
+    "Multi-role procurement document completion and validation",
+    "Official document generation (PDF procurement doc, justification, firm order)",
+    "Acquisition file building with mandatory documents per procedure type",
+    "Cumulation monitoring by CPV, project and budget year",
+  ]}
+  howItWorks={[
+    { title: "Needs collection", desc: "Initiators enter needs with technical details, quantities and price estimates." },
+    { title: "Validation and budgeting", desc: "Procurement adds CPV codes, financial allocates budget items, management approves." },
+    { title: "PAAP generation", desc: "The system centralizes validated needs and generates the annual procurement plan." },
+    { title: "Document workflow", desc: "Documents go through the complete flow: initiation, procurement, financial, manager, CFPP, secretariat." },
+    { title: "Acquisition file", desc: "After document validation, the file is built with all mandatory documents." },
+  ]}
+  outputs={[
+    "Procurement PDF with registration number",
+    "Auto-generated justification document",
+    "Firm order differentiated by contract type",
+    "PAAP in PDF and Excel format",
+    "Needs centralizer by CPV and project",
+    "Collection campaign information note",
+    "Complete acquisition file with document checklist",
+  ]}
+  faq={[
+    { q: "What roles are involved in the workflow?", a: "Initiator, Procurement, Financial, Manager, CFPP, Secretariat, Contract Manager and Administrator." },
+    { q: "Is the procurement procedure calculated automatically?", a: "Yes, based on L98/2016 thresholds and cumulation by CPV, project and year." },
+    { q: "What procedure types are supported?", a: "Direct acquisition (SEAP and internal), simplified procedure, tender, request for proposals and Annex 2." },
+    { q: "Are PDF documents generated?", a: "Yes, all documents are generated with correct fonts and diacritics, including institution data from settings." },
+  ]}
+  demoAvailable={true}
+  demoLabel="Demo available"
+  demoUrl="https://demo-epaap.bid-management.ro/autentificare"
+/>

@@ -1,0 +1,46 @@
+---
+import SolutionLayout from '../../../layouts/SolutionLayout.astro';
+---
+
+<SolutionLayout
+  title="CBAM - Compliance automation"
+  description="Automation for collecting, validating and preparing data required in CBAM processes."
+  heroTitle="Automation for CBAM processes"
+  heroProblem="Collecting data from suppliers, calculating emissions and preparing quarterly reports involves repetitive steps and error risks."
+  heroResult="We automate the collection, validation and preparation of data required for CBAM reporting."
+  forWhom="Importers of products subject to the CBAM regulation who need to report embedded emissions."
+  forWhomItems={[
+    "Importers of iron, steel, aluminium, cement, fertilizers, electricity, hydrogen",
+    "Companies with high transaction volumes and multiple suppliers",
+    "Compliance and reporting departments",
+    "Authorized CBAM customs representatives",
+  ]}
+  processes={[
+    "Supplier data collection (emissions, production processes)",
+    "Data validation and verification",
+    "Embedded emissions calculation by product category",
+    "CBAM quarterly report preparation",
+    "Deadline and obligation monitoring",
+    "Document archiving and traceability",
+  ]}
+  howItWorks={[
+    { title: "Data import", desc: "Supplier data is automatically imported from forms, emails or structured documents." },
+    { title: "AI Validation", desc: "We verify completeness, consistency and correctness of received data." },
+    { title: "Calculation and aggregation", desc: "We calculate embedded emissions according to CBAM methodology and aggregate by category." },
+    { title: "Report generation", desc: "We prepare the quarterly report in the format required for the CBAM registry." },
+  ]}
+  outputs={[
+    "Quarterly CBAM report ready for submission",
+    "Supplier monitoring dashboard with missing data",
+    "Deadline and obligation alerts",
+    "Validation journal and audit trail",
+    "Structured data export",
+  ]}
+  faq={[
+    { q: "What product types does the solution cover?", a: "All CBAM categories: iron and steel, aluminium, cement, fertilizers, electricity and hydrogen." },
+    { q: "Does it integrate with the CBAM registry?", a: "The solution prepares data in the format required for import into the transitional CBAM registry." },
+    { q: "How is supplier data collected?", a: "Through digital forms sent to suppliers, Excel import or automatic processing of received documents." },
+  ]}
+  demoAvailable={true}
+  demoLabel="Demo available"
+/>

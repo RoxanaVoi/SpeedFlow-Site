@@ -1,0 +1,36 @@
+---
+import { getLocaleFromUrl, t } from '../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+
+const diffs = [
+  { titleKey: 'whyUs.d1.title', descKey: 'whyUs.d1.desc', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+  { titleKey: 'whyUs.d2.title', descKey: 'whyUs.d2.desc', icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' },
+  { titleKey: 'whyUs.d3.title', descKey: 'whyUs.d3.desc', icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4' },
+  { titleKey: 'whyUs.d4.title', descKey: 'whyUs.d4.desc', icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' },
+];
+---
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-heading text-3xl lg:text-4xl font-bold text-navy text-center mb-14">
+      {t(locale, 'whyUs.title')}
+    </h2>
+
+    <div class="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      {diffs.map((d, i) => (
+        <div class="flex items-start gap-4" data-animate data-animate-delay={String(i + 1)}>
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d={d.icon}/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading text-lg font-semibold text-navy mb-1">{t(locale, d.titleKey)}</h3>
+            <p class="text-sm text-text-light leading-relaxed">{t(locale, d.descKey)}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
