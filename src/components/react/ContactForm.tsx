@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { type FormEvent } from 'react';
 
 interface ContactFormProps {
   labels: {
@@ -13,38 +13,28 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ labels }: ContactFormProps) {
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setLoading(true);
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    try {
-      await fetch('https://formspree.io/f/xnjodjnb', {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      setSubmitted(true);
-    } catch {
-      setSubmitted(true);
-    } finally {
-      setLoading(false);
-    }
-  }
+    const name = data.get('name') as string;
+    const org = data.get('organization') as string;
+    const email = data.get('email') as string;
+    const domain = data.get('domain') as string;
+    const message = data.get('message') as string;
 
-  if (submitted) {
-    return (
-      <div className="p-8 bg-emerald-50 rounded-2xl text-center">
-        <svg className="w-12 h-12 text-emerald-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <p className="text-lg font-medium text-emerald-800">{labels.success}</p>
-      </div>
-    );
+    const subject = `[SpeedFlow] Cerere demo — ${name}${org ? ` (${org})` : ''}`;
+    const body = [
+      `Nume: ${name}`,
+      org ? `Organizatie: ${org}` : '',
+      `Email: ${email}`,
+      domain ? `Domeniu / tip proces: ${domain}` : '',
+      '',
+      message || '(fara mesaj)',
+    ].filter(Boolean).join('\n');
+
+    window.location.href = `mailto:office@bid-management.ro?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (
@@ -78,9 +68,9 @@ export default function ContactForm({ labels }: ContactFormProps) {
         <textarea id="message" name="message" rows={4}
           className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0D7377]/20 focus:border-[#0D7377] outline-none transition-colors resize-none" />
       </div>
-      <button type="submit" disabled={loading}
-        className="w-full sm:w-auto px-8 py-3.5 bg-[#0D7377] text-white font-semibold rounded-lg hover:bg-[#14919B] transition-colors disabled:opacity-50">
-        {loading ? '...' : labels.send}
+      <button type="submit"
+        className="w-full sm:w-auto px-8 py-3.5 bg-[#0D7377] text-white font-semibold rounded-lg hover:bg-[#14919B] transition-colors">
+        {labels.send}
       </button>
     </form>
   );
