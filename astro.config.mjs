@@ -4,9 +4,12 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from '@astrojs/cloudflare';
+
 export default defineConfig({
   site: 'https://www.speedflow.ai',
   output: 'static',
+
   i18n: {
     defaultLocale: 'ro',
     locales: ['ro', 'en'],
@@ -14,8 +17,12 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+
   integrations: [react(), sitemap()],
+
   vite: {
     plugins: [tailwindcss()],
   },
+
+  adapter: cloudflare(),
 });
