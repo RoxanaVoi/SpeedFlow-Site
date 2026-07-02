@@ -9,7 +9,7 @@
   "nav.seeSolutions": "Vezi soluțiile",
 
   "hero.eyebrow": "Consultanță în adoptarea AI",
-  "hero.h1": "Adoptare AI cu rezultate defendabile.",
+  "hero.h1": "Adoptare AI cu rezultate demonstrabile.",
   "hero.sub": "Nu vindem hype. Pregătim datele, definim regulile și construim agenții care rezolvă procese reale — fără piloți eșuați.",
   "hero.cta1": "Hai să mapăm procesul tău",
   "hero.cta2": "Vezi cum lucrăm",
@@ -29,7 +29,7 @@
   "home.urgency.chartLabel": "Lucrători care folosesc AI generativ la muncă (2026)",
 
   "home.wedge.title": "AI-ul nu eșuează pentru că e slab.",
-  "home.wedge.intro": "Eșuează pe date murdare, pe limite ignorate și pe procese nemaparate. Noi tratăm exact aceste cauze.",
+  "home.wedge.intro": "Eșuează pe date murdare, pe limite ignorate și pe procese nemapate. Noi tratăm exact aceste cauze.",
   "home.wedge.c1.cause": "Date incomplete sau murdare",
   "home.wedge.c1.fix": "Pregătim și structurăm datele înainte de orice agent.",
   "home.wedge.c2.cause": "Limite de model ignorate",
@@ -60,7 +60,7 @@
 
   "home.proof.bridge": "Nu doar consiliem. Construim. Aceste soluții sunt dovada că metodologia noastră funcționează în procese reglementate reale.",
 
-  "home.trust.title": "De ce adoptarea AI cu noi e defendabilă.",
+  "home.trust.title": "De ce adoptarea AI cu noi stă pe baze solide.",
   "home.trust.i1.title": "Expertiză ISO/IEC 42001",
   "home.trust.i1.desc": "Cunoaștere aplicată a cerințelor standardului pentru sisteme de management AI.",
   "home.trust.i2.title": "Formare Harvard",
@@ -69,7 +69,7 @@
   "home.trust.i3.desc": "Experiență pe procese reglementate: CBAM, EUDR, achiziții publice.",
 
   "consulting.h1": "Consultanță în adoptarea AI",
-  "consulting.sub": "AI-ul reușește sau eșuează în funcție de date pregătite, limite cunoscute și reguli clare de operare. Pe astea lucrăm — de la strategie la agenți în producție.",
+  "consulting.sub": "AI-ul reușește sau eșuează în funcție de date pregătite, limite cunoscute și reguli clare de operare. Pe acestea lucrăm — de la strategie la agenți în producție.",
 
   "whatWeDo.title": "Ce facem",
   "whatWeDo.importers.title": "Importatori",
@@ -83,7 +83,7 @@
   "whatWeDo.public.b2": "Construire dosar de achiziție",
   "whatWeDo.public.b3": "Generare și actualizare PAAP",
   "whatWeDo.operators.title": "Operatori economici",
-  "whatWeDo.operators.desc": "Identificare mai rapidă a echipamentelor compliante pentru participarea la proceduri.",
+  "whatWeDo.operators.desc": "Identificare mai rapidă a echipamentelor conforme pentru participarea la proceduri.",
   "whatWeDo.operators.b1": "Căutare echipamente după cerințe tehnice",
   "whatWeDo.operators.b2": "Filtrare și comparare opțiuni",
   "whatWeDo.operators.b3": "Argumente de potrivire generate AI",
@@ -110,7 +110,7 @@
   "solutions.epaap.b1": "Flux de completare și validare referate",
   "solutions.epaap.b2": "Dosar de achiziție cu documente obligatorii",
   "solutions.epaap.b3": "Colectare necesități și generare PAAP",
-  "solutions.findequip.desc": "Soluție pentru operatori economici care participă la proceduri de achiziții publice și au nevoie să identifice echipamente compliante cu cerințele.",
+  "solutions.findequip.desc": "Soluție pentru operatori economici care participă la proceduri de achiziții publice și au nevoie să identifice echipamente conforme cu cerințele.",
   "solutions.findequip.b1": "Căutare echipamente după specificații tehnice",
   "solutions.findequip.b2": "Filtrare și comparare opțiuni",
   "solutions.findequip.b3": "Argumente de potrivire generate AI",

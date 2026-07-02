@@ -6,7 +6,7 @@ const locale = getLocaleFromUrl(Astro.url);
 const demos = [
   {
     name: 'CBAM',
-    useCase: locale === 'ro' ? 'Validare date emisii si generare raport trimestrial' : 'Emissions data validation and quarterly report generation',
+    useCase: locale === 'ro' ? 'Validare date emisii și generare raport trimestrial' : 'Emissions data validation and quarterly report generation',
     href: getLocalizedPath(locale, locale === 'en' ? '/solutions/cbam' : '/solutii/cbam'),
     ctaKey: 'demos.explore',
     duration: 'demos.duration',
@@ -15,7 +15,7 @@ const demos = [
   },
   {
     name: 'ePaap',
-    useCase: locale === 'ro' ? 'Completare referat cu validari si flux de aprobare' : 'Document completion with validations and approval workflow',
+    useCase: locale === 'ro' ? 'Completare referat cu validări și flux de aprobare' : 'Document completion with validations and approval workflow',
     href: 'https://demo-epaap.bid-management.ro/autentificare',
     ctaKey: 'demos.explore',
     duration: 'demos.guidedTour',
@@ -24,7 +24,7 @@ const demos = [
   },
   {
     name: 'FindEquip',
-    useCase: locale === 'ro' ? 'Cautare echipamente dupa cerinte din caietul de sarcini' : 'Equipment search by specification requirements',
+    useCase: locale === 'ro' ? 'Căutare echipamente după cerințe din caietul de sarcini' : 'Equipment search by specification requirements',
     href: 'https://findequip.bid-management.ro/dashboard',
     ctaKey: 'demos.explore',
     duration: 'demos.duration',
@@ -33,7 +33,7 @@ const demos = [
   },
   {
     name: 'EUDR',
-    useCase: locale === 'ro' ? 'Trasabilitate si conformitate pe lantul de aprovizionare' : 'Supply chain traceability and compliance',
+    useCase: locale === 'ro' ? 'Trasabilitate și conformitate pe lanțul de aprovizionare' : 'Supply chain traceability and compliance',
     href: getLocalizedPath(locale, locale === 'en' ? '/solutions/eudr' : '/solutii/eudr'),
     ctaKey: 'demos.seeConcept',
     duration: 'demos.comingSoon',
@@ -42,7 +42,7 @@ const demos = [
   },
   {
     name: 'Retail Reconciliation',
-    useCase: locale === 'ro' ? 'Reconciliere facturi si tratare exceptii automat' : 'Invoice reconciliation and automatic exception handling',
+    useCase: locale === 'ro' ? 'Reconciliere facturi și tratare automată a excepțiilor' : 'Invoice reconciliation and automatic exception handling',
     href: getLocalizedPath(locale, locale === 'en' ? '/solutions/retail' : '/solutii/retail'),
     ctaKey: 'demos.seeConcept',
     duration: 'demos.comingSoon',
@@ -58,7 +58,7 @@ const demos = [
       {t(locale, 'demos.title')}
     </h2>
     <p class="text-text-light text-center mb-14 max-w-2xl mx-auto">
-      {locale === 'ro' ? 'Exploreaza demo-urile solutiilor noastre si vezi cum functioneaza in practica.' : 'Explore our solution demos and see how they work in practice.'}
+      {locale === 'ro' ? 'Explorează demo-urile soluțiilor noastre și vezi cum funcționează în practică.' : 'Explore our solution demos and see how they work in practice.'}
     </p>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
