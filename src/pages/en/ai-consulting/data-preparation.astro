@@ -1,0 +1,29 @@
+---
+import ConsultingServiceLayout from '../../../layouts/ConsultingServiceLayout.astro';
+---
+
+<ConsultingServiceLayout
+  title="Data preparation for AI"
+  description="We structure, clean and organize your data so it's usable by AI agents, consistent and auditable."
+  altPath="/consultanta-ai/pregatire-date"
+  heroTitle="Data preparation"
+  positioning="Without prepared data, any AI agent fails. We structure, clean and organize the data so it's usable, consistent and auditable."
+  problem={[
+    "Real-world data is scattered across files, e-mails and systems that don't talk to each other. Inconsistent formats, missing fields and duplicates make any agent produce unreliable results.",
+    "Cleaning the data \"as you go\", during the pilot, is the classic recipe for failure: the agent inherits every data problem and amplifies it.",
+  ]}
+  deliverables={[
+    "Inventory of the data sources relevant to the process",
+    "Standardized, documented structures and formats",
+    "Data quality and validation rules at intake",
+    "A clean dataset, ready for agents",
+    "A procedure to keep the data clean over time",
+  ]}
+  steps={[
+    { title: "Inventory", desc: "We identify the data sources relevant to the process: files, systems, e-mails, documents." },
+    { title: "Structuring", desc: "We define consistent formats and structures that agents can use without interpretation." },
+    { title: "Cleaning and validation", desc: "We clean the existing data and set validation rules at intake, so the problems don't come back." },
+    { title: "Handover and procedure", desc: "We hand over the prepared dataset and the maintenance procedure, so your team can apply it." },
+  ]}
+  why="Prepared data is the first link in the thread: AI succeeds or fails depending on prepared data, known limits and clear operating rules. This is where everything is won or lost."
+/>

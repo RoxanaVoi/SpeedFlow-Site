@@ -7,10 +7,24 @@ import { getLocaleFromUrl } from '../i18n/utils';
 interface Props {
   title: string;
   description?: string;
+  /** Path (without locale prefix) of this page's version in the other locale, when slugs differ. */
+  altPath?: string;
 }
 
-const { title, description = 'Solutii AI pentru automatizarea proceselor interne complexe' } = Astro.props;
+const {
+  title,
+  description = 'Consultanță în adoptarea AI: diagnostic de procese, pregătirea datelor, guvernanță și agenți în producție.',
+  altPath,
+} = Astro.props;
 const locale = getLocaleFromUrl(Astro.url);
+const otherLocale = locale === 'ro' ? 'en' : 'ro';
+const site = Astro.site ?? new URL('https://www.speed-flow.ai');
+const ogImage = new URL('/images/og-default.png', site).href;
+const currentPath = Astro.url.pathname.replace(new RegExp(`^/${locale}`), '') || '/';
+const altUrlPath = `/${otherLocale}${altPath ?? currentPath}`.replace(/\/?$/, '/');
+const selfUrl = new URL(Astro.url.pathname, site).href;
+const altUrl = new URL(altUrlPath, site).href;
+const roUrl = locale === 'ro' ? selfUrl : altUrl;
 ---
 
 <!doctype html>
@@ -20,10 +34,25 @@ const locale = getLocaleFromUrl(Astro.url);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href={selfUrl} />
+  <link rel="alternate" hreflang={locale} href={selfUrl} />
+  <link rel="alternate" hreflang={otherLocale} href={altUrl} />
+  <link rel="alternate" hreflang="x-default" href={roUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Speed Flow" />
+  <meta property="og:title" content={`${title} | Speed Flow`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={selfUrl} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content={locale === 'ro' ? 'ro_RO' : 'en_US'} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={`${title} | Speed Flow`} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
   <title>{title} | Speed Flow</title>
 </head>
 <body class="min-h-screen flex flex-col">
-  <Header />
+  <Header altUrl={altUrlPath} />
   <main class="flex-1">
     <slot />
   </main>

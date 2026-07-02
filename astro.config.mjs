@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.speedflow.ai',
+  site: 'https://www.speed-flow.ai',
   output: 'static',
   i18n: {
     defaultLocale: 'ro',

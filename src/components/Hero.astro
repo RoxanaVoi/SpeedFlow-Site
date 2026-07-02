@@ -1,5 +1,5 @@
 ---
-import { getLocaleFromUrl, t, getLocalizedPath } from '../i18n/utils';
+import { getLocaleFromUrl, t, getLocalizedPath, getConsultingBase } from '../i18n/utils';
 
 const locale = getLocaleFromUrl(Astro.url);
 ---
@@ -22,7 +22,7 @@ const locale = getLocaleFromUrl(Astro.url);
           <a href={getLocalizedPath(locale, '/contact')} class="px-7 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition-colors text-center">
             {t(locale, 'hero.cta1')}
           </a>
-          <a href="#solutii" class="px-7 py-3.5 border-2 border-gray-200 text-navy font-semibold rounded-lg hover:border-primary hover:text-primary transition-colors text-center">
+          <a href={getLocalizedPath(locale, getConsultingBase(locale))} class="px-7 py-3.5 border-2 border-gray-200 text-navy font-semibold rounded-lg hover:border-primary hover:text-primary transition-colors text-center">
             {t(locale, 'hero.cta2')}
           </a>
         </div>

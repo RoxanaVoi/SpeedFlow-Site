@@ -1,0 +1,48 @@
+---
+import { getLocaleFromUrl, t } from '../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+
+const cards = [
+  { causeKey: 'home.wedge.c1.cause', fixKey: 'home.wedge.c1.fix', icon: 'M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m-8 5v.01' },
+  { causeKey: 'home.wedge.c2.cause', fixKey: 'home.wedge.c2.fix', icon: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' },
+  { causeKey: 'home.wedge.c3.cause', fixKey: 'home.wedge.c3.fix', icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7' },
+  { causeKey: 'home.wedge.c4.cause', fixKey: 'home.wedge.c4.fix', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+];
+---
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-14">
+      <h2 class="font-heading text-3xl lg:text-4xl font-bold text-navy mb-4">
+        {t(locale, 'home.wedge.title')}
+      </h2>
+      <p class="text-lg text-text-light leading-relaxed">
+        {t(locale, 'home.wedge.intro')}
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      {cards.map((card, i) => (
+        <div class="p-6 bg-surface rounded-2xl border border-gray-100" data-animate data-animate-delay={String((i % 4) + 1)}>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-amber-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-5.5 h-5.5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d={card.icon}/>
+              </svg>
+            </div>
+            <p class="font-heading font-semibold text-navy">
+              {t(locale, card.causeKey)}
+            </p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+            <p class="text-text leading-relaxed">{t(locale, card.fixKey)}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -6,6 +6,7 @@ import { getLocaleFromUrl, t, getLocalizedPath } from '../i18n/utils';
 interface Props {
   title: string;
   description: string;
+  altPath?: string;
   heroTitle: string;
   heroProblem: string;
   heroResult: string;
@@ -21,7 +22,7 @@ interface Props {
 }
 
 const {
-  title, description, heroTitle, heroProblem, heroResult,
+  title, description, altPath, heroTitle, heroProblem, heroResult,
   forWhom, forWhomItems, processes, howItWorks, outputs, faq,
   demoAvailable = false, demoLabel, demoUrl,
 } = Astro.props;
@@ -29,7 +30,7 @@ const {
 const locale = getLocaleFromUrl(Astro.url);
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} altPath={altPath}>
   <!-- Hero -->
   <section class="pt-28 pb-16 lg:pt-36 lg:pb-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -58,7 +59,7 @@ const locale = getLocaleFromUrl(Astro.url);
           </a>
         )}
         <a href={getLocalizedPath(locale, '/contact')} class={`inline-block px-7 py-3.5 font-semibold rounded-lg transition-colors ${demoUrl ? 'border-2 border-gray-200 text-navy hover:border-primary hover:text-primary' : 'bg-primary text-white hover:bg-primary-light'}`}>
-          {t(locale, 'hero.cta1')}
+          {t(locale, 'nav.requestDemo')}
         </a>
       </div>
     </div>
@@ -88,7 +89,7 @@ const locale = getLocaleFromUrl(Astro.url);
   <section class="py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-heading text-2xl lg:text-3xl font-bold text-navy mb-8">
-        {locale === 'ro' ? 'Ce procese acopera' : 'What processes it covers'}
+        {locale === 'ro' ? 'Ce procese acoperă' : 'What processes it covers'}
       </h2>
       <div class="grid sm:grid-cols-2 gap-4">
         {processes.map((proc, i) => (
@@ -107,7 +108,7 @@ const locale = getLocaleFromUrl(Astro.url);
   <section class="py-16 bg-surface">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-heading text-2xl lg:text-3xl font-bold text-navy mb-8">
-        {locale === 'ro' ? 'Cum functioneaza' : 'How it works'}
+        {locale === 'ro' ? 'Cum funcționează' : 'How it works'}
       </h2>
       <div class="space-y-6">
         {howItWorks.map((step, i) => (
@@ -155,11 +156,11 @@ const locale = getLocaleFromUrl(Astro.url);
           </svg>
         </div>
         <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">
-          {locale === 'ro' ? 'Exploreaza demo-ul' : 'Explore the demo'}
+          {locale === 'ro' ? 'Explorează demo-ul' : 'Explore the demo'}
         </h2>
         <p class="text-white/70 mb-8 max-w-xl mx-auto leading-relaxed">
           {locale === 'ro'
-            ? 'Vezi cum functioneaza solutia intr-un mediu de test. Poti explora interfata si fluxurile fara nicio obligatie.'
+            ? 'Vezi cum funcționează soluția într-un mediu de test. Poți explora interfața și fluxurile fără nicio obligație.'
             : 'See how the solution works in a test environment. Explore the interface and workflows with no commitment.'}
         </p>
         <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition-colors text-lg">

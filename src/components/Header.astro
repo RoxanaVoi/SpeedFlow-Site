@@ -1,11 +1,16 @@
 ---
 import { getLocaleFromUrl, t, getLocalizedPath, getNavItems } from '../i18n/utils';
 
+interface Props {
+  altUrl?: string;
+}
+
+const { altUrl } = Astro.props;
 const locale = getLocaleFromUrl(Astro.url);
 const navItems = getNavItems(locale);
 const otherLocale = locale === 'ro' ? 'en' : 'ro';
 const currentPath = Astro.url.pathname.replace(`/${locale}`, '');
-const switchUrl = `/${otherLocale}${currentPath || '/'}`;
+const switchUrl = altUrl ?? `/${otherLocale}${currentPath || '/'}`;
 ---
 
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -33,11 +38,17 @@ const switchUrl = `/${otherLocale}${currentPath || '/'}`;
                 </svg>
               </button>
               <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[200px]">
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[260px]">
                   {item.children?.map(child => (
-                    <a href={child.href} class="block px-4 py-2.5 text-sm text-text hover:text-primary hover:bg-surface transition-colors">
-                      {child.label}
-                    </a>
+                    child.heading ? (
+                      <p class="px-4 pt-3 pb-1 text-[11px] font-semibold text-text-light uppercase tracking-wider">
+                        {child.label}
+                      </p>
+                    ) : (
+                      <a href={child.href} class="block px-4 py-2 text-sm text-text hover:text-primary hover:bg-surface transition-colors">
+                        {child.label}
+                      </a>
+                    )
                   ))}
                 </div>
               </div>
@@ -77,9 +88,13 @@ const switchUrl = `/${otherLocale}${currentPath || '/'}`;
           <>
             <p class="px-3 py-2 text-xs font-semibold text-text-light uppercase tracking-wider">{item.label}</p>
             {item.children?.map(child => (
-              <a href={child.href} class="block px-6 py-2.5 text-sm text-text hover:text-primary hover:bg-surface rounded-lg transition-colors">
-                {child.label}
-              </a>
+              child.heading ? (
+                <p class="px-6 pt-2 pb-1 text-[11px] font-semibold text-text-light/80 uppercase tracking-wider">{child.label}</p>
+              ) : (
+                <a href={child.href} class="block px-8 py-2.5 text-sm text-text hover:text-primary hover:bg-surface rounded-lg transition-colors">
+                  {child.label}
+                </a>
+              )
             ))}
           </>
         ) : (
