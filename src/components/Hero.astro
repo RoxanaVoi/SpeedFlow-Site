@@ -4,7 +4,7 @@ import { getLocaleFromUrl, t, getLocalizedPath, getConsultingBase } from '../i18
 const locale = getLocaleFromUrl(Astro.url);
 ---
 
-<section class="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
+<section class="relative pt-32 pb-16 lg:pt-44 lg:pb-28 overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Left: Copy -->
@@ -12,10 +12,10 @@ const locale = getLocaleFromUrl(Astro.url);
         <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
           {t(locale, 'hero.eyebrow')}
         </span>
-        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight mb-6">
+        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-navy leading-[1.05] tracking-tight mb-7">
           {t(locale, 'hero.h1')}
         </h1>
-        <p class="text-lg text-text-light leading-relaxed mb-8 max-w-xl">
+        <p class="text-lg lg:text-xl text-text-light leading-relaxed mb-10 max-w-xl">
           {t(locale, 'hero.sub')}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 mb-6">
