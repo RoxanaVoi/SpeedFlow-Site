@@ -1,0 +1,148 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'Ce este un sistem de management al AI (AIMS)?',
+    a: 'Un ansamblu de politici, roluri, procese și controale prin care o organizație guvernează dezvoltarea și utilizarea AI: cine decide, cum se evaluează riscurile și impactul, cum se gestionează datele și ciclul de viață al sistemelor, cum se documentează deciziile. ISO/IEC 42001 este standardul internațional care definește cerințele unui astfel de sistem.',
+  },
+  {
+    q: 'Este ISO/IEC 42001 obligatoriu?',
+    a: 'Nu. ISO 42001 este un standard voluntar, iar certificarea este o alegere a organizației. EU AI Act, în schimb, este lege și se aplică direct. Standardul este însă cel mai structurat instrument disponibil pentru a construi guvernanța pe care AI Act o presupune.',
+  },
+  {
+    q: 'Certificarea ISO 42001 garantează conformitatea cu EU AI Act?',
+    a: 'Nu. Standardul acoperă fundamentul de guvernanță — risc, date, documentație, supraveghere umană — dar AI Act are obligații legale specifice care nu fac parte din niciun standard voluntar: evaluarea de conformitate, înregistrarea în baza de date UE, regulile pentru modelele de uz general (GPAI). Corect este să privești ISO 42001 ca pe o fundație, nu ca pe o scutire.',
+  },
+  {
+    q: 'Cine ar trebui să ia în calcul implementarea?',
+    a: 'Orice organizație care dezvoltă sau folosește sisteme AI în procese cu miză: furnizori de sisteme AI (mai ales high-risk), companii care integrează AI în decizii despre oameni (HR, credit, sănătate), instituții publice și organizații din lanțuri de aprovizionare unde clienții încep să ceară dovezi de guvernanță AI.',
+  },
+  {
+    q: 'Care este legătura cu ISO 27001?',
+    a: 'ISO 42001 folosește aceeași structură armonizată (clauzele 4–10) ca ISO 27001 și ISO 9001. O organizație certificată deja pe 27001 poate extinde sistemul existent — politici, audit intern, managementul riscului — în loc să construiască de la zero, iar auditurile se pot combina.',
+  },
+  {
+    q: 'De când se aplică obligațiile AI Act pentru sistemele high-risk?',
+    a: 'Termenul stabilit inițial este 2 august 2026 pentru sistemele high-risk din Anexa III. În mai 2026 s-a ajuns la un acord provizoriu de amânare a acestui termen până în decembrie 2027, dar până la adoptarea formală, termenul original rămâne în vigoare. Concluzia practică: fereastra de pregătire există, dar nu este un motiv de amânare a guvernanței.',
+  },
+];
+
+const sources = [
+  'ISO/IEC 42001:2023 — Information technology — Artificial intelligence — Management system (iso.org)',
+  'Regulamentul (UE) 2024/1689 privind inteligența artificială (EU AI Act)',
+  'EU AI Act Preparation Using ISO 42001: Practical Mapping Guide — Glocert International',
+  'The EU AI Act August 2026 Deadline Has Been Delayed — ISMS.online (analiza acordului provizoriu din mai 2026)',
+  'CSA Research Note: EU AI Act, prEN 18286 and ISO 42001 — Cloud Security Alliance (aprilie 2026)',
+];
+---
+
+<ArticleLayout
+  title="ISO/IEC 42001 și EU AI Act: fundamentul de guvernanță"
+  description="Ce este ISO/IEC 42001, cum se mapează pe obligațiile EU AI Act pentru sisteme high-risk, ce acoperă cele 38 de controale din Anexa A și ce nu rezolvă certificarea — ghid pentru decidenți."
+  altPath="/blog/iso-42001-eu-ai-act-preparation"
+  heroTitle="ISO/IEC 42001 și EU AI Act: cum îți construiești guvernanța AI înainte de termenele legale"
+  publishDate="2026-07-09"
+  faq={faq}
+  sources={sources}
+>
+  <p>
+    Multe companii care folosesc deja AI în procese reale au aceeași întrebare: „cu ce începem guvernanța,
+    ca să nu ne prindă nepregătiți obligațiile legale?" Răspunsul scurt: cu un sistem de management al AI.
+    <strong>ISO/IEC 42001</strong> este standardul internațional care definește un astfel de sistem, iar
+    obligațiile din <strong>EU AI Act</strong> pentru sistemele cu risc ridicat se sprijină, în mare parte,
+    pe exact componentele pe care standardul le cere. Acest articol explică ce este standardul, cum se
+    mapează pe AI Act și — la fel de important — ce nu rezolvă.
+  </p>
+
+  <h2>Ce este ISO/IEC 42001</h2>
+  <p>
+    ISO/IEC 42001:2023 este primul standard internațional pentru un <strong>sistem de management al
+    inteligenței artificiale</strong> (AI Management System — AIMS). Nu certifică un model sau un produs,
+    ci felul în care organizația <em>guvernează</em> AI-ul: politici, roluri, evaluarea riscurilor și a
+    impactului, managementul datelor și al ciclului de viață, documentație și îmbunătățire continuă.
+  </p>
+  <p>
+    Standardul folosește structura armonizată comună standardelor moderne de management — aceeași pe care o
+    au ISO 27001 (securitatea informației) și ISO 9001 (calitate): contextul organizației (clauza 4),
+    leadership (5), planificare (6), suport (7), operare (8), evaluarea performanței (9) și îmbunătățire (10).
+    Pentru organizațiile deja certificate pe 27001, asta înseamnă că fundația — politici, audit intern,
+    tratarea riscurilor — există deja și poate fi extinsă, nu reconstruită.
+  </p>
+
+  <h2>De ce contează acum: obligațiile din EU AI Act</h2>
+  <p>
+    EU AI Act (Regulamentul 2024/1689) este lege, nu standard voluntar. Pentru sistemele cu
+    <strong>risc ridicat</strong>, regulamentul impune, prin articolele 9–17, exact tipul de disciplină
+    organizațională pe care ISO 42001 o structurează:
+  </p>
+  <ul>
+    <li><strong>managementul riscului</strong> pe tot ciclul de viață (Art. 9);</li>
+    <li><strong>guvernanța datelor</strong> — calitate, relevanță, bias (Art. 10);</li>
+    <li><strong>documentația tehnică</strong> și <strong>păstrarea înregistrărilor</strong> (Art. 11–12);</li>
+    <li><strong>transparența</strong> față de utilizatori (Art. 13);</li>
+    <li><strong>supravegherea umană</strong> (Art. 14);</li>
+    <li>un <strong>sistem de management al calității</strong> (Art. 17).</li>
+  </ul>
+  <p>
+    Despre termene: obligațiile pentru sistemele high-risk din Anexa III au fost stabilite pentru
+    <strong>2 august 2026</strong>. În mai 2026 s-a ajuns la un acord provizoriu de amânare până în
+    <strong>decembrie 2027</strong>; până la adoptarea formală, termenul original rămâne însă în vigoare.
+    Lectura practică: fereastra de pregătire s-a lărgit, dar guvernanța nu se construiește în ultimul
+    trimestru — colectarea documentației, definirea rolurilor și disciplina datelor cer luni, nu săptămâni.
+  </p>
+  <div class="callout">
+    <p>
+      <strong>Onest spus:</strong> certificarea ISO 42001 <strong>nu</strong> echivalează cu conformitatea
+      la AI Act. Evaluarea de conformitate, înregistrarea în baza de date UE și regulile pentru modelele de
+      uz general sunt obligații legale distincte, în afara oricărui standard voluntar. Standardul construiește
+      fundația de guvernanță pe care aceste obligații se pot sprijini — atât și nimic mai mult.
+    </p>
+  </div>
+
+  <h2>Anexa A: cele 38 de controale, pe categorii</h2>
+  <p>
+    Nucleul practic al standardului este Anexa A — un set de controale specifice AI, organizate pe nouă
+    obiective. Organizația alege și justifică controalele aplicabile în funcție de riscuri, printr-o
+    declarație de aplicabilitate, ca la ISO 27001:
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Categorie</th><th>Ce acoperă</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>A.2 — Politici AI</strong></td><td>Politica AI a organizației și alinierea ei cu celelalte politici existente</td></tr>
+        <tr><td><strong>A.3 — Organizare internă</strong></td><td>Roluri și responsabilități clare, canal de raportare a îngrijorărilor</td></tr>
+        <tr><td><strong>A.4 — Resurse</strong></td><td>Inventarul resurselor: date, unelte, sisteme, competențe umane</td></tr>
+        <tr><td><strong>A.5 — Evaluarea impactului</strong></td><td>Impactul sistemelor AI asupra persoanelor, grupurilor și societății</td></tr>
+        <tr><td><strong>A.6 — Ciclul de viață</strong></td><td>Cerințe, proiectare, verificare, punere în funcțiune, operare, monitorizare</td></tr>
+        <tr><td><strong>A.7 — Date</strong></td><td>Calitatea, proveniența și pregătirea datelor pentru sistemele AI</td></tr>
+        <tr><td><strong>A.8 — Informare</strong></td><td>Transparență: ce comunici utilizatorilor și părților interesate, raportarea incidentelor</td></tr>
+        <tr><td><strong>A.9 — Utilizare responsabilă</strong></td><td>Obiective de utilizare responsabilă, utilizarea conform destinației</td></tr>
+        <tr><td><strong>A.10 — Terți</strong></td><td>Furnizori, parteneri și clienți: alocarea responsabilităților pe lanț</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Două observații din practică. Întâi, <strong>evaluarea impactului (A.5) este pivotul</strong>: standardul
+    este construit pe risc, iar fără o evaluare de impact făcută serios nu poți decide ce controale se aplică
+    și cu ce profunzime. Apoi, categoria <strong>A.7 (date)</strong> este de regulă cea mai subestimată —
+    calitatea și proveniența datelor sunt condiția ca orice alt control să însemne ceva, și tot ele sunt
+    cerința centrală a Art. 10 din AI Act.
+  </p>
+
+  <h2>Cum arată implementarea, în mare</h2>
+  <ol>
+    <li><strong>Inventarul sistemelor AI</strong> — ce folosești, unde, cu ce date și cu ce rol decizional; fără inventar nu există domeniu de aplicare.</li>
+    <li><strong>Analiza decalajului</strong> — ce ai deja (mai ales dacă ești certificat 27001) față de cerințele clauzelor 4–10 și controalele Anexei A.</li>
+    <li><strong>Politica AI, rolurile și evaluarea impactului</strong> — fundamentul de guvernanță; aici se decide cine răspunde și pentru ce.</li>
+    <li><strong>Controalele operaționale</strong> — ciclul de viață, datele, transparența, terții, aplicate proporțional cu riscul.</li>
+    <li><strong>Audit intern și îmbunătățire</strong> — sistemul funcționează doar dacă se măsoară și se corectează; abia apoi are sens discuția despre certificare.</li>
+  </ol>
+  <p>
+    Certificarea în sine este opțională și vine la final, nu la început. Valoarea reală a standardului nu
+    stă în certificat, ci în faptul că transformă „folosim AI responsabil" dintr-o declarație de intenție
+    într-un sistem cu roluri, dovezi și disciplină — exact ce vor cere și legea, și clienții.
+  </p>
+</ArticleLayout>

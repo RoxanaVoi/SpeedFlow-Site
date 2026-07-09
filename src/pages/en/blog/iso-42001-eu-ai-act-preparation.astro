@@ -1,0 +1,147 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'What is an AI management system (AIMS)?',
+    a: 'A set of policies, roles, processes and controls through which an organisation governs the development and use of AI: who decides, how risks and impact are assessed, how data and system lifecycles are managed, how decisions are documented. ISO/IEC 42001 is the international standard defining the requirements of such a system.',
+  },
+  {
+    q: 'Is ISO/IEC 42001 mandatory?',
+    a: 'No. ISO 42001 is a voluntary standard and certification is the organisation’s choice. The EU AI Act, by contrast, is law and applies directly. The standard is, however, the most structured tool available for building the governance the AI Act presupposes.',
+  },
+  {
+    q: 'Does ISO 42001 certification guarantee EU AI Act compliance?',
+    a: 'No. The standard covers the governance foundation — risk, data, documentation, human oversight — but the AI Act contains specific legal obligations that are not part of any voluntary standard: conformity assessment, registration in the EU database, rules for general-purpose AI models. The right way to see ISO 42001 is as a foundation, not an exemption.',
+  },
+  {
+    q: 'Who should consider implementing it?',
+    a: 'Any organisation developing or using AI systems in processes with real stakes: providers of AI systems (especially high-risk), companies embedding AI in decisions about people (HR, credit, health), public institutions, and organisations in supply chains where customers are starting to ask for proof of AI governance.',
+  },
+  {
+    q: 'How does it relate to ISO 27001?',
+    a: 'ISO 42001 uses the same harmonised structure (clauses 4–10) as ISO 27001 and ISO 9001. An organisation already certified to 27001 can extend its existing system — policies, internal audit, risk treatment — instead of building from scratch, and audits can be combined.',
+  },
+  {
+    q: 'When do the AI Act obligations for high-risk systems apply?',
+    a: 'The date originally set is 2 August 2026 for Annex III high-risk systems. In May 2026 a provisional agreement was reached to postpone this deadline to December 2027, but until formal adoption the original date remains in force. The practical takeaway: the preparation window exists, but it is not a reason to postpone governance.',
+  },
+];
+
+const sources = [
+  'ISO/IEC 42001:2023 — Information technology — Artificial intelligence — Management system (iso.org)',
+  'Regulation (EU) 2024/1689 on artificial intelligence (EU AI Act)',
+  'EU AI Act Preparation Using ISO 42001: Practical Mapping Guide — Glocert International',
+  'The EU AI Act August 2026 Deadline Has Been Delayed — ISMS.online (analysis of the May 2026 provisional agreement)',
+  'CSA Research Note: EU AI Act, prEN 18286 and ISO 42001 — Cloud Security Alliance (April 2026)',
+];
+---
+
+<ArticleLayout
+  title="ISO/IEC 42001 and the EU AI Act: the governance foundation"
+  description="What ISO/IEC 42001 is, how it maps to the EU AI Act obligations for high-risk systems, what the 38 Annex A controls cover and what certification does not solve — a guide for decision-makers."
+  altPath="/blog/iso-42001-pregatire-eu-ai-act"
+  heroTitle="ISO/IEC 42001 and the EU AI Act: building your AI governance before the legal deadlines"
+  publishDate="2026-07-09"
+  faq={faq}
+  sources={sources}
+>
+  <p>
+    Many companies already using AI in real processes ask the same question: "where do we start with
+    governance, so the legal obligations don't catch us unprepared?" The short answer: with an AI management
+    system. <strong>ISO/IEC 42001</strong> is the international standard defining such a system, and the
+    <strong>EU AI Act</strong> obligations for high-risk systems rest, to a large extent, on exactly the
+    components the standard requires. This article explains what the standard is, how it maps to the AI Act
+    and — just as important — what it does not solve.
+  </p>
+
+  <h2>What ISO/IEC 42001 is</h2>
+  <p>
+    ISO/IEC 42001:2023 is the first international standard for an <strong>AI management system</strong>
+    (AIMS). It does not certify a model or a product, but the way the organisation <em>governs</em> AI:
+    policies, roles, risk and impact assessment, data and lifecycle management, documentation and continual
+    improvement.
+  </p>
+  <p>
+    The standard uses the harmonised structure shared by modern management standards — the same one used by
+    ISO 27001 (information security) and ISO 9001 (quality): context of the organisation (clause 4),
+    leadership (5), planning (6), support (7), operation (8), performance evaluation (9) and improvement (10).
+    For organisations already certified to 27001, that means the foundation — policies, internal audit, risk
+    treatment — already exists and can be extended rather than rebuilt.
+  </p>
+
+  <h2>Why it matters now: the EU AI Act obligations</h2>
+  <p>
+    The EU AI Act (Regulation 2024/1689) is law, not a voluntary standard. For <strong>high-risk</strong>
+    systems, Articles 9–17 impose exactly the kind of organisational discipline ISO 42001 structures:
+  </p>
+  <ul>
+    <li><strong>risk management</strong> across the whole lifecycle (Art. 9);</li>
+    <li><strong>data governance</strong> — quality, relevance, bias (Art. 10);</li>
+    <li><strong>technical documentation</strong> and <strong>record-keeping</strong> (Art. 11–12);</li>
+    <li><strong>transparency</strong> towards users (Art. 13);</li>
+    <li><strong>human oversight</strong> (Art. 14);</li>
+    <li>a <strong>quality management system</strong> (Art. 17).</li>
+  </ul>
+  <p>
+    On deadlines: the obligations for Annex III high-risk systems were set for <strong>2 August 2026</strong>.
+    In May 2026 a provisional agreement was reached to postpone them to <strong>December 2027</strong>; until
+    formal adoption, however, the original date remains in force. The practical reading: the preparation
+    window has widened, but governance is not built in the last quarter — assembling documentation, defining
+    roles and instilling data discipline takes months, not weeks.
+  </p>
+  <div class="callout">
+    <p>
+      <strong>To be honest about it:</strong> ISO 42001 certification does <strong>not</strong> equal AI Act
+      compliance. Conformity assessment, registration in the EU database and the rules for general-purpose
+      models are distinct legal obligations, outside any voluntary standard. The standard builds the
+      governance foundation those obligations can rest on — that much and nothing more.
+    </p>
+  </div>
+
+  <h2>Annex A: the 38 controls, by category</h2>
+  <p>
+    The practical core of the standard is Annex A — a set of AI-specific controls organised under nine
+    objectives. The organisation selects and justifies the applicable controls based on its risks, through a
+    statement of applicability, just like in ISO 27001:
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Category</th><th>What it covers</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>A.2 — AI policies</strong></td><td>The organisation’s AI policy and its alignment with existing policies</td></tr>
+        <tr><td><strong>A.3 — Internal organisation</strong></td><td>Clear roles and responsibilities, a channel for reporting concerns</td></tr>
+        <tr><td><strong>A.4 — Resources</strong></td><td>Inventory of resources: data, tooling, systems, human competence</td></tr>
+        <tr><td><strong>A.5 — Impact assessment</strong></td><td>The impact of AI systems on individuals, groups and society</td></tr>
+        <tr><td><strong>A.6 — Lifecycle</strong></td><td>Requirements, design, verification, deployment, operation, monitoring</td></tr>
+        <tr><td><strong>A.7 — Data</strong></td><td>Quality, provenance and preparation of data for AI systems</td></tr>
+        <tr><td><strong>A.8 — Information for interested parties</strong></td><td>Transparency: what you communicate to users and stakeholders, incident reporting</td></tr>
+        <tr><td><strong>A.9 — Responsible use</strong></td><td>Objectives for responsible use, use according to intended purpose</td></tr>
+        <tr><td><strong>A.10 — Third parties</strong></td><td>Suppliers, partners and customers: allocating responsibilities along the chain</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Two observations from practice. First, <strong>impact assessment (A.5) is the pivot</strong>: the standard
+    is risk-based, and without a serious impact assessment you cannot decide which other controls apply and at
+    what depth. Second, category <strong>A.7 (data)</strong> is usually the most underestimated — data quality
+    and provenance are the condition for any other control to mean anything, and they are also the central
+    requirement of Art. 10 of the AI Act.
+  </p>
+
+  <h2>What implementation looks like, broadly</h2>
+  <ol>
+    <li><strong>AI system inventory</strong> — what you use, where, with what data and what decision role; without an inventory there is no scope.</li>
+    <li><strong>Gap analysis</strong> — what you already have (especially if 27001-certified) against clauses 4–10 and the Annex A controls.</li>
+    <li><strong>AI policy, roles and impact assessment</strong> — the governance foundation; this is where accountability is decided.</li>
+    <li><strong>Operational controls</strong> — lifecycle, data, transparency, third parties, applied proportionally to risk.</li>
+    <li><strong>Internal audit and improvement</strong> — the system only works if it is measured and corrected; only then does certification become a meaningful conversation.</li>
+  </ol>
+  <p>
+    Certification itself is optional and comes at the end, not the beginning. The real value of the standard
+    is not the certificate but the fact that it turns "we use AI responsibly" from a statement of intent into
+    a system with roles, evidence and discipline — exactly what both the law and your customers will ask for.
+  </p>
+</ArticleLayout>
