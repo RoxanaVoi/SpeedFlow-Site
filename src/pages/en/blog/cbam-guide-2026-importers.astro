@@ -1,0 +1,190 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'Who needs to become an authorised CBAM declarant?',
+    a: 'Any EU importer (or their indirect customs representative) importing goods from the CBAM sectors — iron and steel, aluminium, cement, fertilisers, electricity, hydrogen — above the 50-tonne annual de minimis threshold. Without authorisation, importing CBAM goods is no longer permitted under the definitive regime.',
+  },
+  {
+    q: 'What if I import less than 50 tonnes per year?',
+    a: 'The de minimis threshold introduced by the Omnibus Regulation 2025/2083 exempts importers who stay below 50 net tonnes per year, aggregated across iron and steel, aluminium, fertilisers and cement. Note: the threshold does not apply to electricity and hydrogen, and exceeding it during the year triggers the full set of obligations.',
+  },
+  {
+    q: 'When is the first CBAM declaration due?',
+    a: 'The first CBAM declaration is due by 30 September 2027, covering imports made in 2026. Certificates for that year are surrendered at the same time. Certificate purchases start in 2027, together with the quarterly obligation to hold at least 50% of the certificates due.',
+  },
+  {
+    q: 'How much does a CBAM certificate cost?',
+    a: 'The price mirrors the auction price of EU ETS allowances. For 2026 the quarterly average of closing prices applies; from 2027 it switches to a weekly average. The price is published by the European Commission and made available in the CBAM registry.',
+  },
+  {
+    q: 'Can I use default values instead of actual emissions data?',
+    a: 'Yes, but at a growing cost: default values carry a mark-up of +10% in 2026, +20% in 2027 and +30% from 2028 (fertilisers: +1%). Verified actual data is usually more advantageous, but requires a data collection channel with suppliers and accredited verification.',
+  },
+  {
+    q: 'What is the CBAM factor and why does the obligation grow every year?',
+    a: 'The CBAM factor expresses the free EU ETS allocation still retained by European producers: 97.5% in 2026, declining to 0% by 2034. The certificates to be surrendered are reduced by this adjustment, so the importer’s net obligation grows gradually until it becomes full in 2034.',
+  },
+];
+
+const sources = [
+  'Regulation (EU) 2023/956 establishing the Carbon Border Adjustment Mechanism, consolidated 20.10.2025 (post-Omnibus)',
+  'Regulation (EU) 2025/2083 (Omnibus) — CBAM simplification and consolidation',
+  'Implementing Regulation (EU) 2025/486 (+2025/2549) — authorised CBAM declarant status',
+  'Implementing Regulation (EU) 2025/2547 — methods for calculating embedded emissions',
+  'Implementing Regulation (EU) 2025/2621 — default values',
+  'Implementing Regulation (EU) 2025/2548 — calculation and publication of certificate prices',
+  'Implementing Regulation (EU) 2025/2620 — free allocation adjustment',
+  'Directive 2003/87/EC, Art. 10a(1a) — the CBAM factor',
+];
+---
+
+<ArticleLayout
+  title="CBAM in 2026: a practical guide for importers"
+  description="The definitive CBAM regime started on 1 January 2026. Who is affected, the 50-tonne threshold, declarant authorisation, emissions calculation, certificates and common pitfalls — what you need to do."
+  altPath="/blog/ghid-cbam-2026-importatori"
+  heroTitle="CBAM in 2026: a practical guide for importers — definitive regime, deadlines and costs"
+  publishDate="2026-07-09"
+  faq={faq}
+  sources={sources}
+>
+  <p>
+    On 1 January 2026, CBAM moved from the transitional period into the <strong>definitive regime</strong>.
+    The quarterly "trial" reporting is over: importers of iron and steel, aluminium, cement, fertilisers,
+    electricity and hydrogen now face real obligations — authorisation, emissions calculation and, from 2027,
+    buying and surrendering certificates. This guide summarises what you need to know and, above all, what
+    to do now.
+  </p>
+
+  <h2>What CBAM is, in short</h2>
+  <p>
+    CBAM (Carbon Border Adjustment Mechanism) is <strong>a carbon price applied at the EU border</strong> on
+    the emissions "embedded" in goods imported from carbon-intensive sectors. It is the import-side mirror of
+    the EU ETS: the importer pays for the emissions generated when the good was produced, just as a European
+    producer pays for ETS allowances. The goal is twofold: to prevent carbon leakage and to level the carbon
+    cost between EU production and imports.
+  </p>
+  <p>The mechanics, in four steps:</p>
+  <ol>
+    <li>The importer becomes an <strong>authorised CBAM declarant</strong>.</li>
+    <li>They calculate the <strong>embedded emissions</strong> of imported goods.</li>
+    <li>They buy and surrender <strong>CBAM certificates</strong>.</li>
+    <li>An <strong>accredited verifier</strong> confirms the declared actual emissions.</li>
+  </ol>
+
+  <h2>Who is affected</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Sector</th><th>Emissions in scope</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Iron and steel</td><td>Direct emissions only</td></tr>
+        <tr><td>Aluminium</td><td>Direct + indirect</td></tr>
+        <tr><td>Cement</td><td>Direct + indirect</td></tr>
+        <tr><td>Fertilisers</td><td>Direct + indirect</td></tr>
+        <tr><td>Electricity</td><td>Special rules (kWh)</td></tr>
+        <tr><td>Hydrogen</td><td>Direct + indirect</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <p>
+      <strong>De minimis threshold:</strong> importers staying below <strong>50 net tonnes per year</strong>
+      (aggregated across iron and steel, aluminium, fertilisers and cement) are exempt. The threshold does
+      <strong>not</strong> apply to electricity and hydrogen — those are in scope regardless of quantity.
+    </p>
+  </div>
+
+  <h2>The timeline: what changed and what comes next</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Deadline</th><th>What happens</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Oct 2023 – Dec 2025</td><td>Transitional period: quarterly reporting only, no payments</td></tr>
+        <tr><td><strong>1 January 2026</strong></td><td>Definitive regime: authorised declarant, emissions calculation, de minimis</td></tr>
+        <tr><td>1 January 2027</td><td>Quarterly holding obligation: at least 50% of certificates</td></tr>
+        <tr><td>1 February 2027</td><td>CBAM certificates sold on the common central platform</td></tr>
+        <tr><td><strong>30 September 2027</strong></td><td>First CBAM declaration + certificate surrender for 2026</td></tr>
+        <tr><td>2034</td><td>Free ETS allocation reaches zero — the CBAM obligation becomes full</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Becoming an authorised CBAM declarant</h2>
+  <p>
+    Under the definitive regime, only <strong>authorised CBAM declarants</strong> (the importer or an indirect
+    customs representative) may import CBAM goods. The application is filed electronically in the CBAM registry
+    and assessed by the competent authority within <strong>120 days</strong> (180 if additional information is
+    requested). The criteria: no recent serious infringements, financial and operational capacity, and — for
+    companies established within the last two years — a guarantee.
+  </p>
+  <p>
+    Applications registered by 31 March 2026 benefited from <strong>provisional import</strong> until the
+    authorisation decision. If you have not yet applied and you import CBAM goods above the threshold, apply
+    now — without declarant status, imports cannot continue.
+  </p>
+
+  <h2>Calculating emissions: actual values or default values</h2>
+  <p>Embedded emissions can be determined via one of two routes:</p>
+  <ul>
+    <li>
+      <strong>Actual values</strong> — emissions measured at installation level, under a monitoring plan,
+      verified by an accredited verifier. Usually more advantageous, but they require a data collection channel
+      with non-EU suppliers.
+    </li>
+    <li>
+      <strong>Default values</strong> — values set by Regulation 2025/2621, per CN code, country and production
+      route. Simple to apply, but with a <strong>growing mark-up</strong>: +10% in 2026, +20% in 2027, +30% from
+      2028 (fertilisers: +1%). The mark-up is designed precisely to motivate the switch to actual data.
+    </li>
+  </ul>
+  <p>
+    Mind the <strong>functional unit</strong>: the general rule is tonnes per CN code, but electricity is
+    reported in kWh, fertilisers in kilograms of nitrogen and cement in tonnes of clinker. Getting the unit
+    wrong means the whole calculation is wrong.
+  </p>
+
+  <h2>CBAM certificates and the real cost</h2>
+  <p>
+    The certificate price mirrors EU ETS auction prices: a quarterly average in 2026, a weekly average from
+    2027, published by the Commission. The full cycle: buy (from February 2027, on the central platform), hold
+    at least 50% quarterly against cumulated emissions, surrender by 30 September for the preceding year, and
+    request repurchase of any surplus by 31 October.
+  </p>
+  <p>
+    The net obligation is reduced by the <strong>free allocation adjustment</strong> (FAA), reflecting the free
+    ETS allocation still granted to European producers. The CBAM factor starts at 97.5% retained allocation in
+    2026 and reaches 0% in 2034 — in other words, the payment obligation starts small and <strong>grows every
+    year</strong> until it becomes full. Multi-year budgeting must reflect that slope.
+  </p>
+
+  <h2>Common pitfalls</h2>
+  <ul>
+    <li><strong>Inverting the CBAM factor</strong> — the factor expresses the allocation <em>retained</em> (97.5% → 0%), not the share of the obligation. Inverting it grossly understates the cost.</li>
+    <li><strong>Wrong functional unit</strong> — fertilisers per nitrogen, cement per clinker, electricity per kWh, not generic tonnes.</li>
+    <li><strong>Steel with indirect emissions</strong> — Annex II goods (mainly iron and steel) are in scope for direct emissions only; adding indirect ones inflates the calculation.</li>
+    <li><strong>Missed deadlines</strong> — 30 September (declaration + surrender), the 50% quarterly threshold from 2027.</li>
+    <li><strong>Ignoring the default fallback</strong> — an unlisted country or missing value means the "Other countries" value, not zero.</li>
+    <li><strong>Underestimating the default mark-up</strong> — the +10% → +30% escalation distorts the multi-year budget if ignored.</li>
+  </ul>
+
+  <h2>Checklist: what to do in 2026</h2>
+  <ol>
+    <li>Check whether your imported goods are in scope and whether you exceed the 50 t/year threshold.</li>
+    <li>File (or finalise) your application for authorised CBAM declarant status.</li>
+    <li>Map your non-EU suppliers and open the emissions data collection channel.</li>
+    <li>Decide your strategy: verified actual data vs. default values with a growing mark-up.</li>
+    <li>Identify accredited verifiers for the relevant activity group.</li>
+    <li>Budget for certificates and plan for quarterly holding from 2027.</li>
+  </ol>
+
+  <p>
+    Collecting supplier data, validating it and preparing reporting is exactly the kind of repetitive process
+    where automation pays off. See <a href="/en/solutions/cbam/">CBAM Manager</a>, our solution for CBAM
+    processes, or our <a href="/en/ai-consulting/">consulting services</a> if you want to map the process first.
+  </p>
+</ArticleLayout>

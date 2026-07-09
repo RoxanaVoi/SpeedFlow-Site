@@ -55,6 +55,7 @@ const consultingServices = getConsultingServices(locale);
         <ul class="space-y-2.5 text-sm">
           <li><a href={getLocalizedPath(locale, locale === 'en' ? '/how-we-work' : '/cum-lucram')} class="hover:text-primary-light transition-colors">{t(locale, 'nav.howWeWork')}</a></li>
           <li><a href={getLocalizedPath(locale, locale === 'en' ? '/about' : '/despre')} class="hover:text-primary-light transition-colors">{t(locale, 'nav.about')}</a></li>
+          <li><a href={getLocalizedPath(locale, '/blog')} class="hover:text-primary-light transition-colors">{t(locale, 'nav.blog')}</a></li>
           <li><a href={getLocalizedPath(locale, '/contact')} class="hover:text-primary-light transition-colors">{t(locale, 'nav.contact')}</a></li>
         </ul>
       </div>

@@ -1,0 +1,191 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'Cine trebuie să devină declarant CBAM autorizat?',
+    a: 'Orice importator UE (sau reprezentantul său vamal indirect) care importă bunuri din sectoarele CBAM — fier și oțel, aluminiu, ciment, îngrășăminte, electricitate, hidrogen — peste pragul de minimis de 50 de tone pe an. Fără autorizare, importul bunurilor CBAM nu mai este permis în regimul definitiv.',
+  },
+  {
+    q: 'Ce se întâmplă dacă import sub 50 de tone pe an?',
+    a: 'Pragul de minimis introdus prin Regulamentul Omnibus 2025/2083 scutește importatorii care rămân sub 50 de tone net pe an, agregat pe fier-oțel, aluminiu, îngrășăminte și ciment. Atenție: pragul nu se aplică electricității și hidrogenului, iar depășirea lui în cursul anului activează integral obligațiile.',
+  },
+  {
+    q: 'Când se depune prima declarație CBAM?',
+    a: 'Prima declarație CBAM se depune până la 30 septembrie 2027, pentru importurile din anul 2026. Tot atunci se restituie și certificatele aferente. Cumpărarea certificatelor începe însă din 2027, iar din acel an există și obligația de deținere trimestrială de minimum 50%.',
+  },
+  {
+    q: 'Cât costă un certificat CBAM?',
+    a: 'Prețul oglindește prețul alocațiilor EU ETS de la licitații. Pentru 2026 se folosește media trimestrială a prețurilor de închidere, iar din 2027 media săptămânală. Prețul este publicat de Comisia Europeană și preluat în registrul CBAM.',
+  },
+  {
+    q: 'Pot folosi valori default în loc de date reale de emisii?',
+    a: 'Da, dar cu un cost în creștere: valorile default poartă un mark-up de +10% în 2026, +20% în 2027 și +30% din 2028 (la îngrășăminte, +1%). Datele reale verificate sunt de regulă mai avantajoase, dar cer un canal de colectare a datelor de la furnizori și verificare acreditată.',
+  },
+  {
+    q: 'Ce este factorul CBAM și de ce crește obligația an de an?',
+    a: 'Factorul CBAM exprimă alocarea gratuită EU ETS încă păstrată de producătorii europeni: 97,5% în 2026, în scădere până la 0% în 2034. Certificatele de restituit se reduc cu această ajustare, deci obligația netă a importatorului crește treptat, până devine integrală în 2034.',
+  },
+];
+
+const sources = [
+  'Regulamentul (UE) 2023/956 privind instituirea mecanismului de ajustare la frontieră a carbonului, consolidat la 20.10.2025 (post-Omnibus)',
+  'Regulamentul (UE) 2025/2083 (Omnibus) — simplificare și consolidare CBAM',
+  'Regulamentul de punere în aplicare (UE) 2025/486 (+2025/2549) — statutul de declarant CBAM autorizat',
+  'Regulamentul de punere în aplicare (UE) 2025/2547 — metode de calcul al emisiilor încorporate',
+  'Regulamentul de punere în aplicare (UE) 2025/2621 — valori default',
+  'Regulamentul de punere în aplicare (UE) 2025/2548 — calculul și publicarea prețului certificatelor',
+  'Regulamentul de punere în aplicare (UE) 2025/2620 — ajustarea pentru alocarea gratuită',
+  'Directiva 2003/87/CE, Art. 10a(1a) — factorul CBAM',
+];
+---
+
+<ArticleLayout
+  title="CBAM în 2026: ghid practic pentru importatori"
+  description="Regimul definitiv CBAM a început la 1 ianuarie 2026. Cine este afectat, pragul de 50 t, autorizarea ca declarant, calculul emisiilor, certificatele și capcanele frecvente — pe scurt, ce ai de făcut."
+  altPath="/blog/cbam-guide-2026-importers"
+  heroTitle="CBAM în 2026: ghid practic pentru importatori — regim definitiv, termene și costuri"
+  publishDate="2026-07-09"
+  faq={faq}
+  sources={sources}
+>
+  <p>
+    De la 1 ianuarie 2026, CBAM a trecut din perioada tranzitorie în <strong>regimul definitiv</strong>.
+    Raportarea trimestrială „de probă" s-a terminat: importatorii de fier și oțel, aluminiu, ciment,
+    îngrășăminte, electricitate și hidrogen au acum obligații reale — autorizare, calcul de emisii,
+    iar din 2027, cumpărare și restituire de certificate. Acest ghid rezumă ce trebuie să știi și,
+    mai ales, ce ai de făcut acum.
+  </p>
+
+  <h2>Ce este CBAM, pe scurt</h2>
+  <p>
+    CBAM (Carbon Border Adjustment Mechanism) este <strong>un preț al carbonului aplicat la frontiera UE</strong>
+    pe emisiile „încorporate" în bunurile importate din sectoare intensive în carbon. Este oglinda la import
+    a sistemului EU ETS: importatorul plătește pentru emisiile generate la fabricarea bunului, la fel cum un
+    producător european plătește pentru alocațiile ETS. Scopul este dublu: să împiedice mutarea producției
+    poluante în afara UE (anti carbon-leakage) și să alinieze costul carbonului între producția UE și importuri.
+  </p>
+  <p>Mecanica, în patru pași:</p>
+  <ol>
+    <li>Importatorul devine <strong>declarant CBAM autorizat</strong>.</li>
+    <li>Calculează <strong>emisiile încorporate</strong> ale bunurilor importate.</li>
+    <li>Cumpără și restituie <strong>certificate CBAM</strong>.</li>
+    <li>Un <strong>verificator acreditat</strong> confirmă emisiile reale declarate.</li>
+  </ol>
+
+  <h2>Cine este afectat</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Sector</th><th>Emisii luate în calcul</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Fier și oțel</td><td>Doar emisii directe</td></tr>
+        <tr><td>Aluminiu</td><td>Directe + indirecte</td></tr>
+        <tr><td>Ciment</td><td>Directe + indirecte</td></tr>
+        <tr><td>Îngrășăminte</td><td>Directe + indirecte</td></tr>
+        <tr><td>Electricitate</td><td>Reguli speciale (kWh)</td></tr>
+        <tr><td>Hidrogen</td><td>Directe + indirecte</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <p>
+      <strong>Pragul de minimis:</strong> importatorii care rămân sub <strong>50 de tone net pe an</strong>
+      (agregat pe fier-oțel, aluminiu, îngrășăminte și ciment) sunt scutiți. Pragul <strong>nu</strong> se aplică
+      electricității și hidrogenului — acestea intră în mecanism indiferent de cantitate.
+    </p>
+  </div>
+
+  <h2>Calendarul: ce s-a schimbat și ce urmează</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Termen</th><th>Ce se întâmplă</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Oct 2023 – dec 2025</td><td>Perioada tranzitorie: doar raportare trimestrială, fără plăți</td></tr>
+        <tr><td><strong>1 ianuarie 2026</strong></td><td>Regim definitiv: declarant autorizat, calcul emisii, de minimis</td></tr>
+        <tr><td>1 ianuarie 2027</td><td>Obligația de deținere trimestrială: minimum 50% din certificate</td></tr>
+        <tr><td>1 februarie 2027</td><td>Certificatele CBAM se vând pe platforma centrală comună</td></tr>
+        <tr><td><strong>30 septembrie 2027</strong></td><td>Prima declarație CBAM + restituirea certificatelor pentru 2026</td></tr>
+        <tr><td>2034</td><td>Alocarea gratuită ETS ajunge la zero — obligația CBAM devine integrală</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Autorizarea ca declarant CBAM</h2>
+  <p>
+    În regimul definitiv, doar <strong>declaranții CBAM autorizați</strong> (importatorul sau reprezentantul
+    vamal indirect) pot importa bunuri CBAM. Cererea se depune electronic în registrul CBAM, iar autoritatea
+    competentă o evaluează în cel mult <strong>120 de zile</strong> (180 dacă cere informații suplimentare).
+    Criteriile: fără infracțiuni grave recente, capacitate financiară și operațională, iar pentru firmele
+    înființate în ultimii doi ani — o garanție.
+  </p>
+  <p>
+    Cererile înregistrate până la 31 martie 2026 au beneficiat de <strong>import provizoriu</strong> până la
+    decizia de autorizare. Dacă nu ai depus încă cererea și imporți bunuri CBAM peste prag, depune-o acum —
+    fără statut de declarant, importurile nu pot continua.
+  </p>
+
+  <h2>Calculul emisiilor: valori reale sau valori default</h2>
+  <p>Emisiile încorporate se determină pe una dintre cele două rute:</p>
+  <ul>
+    <li>
+      <strong>Valori reale</strong> — emisii măsurate la nivel de instalație, pe plan de monitorizare,
+      verificate de un verificator acreditat. De regulă mai avantajoase, dar cer un canal de colectare
+      a datelor de la furnizorii extra-UE.
+    </li>
+    <li>
+      <strong>Valori default</strong> — valori stabilite prin Regulamentul 2025/2621, pe cod CN, țară și rută
+      de producție. Simple de aplicat, dar cu un <strong>mark-up crescător</strong>: +10% în 2026, +20% în 2027,
+      +30% din 2028 (la îngrășăminte, +1%). Mark-up-ul este proiectat exact ca să motiveze trecerea la date reale.
+    </li>
+  </ul>
+  <p>
+    Atenție la <strong>unitatea funcțională</strong>: regula generală este tone per cod CN, dar electricitatea
+    se raportează în kWh, îngrășămintele în kilograme de azot, iar cimentul în tone de clincher. Greșirea
+    unității înseamnă un calcul eronat de la bază.
+  </p>
+
+  <h2>Certificatele CBAM și costul real</h2>
+  <p>
+    Prețul certificatului oglindește prețul alocațiilor EU ETS de la licitații: în 2026 media trimestrială,
+    din 2027 media săptămânală, publicată de Comisie. Ciclul complet: cumperi (din februarie 2027, pe platforma
+    centrală), deții minimum 50% trimestrial față de emisiile cumulate, restitui până la 30 septembrie pentru
+    anul precedent, iar excedentul poate fi răscumpărat până la 31 octombrie.
+  </p>
+  <p>
+    Obligația netă se reduce cu <strong>ajustarea pentru alocarea gratuită</strong> (FAA), care reflectă alocarea
+    gratuită ETS încă acordată producătorilor europeni. Factorul CBAM pornește de la 97,5% alocare păstrată în
+    2026 și ajunge la 0% în 2034 — cu alte cuvinte, obligația de plată pornește mică și <strong>crește an de an</strong>,
+    până devine integrală. Bugetarea multianuală trebuie să reflecte această pantă.
+  </p>
+
+  <h2>Capcane frecvente</h2>
+  <ul>
+    <li><strong>Factorul CBAM inversat</strong> — factorul exprimă alocarea <em>păstrată</em> (97,5% → 0%), nu ponderea obligației. Inversarea subestimează grav costul.</li>
+    <li><strong>Unitatea funcțională greșită</strong> — îngrășăminte pe azot, ciment pe clincher, electricitate pe kWh, nu tone generice.</li>
+    <li><strong>Oțel cu emisii indirecte</strong> — bunurile din Anexa II (în principal fier-oțel) intră doar cu emisii directe; includerea indirectelor umflă calculul.</li>
+    <li><strong>Termene ratate</strong> — 30 septembrie (declarație + restituire), pragul de 50% trimestrial din 2027.</li>
+    <li><strong>Fallback-ul default ignorat</strong> — țară nelistată sau valoare lipsă înseamnă valoarea „Other countries", nu zero.</li>
+    <li><strong>Mark-up-ul default subestimat</strong> — creșterea +10% → +30% distorsionează bugetul multianual dacă e ignorată.</li>
+  </ul>
+
+  <h2>Checklist: ce ai de făcut în 2026</h2>
+  <ol>
+    <li>Verifică dacă bunurile importate sunt în scop și dacă depășești pragul de 50 t/an.</li>
+    <li>Depune (sau finalizează) cererea de declarant CBAM autorizat.</li>
+    <li>Mapează furnizorii extra-UE și deschide canalul de colectare a datelor de emisii.</li>
+    <li>Decide strategia: date reale verificate vs. valori default cu mark-up crescător.</li>
+    <li>Identifică verificatori acreditați pentru grupa de activitate relevantă.</li>
+    <li>Bugetează certificatele și planifică deținerea trimestrială din 2027.</li>
+  </ol>
+
+  <p>
+    Colectarea datelor de la furnizori, validarea lor și pregătirea raportării sunt exact genul de proces
+    repetitiv în care automatizarea își arată valoarea. Vezi
+    <a href="/ro/solutii/cbam/">CBAM Manager</a>, soluția noastră pentru procesele CBAM, sau
+    <a href="/ro/consultanta-ai/">serviciile de consultanță</a> dacă vrei să mapezi întâi procesul.
+  </p>
+</ArticleLayout>

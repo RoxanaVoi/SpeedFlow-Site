@@ -9,12 +9,15 @@ interface Props {
   description?: string;
   /** Path (without locale prefix) of this page's version in the other locale, when slugs differ. */
   altPath?: string;
+  /** Extra JSON-LD structured data objects for this page (Service, FAQPage, SoftwareApplication etc.). */
+  schemas?: Record<string, unknown>[];
 }
 
 const {
   title,
   description = 'Consultanță în adoptarea AI: diagnostic de procese, pregătirea datelor, guvernanță și agenți în producție.',
   altPath,
+  schemas = [],
 } = Astro.props;
 const locale = getLocaleFromUrl(Astro.url);
 const otherLocale = locale === 'ro' ? 'en' : 'ro';
@@ -25,6 +28,45 @@ const altUrlPath = `/${otherLocale}${altPath ?? currentPath}`.replace(/\/?$/, '/
 const selfUrl = new URL(Astro.url.pathname, site).href;
 const altUrl = new URL(altUrlPath, site).href;
 const roUrl = locale === 'ro' ? selfUrl : altUrl;
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${site.origin}/#organization`,
+  name: 'Speed Flow',
+  legalName: 'Equalys Global',
+  url: site.origin + '/',
+  logo: new URL('/favicon.svg', site).href,
+  image: ogImage,
+  email: 'office@bid-management.ro',
+  description:
+    locale === 'ro'
+      ? 'Consultanță în adoptarea AI: diagnostic de procese, pregătirea datelor, guvernanță și agenți în producție. Soluții pentru procese reglementate: CBAM, EUDR, achiziții publice.'
+      : 'AI adoption consulting: process diagnostics, data preparation, governance and agents in production. Solutions for regulated processes: CBAM, EUDR, public procurement.',
+  areaServed: ['RO', 'EU'],
+  knowsAbout: [
+    'AI adoption',
+    'AI governance',
+    'ISO/IEC 42001',
+    'AI agents',
+    'data preparation',
+    'CBAM',
+    'EUDR',
+    'public procurement',
+  ],
+};
+
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${site.origin}/#website`,
+  name: 'Speed Flow',
+  url: site.origin + '/',
+  inLanguage: ['ro', 'en'],
+  publisher: { '@id': `${site.origin}/#organization` },
+};
+
+const allSchemas = [orgSchema, webSiteSchema, ...schemas];
 ---
 
 <!doctype html>
@@ -50,6 +92,9 @@ const roUrl = locale === 'ro' ? selfUrl : altUrl;
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
   <title>{title} | Speed Flow</title>
+  {allSchemas.map(schema => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
 </head>
 <body class="min-h-screen flex flex-col">
   <Header altUrl={altUrlPath} />

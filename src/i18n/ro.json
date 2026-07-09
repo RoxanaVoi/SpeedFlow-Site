@@ -4,22 +4,20 @@
   "nav.howWeWork": "Cum lucrăm",
   "nav.about": "Despre",
   "nav.contact": "Contact",
+  "nav.blog": "Blog",
   "nav.retail": "Retail Reconciliation",
   "nav.requestDemo": "Solicită demo",
   "nav.seeSolutions": "Vezi soluțiile",
-
   "hero.eyebrow": "Consultanță în adoptarea AI",
   "hero.h1": "Adoptare AI cu rezultate demonstrabile.",
   "hero.sub": "Nu vindem hype. Pregătim datele, definim regulile și construim agenții care rezolvă procese reale — fără piloți eșuați.",
   "hero.cta1": "Hai să mapăm procesul tău",
   "hero.cta2": "Vezi cum lucrăm",
   "hero.reassurance": "AI-ul reușește sau eșuează în funcție de date pregătite, limite cunoscute și reguli clare de operare.",
-
   "process.step1": "Diagnostic de proces",
   "process.step2": "Pregătirea datelor",
   "process.step3": "Reguli și guvernanță",
   "process.step4": "Agenți în producție",
-
   "home.urgency.title": "Adoptarea AI e acum un avantaj competitiv, nu o opțiune.",
   "home.urgency.text": "Companiile care operează AI corect câștigă productivitate și își păstrează avantajul. Cele care sar peste pregătirea datelor și guvernanță rămân cu piloți care nu ajung niciodată în producție. Diferența nu e tehnologia — e modul de operare.",
   "home.urgency.stat": "În ianuarie–februarie 2026, 43% dintre lucrătorii americani foloseau AI generativ la muncă, față de o medie de 32% în Europa — iar decalajul se adâncește. Aproape tot decalajul se explică printr-un singur lucru: dacă firma își încurajează activ oamenii să folosească AI și le dă uneltele și cadrul pentru asta.",
@@ -27,7 +25,6 @@
   "home.urgency.chartUS": "SUA",
   "home.urgency.chartEU": "Europa",
   "home.urgency.chartLabel": "Lucrători care folosesc AI generativ la muncă (2026)",
-
   "home.wedge.title": "AI-ul nu eșuează pentru că e slab.",
   "home.wedge.intro": "Eșuează pe date murdare, pe limite ignorate și pe procese nemapate. Noi tratăm exact aceste cauze.",
   "home.wedge.c1.cause": "Date incomplete sau murdare",
@@ -38,10 +35,8 @@
   "home.wedge.c3.fix": "Începem cu diagnosticul procesului, nu cu tehnologia.",
   "home.wedge.c4.cause": "Lipsă de guvernanță și audit",
   "home.wedge.c4.fix": "Definim reguli de operare și lăsăm urmă de decizie.",
-
   "home.method.title": "Cum creștem adoptarea AI la voi.",
   "home.method.intro": "De la strategie la agenți în producție, în cinci etape. Majoritatea clienților intră la diagnostic și avansează pe măsură ce cresc încrederea și rezultatele.",
-
   "services.diagnostic.title": "Diagnostic de adoptare AI",
   "services.diagnostic.short": "Mapăm procesele și evaluăm datele: unde ajută AI-ul, unde e ROI-ul, unde e riscul.",
   "services.dataPrep.title": "Pregătirea datelor",
@@ -57,9 +52,7 @@
   "services.deliverTitle": "Ce livrăm",
   "services.howTitle": "Cum lucrăm",
   "services.whyTitle": "De ce contează",
-
   "home.proof.bridge": "Nu doar consiliem. Construim. Aceste soluții sunt dovada că metodologia noastră funcționează în procese reglementate reale.",
-
   "home.trust.title": "De ce adoptarea AI cu noi stă pe baze solide.",
   "home.trust.i1.title": "Expertiză ISO/IEC 42001",
   "home.trust.i1.desc": "Cunoaștere aplicată a cerințelor standardului pentru sisteme de management AI.",
@@ -67,10 +60,8 @@
   "home.trust.i2.desc": "AI Strategy for Business Leaders: From Hype to Impact — program Harvard de strategie și adoptare AI.",
   "home.trust.i3.title": "Procese reglementate",
   "home.trust.i3.desc": "Experiență pe procese reglementate: CBAM, EUDR, achiziții publice.",
-
   "consulting.h1": "Consultanță în adoptarea AI",
   "consulting.sub": "AI-ul reușește sau eșuează în funcție de date pregătite, limite cunoscute și reguli clare de operare. Pe acestea lucrăm — de la strategie la agenți în producție.",
-
   "whatWeDo.title": "Ce facem",
   "whatWeDo.importers.title": "Importatori",
   "whatWeDo.importers.desc": "Automatizare pentru raportare, validare și conformitate CBAM / EUDR.",
@@ -92,7 +83,6 @@
   "whatWeDo.retail.b1": "Matching automat documente",
   "whatWeDo.retail.b2": "Identificare și escaladare excepții",
   "whatWeDo.retail.b3": "Jurnal de decizie și audit trail",
-
   "solutions.title": "Soluții din portofoliu",
   "solutions.group.compliance": "Conformitate — importatori",
   "solutions.group.authorities": "Achiziții publice — autorități contractante",
@@ -127,7 +117,6 @@
   "solutions.viewConcept": "Vezi conceptul",
   "solutions.demoAvailable": "Demo disponibil",
   "solutions.inPreparation": "În pregătire",
-
   "howItWorks.title": "Cum funcționează",
   "howItWorks.step1.title": "Analizăm procesul existent",
   "howItWorks.step1.desc": "Înțelegem fluxul, documentele și regulile pe care le folosiți deja.",
@@ -137,7 +126,6 @@
   "howItWorks.step3.desc": "Creăm interacțiunea AI cu validări, reguli și output-uri concrete.",
   "howItWorks.step4.title": "Integrăm și rafinăm",
   "howItWorks.step4.desc": "Integrăm, validăm și rafinăm soluția împreună cu utilizatorii.",
-
   "value.title": "Unde aducem valoare",
   "value.v1": "Reducerea muncii manuale în procese repetitive",
   "value.v2": "Validare mai consecventă a documentelor",
@@ -145,14 +133,12 @@
   "value.v4": "Trasabilitate mai bună a deciziilor și modificărilor",
   "value.v5": "Scăderea erorilor și a omisiunilor",
   "value.v6": "Acces mai rapid la informația relevantă",
-
   "demos.title": "Demo center",
   "demos.explore": "Deschide demo",
   "demos.seeConcept": "Vezi conceptul",
   "demos.comingSoon": "În curând",
   "demos.duration": "~2 min de explorare",
   "demos.guidedTour": "Guided tour",
-
   "whyUs.title": "De ce noi",
   "whyUs.d1.title": "Înțelegem procese reglementate",
   "whyUs.d1.desc": "Lucrăm cu documente, reguli de validare și cerințe de conformitate.",
@@ -162,11 +148,9 @@
   "whyUs.d3.desc": "Putem modela validări, escaladări și tratare de cazuri speciale.",
   "whyUs.d4.title": "Produs + flux operațional",
   "whyUs.d4.desc": "Gândim produsul împreună cu fluxul operațional al clientului.",
-
   "ctaFinal.title": "Hai să mapăm procesul pe care vrei să-l automatizezi.",
   "ctaFinal.sub": "Începem cu procesul, documentele și datele tale. De acolo definim strategia, regulile și pașii de implementare.",
   "ctaFinal.cta": "Solicită o discuție",
-
   "footer.company": "Equalys Global",
   "footer.tagline": "Consultanță în adoptarea AI și soluții construite pe procese reale.",
   "footer.consulting": "Consultanță AI",
@@ -174,7 +158,6 @@
   "footer.company2": "Companie",
   "footer.contact": "Contact",
   "footer.rights": "Toate drepturile rezervate.",
-
   "contact.title": "Solicită demo",
   "contact.sub": "Completează formularul și te contactăm în cel mai scurt timp.",
   "contact.name": "Nume",
@@ -184,7 +167,6 @@
   "contact.message": "Mesaj scurt",
   "contact.send": "Trimite",
   "contact.success": "Mulțumim! Te contactăm în curând.",
-
   "about.title": "Despre noi",
   "about.intro": "Dezvoltăm soluții AI pentru automatizarea proceselor interne complexe, cu accent pe conformitate, documente, validare și decizie operațională.",
   "about.areasTitle": "Arii în care lucrăm cel mai bine",
@@ -193,7 +175,6 @@
   "about.area2": "Achiziții publice și documentație internă",
   "about.area3": "Automatizare documentară și reconciliere",
   "about.area4": "Produse AI aplicate pe operațiuni",
-
   "howWeWork.title": "Cum lucrăm",
   "howWeWork.step1.title": "Discovery și mapare proces",
   "howWeWork.step1.desc": "Înțelegem procesul existent, documentele, rolurile și regulile implicate.",
@@ -209,5 +190,16 @@
   "howWeWork.client1": "Documente și exemple de procese",
   "howWeWork.client2": "Reguli de validare și excepții",
   "howWeWork.client3": "Roluri și responsabilități",
-  "howWeWork.client4": "Feedback de validare"
+  "howWeWork.client4": "Feedback de validare",
+  "blog.eyebrow": "Blog",
+  "blog.title": "Ghiduri și analize",
+  "blog.sub": "Ghiduri practice despre CBAM, EUDR și adoptarea AI în procese reglementate. Fără hype — doar ce trebuie să știi și ce ai de făcut.",
+  "blog.published": "Publicat",
+  "blog.updated": "Actualizat",
+  "blog.faqTitle": "Întrebări frecvente",
+  "blog.sourcesTitle": "Surse și referințe",
+  "blog.readMore": "Citește articolul",
+  "blog.back": "Înapoi la blog",
+  "blog.disclaimer": "Acest articol este un instrument de informare, nu consultanță juridică. Doar textele publicate în Jurnalul Oficial al UE (EUR-Lex) produc efecte juridice.",
+  "blog.author": "de"
 }

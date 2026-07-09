@@ -4,22 +4,20 @@
   "nav.howWeWork": "How we work",
   "nav.about": "About",
   "nav.contact": "Contact",
+  "nav.blog": "Blog",
   "nav.retail": "Retail Reconciliation",
   "nav.requestDemo": "Request demo",
   "nav.seeSolutions": "See solutions",
-
   "hero.eyebrow": "AI adoption consulting",
   "hero.h1": "AI adoption with defensible results.",
   "hero.sub": "We don't sell hype. We prepare the data, define the rules and build the agents that solve real processes — without failed pilots.",
   "hero.cta1": "Let's map your process",
   "hero.cta2": "See how we work",
   "hero.reassurance": "AI succeeds or fails depending on prepared data, known limits and clear operating rules.",
-
   "process.step1": "Process diagnostic",
   "process.step2": "Data preparation",
   "process.step3": "Rules & governance",
   "process.step4": "Agents in production",
-
   "home.urgency.title": "AI adoption is now a competitive advantage, not an option.",
   "home.urgency.text": "Companies that operate AI correctly gain productivity and keep their edge. Those that skip data preparation and governance are left with pilots that never reach production. The difference isn't the technology — it's the way of operating.",
   "home.urgency.stat": "In January–February 2026, 43% of American workers were using generative AI at work, versus a 32% average in Europe — and the gap is widening. Almost the entire gap comes down to one thing: whether the company actively encourages its people to use AI and gives them the tools and the framework to do it.",
@@ -27,7 +25,6 @@
   "home.urgency.chartUS": "US",
   "home.urgency.chartEU": "Europe",
   "home.urgency.chartLabel": "Workers using generative AI at work (2026)",
-
   "home.wedge.title": "AI doesn't fail because it's weak.",
   "home.wedge.intro": "It fails on dirty data, ignored limits and unmapped processes. We treat exactly these causes.",
   "home.wedge.c1.cause": "Incomplete or dirty data",
@@ -38,10 +35,8 @@
   "home.wedge.c3.fix": "We start with the process diagnostic, not with the technology.",
   "home.wedge.c4.cause": "Missing governance and audit",
   "home.wedge.c4.fix": "We define operating rules and leave a decision trail.",
-
   "home.method.title": "How we grow AI adoption at your company.",
   "home.method.intro": "From strategy to agents in production, in five stages. Most clients start with the diagnostic and advance as trust and results grow.",
-
   "services.diagnostic.title": "AI adoption diagnostic",
   "services.diagnostic.short": "We map processes and assess data: where AI helps, where the ROI is, where the risk is.",
   "services.dataPrep.title": "Data preparation",
@@ -57,9 +52,7 @@
   "services.deliverTitle": "What we deliver",
   "services.howTitle": "How we work",
   "services.whyTitle": "Why it matters",
-
   "home.proof.bridge": "We don't just advise. We build. These solutions are the proof that our methodology works in real regulated processes.",
-
   "home.trust.title": "Why AI adoption with us is defensible.",
   "home.trust.i1.title": "ISO/IEC 42001 expertise",
   "home.trust.i1.desc": "Applied knowledge of the AI management system standard's requirements.",
@@ -67,10 +60,8 @@
   "home.trust.i2.desc": "AI Strategy for Business Leaders: From Hype to Impact — Harvard program on AI strategy and adoption.",
   "home.trust.i3.title": "Regulated processes",
   "home.trust.i3.desc": "Experience with regulated processes: CBAM, EUDR, public procurement.",
-
   "consulting.h1": "AI adoption consulting",
   "consulting.sub": "AI succeeds or fails depending on prepared data, known limits and clear operating rules. That's what we work on — from strategy to agents in production.",
-
   "whatWeDo.title": "What we do",
   "whatWeDo.importers.title": "Importers",
   "whatWeDo.importers.desc": "Automation for reporting, validation and CBAM / EUDR compliance.",
@@ -92,7 +83,6 @@
   "whatWeDo.retail.b1": "Automatic document matching",
   "whatWeDo.retail.b2": "Exception identification and escalation",
   "whatWeDo.retail.b3": "Decision journal and audit trail",
-
   "solutions.title": "Solutions portfolio",
   "solutions.group.compliance": "Compliance — importers",
   "solutions.group.authorities": "Public procurement — contracting authorities",
@@ -127,7 +117,6 @@
   "solutions.viewConcept": "View concept",
   "solutions.demoAvailable": "Demo available",
   "solutions.inPreparation": "In preparation",
-
   "howItWorks.title": "How it works",
   "howItWorks.step1.title": "We analyze the existing process",
   "howItWorks.step1.desc": "We understand the workflow, documents and rules you already use.",
@@ -137,7 +126,6 @@
   "howItWorks.step3.desc": "We create AI interaction with validations, rules and concrete outputs.",
   "howItWorks.step4.title": "We integrate and refine",
   "howItWorks.step4.desc": "We integrate, validate and refine the solution together with users.",
-
   "value.title": "Where we add value",
   "value.v1": "Reducing manual work in repetitive processes",
   "value.v2": "More consistent document validation",
@@ -145,14 +133,12 @@
   "value.v4": "Better traceability of decisions and changes",
   "value.v5": "Fewer errors and omissions",
   "value.v6": "Faster access to relevant information",
-
   "demos.title": "Demo center",
   "demos.explore": "Open demo",
   "demos.seeConcept": "View concept",
   "demos.comingSoon": "Coming soon",
   "demos.duration": "~2 min to explore",
   "demos.guidedTour": "Guided tour",
-
   "whyUs.title": "Why us",
   "whyUs.d1.title": "We understand regulated processes",
   "whyUs.d1.desc": "We work with documents, validation rules and compliance requirements.",
@@ -162,11 +148,9 @@
   "whyUs.d3.desc": "We can model validations, escalations and special case handling.",
   "whyUs.d4.title": "Product + operational workflow",
   "whyUs.d4.desc": "We design the product together with the client's operational workflow.",
-
   "ctaFinal.title": "Let's map the process you want to automate.",
   "ctaFinal.sub": "We start with your process, documents and data. From there we define the strategy, the rules and the implementation steps.",
   "ctaFinal.cta": "Request a conversation",
-
   "footer.company": "Equalys Global",
   "footer.tagline": "AI adoption consulting and solutions built on real processes.",
   "footer.consulting": "AI consulting",
@@ -174,7 +158,6 @@
   "footer.company2": "Company",
   "footer.contact": "Contact",
   "footer.rights": "All rights reserved.",
-
   "contact.title": "Request demo",
   "contact.sub": "Fill in the form and we'll get back to you shortly.",
   "contact.name": "Name",
@@ -184,7 +167,6 @@
   "contact.message": "Short message",
   "contact.send": "Send",
   "contact.success": "Thank you! We'll contact you soon.",
-
   "about.title": "About us",
   "about.intro": "We develop AI solutions for automating complex internal processes, focused on compliance, documents, validation and operational decisions.",
   "about.areasTitle": "Areas where we work best",
@@ -193,7 +175,6 @@
   "about.area2": "Public procurement and internal documentation",
   "about.area3": "Document automation and reconciliation",
   "about.area4": "AI products applied to operations",
-
   "howWeWork.title": "How we work",
   "howWeWork.step1.title": "Discovery and process mapping",
   "howWeWork.step1.desc": "We understand the existing process, documents, roles and rules involved.",
@@ -209,5 +190,16 @@
   "howWeWork.client1": "Documents and process examples",
   "howWeWork.client2": "Validation rules and exceptions",
   "howWeWork.client3": "Roles and responsibilities",
-  "howWeWork.client4": "Validation feedback"
+  "howWeWork.client4": "Validation feedback",
+  "blog.eyebrow": "Blog",
+  "blog.title": "Guides and analysis",
+  "blog.sub": "Practical guides on CBAM, EUDR and AI adoption in regulated processes. No hype — just what you need to know and what to do.",
+  "blog.published": "Published",
+  "blog.updated": "Updated",
+  "blog.faqTitle": "Frequently asked questions",
+  "blog.sourcesTitle": "Sources and references",
+  "blog.readMore": "Read the article",
+  "blog.back": "Back to blog",
+  "blog.disclaimer": "This article is an information tool, not legal advice. Only texts published in the Official Journal of the EU (EUR-Lex) have legal effect.",
+  "blog.author": "by"
 }

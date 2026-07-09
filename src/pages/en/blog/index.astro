@@ -1,0 +1,64 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { t } from '../../../i18n/utils';
+
+const articles = [
+  {
+    href: '/en/blog/eudr-guide-importers/',
+    title: 'EUDR: a guide for importers — your obligations and how to prepare before 30 December 2026',
+    description:
+      'Who is in scope, the three prohibitions, due diligence obligations (Art. 9–11), plot geolocation, the DDS in TRACES and the preparation checklist.',
+    date: '2026-07-09',
+    tag: 'EUDR',
+  },
+  {
+    href: '/en/blog/cbam-guide-2026-importers/',
+    title: 'CBAM in 2026: a practical guide for importers — definitive regime, deadlines and costs',
+    description:
+      'The definitive regime started on 1 January 2026. The 50-tonne threshold, declarant authorisation, emissions calculation, certificates and common pitfalls.',
+    date: '2026-07-09',
+    tag: 'CBAM',
+  },
+];
+
+const locale = 'en';
+const fmt = (d: string) =>
+  new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Layout
+  title="Blog — CBAM, EUDR and AI adoption guides"
+  description="Practical guides on CBAM, EUDR and AI adoption in regulated processes. No hype — just what you need to know and what to do."
+>
+  <section class="pt-28 pb-12 lg:pt-36 lg:pb-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
+        {t(locale, 'blog.eyebrow')}
+      </span>
+      <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight mb-6">
+        {t(locale, 'blog.title')}
+      </h1>
+      <p class="text-lg text-text-light leading-relaxed max-w-2xl mx-auto">
+        {t(locale, 'blog.sub')}
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      {articles.map(a => (
+        <a href={a.href} class="block bg-surface rounded-2xl p-7 lg:p-8 hover:shadow-lg transition-shadow group">
+          <div class="flex items-center gap-3 mb-3 text-sm">
+            <span class="px-3 py-0.5 bg-primary/10 text-primary font-medium rounded-full">{a.tag}</span>
+            <time datetime={a.date} class="text-text-light">{fmt(a.date)}</time>
+          </div>
+          <h2 class="font-heading text-xl lg:text-2xl font-bold text-navy leading-snug mb-3 group-hover:text-primary transition-colors">
+            {a.title}
+          </h2>
+          <p class="text-text-light leading-relaxed mb-4">{a.description}</p>
+          <span class="text-primary font-medium">{t(locale, 'blog.readMore')} →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>

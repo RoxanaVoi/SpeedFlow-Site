@@ -68,6 +68,7 @@ export function getNavItems(locale: Locale) {
     },
     { label: t(locale, 'nav.howWeWork'), href: getLocalizedPath(locale, locale === 'en' ? '/how-we-work' : '/cum-lucram') },
     { label: t(locale, 'nav.about'), href: getLocalizedPath(locale, locale === 'en' ? '/about' : '/despre') },
+    { label: t(locale, 'nav.blog'), href: getLocalizedPath(locale, '/blog') },
     { label: t(locale, 'nav.contact'), href: getLocalizedPath(locale, '/contact') },
   ];
 }

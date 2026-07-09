@@ -1,0 +1,63 @@
+# Speed Flow
+
+> Speed Flow (Equalys Global) is an AI adoption consultancy based in Romania, serving clients in Romania and the EU. We help companies adopt AI with demonstrable results: process diagnostics, data preparation, governance and operating rules, and AI agents in production. Our own software products — built for regulated processes such as CBAM, EUDR and public procurement — are proof the methodology works. Expertise includes ISO/IEC 42001 (AI management systems) and Harvard executive training in AI strategy. The site is bilingual: Romanian (default) and English.
+
+Contact: office@bid-management.ro
+
+## AI Consulting Services (English)
+
+- [AI adoption consulting — overview](https://www.speed-flow.ai/en/ai-consulting/): Why AI succeeds or fails: prepared data, known limits, operating rules.
+- [AI adoption diagnostic](https://www.speed-flow.ai/en/ai-consulting/diagnostic/): Process mapping and data assessment — where AI helps, where the ROI is, where the risk is.
+- [Data preparation](https://www.speed-flow.ai/en/ai-consulting/data-preparation/): Structuring and cleaning data so it is usable by AI agents.
+- [Governance and operating rules](https://www.speed-flow.ai/en/ai-consulting/governance/): Company-level methodologies and rules for using AI agents, informed by ISO/IEC 42001.
+- [Agent design and implementation](https://www.speed-flow.ai/en/ai-consulting/agents-automation/): Designing, building and integrating AI agents into real processes.
+- [Adoption and scaling](https://www.speed-flow.ai/en/ai-consulting/adoption-scaling/): Training, measurement and iteration so adoption takes root.
+
+## Software Solutions (English)
+
+- [CBAM Manager](https://www.speed-flow.ai/en/solutions/cbam/): Automation for collecting, validating and preparing data required in CBAM processes.
+- [EUDR Manager](https://www.speed-flow.ai/en/solutions/eudr/): Support for EUDR processes, document traceability and organizing compliance data.
+- [ePaap](https://www.speed-flow.ai/en/solutions/epaap/): Platform for public institutions managing procurement document workflows, acquisition files, needs collection and PAAP generation.
+- [TenderCraft](https://www.speed-flow.ai/en/solutions/tendercraft/): Bid generation for public procurement procedures — extracts requirements from the documentation and builds the bid.
+- [FindEquip](https://www.speed-flow.ai/en/solutions/findequip/): Helps economic operators in public procurement identify equipment compliant with technical requirements.
+- [Retail Reconciliation](https://www.speed-flow.ai/en/solutions/retail/): Automation for internal document reconciliation and exception handling in repetitive processes.
+
+## Guides & Articles (English)
+
+- [CBAM in 2026: a practical guide for importers](https://www.speed-flow.ai/en/blog/cbam-guide-2026-importers/): The definitive CBAM regime, the 50-tonne de minimis threshold, declarant authorisation, emissions calculation, certificates, deadlines and common pitfalls.
+- [EUDR: a guide for importers](https://www.speed-flow.ai/en/blog/eudr-guide-importers/): EUDR obligations from 30 December 2026 — the three prohibitions, due diligence (Art. 9–11), plot geolocation, the DDS in TRACES and a preparation checklist.
+
+## Company (English)
+
+- [How we work](https://www.speed-flow.ai/en/how-we-work/): Five-stage method from strategy to agents in production.
+- [About](https://www.speed-flow.ai/en/about/): Team, expertise areas, ISO/IEC 42001 and Harvard credentials.
+- [Contact](https://www.speed-flow.ai/en/contact/): Request a demo or a process-mapping discussion.
+
+## Servicii de consultanță AI (Română)
+
+- [Consultanță în adoptarea AI — prezentare](https://www.speed-flow.ai/ro/consultanta-ai/): De ce reușește sau eșuează AI-ul: date pregătite, limite cunoscute, reguli de operare.
+- [Diagnostic de adoptare AI](https://www.speed-flow.ai/ro/consultanta-ai/diagnostic/): Mapăm procesele și evaluăm datele — unde ajută AI-ul, unde e ROI-ul, unde e riscul.
+- [Pregătirea datelor](https://www.speed-flow.ai/ro/consultanta-ai/pregatire-date/): Structurăm și curățăm datele ca să fie utilizabile de agenți.
+- [Guvernanță și reguli de operare](https://www.speed-flow.ai/ro/consultanta-ai/guvernanta/): Metodologii și reguli pentru utilizarea agenților la nivel de companie.
+- [Design și implementare de agenți](https://www.speed-flow.ai/ro/consultanta-ai/agenti-automatizare/): Proiectăm, construim și integrăm agenți pe procesele voastre.
+- [Adoptare și scalare](https://www.speed-flow.ai/ro/consultanta-ai/adoptie-scalare/): Training, măsurare și iterare, ca adoptarea să prindă rădăcini.
+
+## Soluții software (Română)
+
+- [CBAM Manager](https://www.speed-flow.ai/ro/solutii/cbam/): Automatizare pentru raportare, validare și conformitate CBAM pentru importatori.
+- [EUDR Manager](https://www.speed-flow.ai/ro/solutii/eudr/): Suport pentru procese EUDR, trasabilitate documentară și organizarea datelor necesare conformării.
+- [ePaap](https://www.speed-flow.ai/ro/solutii/epaap/): Flux digital pentru achiziții publice — referate, dosar de achiziție și PAAP.
+- [TenderCraft](https://www.speed-flow.ai/ro/solutii/tendercraft/): Generare de oferte pentru proceduri de achiziții publice — extrage cerințele din documentație și construiește oferta.
+- [FindEquip](https://www.speed-flow.ai/ro/solutii/findequip/): Identificarea echipamentelor conforme pentru participarea la proceduri, după cerințe tehnice.
+- [Retail Reconciliation](https://www.speed-flow.ai/ro/solutii/retail/): Reconciliere documentară și tratarea excepțiilor în procese repetitive.
+
+## Ghiduri și articole (Română)
+
+- [CBAM în 2026: ghid practic pentru importatori](https://www.speed-flow.ai/ro/blog/ghid-cbam-2026-importatori/): Regimul definitiv CBAM, pragul de minimis de 50 t, autorizarea ca declarant, calculul emisiilor, certificatele, termenele și capcanele frecvente.
+- [EUDR: ghid pentru importatori](https://www.speed-flow.ai/ro/blog/ghid-eudr-importatori/): Obligațiile EUDR de la 30 decembrie 2026 — cele trei interdicții, due diligence (Art. 9–11), geolocația parcelelor, DDS în TRACES și checklistul de pregătire.
+
+## Companie (Română)
+
+- [Cum lucrăm](https://www.speed-flow.ai/ro/cum-lucram/): Metoda în cinci etape, de la strategie la agenți în producție.
+- [Despre](https://www.speed-flow.ai/ro/despre/): Echipa, ariile de expertiză, certificări ISO/IEC 42001 și formare Harvard.
+- [Contact](https://www.speed-flow.ai/ro/contact/): Solicită un demo sau o discuție de mapare a proceselor.

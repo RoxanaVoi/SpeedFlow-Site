@@ -1,0 +1,162 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'De când se aplică efectiv EUDR?',
+    a: 'Obligațiile principale se aplică de la 30 decembrie 2026 pentru operatorii mari și mijlocii și de la 30 iunie 2027 pentru microîntreprinderile și întreprinderile mici (care aveau acest statut la 31 decembrie 2024). Micro și micii operatori care erau deja acoperiți de EUTR pentru lemn intră tot de la 30 decembrie 2026.',
+  },
+  {
+    q: 'Ce produse intră sub EUDR?',
+    a: 'Produsele legate de șapte mărfuri: bovine, cacao, cafea, palmier de ulei, cauciuc, soia și lemn. Încadrarea se decide după codul NC din Anexa I a regulamentului — de exemplu lemn și produse derivate (cap. 44), hârtie și carton (cap. 48), mobilă (cap. 94). Nu există prag de minimis: orice cantitate intră în domeniu.',
+  },
+  {
+    q: 'Ce este Declarația de Diligență (DDS)?',
+    a: 'DDS este declarația depusă în sistemul de informații al UE (TRACES) prin care operatorul confirmă că a exercitat due diligence și că riscul de neconformitate este neglijabil. Ea generează un număr de referință care se atașează declarației vamale — fără el, importul nu poate fi procesat.',
+  },
+  {
+    q: 'Ce înseamnă cerința de geolocație?',
+    a: 'Pentru fiecare parcelă de origine trebuie furnizate coordonate de latitudine și longitudine cu minimum 6 zecimale. Parcelele mai mari de 4 hectare (cu excepția bovinelor) trebuie descrise ca poligoane, nu ca punct unic.',
+  },
+  {
+    q: 'Ce riscă un importator neconform?',
+    a: 'Blocarea importurilor în vamă, confiscarea mărfii, amenzi administrative proporționale cu prejudiciul de mediu și valoarea mărfii, excluderea temporară de la achiziții publice și pierderea accesului pe piața UE. Documentația trebuie păstrată 5 ani și prezentată la control.',
+  },
+  {
+    q: 'Furnizorii mei nu au sisteme digitale. Cum colectez datele?',
+    a: 'Un flux funcțional și cu furnizori „low-tech" este un formular standard (de exemplu Excel) cu câmpurile obligatorii — date produs, coordonate GPS, documente de legalitate — completat de furnizor și încărcat intern. Important este ca validarea completitudinii și consistenței să fie sistematică, nu manuală.',
+  },
+];
+
+const sources = [
+  'Regulamentul (UE) 2023/1115 privind produsele fără defrișări (EUDR), consolidat la 26.12.2025',
+  'Regulamentul (UE) 2024/3234 — amânarea datelor de aplicare',
+  'Regulamentul (UE) 2025/2650 — simplificare țintită (operator din aval, MSPO)',
+  'Document de Ghidare al Comisiei (proiect, C(2026) 3056, 4.5.2026)',
+  'Întrebări frecvente EUDR, a 5-a iterație (aprilie 2026) — document de lucru al Comisiei',
+  'Ghidul Sistemului de Informații EUDR (TRACES)',
+];
+---
+
+<ArticleLayout
+  title="EUDR: ghid pentru importatori — obligații, DDS și termene"
+  description="EUDR se aplică de la 30 decembrie 2026. Cine este vizat, cele trei interdicții, obligațiile de due diligence (Art. 9–11), geolocația parcelelor, DDS în TRACES și cum te pregătești — ghid practic."
+  altPath="/blog/eudr-guide-importers"
+  heroTitle="EUDR: ghid pentru importatori — ce obligații ai și cum te pregătești până la 30 decembrie 2026"
+  publishDate="2026-07-09"
+  faq={faq}
+  sources={sources}
+>
+  <p>
+    Regulamentul UE privind produsele fără defrișări (EUDR) intră în aplicare pentru operatorii mari și
+    mijlocii la <strong>30 decembrie 2026</strong> — adică în mai puțin de șase luni. Pentru importatorii de
+    lemn, mobilă, hârtie, cafea, cacao și alte produse vizate, asta înseamnă un lucru concret: fără
+    <strong>Declarație de Diligență (DDS)</strong> și fără număr de referință EUDR atașat declarației vamale,
+    importul nu poate fi procesat. Ghidul de față rezumă obligațiile și pașii de pregătire.
+  </p>
+
+  <h2>Ce cere EUDR: cele trei condiții</h2>
+  <p>
+    Un produs relevant poate fi introdus pe piața UE sau exportat doar dacă îndeplinește
+    <strong>toate cele trei</strong> condiții (Art. 3):
+  </p>
+  <ol>
+    <li><strong>Fără defrișări</strong> — nu provine de pe terenuri defrișate după <strong>31 decembrie 2020</strong>; pentru lemn, nici cu degradarea pădurii după această dată.</li>
+    <li><strong>Legalitate</strong> — a fost produs în conformitate cu legislația relevantă a țării de producție.</li>
+    <li><strong>Acoperit de o DDS</strong> — sau de o declarație simplificată, depusă în sistemul de informații al UE.</li>
+  </ol>
+
+  <h2>Cine și ce este vizat</h2>
+  <p>
+    EUDR acoperă <strong>șapte mărfuri</strong>: bovine, cacao, cafea, palmier de ulei, cauciuc, soia și lemn —
+    plus produsele derivate listate în Anexa I, identificate după <strong>codul NC</strong>. Pentru importatorii
+    din România, categoriile tipice sunt lemnul și produsele din lemn (cap. 44), hârtia, cartonul și celuloza
+    (cap. 48) și mobila (cap. 94).
+  </p>
+  <div class="callout">
+    <p>
+      <strong>Nu există prag de minimis.</strong> Spre deosebire de CBAM, orice cantitate sau valoare intră în
+      domeniu. Încadrarea se decide după codul NC din Anexa I, nu după prezența materialului — o marfă cu
+      cod nelistat este în afara domeniului chiar dacă conține lemn sau cauciuc.
+    </p>
+  </div>
+  <p>
+    Rolul se stabilește <strong>per produs, nu per companie</strong>: cine introduce primul un produs relevant
+    pe piața UE (sau îl exportă) este <strong>operator</strong> și poartă obligația de due diligence și de DDS.
+    Simplificarea din decembrie 2025 a creat două categorii cu obligații reduse: <strong>operatorul din aval</strong>
+    (fabrică produse din materiale deja acoperite integral de o DDS — nu mai depune DDS proprie) și
+    <strong>MSPO</strong> (micul producător primar din țări cu risc scăzut, cu declarație simplificată unică).
+  </p>
+
+  <h2>Termenele de aplicare</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Cine</th><th>De când se aplică</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Operatori mari și mijlocii</td><td><strong>30 decembrie 2026</strong></td></tr>
+        <tr><td>Micro și mici (statut la 31 dec. 2024)</td><td>30 iunie 2027</td></tr>
+        <tr><td>Micro și mici deja acoperiți de EUTR (lemn)</td><td>30 decembrie 2026</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Obligațiile de due diligence (Art. 9–11)</h2>
+
+  <h3>1. Colectarea informațiilor (Art. 9)</h3>
+  <ul>
+    <li><strong>Geolocația parcelei</strong> de origine: coordonate cu minimum 6 zecimale; parcelele peste 4 ha se descriu ca poligon;</li>
+    <li>originea și traseul lanțului de aprovizionare;</li>
+    <li>documente de legalitate: permise, autorizații, drept de exploatare;</li>
+    <li>perioada recoltării sau producerii;</li>
+    <li>descrierea produsului, volumul și codul NC.</li>
+  </ul>
+
+  <h3>2. Evaluarea riscului (Art. 10)</h3>
+  <p>Operatorul analizează dacă riscul de neconformitate este „neglijabil", combinând:</p>
+  <ul>
+    <li><strong>riscul geospațial</strong> — parcela a pierdut pădure după 31.12.2020? Se suprapune cu arii protejate?</li>
+    <li><strong>riscul de țară</strong> — clasificarea de risc a Comisiei, plus indicatori de guvernanță și legalitate;</li>
+    <li><strong>riscul documentar</strong> — completitudinea și consistența datelor colectate (de exemplu, țara declarată vs. țara rezultată din coordonate).</li>
+  </ul>
+
+  <h3>3. Măsuri de atenuare (Art. 11)</h3>
+  <p>
+    Dacă riscul nu este neglijabil, DDS nu poate fi depusă. Operatorul trebuie să obțină documente suplimentare,
+    să clarifice informațiile cu furnizorul sau să facă verificări ori audit extern — și să documenteze fiecare
+    acțiune. Doar când riscul devine neglijabil se poate genera declarația.
+  </p>
+
+  <h2>DDS, TRACES și vama</h2>
+  <p>
+    Declarația de diligență se depune electronic în <strong>sistemul de informații al UE (TRACES)</strong> și
+    primește un număr de referință care se atașează declarației vamale. Fluxul practic al unui import arată așa:
+    identifici produsul (cod NC în scop), colectezi datele și documentele de la furnizor, validezi completitudinea
+    și consistența, rulezi verificarea geospațială, evaluezi riscul, aplici măsuri de atenuare dacă e cazul,
+    generezi DDS și abia apoi mergi la vamă.
+  </p>
+  <p>
+    Întregul dosar — date, documente, verificări, decizii — trebuie <strong>arhivat minimum 5 ani</strong> și
+    prezentat autorităților la control. Neconformitatea aduce blocarea importurilor, confiscarea mărfii,
+    penalități și, în practică, pierderea accesului pe piața UE.
+  </p>
+
+  <h2>Cum te pregătești: checklist</h2>
+  <ol>
+    <li>Inventariază produsele importate și verifică codurile NC față de Anexa I.</li>
+    <li>Stabilește rolul tău per produs: operator, operator din aval sau comerciant.</li>
+    <li>Mapează furnizorii pe țări de origine și cere-le geolocația parcelelor și documentele de legalitate.</li>
+    <li>Definește un formular standard de colectare pentru furnizori — funcționează și cu furnizori fără sisteme digitale.</li>
+    <li>Alege modul de verificare geospațială (analiza defrișării post-2020 pe coordonatele primite).</li>
+    <li>Documentează procedura de evaluare a riscului și de atenuare.</li>
+    <li>Pregătește înregistrarea în TRACES și testează generarea DDS pe cazuri reale, înainte de termen.</li>
+  </ol>
+
+  <p>
+    Colectarea datelor de la furnizori, validările, verificarea geospațială și generarea DDS sunt un proces
+    repetitiv, cu reguli clare — exact profilul potrivit pentru automatizare. Vezi
+    <a href="/ro/solutii/eudr/">EUDR Manager</a>, soluția noastră pentru conformitatea EUDR, sau
+    <a href="/ro/consultanta-ai/">serviciile de consultanță</a> dacă vrei să începi cu maparea procesului.
+  </p>
+</ArticleLayout>

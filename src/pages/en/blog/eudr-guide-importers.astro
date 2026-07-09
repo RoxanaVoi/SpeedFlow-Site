@@ -1,0 +1,163 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'When does EUDR actually apply?',
+    a: 'The main obligations apply from 30 December 2026 for large and medium operators, and from 30 June 2027 for micro and small enterprises (that had that status on 31 December 2024). Micro and small operators already covered by the EUTR for timber are also in scope from 30 December 2026.',
+  },
+  {
+    q: 'Which products fall under EUDR?',
+    a: 'Products linked to seven commodities: cattle, cocoa, coffee, oil palm, rubber, soya and wood. Scope is decided by the CN code listed in Annex I of the regulation — for example wood and wood products (ch. 44), paper and paperboard (ch. 48), furniture (ch. 94). There is no de minimis: any quantity is in scope.',
+  },
+  {
+    q: 'What is the Due Diligence Statement (DDS)?',
+    a: 'The DDS is the statement filed in the EU Information System (TRACES) by which the operator confirms due diligence was exercised and the risk of non-compliance is negligible. It generates a reference number that must be attached to the customs declaration — without it, the import cannot be processed.',
+  },
+  {
+    q: 'What does the geolocation requirement mean?',
+    a: 'For every plot of origin you must provide latitude and longitude coordinates with at least 6 decimal places. Plots larger than 4 hectares (except for cattle) must be described as polygons, not a single point.',
+  },
+  {
+    q: 'What does a non-compliant importer risk?',
+    a: 'Imports blocked at customs, confiscation of the goods, administrative fines proportionate to the environmental damage and the value of the goods, temporary exclusion from public procurement and loss of access to the EU market. Documentation must be kept for 5 years and produced during inspections.',
+  },
+  {
+    q: 'My suppliers have no digital systems. How do I collect the data?',
+    a: 'A workable flow even with low-tech suppliers is a standard form (for example Excel) with the mandatory fields — product data, GPS coordinates, legality documents — filled in by the supplier and uploaded internally. What matters is that completeness and consistency checks are systematic, not manual.',
+  },
+];
+
+const sources = [
+  'Regulation (EU) 2023/1115 on deforestation-free products (EUDR), consolidated 26.12.2025',
+  'Regulation (EU) 2024/3234 — postponement of the application dates',
+  'Regulation (EU) 2025/2650 — targeted simplification (downstream operator, MSPO)',
+  'Commission Guidance Document (draft, C(2026) 3056, 4.5.2026)',
+  'EUDR Frequently Asked Questions, 5th iteration (April 2026) — Commission working document',
+  'EUDR Information System (TRACES) user guide',
+];
+---
+
+<ArticleLayout
+  title="EUDR: a guide for importers — obligations, DDS and deadlines"
+  description="EUDR applies from 30 December 2026. Who is in scope, the three prohibitions, due diligence obligations (Art. 9–11), plot geolocation, the DDS in TRACES and how to prepare — a practical guide."
+  altPath="/blog/ghid-eudr-importatori"
+  heroTitle="EUDR: a guide for importers — your obligations and how to prepare before 30 December 2026"
+  publishDate="2026-07-09"
+  faq={faq}
+  sources={sources}
+>
+  <p>
+    The EU Deforestation Regulation (EUDR) starts applying to large and medium operators on
+    <strong>30 December 2026</strong> — less than six months away. For importers of wood, furniture, paper,
+    coffee, cocoa and other covered products, that means something very concrete: without a
+    <strong>Due Diligence Statement (DDS)</strong> and its EUDR reference number attached to the customs
+    declaration, the import cannot be processed. This guide summarises the obligations and the preparation steps.
+  </p>
+
+  <h2>What EUDR requires: the three conditions</h2>
+  <p>
+    A relevant product may be placed on the EU market or exported only if it meets
+    <strong>all three</strong> conditions (Art. 3):
+  </p>
+  <ol>
+    <li><strong>Deforestation-free</strong> — it does not come from land deforested after <strong>31 December 2020</strong>; for wood, also no forest degradation after that date.</li>
+    <li><strong>Legality</strong> — it was produced in accordance with the relevant legislation of the country of production.</li>
+    <li><strong>Covered by a DDS</strong> — or by a simplified declaration, filed in the EU Information System.</li>
+  </ol>
+
+  <h2>Who and what is in scope</h2>
+  <p>
+    EUDR covers <strong>seven commodities</strong>: cattle, cocoa, coffee, oil palm, rubber, soya and wood —
+    plus the derived products listed in Annex I, identified by <strong>CN code</strong>. For most importers,
+    the typical categories are wood and wood products (ch. 44), paper, paperboard and pulp (ch. 48) and
+    furniture (ch. 94).
+  </p>
+  <div class="callout">
+    <p>
+      <strong>There is no de minimis threshold.</strong> Unlike CBAM, any quantity or value is in scope.
+      Scope is decided by the CN code in Annex I, not by the presence of the material — a product with an
+      unlisted code is out of scope even if it contains wood or rubber.
+    </p>
+  </div>
+  <p>
+    The role is determined <strong>per product, not per company</strong>: whoever first places a relevant
+    product on the EU market (or exports it) is an <strong>operator</strong> and carries the due diligence and
+    DDS obligations. The December 2025 simplification created two categories with reduced obligations: the
+    <strong>downstream operator</strong> (manufactures products from materials already fully covered by a DDS —
+    no own DDS required) and the <strong>MSPO</strong> (micro or small primary operator in low-risk countries,
+    with a single simplified declaration).
+  </p>
+
+  <h2>Application dates</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Who</th><th>Applies from</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Large and medium operators</td><td><strong>30 December 2026</strong></td></tr>
+        <tr><td>Micro and small (status on 31 Dec 2024)</td><td>30 June 2027</td></tr>
+        <tr><td>Micro and small already covered by EUTR (timber)</td><td>30 December 2026</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>The due diligence obligations (Art. 9–11)</h2>
+
+  <h3>1. Information collection (Art. 9)</h3>
+  <ul>
+    <li><strong>Geolocation of the plot</strong> of origin: coordinates with at least 6 decimal places; plots over 4 ha described as polygons;</li>
+    <li>origin and supply chain trail;</li>
+    <li>legality documents: permits, authorisations, harvesting rights;</li>
+    <li>the harvesting or production period;</li>
+    <li>product description, volume and CN code.</li>
+  </ul>
+
+  <h3>2. Risk assessment (Art. 10)</h3>
+  <p>The operator assesses whether the risk of non-compliance is "negligible", combining:</p>
+  <ul>
+    <li><strong>geospatial risk</strong> — did the plot lose forest after 31.12.2020? Does it overlap protected areas?</li>
+    <li><strong>country risk</strong> — the Commission's risk benchmarking, plus governance and legality indicators;</li>
+    <li><strong>documentary risk</strong> — completeness and consistency of the collected data (for example, declared country vs. the country derived from coordinates).</li>
+  </ul>
+
+  <h3>3. Risk mitigation (Art. 11)</h3>
+  <p>
+    If the risk is not negligible, the DDS cannot be filed. The operator must obtain additional documents,
+    clarify the information with the supplier or perform checks or an external audit — and document every
+    action. Only once the risk becomes negligible can the statement be generated.
+  </p>
+
+  <h2>DDS, TRACES and customs</h2>
+  <p>
+    The due diligence statement is filed electronically in the <strong>EU Information System (TRACES)</strong>
+    and receives a reference number that is attached to the customs declaration. The practical flow of an
+    import: identify the product (CN code in scope), collect data and documents from the supplier, validate
+    completeness and consistency, run the geospatial check, assess the risk, apply mitigation if needed,
+    generate the DDS — and only then go to customs.
+  </p>
+  <p>
+    The entire file — data, documents, checks, decisions — must be <strong>archived for at least 5 years</strong>
+    and produced during inspections. Non-compliance brings blocked imports, confiscation of goods, penalties
+    and, in practice, loss of access to the EU market.
+  </p>
+
+  <h2>How to prepare: checklist</h2>
+  <ol>
+    <li>Inventory your imported products and check CN codes against Annex I.</li>
+    <li>Determine your role per product: operator, downstream operator or trader.</li>
+    <li>Map suppliers by country of origin and request plot geolocation and legality documents.</li>
+    <li>Define a standard collection form for suppliers — it works even with suppliers without digital systems.</li>
+    <li>Choose your geospatial verification approach (post-2020 deforestation analysis on the received coordinates).</li>
+    <li>Document your risk assessment and mitigation procedure.</li>
+    <li>Prepare TRACES registration and test DDS generation on real cases before the deadline.</li>
+  </ol>
+
+  <p>
+    Supplier data collection, validations, geospatial checks and DDS generation form a repetitive process with
+    clear rules — exactly the right profile for automation. See <a href="/en/solutions/eudr/">EUDR Manager</a>,
+    our solution for EUDR compliance, or our <a href="/en/ai-consulting/">consulting services</a> if you want
+    to start by mapping the process.
+  </p>
+</ArticleLayout>
