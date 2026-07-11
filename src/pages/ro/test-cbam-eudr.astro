@@ -1,0 +1,106 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CbamEudrQuiz from '../../components/CbamEudrQuiz.astro';
+
+const strings = {
+  stepLabel: 'Întrebarea',
+  ofLabel: 'din',
+  resultLabel: 'Rezultat',
+  questions: [
+    {
+      q: 'Firma ta importă mărfuri din afara UE (ex. Turcia, China, Ucraina, India)?',
+      h: 'Sau pune pe piața UE produse care conțin materii prime din afara UE.',
+      a: [['Da', 'imp_yes'], ['Nu', 'imp_no'], ['Nu știu sigur', 'imp_maybe']] as [string, string][],
+    },
+    {
+      q: 'Lucrezi cu vreuna dintre aceste mărfuri: oțel, aluminiu, ciment, îngrășăminte, hidrogen, energie electrică?',
+      h: 'Categoriile acoperite de CBAM.',
+      a: [['Da', 'cbam_yes'], ['Nu', 'cbam_no']] as [string, string][],
+    },
+    {
+      q: 'Lucrezi cu vreuna dintre: lemn/mobilă, cafea, cacao, soia, ulei de palmier, cauciuc, vită/piele?',
+      h: 'Categoriile acoperite de EUDR.',
+      a: [['Da', 'eudr_yes'], ['Nu', 'eudr_no']] as [string, string][],
+    },
+    {
+      q: 'Ce dimensiune are firma?',
+      h: 'Termenele EUDR diferă pentru companiile mari vs. micro/mici.',
+      a: [['Companie mare / medie', 'big'], ['Micro / mică întreprindere', 'small']] as [string, string][],
+    },
+    {
+      q: 'Ai deja un proces pus la punct pentru raportare CBAM / declarații EUDR?',
+      h: '',
+      a: [['Nu, facem manual / deloc', 'noproc'], ['Parțial', 'partial'], ['Da, complet', 'full']] as [string, string][],
+    },
+  ],
+  badgeCbam: 'CBAM: probabil obligat',
+  badgeEudr: 'EUDR: probabil obligat',
+  badgeNone: 'Probabil neafectat momentan',
+  cbamBody:
+    '<strong>CBAM</strong> — regimul definitiv e în vigoare din 2026. Ca importator de mărfuri cu emisii ridicate, ai nevoie de statut de <strong>declarant CBAM autorizat</strong>, de calculul emisiilor încorporate și, din 2027, de achiziția de certificate.',
+  cbamDeadline: 'Prima declarație CBAM se depune până la 30 septembrie 2027, pentru importurile din 2026 — dar autorizarea și colectarea datelor trebuie să înceapă acum.',
+  eudrBody:
+    '<strong>EUDR</strong> — trebuie <strong>geolocalizarea parcelelor</strong> și o <strong>declarație de due diligence (DDS)</strong> pentru fiecare lot pus pe piața UE.',
+  eudrDeadline: 'Termen de aplicare pentru companiile mari și medii: 30 decembrie 2026.',
+  eudrDeadlineSmall: 'Termen de aplicare pentru micro și mici întreprinderi: 30 iunie 2027.',
+  noneBody:
+    'Pe baza răspunsurilor, momentan nu pari să ai obligații directe CBAM/EUDR. Dacă însă începi să imporți din afara UE sau adaugi mărfuri din categoriile vizate, situația se schimbă.',
+  ctaTitle: 'Vrei un plan concret de conformitate în 15 minute?',
+  ctaHint: 'Îți trimitem o analiză scurtă pe situația firmei tale și îți arătăm cum automatizăm raportarea CBAM / declarațiile EUDR.',
+  fieldCompany: 'Numele firmei',
+  fieldName: 'Numele tău',
+  fieldEmail: 'E-mail de contact',
+  send: 'Trimite-mi analiza',
+  restart: 'Reia testul',
+  alertFill: 'Completează măcar firma și e-mailul.',
+  thanks: 'Mulțumim! Ți se deschide e-mailul cu datele completate — apasă Trimite și revenim cu analiza.',
+  mailSubjectPrefix: '[SpeedFlow] Cerere analiză conformitate CBAM/EUDR',
+  mailModules: 'Module relevante',
+  linksTitle: 'Vrei să aprofundezi înainte?',
+  links: [
+    { label: 'CBAM în 2026: ghid practic pentru importatori', href: '/ro/blog/ghid-cbam-2026-importatori/' },
+    { label: 'EUDR: ghid practic pentru importatori', href: '/ro/blog/ghid-eudr-importatori/' },
+    { label: 'CBAM Manager — automatizarea raportării CBAM', href: '/ro/solutii/cbam/' },
+    { label: 'EUDR Manager — geolocalizare și declarații DDS', href: '/ro/solutii/eudr/' },
+  ],
+};
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Ești obligat la CBAM sau EUDR? — test rapid',
+    description:
+      'Test interactiv de 5 întrebări: află în sub un minut dacă firma ta are obligații de conformitate CBAM sau EUDR și până când.',
+    inLanguage: 'ro',
+    about: ['CBAM', 'EUDR', 'conformitate'],
+  },
+];
+---
+
+<Layout
+  title="Ești obligat la CBAM sau EUDR? Test rapid"
+  description="Răspunde la 5 întrebări (sub un minut) și află dacă firma ta are obligații de conformitate CBAM sau EUDR — și până când."
+  altPath="/cbam-eudr-test"
+  schemas={schemas}
+>
+  <!-- Hero -->
+  <section class="pt-28 pb-16 lg:pt-36 lg:pb-20 bg-gradient-to-br from-navy to-navy-light text-center">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
+        Ești obligat la CBAM sau EUDR?
+      </h1>
+      <p class="text-slate-300 leading-relaxed max-w-xl mx-auto">
+        Răspunde la 5 întrebări (sub un minut) și află dacă firma ta are obligații de conformitate — și până când.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="pb-16">
+    <CbamEudrQuiz strings={strings} />
+    <p class="text-center text-xs text-text-light mt-8 max-w-xl mx-auto px-4">
+      Test informativ, orientativ — nu constituie consultanță juridică. Rezultatul se bazează pe răspunsurile tale.
+    </p>
+  </section>
+</Layout>

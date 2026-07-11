@@ -1,0 +1,106 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CbamEudrQuiz from '../../components/CbamEudrQuiz.astro';
+
+const strings = {
+  stepLabel: 'Question',
+  ofLabel: 'of',
+  resultLabel: 'Result',
+  questions: [
+    {
+      q: 'Does your company import goods from outside the EU (e.g. Turkey, China, Ukraine, India)?',
+      h: 'Or place products on the EU market that contain raw materials from outside the EU.',
+      a: [['Yes', 'imp_yes'], ['No', 'imp_no'], ['Not sure', 'imp_maybe']] as [string, string][],
+    },
+    {
+      q: 'Do you work with any of these goods: steel, aluminium, cement, fertilisers, hydrogen, electricity?',
+      h: 'The categories covered by CBAM.',
+      a: [['Yes', 'cbam_yes'], ['No', 'cbam_no']] as [string, string][],
+    },
+    {
+      q: 'Do you work with any of: wood/furniture, coffee, cocoa, soy, palm oil, rubber, cattle/leather?',
+      h: 'The categories covered by EUDR.',
+      a: [['Yes', 'eudr_yes'], ['No', 'eudr_no']] as [string, string][],
+    },
+    {
+      q: 'How large is your company?',
+      h: 'EUDR deadlines differ for large companies vs. micro/small enterprises.',
+      a: [['Large / medium company', 'big'], ['Micro / small enterprise', 'small']] as [string, string][],
+    },
+    {
+      q: 'Do you already have a working process for CBAM reporting / EUDR declarations?',
+      h: '',
+      a: [['No, manual / none at all', 'noproc'], ['Partially', 'partial'], ['Yes, fully', 'full']] as [string, string][],
+    },
+  ],
+  badgeCbam: 'CBAM: likely obligated',
+  badgeEudr: 'EUDR: likely obligated',
+  badgeNone: 'Likely not affected for now',
+  cbamBody:
+    '<strong>CBAM</strong> — the definitive regime has been in force since 2026. As an importer of high-emission goods, you need <strong>authorised CBAM declarant</strong> status, embedded-emissions calculations and, from 2027, certificate purchases.',
+  cbamDeadline: 'The first CBAM declaration is due by 30 September 2027, covering 2026 imports — but authorisation and data collection need to start now.',
+  eudrBody:
+    '<strong>EUDR</strong> — you need <strong>plot geolocation</strong> and a <strong>due diligence statement (DDS)</strong> for every batch placed on the EU market.',
+  eudrDeadline: 'Application deadline for large and medium companies: 30 December 2026.',
+  eudrDeadlineSmall: 'Application deadline for micro and small enterprises: 30 June 2027.',
+  noneBody:
+    'Based on your answers, you don’t appear to have direct CBAM/EUDR obligations at the moment. If you start importing from outside the EU or add goods from the covered categories, that changes.',
+  ctaTitle: 'Want a concrete compliance plan in 15 minutes?',
+  ctaHint: 'We’ll send you a short analysis of your company’s situation and show you how we automate CBAM reporting / EUDR declarations.',
+  fieldCompany: 'Company name',
+  fieldName: 'Your name',
+  fieldEmail: 'Contact e-mail',
+  send: 'Send me the analysis',
+  restart: 'Restart the test',
+  alertFill: 'Please fill in at least the company and e-mail.',
+  thanks: 'Thank you! Your e-mail client opens with the details filled in — press Send and we’ll get back with the analysis.',
+  mailSubjectPrefix: '[SpeedFlow] CBAM/EUDR compliance analysis request',
+  mailModules: 'Relevant modules',
+  linksTitle: 'Want to dig deeper first?',
+  links: [
+    { label: 'CBAM in 2026: a practical guide for importers', href: '/en/blog/cbam-guide-2026-importers/' },
+    { label: 'EUDR: a practical guide for importers', href: '/en/blog/eudr-guide-importers/' },
+    { label: 'CBAM Manager — CBAM reporting automation', href: '/en/solutions/cbam/' },
+    { label: 'EUDR Manager — geolocation and DDS declarations', href: '/en/solutions/eudr/' },
+  ],
+};
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Are you subject to CBAM or EUDR? — quick test',
+    description:
+      'Interactive 5-question test: find out in under a minute whether your company has CBAM or EUDR compliance obligations, and by when.',
+    inLanguage: 'en',
+    about: ['CBAM', 'EUDR', 'compliance'],
+  },
+];
+---
+
+<Layout
+  title="Are you subject to CBAM or EUDR? Quick test"
+  description="Answer 5 questions (under a minute) and find out whether your company has CBAM or EUDR compliance obligations — and by when."
+  altPath="/test-cbam-eudr"
+  schemas={schemas}
+>
+  <!-- Hero -->
+  <section class="pt-28 pb-16 lg:pt-36 lg:pb-20 bg-gradient-to-br from-navy to-navy-light text-center">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
+        Are you subject to CBAM or EUDR?
+      </h1>
+      <p class="text-slate-300 leading-relaxed max-w-xl mx-auto">
+        Answer 5 questions (under a minute) and find out whether your company has compliance obligations — and by when.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="pb-16">
+    <CbamEudrQuiz strings={strings} />
+    <p class="text-center text-xs text-text-light mt-8 max-w-xl mx-auto px-4">
+      Informative, indicative test — not legal advice. The result is based on your answers.
+    </p>
+  </section>
+</Layout>

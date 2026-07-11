@@ -1,0 +1,153 @@
+---
+/**
+ * Interactive "Are you subject to CBAM / EUDR?" quiz.
+ * All user-facing strings come in via `strings`, so the same component
+ * serves both locales. Logic runs client-side, no backend — the lead
+ * form opens the visitor's e-mail client (same pattern as ContactForm).
+ */
+interface Props {
+  strings: {
+    stepLabel: string;
+    ofLabel: string;
+    resultLabel: string;
+    questions: {
+      q: string;
+      h: string;
+      a: [string, string][];
+    }[];
+    badgeCbam: string;
+    badgeEudr: string;
+    badgeNone: string;
+    cbamBody: string;
+    cbamDeadline: string;
+    eudrBody: string;
+    eudrDeadline: string;
+    eudrDeadlineSmall: string;
+    noneBody: string;
+    ctaTitle: string;
+    ctaHint: string;
+    fieldCompany: string;
+    fieldName: string;
+    fieldEmail: string;
+    send: string;
+    restart: string;
+    alertFill: string;
+    thanks: string;
+    mailSubjectPrefix: string;
+    mailModules: string;
+    linksTitle: string;
+    links: { label: string; href: string }[];
+  };
+}
+
+const { strings } = Astro.props;
+---
+
+<div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="bg-white border border-gray-200 rounded-2xl shadow-[0_8px_30px_rgba(15,23,42,0.08)] -mt-10 relative z-10 p-6 sm:p-8">
+    <div class="h-1.5 bg-surface-dark rounded-full overflow-hidden mb-6">
+      <i id="quiz-bar" class="block h-full bg-primary rounded-full transition-all duration-300" style="width:0"></i>
+    </div>
+    <div id="quiz-root"></div>
+  </div>
+
+  <div id="quiz-links" class="hidden mt-8 bg-surface rounded-2xl p-6">
+    <p class="font-heading font-semibold text-navy mb-3">{strings.linksTitle}</p>
+    <ul class="space-y-2">
+      {strings.links.map(l => (
+        <li>
+          <a href={l.href} class="text-primary underline underline-offset-2 hover:text-primary-dark text-sm">{l.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<script define:vars={{ S: strings }}>
+  const root = document.getElementById('quiz-root');
+  const bar = document.getElementById('quiz-bar');
+  const links = document.getElementById('quiz-links');
+  const Q = S.questions;
+  let step = 0;
+  const ans = {};
+
+  const OPT_CLS = 'block w-full text-left border-[1.5px] border-gray-200 bg-white rounded-xl px-4 py-3.5 my-2 text-[15px] text-text cursor-pointer transition-colors hover:border-primary hover:bg-surface';
+  const FIELD_CLS = 'w-full border-[1.5px] border-gray-200 rounded-lg px-4 py-3 text-[15px] my-1.5 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors';
+  const BTN_CLS = 'bg-primary text-white border-0 rounded-lg px-6 py-3 text-[15px] font-semibold cursor-pointer hover:bg-primary-light transition-colors';
+  const BTN_SEC_CLS = 'bg-white text-primary border-[1.5px] border-primary rounded-lg px-6 py-3 text-[15px] font-semibold cursor-pointer hover:bg-surface transition-colors';
+
+  function render() {
+    bar.style.width = (step / (Q.length + 1) * 100) + '%';
+    if (step < Q.length) {
+      const it = Q[step];
+      root.innerHTML = `
+        <div class="text-xs text-text-light uppercase tracking-wider font-semibold mb-2.5">${S.stepLabel} ${step + 1} ${S.ofLabel} ${Q.length}</div>
+        <p class="font-heading text-lg font-bold text-navy mb-1">${it.q}</p>
+        ${it.h ? `<p class="text-[13px] text-text-light mb-4">${it.h}</p>` : '<div class="mb-4"></div>'}
+        <div id="quiz-opts"></div>`;
+      const o = document.getElementById('quiz-opts');
+      it.a.forEach(([lbl, val]) => {
+        const b = document.createElement('button');
+        b.className = OPT_CLS;
+        b.textContent = lbl;
+        b.onclick = () => { ans[step] = val; step++; render(); };
+        o.appendChild(b);
+      });
+    } else {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    bar.style.width = '100%';
+    links.classList.remove('hidden');
+    const imp = ans[0];
+    const cbamMarf = ans[1] === 'cbam_yes';
+    const eudrMarf = ans[2] === 'eudr_yes';
+    const big = ans[3] === 'big';
+    const importing = imp === 'imp_yes' || imp === 'imp_maybe';
+    const cbam = cbamMarf && importing;
+    const eudr = eudrMarf; // EUDR also applies to EU production, risk is higher on imports
+    let badges = '', body = '';
+    const badge = (cls, txt) => `<span class="inline-block px-3 py-1 rounded-full font-bold text-[13px] ${cls}">${txt}</span> `;
+    if (cbam) badges += badge('bg-primary/10 text-primary-dark', S.badgeCbam);
+    if (eudr) badges += badge('bg-success/15 text-[#166534]', S.badgeEudr);
+    if (!cbam && !eudr) badges = badge('bg-surface-dark text-text', S.badgeNone);
+    const deadline = (txt) => `<span class="block bg-amber-50 border border-amber-200 text-amber-800 rounded-lg px-3.5 py-3 text-sm mt-3">${txt}</span>`;
+    if (cbam) body += `<p class="text-text leading-relaxed mb-4">${S.cbamBody}${deadline(S.cbamDeadline)}</p>`;
+    if (eudr) body += `<p class="text-text leading-relaxed mb-4">${S.eudrBody}${deadline(big ? S.eudrDeadline : S.eudrDeadlineSmall)}</p>`;
+    if (!cbam && !eudr) body += `<p class="text-text leading-relaxed mb-4">${S.noneBody}</p>`;
+    root.innerHTML = `
+      <div class="text-xs text-text-light uppercase tracking-wider font-semibold mb-2.5">${S.resultLabel}</div>
+      <div class="mb-3">${badges}</div>${body}
+      <hr class="border-0 border-t border-gray-200 my-5">
+      <p class="font-heading text-base font-bold text-navy mb-1">${S.ctaTitle}</p>
+      <p class="text-[13px] text-text-light mb-4">${S.ctaHint}</p>
+      <div id="quiz-lead">
+        <input class="${FIELD_CLS}" id="qf-comp" placeholder="${S.fieldCompany}">
+        <input class="${FIELD_CLS}" id="qf-name" placeholder="${S.fieldName}">
+        <input class="${FIELD_CLS}" id="qf-email" type="email" placeholder="${S.fieldEmail}">
+        <div class="flex flex-wrap gap-3 mt-3">
+          <button class="${BTN_CLS}" id="qf-send">${S.send}</button>
+          <button class="${BTN_SEC_CLS}" id="qf-restart">${S.restart}</button>
+        </div>
+      </div>`;
+    document.getElementById('qf-restart').onclick = () => location.reload();
+    document.getElementById('qf-send').onclick = () => {
+      const comp = document.getElementById('qf-comp').value.trim();
+      const name = document.getElementById('qf-name').value.trim();
+      const email = document.getElementById('qf-email').value.trim();
+      if (!email || !comp) { alert(S.alertFill); return; }
+      const modules = [cbam ? 'CBAM' : null, eudr ? 'EUDR' : null].filter(Boolean).join(', ') || '—';
+      const subject = encodeURIComponent(`${S.mailSubjectPrefix} — ${comp}`);
+      const bodyTxt = encodeURIComponent(
+        `${S.fieldCompany}: ${comp}\n${S.fieldName}: ${name}\n${S.fieldEmail}: ${email}\n${S.mailModules}: ${modules}\n\n` +
+        `import=${ans[0]}, CBAM=${ans[1]}, EUDR=${ans[2]}, size=${ans[3]}, process=${ans[4]}`
+      );
+      window.location.href = `mailto:office@bid-management.ro?subject=${subject}&body=${bodyTxt}`;
+      document.getElementById('quiz-lead').innerHTML = `<p class="text-[#166534] font-semibold">${S.thanks}</p>`;
+    };
+  }
+
+  render();
+</script>
