@@ -153,20 +153,31 @@ const { strings } = Astro.props;
         `Proces actual: ${procesMap[ans[4]] ?? ans[4]}`,
       ].join(' | ');
       try {
-        const res = await fetch('https://webforms.close.com/webforms/form/formconf_033ml4falAQj1xcN3tHelz/', {
+        // Configurația publicată (form_configuration_id, numele câmpurilor) se
+        // schimbă la fiecare republicare a formularului în Close — o citim
+        // dinamic, exact ca widgetul oficial <close-form>.
+        const FORM_ID = 'form_033ml4faH3cB6fw8WibnpV';
+        const cfgRes = await fetch(`https://webforms.closeiocdn.com/forms/published/${FORM_ID}.json`);
+        if (!cfgRes.ok) throw new Error('');
+        const cfg = await cfgRes.json();
+        const responses = cfg.step.fields.flat().map((f) => {
+          const spec = (f.field_mapping || {}).field_spec || {};
+          let value = ''; // honeypot-ul și câmpurile necunoscute rămân goale
+          if (spec.object_type === 'lead' && spec.id === 'name') value = comp;
+          else if (spec.object_type === 'contact' && spec.id === 'name') value = name;
+          else if (spec.object_type === 'contact' && spec.id === 'primary_email') value = email;
+          else if (spec.field_type === 'custom_field') value = rezultat;
+          return { field_name: f.name, value };
+        });
+        const res = await fetch(`https://webforms.close.com/webforms/form/${cfg.form_configuration_id}/`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            form_configuration_id: 'formconf_033ml4falAQj1xcN3tHelz',
-            form_session_id: 'form_033ml4faH3cB6fw8WibnpV',
-            step_id: 0,
+            form_configuration_id: cfg.form_configuration_id,
+            form_session_id: FORM_ID,
+            step_id: cfg.step.id ?? 0,
             metadata: { source_url: window.location.href },
-            responses: [
-              { field_name: 'name', value: name },
-              { field_name: 'email', value: email },
-              { field_name: 'company', value: comp },
-              { field_name: 'rezultat_test', value: rezultat },
-            ],
+            responses,
           }),
         });
         const data = await res.json().catch(() => ({}));
