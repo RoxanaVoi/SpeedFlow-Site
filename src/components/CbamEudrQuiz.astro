@@ -3,7 +3,7 @@
  * Interactive "Are you subject to CBAM / EUDR?" quiz.
  * All user-facing strings come in via `strings`, so the same component
  * serves both locales. Logic runs client-side, no backend — the lead
- * form opens the visitor's e-mail client (same pattern as ContactForm).
+ * form POSTs directly to the Close CRM webform endpoint.
  */
 interface Props {
   strings: {
@@ -30,11 +30,11 @@ interface Props {
     fieldName: string;
     fieldEmail: string;
     send: string;
+    sending: string;
     restart: string;
     alertFill: string;
     thanks: string;
-    mailSubjectPrefix: string;
-    mailModules: string;
+    errorGeneric: string;
     linksTitle: string;
     links: { label: string; href: string }[];
   };
@@ -133,19 +133,57 @@ const { strings } = Astro.props;
         </div>
       </div>`;
     document.getElementById('qf-restart').onclick = () => location.reload();
-    document.getElementById('qf-send').onclick = () => {
+    document.getElementById('qf-send').onclick = async () => {
       const comp = document.getElementById('qf-comp').value.trim();
       const name = document.getElementById('qf-name').value.trim();
       const email = document.getElementById('qf-email').value.trim();
-      if (!email || !comp) { alert(S.alertFill); return; }
-      const modules = [cbam ? 'CBAM' : null, eudr ? 'EUDR' : null].filter(Boolean).join(', ') || '—';
-      const subject = encodeURIComponent(`${S.mailSubjectPrefix} — ${comp}`);
-      const bodyTxt = encodeURIComponent(
-        `${S.fieldCompany}: ${comp}\n${S.fieldName}: ${name}\n${S.fieldEmail}: ${email}\n${S.mailModules}: ${modules}\n\n` +
-        `import=${ans[0]}, CBAM=${ans[1]}, EUDR=${ans[2]}, size=${ans[3]}, process=${ans[4]}`
-      );
-      window.location.href = `mailto:office@bid-management.ro?subject=${subject}&body=${bodyTxt}`;
-      document.getElementById('quiz-lead').innerHTML = `<p class="text-[#166534] font-semibold">${S.thanks}</p>`;
+      if (!name || !email || !comp) { alert(S.alertFill); return; }
+      const btn = document.getElementById('qf-send');
+      const oldError = document.getElementById('qf-error');
+      if (oldError) oldError.remove();
+      btn.disabled = true;
+      btn.textContent = S.sending;
+      // rezumatul merge în CRM-ul intern, deci e mereu în română
+      const procesMap = { noproc: 'manual/deloc', partial: 'parțial', full: 'complet' };
+      const rezultat = [
+        `CBAM: ${cbam ? 'da' : 'nu'}`,
+        `EUDR: ${eudr ? 'da' : 'nu'}`,
+        `Import extra-UE: ${importing ? 'da' : 'nu'}`,
+        `Dimensiune: ${big ? 'mare/medie' : 'micro/mică'}`,
+        `Proces actual: ${procesMap[ans[4]] ?? ans[4]}`,
+      ].join(' | ');
+      try {
+        const res = await fetch('https://webforms.close.com/webforms/form/formconf_033ml4falAQj1xcN3tHelz/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            form_configuration_id: 'formconf_033ml4falAQj1xcN3tHelz',
+            form_session_id: 'form_033ml4faH3cB6fw8WibnpV',
+            step_id: 0,
+            metadata: { source_url: window.location.href },
+            responses: [
+              { field_name: 'name', value: name },
+              { field_name: 'email', value: email },
+              { field_name: 'company', value: comp },
+              { field_name: 'rezultat_test', value: rezultat },
+            ],
+          }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (Array.isArray(data.form_field_errors) && data.form_field_errors.length) {
+          throw new Error(data.form_field_errors.map((e) => e.value).join(' · '));
+        }
+        if (!res.ok) throw new Error('');
+        document.getElementById('quiz-lead').innerHTML = `<p class="text-[#166534] font-semibold">${S.thanks}</p>`;
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = S.send;
+        const p = document.createElement('p');
+        p.id = 'qf-error';
+        p.className = 'text-danger text-sm font-medium mt-3';
+        p.textContent = err.message || S.errorGeneric;
+        document.getElementById('quiz-lead').appendChild(p);
+      }
     };
   }
 
