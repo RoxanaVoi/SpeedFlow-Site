@@ -22,8 +22,10 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
     "Colectare necesități anuale cu linii detaliate și coduri CPV",
     "Centralizare și generare plan anual de achiziții publice (PAAP)",
     "Completare și validare referate de necesitate în flux multi-rol",
+    "Verificare disponibil bugetar și rezervare automată a sumei pe fiecare articol",
     "Generare documente oficiale (referat PDF, document justificativ, comandă fermă)",
     "Construire dosar de achiziție cu documente obligatorii per tip procedură",
+    "Decontare cheltuieli pe referate finalizate, cu documente justificative pe linie",
     "Monitorizare cumulări pe CPV, proiect și an bugetar",
   ]}
   howItWorks={[
@@ -39,14 +41,18 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
     "Comandă fermă diferențiată per tip contract",
     "PAAP în format PDF și Excel",
     "Centralizator necesități per CPV și proiect",
+    "Pagină de buget: alocat, rezervat și disponibil pe fiecare articol, actualizate live",
+    "Decont cu plafon automat și documente justificative pe linie de cheltuială",
     "Notă de informare campanie colectare",
     "Dosar de achiziție complet cu checklist documente",
   ]}
   faq={[
     { q: "Ce roluri sunt implicate în flux?", a: "Inițiator, Achiziții, Financiar, Manager, CFPP, Secretariat, Responsabil contract și Administrator." },
-    { q: "Se calculează automat procedura de achiziție?", a: "Da, pe baza pragurilor din L98/2016 și a cumulului pe CPV, proiect și an." },
+    { q: "Se calculează automat procedura de achiziție?", a: "Da, pe baza pragurilor legale din legislația achizițiilor publice și a cumulului pe CPV, proiect și an." },
     { q: "Ce tipuri de proceduri sunt suportate?", a: "Achiziție directă (SEAP și intern), procedură simplificată, licitație, cerere de oferte și Anexa 2." },
     { q: "Se generează documente PDF?", a: "Da, toate documentele sunt generate cu fonturi corecte și diacritice, incluzând datele instituției din setări." },
+    { q: "Cum se controlează bugetul?", a: "Aplicația verifică disponibilul pe fiecare articol bugetar și rezervă automat sumele din referate și deconturi în flux — verificare și rezervare, nu execuție bugetară formală. Depășirile sunt semnalate instant." },
+    { q: "Se poate deconta o cheltuială după finalizarea referatului?", a: "Da — decontul se creează pe referatul finalizat, cu documente justificative (factură, chitanță, bon) atașate per linie de cheltuială, și un plafon automat care nu permite depășirea sumei aprobate." },
   ]}
   demoAvailable={true}
   demoLabel="Demo disponibil"

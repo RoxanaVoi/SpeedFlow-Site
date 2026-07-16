@@ -18,9 +18,12 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
   ]}
   processes={[
     "Supplier data collection (emissions, production processes)",
-    "Data validation and verification",
-    "Embedded emissions calculation by product category",
-    "CBAM quarterly report preparation",
+    "Data validation and verification, with 44 rules aligned to the CBAM regulation",
+    "Embedded emissions calculation by product category, with default values when data is missing",
+    "CBAM quarterly and annual report preparation, with validated XML export",
+    "Multi-year CBAM certificate cost simulation, with ETS price scenarios",
+    "Certificate management: purchase, inventory, surrender, automatic cancellation of unsurrendered certificates",
+    "Free allocation (phase-in) and net certificate obligation calculation",
     "Deadline and obligation monitoring",
     "Document archiving and traceability",
   ]}
@@ -31,16 +34,20 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
     { title: "Report generation", desc: "We prepare the quarterly report in the format required for the CBAM registry." },
   ]}
   outputs={[
-    "Quarterly CBAM report ready for submission",
-    "Supplier monitoring dashboard with missing data",
+    "Quarterly and annual CBAM report, ready for submission (Excel + XML)",
+    "Multi-year cost simulator, with ETS price scenarios",
+    "CBAM certificate registry: purchases, inventory, surrender, automatic cancellation",
+    "Reconciliation with the official CBAM registry",
+    "Supplier monitoring dashboard with missing data and per-supplier scorecard",
     "Deadline and obligation alerts",
     "Validation journal and audit trail",
     "Structured data export",
   ]}
   faq={[
     { q: "What product types does the solution cover?", a: "All CBAM categories: iron and steel, aluminium, cement, fertilizers, electricity and hydrogen." },
-    { q: "Does it integrate with the CBAM registry?", a: "The solution prepares data in the format required for import into the transitional CBAM registry." },
+    { q: "Does it integrate with the CBAM registry?", a: "The solution prepares data in the format required for the definitive CBAM regime declaration (in effect since January 1, 2026), including XML export per the official EU schema (QReport)." },
     { q: "How is supplier data collected?", a: "Through digital forms sent to suppliers, Excel import or automatic processing of received documents." },
+    { q: "What happens with CBAM certificates?", a: "The application manages the purchase registry, inventory and surrender of certificates, with automatic cancellation of unsurrendered certificates at the legal deadline." },
   ]}
   demoAvailable={true}
   demoLabel="Demo available"

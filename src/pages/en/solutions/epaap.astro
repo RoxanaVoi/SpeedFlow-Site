@@ -22,8 +22,10 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
     "Annual needs collection with detailed lines and CPV codes",
     "Centralization and annual procurement plan (PAAP) generation",
     "Multi-role procurement document completion and validation",
+    "Budget availability check and automatic amount reservation on each budget line item",
     "Official document generation (PDF procurement doc, justification, firm order)",
     "Acquisition file building with mandatory documents per procedure type",
+    "Expense settlement on finalized procurement documents, with justifying documents per line",
     "Cumulation monitoring by CPV, project and budget year",
   ]}
   howItWorks={[
@@ -39,14 +41,18 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
     "Firm order differentiated by contract type",
     "PAAP in PDF and Excel format",
     "Needs centralizer by CPV and project",
+    "Budget page: allocated, reserved and available on each budget line item, updated live",
+    "Settlement with automatic cap and justifying documents per expense line",
     "Collection campaign information note",
     "Complete acquisition file with document checklist",
   ]}
   faq={[
     { q: "What roles are involved in the workflow?", a: "Initiator, Procurement, Financial, Manager, CFPP, Secretariat, Contract Manager and Administrator." },
-    { q: "Is the procurement procedure calculated automatically?", a: "Yes, based on L98/2016 thresholds and cumulation by CPV, project and year." },
+    { q: "Is the procurement procedure calculated automatically?", a: "Yes, based on the legal thresholds in public procurement legislation and cumulation by CPV, project and year." },
     { q: "What procedure types are supported?", a: "Direct acquisition (SEAP and internal), simplified procedure, tender, request for proposals and Annex 2." },
     { q: "Are PDF documents generated?", a: "Yes, all documents are generated with correct fonts and diacritics, including institution data from settings." },
+    { q: "How is the budget controlled?", a: "The application checks availability on each budget line item and automatically reserves amounts from procurement documents and settlements in progress — availability checking and reservation, not formal budget execution. Overruns are flagged instantly." },
+    { q: "Can an expense be settled after the procurement document is finalized?", a: "Yes — the settlement is created on the finalized procurement document, with justifying documents (invoice, receipt) attached per expense line, and an automatic cap that prevents exceeding the approved amount." },
   ]}
   demoAvailable={true}
   demoLabel="Demo available"

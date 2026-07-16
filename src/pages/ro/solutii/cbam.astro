@@ -18,9 +18,12 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
   ]}
   processes={[
     "Colectare date de la furnizori (emisii, procese de producție)",
-    "Validare și verificare date primite",
-    "Calcul emisii încorporate pe categorii de produse",
-    "Pregătire raport trimestrial CBAM",
+    "Validare și verificare date primite, cu 44 de reguli aliniate la regulamentul CBAM",
+    "Calcul emisii încorporate pe categorii de produse, cu valori default când datele lipsesc",
+    "Pregătire raport trimestrial și anual CBAM, cu export XML validat",
+    "Simulare cost certificate CBAM pe mai mulți ani, cu scenarii de preț ETS",
+    "Gestiune certificate: achiziție, inventar, predare, anulare automată a celor nepredate",
+    "Calcul alocare gratuită (phase-in) și obligație netă de certificate",
     "Monitorizare termene și obligații",
     "Arhivare și trasabilitate documente",
   ]}
@@ -31,16 +34,20 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
     { title: "Generare raport", desc: "Pregătim raportul trimestrial în formatul necesar pentru registrul CBAM." },
   ]}
   outputs={[
-    "Raport trimestrial CBAM pregătit pentru depunere",
-    "Dashboard monitorizare furnizori și date lipsă",
+    "Raport trimestrial și anual CBAM, pregătit pentru depunere (Excel + XML)",
+    "Simulator de cost multi-an, cu scenarii de preț ETS",
+    "Registru certificate CBAM: achiziții, inventar, predare, anulare automată",
+    "Reconciliere cu portalul oficial CBAM",
+    "Dashboard monitorizare furnizori și date lipsă, cu scorecard per furnizor",
     "Alerte pentru termene și obligații",
     "Jurnal de validare și audit trail",
     "Export date în format structurat",
   ]}
   faq={[
     { q: "Ce tipuri de produse acoperă soluția?", a: "Toate categoriile CBAM: fier și oțel, aluminiu, ciment, îngrășăminte, electricitate și hidrogen." },
-    { q: "Se integrează cu registrul CBAM?", a: "Soluția pregătește datele în formatul necesar pentru importul în registrul tranzitoriu CBAM." },
+    { q: "Se integrează cu registrul CBAM?", a: "Soluția pregătește datele în formatul necesar pentru declarația din regimul definitiv CBAM (activ din 1 ianuarie 2026), inclusiv export XML conform schemei oficiale EU (QReport)." },
     { q: "Cum se colectează datele de la furnizori?", a: "Prin formulare digitale trimise furnizorilor, import din Excel sau procesare automată a documentelor primite." },
+    { q: "Ce se întâmplă cu certificatele CBAM?", a: "Aplicația gestionează registrul de achiziții, inventarul și predarea certificatelor, cu anulare automată a celor nepredate la termenul legal." },
   ]}
   demoAvailable={true}
   demoLabel="Demo disponibil"

@@ -18,10 +18,13 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
   ]}
   processes={[
     "Supply chain and supplier mapping",
+    "Plot geolocation (polygon/point), with protected-area and supplier-overlap checks",
+    "AI-assisted extraction of data and GPS coordinates from documents, with manual validation",
+    "Automated risk scoring by country, supplier, commodity and documentation",
     "Traceability document collection and organization",
     "Compliance validation per lot/delivery",
-    "Due diligence statement generation",
-    "Data monitoring and updates",
+    "Due diligence statement generation and TRACES export",
+    "Data monitoring and updates, including monthly supplier sanctions rescreening",
   ]}
   howItWorks={[
     { title: "Supplier mapping", desc: "We identify and structure information about suppliers and product origins." },
@@ -30,14 +33,16 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
     { title: "Report generation", desc: "We prepare declarations and reports required by authorities." },
   ]}
   outputs={[
-    "Structured traceability registry",
-    "Due diligence declarations",
+    "Structured traceability registry, with an interactive plot map",
+    "Per-lot risk score, aligned with the Art. 10(2) conclusion — negligible/non-negligible",
+    "Due diligence declarations, with validated XML export and TRACES integration",
     "Per-supplier compliance status dashboard",
-    "Alerts for missing or expired documents",
+    "Alerts for missing or expired documents, and for supplier sanctions",
   ]}
   faq={[
     { q: "What products are targeted?", a: "Wood, rubber, coffee, cocoa, soy, palm oil and cattle, including derived products." },
-    { q: "When does EUDR take effect?", a: "The regulation applies to large operators from December 30, 2025, with progressive implementation." },
+    { q: "When does EUDR take effect?", a: "The regulation applies to large and medium operators from December 30, 2026, and to micro and small enterprises from June 30, 2027." },
+    { q: "How is risk calculated?", a: "Through an automated scoring engine across 4 components (country, supplier, commodity, documentation), with automatic blocking rules for high-risk cases or missing documentation." },
     { q: "Is a demo available?", a: "Yes. You can open the demo directly from this page or contact us for a guided tour." },
   ]}
   demoAvailable={true}

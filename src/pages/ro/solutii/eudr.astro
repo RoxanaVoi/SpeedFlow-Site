@@ -18,10 +18,13 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
   ]}
   processes={[
     "Mapare lanț de aprovizionare și furnizori",
+    "Geolocalizare parcele (poligon/punct), cu verificare arii protejate și suprapunere furnizori",
+    "Extragere asistată de AI a datelor și coordonatelor GPS din documente, cu validare manuală",
+    "Evaluare automată de risc pe țară, furnizor, marfă și documentație",
     "Colectare și organizare documente de trasabilitate",
     "Validare conformitate pe fiecare lot / livrare",
-    "Generare declarație de due diligence",
-    "Monitorizare și actualizare date",
+    "Generare declarație de due diligence și export către TRACES",
+    "Monitorizare și actualizare date, inclusiv rescreening sancțiuni furnizori",
   ]}
   howItWorks={[
     { title: "Mapare furnizori", desc: "Identificăm și structurăm informațiile despre furnizorii și originea produselor." },
@@ -30,14 +33,16 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
     { title: "Generare rapoarte", desc: "Pregătim declarațiile și rapoartele necesare pentru autorități." },
   ]}
   outputs={[
-    "Registru structurat de trasabilitate",
-    "Declarații de due diligence",
+    "Registru structurat de trasabilitate, cu hartă interactivă a parcelelor",
+    "Scor de risc per lot, aliniat la concluzia Art. 10(2) — neglijabil/non-neglijabil",
+    "Declarații de due diligence, cu export XML validat și integrare TRACES",
     "Dashboard stare conformitate per furnizor",
-    "Alerte pentru documente lipsă sau expirate",
+    "Alerte pentru documente lipsă sau expirate, și pentru sancțiuni furnizori",
   ]}
   faq={[
     { q: "Ce produse sunt vizate?", a: "Lemn, cauciuc, cafea, cacao, soia, ulei de palmier și bovine, inclusiv produse derivate." },
-    { q: "Când intră în vigoare EUDR?", a: "Regulamentul se aplică operatorilor mari din 30 decembrie 2025, cu implementare progresivă." },
+    { q: "Când intră în vigoare EUDR?", a: "Regulamentul se aplică operatorilor mari și medii din 30 decembrie 2026, iar micro și micilor întreprinderi din 30 iunie 2027." },
+    { q: "Cum se calculează riscul?", a: "Printr-un motor automat de scoring pe 4 componente (țară, furnizor, marfă, documentație), cu reguli de blocare automată pentru cazurile de risc ridicat sau documentație lipsă." },
     { q: "Există demo disponibil?", a: "Da. Poți deschide demo-ul direct din această pagină sau ne poți contacta pentru un tur ghidat." },
   ]}
   demoAvailable={true}
