@@ -34,7 +34,7 @@ export default function ContactForm({ labels }: ContactFormProps) {
       message || '(fara mesaj)',
     ].filter(Boolean).join('\n');
 
-    window.location.href = `mailto:office@bid-management.ro?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:office@speed-flow.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (

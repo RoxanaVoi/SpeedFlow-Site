@@ -2,7 +2,7 @@
 
 > Speed Flow (Equalys Global) is an AI adoption consultancy based in Romania, serving clients in Romania and the EU. We help companies adopt AI with demonstrable results: process diagnostics, data preparation, governance and operating rules, and AI agents in production. Our own software products — built for regulated processes such as CBAM, EUDR and public procurement — are proof the methodology works. Expertise includes ISO/IEC 42001 (AI management systems) and Harvard executive training in AI strategy. The site is bilingual: Romanian (default) and English.
 
-Contact: office@bid-management.ro
+Contact: office@speed-flow.ai
 
 ## AI Consulting Services (English)
 
