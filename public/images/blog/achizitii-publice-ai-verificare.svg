@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-labelledby="illoTitle">
+  <title id="illoTitle">O instituție publică și un sistem de inteligență artificială, legate printr-un contract de achiziție pe care nimeni nu îl verifică</title>
+
+  <defs>
+    <linearGradient id="sfBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F8FAFB"/>
+      <stop offset="100%" stop-color="#EFF3F4"/>
+    </linearGradient>
+    <linearGradient id="sfGlass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.97"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.82"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="600" rx="24" fill="url(#sfBg)"/>
+
+  <!-- soft teal halo behind the model -->
+  <circle cx="945" cy="295" r="172" fill="#14919B" opacity="0.07"/>
+
+  <!-- ============ LEFT: the public institution ============ -->
+  <g fill="#0B1220">
+    <path d="M250 148 L392 214 L108 214 Z"/>
+    <rect x="108" y="222" width="284" height="20" rx="4"/>
+    <rect x="127" y="250" width="26" height="164" rx="3"/>
+    <rect x="183" y="250" width="26" height="164" rx="3"/>
+    <rect x="239" y="250" width="26" height="164" rx="3"/>
+    <rect x="295" y="250" width="26" height="164" rx="3"/>
+    <rect x="351" y="250" width="26" height="164" rx="3"/>
+    <rect x="112" y="418" width="276" height="16" rx="4"/>
+    <rect x="94" y="438" width="312" height="16" rx="4"/>
+  </g>
+  <circle cx="250" cy="192" r="13" fill="none" stroke="#14919B" stroke-width="3"/>
+  <circle cx="250" cy="192" r="4" fill="#14919B"/>
+
+  <!-- ============ RIGHT: the AI model ============ -->
+  <g stroke="#0D7377" stroke-width="1.6" opacity="0.42">
+    <path d="M840 205 L948 165 M840 205 L948 253 M840 205 L948 339 M840 205 L948 427"/>
+    <path d="M840 296 L948 165 M840 296 L948 253 M840 296 L948 339 M840 296 L948 427"/>
+    <path d="M840 387 L948 165 M840 387 L948 253 M840 387 L948 339 M840 387 L948 427"/>
+    <path d="M1056 205 L948 165 M1056 205 L948 253 M1056 205 L948 339 M1056 205 L948 427"/>
+    <path d="M1056 296 L948 165 M1056 296 L948 253 M1056 296 L948 339 M1056 296 L948 427"/>
+    <path d="M1056 387 L948 165 M1056 387 L948 253 M1056 387 L948 339 M1056 387 L948 427"/>
+  </g>
+  <g fill="#0D7377">
+    <circle cx="840" cy="205" r="13"/>
+    <circle cx="840" cy="296" r="13"/>
+    <circle cx="840" cy="387" r="13"/>
+    <circle cx="1056" cy="205" r="13"/>
+    <circle cx="1056" cy="296" r="13"/>
+    <circle cx="1056" cy="387" r="13"/>
+  </g>
+  <g fill="#14919B">
+    <circle cx="948" cy="165" r="15"/>
+    <circle cx="948" cy="253" r="15"/>
+    <circle cx="948" cy="339" r="15"/>
+    <circle cx="948" cy="427" r="15"/>
+  </g>
+
+  <!-- ============ CENTER: the procurement link ============ -->
+  <path d="M414 330 L806 302" stroke="#0B1220" stroke-width="3" stroke-dasharray="12 11" stroke-linecap="round" opacity="0.32"/>
+
+  <!-- the contract: what the institution actually signs -->
+  <g transform="translate(464 268) rotate(-5)">
+    <rect x="0" y="0" width="80" height="102" rx="9" fill="#FFFFFF" stroke="#0B1220" stroke-width="3.5"/>
+    <g stroke="#0B1220" stroke-width="3" stroke-linecap="round" opacity="0.3">
+      <path d="M16 27 H64 M16 46 H64 M16 65 H47"/>
+    </g>
+    <rect x="16" y="80" width="26" height="8" rx="4" fill="#0D7377"/>
+  </g>
+
+  <!-- ============ the verification that is missing ============ -->
+  <line x1="716" y1="368" x2="782" y2="434" stroke="#0B1220" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="662" cy="314" r="82" fill="url(#sfGlass)"/>
+  <circle cx="662" cy="314" r="82" fill="none" stroke="#0B1220" stroke-width="11"/>
+  <!-- question mark drawn as a path, so it renders without web fonts -->
+  <g fill="#0D7377">
+    <path d="M637 279c0-16 12-28 27-28 15 0 26 10 26 24 0 11-6 18-15 25-9 7-13 12-13 21v5h-19v-8c0-13 6-21 15-28 7-6 11-9 11-15 0-6-4-10-10-10-7 0-11 5-11 14z"/>
+    <circle cx="659" cy="351" r="11"/>
+  </g>
+</svg>

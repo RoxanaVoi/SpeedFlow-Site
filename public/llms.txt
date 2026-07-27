@@ -27,6 +27,7 @@ Contact: office@speed-flow.ai
 - [CBAM in 2026: a practical guide for importers](https://www.speed-flow.ai/en/blog/cbam-guide-2026-importers/): The definitive CBAM regime, the 50-tonne de minimis threshold, declarant authorisation, emissions calculation, certificates, deadlines and common pitfalls.
 - [EUDR: a guide for importers](https://www.speed-flow.ai/en/blog/eudr-guide-importers/): EUDR obligations from 30 December 2026 — the three prohibitions, due diligence (Art. 9–11), plot geolocation, the DDS in TRACES and a preparation checklist.
 - [ISO/IEC 42001 and the EU AI Act](https://www.speed-flow.ai/en/blog/iso-42001-eu-ai-act-preparation/): How the AI management system standard maps to the EU AI Act obligations for high-risk systems, the 38 Annex A controls and what certification does not solve.
+- [Who checks the AI the state buys?](https://www.speed-flow.ai/en/blog/who-checks-the-ai-the-state-buys/): AI Act obligations for deployers (Art. 26–27), the postponement of the high-risk deadline to December 2027, the governance gap in public procurement and what a contracting authority can do now.
 - [Quick test: are you subject to CBAM or EUDR?](https://www.speed-flow.ai/en/cbam-eudr-test/): Interactive 5-question test — find out in under a minute whether your company has CBAM or EUDR obligations, and by when.
 
 ## Company (English)
@@ -58,6 +59,7 @@ Contact: office@speed-flow.ai
 - [CBAM în 2026: ghid practic pentru importatori](https://www.speed-flow.ai/ro/blog/ghid-cbam-2026-importatori/): Regimul definitiv CBAM, pragul de minimis de 50 t, autorizarea ca declarant, calculul emisiilor, certificatele, termenele și capcanele frecvente.
 - [EUDR: ghid pentru importatori](https://www.speed-flow.ai/ro/blog/ghid-eudr-importatori/): Obligațiile EUDR de la 30 decembrie 2026 — cele trei interdicții, due diligence (Art. 9–11), geolocația parcelelor, DDS în TRACES și checklistul de pregătire.
 - [ISO/IEC 42001 și EU AI Act](https://www.speed-flow.ai/ro/blog/iso-42001-pregatire-eu-ai-act/): Cum se mapează standardul de management AI pe obligațiile EU AI Act pentru sisteme high-risk, cele 38 de controale din Anexa A și ce nu rezolvă certificarea.
+- [Cine verifică AI-ul pe care îl cumpără statul?](https://www.speed-flow.ai/ro/blog/cine-verifica-ai-ul-cumparat-de-stat/): Obligațiile AI Act pentru implementatori (art. 26–27), amânarea termenului pentru risc înalt la decembrie 2027, golul de guvernanță din achizițiile publice și ce poate face o autoritate contractantă acum.
 - [Test rapid: ești obligat la CBAM sau EUDR?](https://www.speed-flow.ai/ro/test-cbam-eudr/): Test interactiv de 5 întrebări — află în sub un minut dacă firma ta are obligații CBAM sau EUDR și până când.
 
 ## Companie (Română)

@@ -3,6 +3,9 @@ import Layout from './Layout.astro';
 import CTAFinal from '../components/CTAFinal.astro';
 import { getLocaleFromUrl, t, getLocalizedPath } from '../i18n/utils';
 
+/** A plain string, or a labelled link to the source. */
+type Source = string | { text: string; url: string };
+
 interface Props {
   title: string;
   description: string;
@@ -10,11 +13,24 @@ interface Props {
   heroTitle: string;
   /** ISO date, e.g. 2026-07-09 */
   publishDate: string;
+  /** Site-absolute path to the article illustration, e.g. /images/blog/foo.svg */
+  heroImage?: string;
+  heroImageAlt?: string;
   faq?: { q: string; a: string }[];
-  sources?: string[];
+  sources?: Source[];
 }
 
-const { title, description, altPath, heroTitle, publishDate, faq = [], sources = [] } = Astro.props;
+const {
+  title,
+  description,
+  altPath,
+  heroTitle,
+  publishDate,
+  heroImage,
+  heroImageAlt = '',
+  faq = [],
+  sources = [],
+} = Astro.props;
 const locale = getLocaleFromUrl(Astro.url);
 
 const site = Astro.site ?? new URL('https://www.speed-flow.ai');
@@ -35,6 +51,7 @@ const schemas: Record<string, unknown>[] = [
     datePublished: publishDate,
     dateModified: publishDate,
     inLanguage: locale,
+    ...(heroImage ? { image: new URL(heroImage, site).href } : {}),
     author: { '@type': 'Person', name: 'Roxana Voicu' },
     publisher: { '@id': `${site.origin}/#organization` },
   },
@@ -79,6 +96,22 @@ if (faq.length > 0) {
     </div>
   </section>
 
+  {heroImage && (
+    <section class="pb-10">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <img
+          src={heroImage}
+          alt={heroImageAlt}
+          width="1200"
+          height="600"
+          loading="eager"
+          decoding="async"
+          class="w-full h-auto rounded-2xl"
+        />
+      </div>
+    </section>
+  )}
+
   <!-- Body -->
   <section class="pb-16">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -113,7 +146,15 @@ if (faq.length > 0) {
           {t(locale, 'blog.sourcesTitle')}
         </h2>
         <ul class="list-disc pl-5 space-y-1.5 text-sm text-text-light">
-          {sources.map(s => <li>{s}</li>)}
+          {sources.map(s => (
+            <li>
+              {typeof s === 'string' ? s : (
+                <a href={s.url} target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-2 hover:text-primary-dark">
+                  {s.text}
+                </a>
+              )}
+            </li>
+          ))}
         </ul>
         <p class="mt-6 text-sm text-text-light italic">
           {t(locale, 'blog.disclaimer')}

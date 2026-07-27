@@ -1,0 +1,260 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'Does the AI Act apply to public institutions, or only to technology companies?',
+    a: 'To both. The regulation imposes obligations on deployers as well — the organisations that use AI systems — not just on developers. Public bodies have additional obligations, such as the fundamental rights impact assessment (Art. 27).',
+  },
+  {
+    q: 'If the high-risk deadline moved to December 2027, is there anything to do now?',
+    a: 'Yes. The prohibitions and the AI literacy obligation have applied since February 2025, transparency from August 2026, and systems bought today will be in production in 2027 — contractual requirements are written at procurement, not retroactively.',
+  },
+  {
+    q: 'Who supervises the application of the AI Act in Romania?',
+    a: 'Under the memorandum of 12 March 2026: ANCOM (market surveillance and single point of contact), ASF and BNR (financial sector), ANSPDCP (sensitive domains), ADR (notifying authority). The national law setting out penalties and procedures is still being drafted.',
+  },
+  {
+    q: 'What counts as a “high-risk system” for a public institution?',
+    a: 'Annex III includes, among others, systems used by public authorities to assess eligibility for essential benefits and services, as well as systems in education, employment and access to services. Classification follows the use case, not the technology.',
+  },
+];
+
+const sources = [
+  {
+    text: 'Regulation (EU) 2024/1689 (AI Act) — full text on EUR-Lex; Art. 26 and Annex III also available on the AI Act Explorer (primary source)',
+    url: 'https://artificialintelligenceact.eu/article/26/',
+  },
+  {
+    text: 'AI Act Explorer — Annex III, the list of high-risk systems (primary source)',
+    url: 'https://artificialintelligenceact.eu/annex/3/',
+  },
+  {
+    text: 'European Commission — “AI Act | Shaping Europe’s digital future": the updated application timeline, including the Digital Omnibus extensions (primary source)',
+    url: 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai',
+  },
+  {
+    text: 'Gibson Dunn — analysis of the “Digital Omnibus" agreement (May 2026): postponed high-risk deadlines',
+    url: 'https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/',
+  },
+  {
+    text: 'Freshfields — EU Digital Strategy: Artificial Intelligence Act (legal analysis)',
+    url: 'https://www.freshfields.com/en/our-thinking/campaigns/tech-data-and-ai-the-digital-frontier/eu-digital-strategy/artificial-intelligence-act',
+  },
+  {
+    text: 'OECD (2025) — “Governing with Artificial Intelligence", chapter on AI in public procurement (primary source)',
+    url: 'https://www.oecd.org/en/publications/2025/06/governing-with-artificial-intelligence_398fa287/full-report/ai-in-public-procurement_2e095543.html',
+  },
+  {
+    text: 'UK House of Commons, Public Accounts Committee — “Use of AI in Government" (primary source)',
+    url: 'https://publications.parliament.uk/pa/cm5901/cmselect/cmpubacc/356/report.html',
+  },
+  {
+    text: 'Open Contracting Partnership (2025) — “The surprising shifts in how the public sector is buying AI" (referencing the Code for America assessment of state AI capacity)',
+    url: 'https://www.open-contracting.org/2025/11/10/the-surprising-shifts-in-how-the-public-sector-is-buying-ai-and-what-policymakers-can-do-about-it/',
+  },
+  {
+    text: 'Trowers & Hamlins — “The future of AI in public procurement" (PPN 017, capacity to evaluate AI-assisted bids)',
+    url: 'https://www.trowers.com/insights/2025/february/the-future-of-ai-in-public-procurement',
+  },
+  {
+    text: 'Government of Romania — the 12 March 2026 memorandum designating the competent authorities, reported by JURIDICE.ro',
+    url: 'https://www.juridice.ro/820036/autoritatile-nationale-competente-pentru-aplicarea-regulamentului-ai.html',
+  },
+  {
+    text: 'Digi24 — the AI Act becoming fully applicable in Romania from August 2026: obligations and penalties for companies',
+    url: 'https://www.digi24.ro/amphtml/stiri/economie/din-august-2026-ai-act-devine-pe-deplin-aplicabil-in-ue-ce-trebuie-sa-stie-firmele-din-romania-si-ce-amenzi-risca-3714541',
+  },
+  {
+    text: 'Economedia — ANCOM preparing the national implementation framework for the AI Act (July 2026)',
+    url: 'https://economedia.ro/ai-act-intra-intr-o-noua-etapa-de-aplicare-din-2-august-ancom-pregateste-cadrul-national-de-implementare-companiile-trebuie-sa-se-pregateasca-pentru-conformare-cand-vor-fi-putea-fi-aplicate-sancti.html',
+  },
+  {
+    text: 'Cloud Security Alliance (2026) — “EU AI Act High-Risk Deadline: Enterprise Readiness Gap" (more than half of organisations have no systematic AI inventory)',
+    url: 'https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-high-risk-compliance-deadline-20/',
+  },
+];
+---
+
+<ArticleLayout
+  title="Who checks the AI the state buys?"
+  description="Public institutions are already buying “AI-powered” solutions, but they evaluate them with criteria written for classic software. What the AI Act says about deployers, where Romania stands on national authorities, and what a contracting authority can do now — without waiting for 2027."
+  altPath="/blog/cine-verifica-ai-ul-cumparat-de-stat"
+  heroTitle="Who checks the AI the state buys?"
+  publishDate="2026-07-27"
+  heroImage="/images/blog/achizitii-publice-ai-verificare.svg"
+  heroImageAlt="A public institution and an artificial intelligence model, connected by a procurement contract with a magnifying glass and a question mark over it"
+  faq={faq}
+  sources={sources}
+>
+  <p>
+    <strong>The short answer:</strong> right now, most of the time — nobody genuinely qualified to do it.
+    Sunday, 2 August 2026 is the day the European Artificial Intelligence Regulation (AI Act) was due to
+    become fully applicable, including for high-risk systems. That deadline was postponed, through the
+    “Digital Omnibus" agreement of May 2026, to 2 December 2027. Many read the postponement as a pause.
+    That is a dangerous reading: public institutions are already buying “AI-powered" solutions through
+    public procurement, and those solutions are evaluated with criteria written for classic software, by
+    committees that do not have — and until now had no reason to have — the competence to verify an AI
+    model. Postponing the obligations does not postpone the risks. It only leaves them unsupervised for
+    longer.
+  </p>
+
+  <h2>Where we actually stand with the AI Act (no myths)</h2>
+  <p>
+    Regulation (EU) 2024/1689 entered into force on 1 August 2024, with staggered application. The timeline,
+    in short:
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Deadline</th><th>What applies</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>2 February 2025</strong><br /><em>in force</em></td>
+          <td>Prohibitions on unacceptable-risk practices (social scoring, subliminal manipulation, certain biometric uses) and the AI literacy obligation for staff — for any organisation using AI systems, public institutions included</td>
+        </tr>
+        <tr>
+          <td><strong>2 August 2025</strong><br /><em>in force</em></td>
+          <td>Rules for general-purpose AI models (GPAI)</td>
+        </tr>
+        <tr>
+          <td><strong>2 August 2026</strong></td>
+          <td>Transparency obligations (Art. 50): users must be informed when interacting with a chatbot, AI-generated content must be marked</td>
+        </tr>
+        <tr>
+          <td><strong>2 December 2027</strong><br /><em>postponed</em></td>
+          <td>Full obligations for high-risk systems in Annex III — including systems used by public authorities to assess eligibility for essential benefits and services</td>
+        </tr>
+        <tr>
+          <td><strong>August 2028</strong><br /><em>postponed</em></td>
+          <td>AI embedded in regulated products (Annex I)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    What was postponed is therefore the heaviest block. What is already mandatory — and applies today, not
+    in 2027 — has not moved.
+  </p>
+  <div class="callout">
+    <p>
+      <strong>One myth worth dismantling</strong>, because I hear it constantly: “the AI Act is a tech
+      company problem." It is not. The regulation creates explicit obligations for
+      <strong>deployers</strong> — that is, for anyone who <em>uses</em> an AI system, not only for whoever
+      builds it.
+    </p>
+  </div>
+  <p>
+    For public institutions deploying high-risk systems, the list in Art. 26 is concrete: use in accordance
+    with the instructions, designated and competent human oversight, retention of system-generated logs for
+    at least 6 months, and informing the people affected by decisions. Art. 27 adds, specifically for public
+    bodies: a fundamental rights impact assessment before use.
+  </p>
+
+  <h2>And where Romania stands</h2>
+  <p>
+    The government adopted the memorandum designating the national authorities only on 12 March 2026 — seven
+    months after the European deadline: <strong>ANCOM</strong> as market surveillance authority and single
+    point of contact, <strong>ASF</strong> and <strong>BNR</strong> for the financial sector,
+    <strong>ANSPDCP</strong> for sensitive domains, <strong>ADR</strong> as notifying authority. The national
+    law setting out penalties and procedures is still being drafted, and the designated authorities have not
+    yet published guidance for organisations.
+  </p>
+  <p>
+    Worth remembering, as the public debate has stressed: the regulation is <strong>directly
+    applicable</strong> — the absence of operational national procedures does not suspend obligations
+    already in force.
+  </p>
+  <p>
+    Translated for a contracting authority: the framework that should help you verify AI is itself still
+    under construction. The supervisory authorities are only now recruiting their technical experts. If you
+    wait for verification to come “from above", you will be waiting long after the solutions have gone live
+    inside your institution.
+  </p>
+
+  <h2>The governance gap: when the supplier evaluates itself</h2>
+  <p>
+    The problem is not a Romanian one; it is documented at European and international level, and the
+    mechanism behind it is worth understanding precisely.
+  </p>
+  <p>
+    Governance decisions about technology are made, in practice, <strong>at the procurement stage</strong> —
+    that is when it is settled what the institution buys, under what requirements and with what control
+    mechanisms. Analyses built on UK National Audit Office reports show that real oversight requires
+    officials able to interpret suppliers' claims about model performance, to assess documentation about
+    training data, and to identify the risks of algorithmic decisions. Where those competences are missing,
+    responsibility for the evaluation migrates, de facto, to the supplier. In other words:
+    <strong>the supplier evaluates itself</strong>.
+  </p>
+  <p>
+    The OECD, in “Governing with AI" (2025), identifies digital skills gaps as one of the major obstacles to
+    using AI in public procurement. The UK Parliament's Public Accounts Committee asked the government to
+    explain how it is addressing the digital skills shortfall, noting also the absence of a systematic
+    mechanism for learning from pilot projects. And in the US, the Code for America assessment found states
+    weakest precisely on building internal AI capacity. The shared conclusion, as formulated by the Open
+    Contracting Partnership, is simple and uncomfortable: buying AI is not enough; you also have to
+    understand it.
+  </p>
+  <p>
+    Romania has no equivalent study — but it has every ingredient of the problem: digitalisation accelerated
+    by European funds, suppliers adding “AI" to any technical proposal to score points, evaluation
+    committees trained in procurement law rather than model assessment, and a supervisory framework still
+    being built.
+  </p>
+
+  <h2>What an institution can do now — without waiting for 2027</h2>
+  <p>
+    The good news: nothing below requires AI laboratory expertise. It requires procurement discipline —
+    exactly the competence institutions already have.
+  </p>
+
+  <h3>1. The inventory</h3>
+  <p>
+    Before anything else: which systems with AI components already exist in the institution — bought,
+    delivered as part of other contracts, or used informally by staff? More than half of organisations have
+    no systematic inventory of their AI systems. You cannot govern what you do not know you have.
+  </p>
+
+  <h3>2. Verifiable requirements in the tender documentation</h3>
+  <p>
+    “The solution uses artificial intelligence" is not a requirement; it is a slogan. Verifiable
+    requirements are:
+  </p>
+  <ul>
+    <li>a description of the AI function and of its limits;</li>
+    <li>the provenance of, and rights over, the training data;</li>
+    <li>the performance metrics measured, and the conditions under which they were measured;</li>
+    <li>decision logging (who, what, when — at least 6 months, aligned with Art. 26);</li>
+    <li>the human oversight mechanism;</li>
+    <li>the institution's right to audit;</li>
+    <li>the exit plan — what remains with the institution if the contract ends.</li>
+  </ul>
+
+  <h3>3. Three internal competences, not a new department</h3>
+  <p>
+    One person who can read a model datasheet critically and ask the questions above; one who assesses risks
+    against the institution's own process (not technology in the abstract); one who monitors the system in
+    operation. These can be part-time roles, they can be built through training — but they cannot be
+    outsourced entirely to the very party being evaluated.
+  </p>
+
+  <h3>4. Preparing for the impact assessment</h3>
+  <p>
+    For public bodies, the fundamental rights impact assessment (Art. 27) becomes mandatory for high-risk
+    systems. Institutions that start the exercise now — on the systems already in use — will have a routine
+    by December 2027; the others will have a crisis.
+  </p>
+
+  <h2>The conclusion</h2>
+  <p>
+    The Digital Omnibus postponement moved the deadlines, not the question. Systems are entering
+    institutions now, through contracts signed now, evaluated against today's criteria. The difference
+    between a prepared institution and an exposed one is not made by the regulation — it is made by the
+    ability to ask, at the moment of procurement, the questions the supplier cannot dodge.
+  </p>
+  <p>
+    Public procurement has always been about exactly this: decisions that hold up under scrutiny. AI does
+    not change the principle. It only raises the stakes.
+  </p>
+</ArticleLayout>
