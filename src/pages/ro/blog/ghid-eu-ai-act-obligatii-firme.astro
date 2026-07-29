@@ -1,0 +1,230 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'Folosim doar ChatGPT intern. Avem obligații?',
+    a: 'Da, dar rezonabile. Nu ești furnizor de AI, ci implementator (deployer), iar obligația de alfabetizare AI se aplică din 2 februarie 2025: personalul care lucrează cu sisteme AI trebuie să aibă un nivel suficient de competență. În practică înseamnă o politică internă de utilizare (ce date nu se introduc, cum se verifică rezultatele) și o instruire de bază, documentată.',
+  },
+  {
+    q: 'Avem un chatbot pe site. Ce trebuie să facem?',
+    a: 'De la 2 august 2026 se aplică obligațiile de transparență din art. 50: utilizatorul trebuie informat clar că interacționează cu un sistem AI, iar conținutul generat trebuie marcat. O mențiune vizibilă în interfața de chat acoperă de regulă partea de informare. Pentru sistemele aflate deja pe piață înainte de 2 august 2026, marcarea machine-readable a conținutului generat are termen până la 2 decembrie 2026.',
+  },
+  {
+    q: 'Folosim AI la trierea CV-urilor. Este sistem cu risc înalt?',
+    a: 'Da — recrutarea și deciziile de angajare sunt în Anexa III, categoria de risc înalt. Termenul pentru obligațiile complete a fost amânat la 2 decembrie 2027 prin regulamentul Digital Omnibus, dar alegerea furnizorului și documentarea procesului merită începute acum: schimbarea instrumentului cu câteva luni înainte de termen este mult mai scumpă decât selecția corectă de la început.',
+  },
+  {
+    q: 'Termenul pentru risc înalt s-a amânat. Putem amâna și noi?',
+    a: 'Nu, pentru că amânarea nu a atins blocul deja aplicabil. Interdicțiile și alfabetizarea AI se aplică din februarie 2025, regulile GPAI din august 2025, iar transparența din august 2026. S-a amânat doar partea grea — sistemele cu risc înalt — și doar pentru cine are astfel de sisteme.',
+  },
+  {
+    q: 'Ce sancțiuni riscă o firmă?',
+    a: 'Până la 35 de milioane EUR sau 7% din cifra de afaceri mondială anuală pentru practicile interzise, și până la 15 milioane EUR sau 3% pentru încălcarea celorlalte obligații — se aplică valoarea mai mare dintre cele două. Pentru IMM-uri și startup-uri se aplică, invers, plafonul mai mic dintre procent și sumă fixă.',
+  },
+  {
+    q: 'Cine aplică AI Act în România?',
+    a: 'Prin memorandumul din 12 martie 2026: ANCOM ca autoritate de supraveghere a pieței și punct unic de contact, ASF și BNR pentru sectorul financiar, ANSPDCP pentru domeniile sensibile, ADR ca autoritate de notificare. Legea națională privind sancțiunile și procedurile era încă în pregătire la data publicării acestui articol.',
+  },
+];
+
+const sources = [
+  {
+    text: 'Regulamentul (UE) 2024/1689 privind inteligența artificială (EU AI Act) — text consolidat pe EUR-Lex (sursă primară)',
+    url: 'https://eur-lex.europa.eu/legal-content/RO/TXT/?uri=CELEX%3A32024R1689',
+  },
+  {
+    text: 'Comisia Europeană — „AI Act | Shaping Europe’s digital future": calendarul de aplicare actualizat, inclusiv extinderile Digital Omnibus (sursă primară)',
+    url: 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai',
+  },
+  {
+    text: 'Consiliul UE — comunicat de presă, 29 iunie 2026: adoptarea finală a regulamentului „Digital Omnibus on AI" (sursă primară)',
+    url: 'https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/',
+  },
+  'Regulamentul (UE) 2024/1689, art. 4 (alfabetizare AI), art. 5 (practici interzise), art. 26–27 (obligațiile implementatorilor), art. 50 (transparență), art. 99 (sancțiuni)',
+  'Guvernul României — memorandumul din 12 martie 2026 privind desemnarea autorităților naționale competente',
+];
+---
+
+<ArticleLayout
+  title="EU AI Act: ce obligații are firma ta și de când"
+  description="Calendarul complet AI Act după amânarea Digital Omnibus: ce se aplică deja, ce vine în august și decembrie 2026, ce s-a mutat în decembrie 2027 — și cei cinci pași de conformare pentru o firmă care doar folosește AI."
+  altPath="/blog/eu-ai-act-obligations-guide"
+  heroTitle="EU AI Act pe scurt: ce obligații are firma ta și de când"
+  publishDate="2026-07-29"
+  faq={faq}
+  sources={sources}
+>
+  <p>
+    Prima reacție a majorității firmelor la EU AI Act este aceeași — „nu ne privește, noi nu facem AI" —
+    și este, de regulă, greșită. Regulamentul (UE) 2024/1689 nu reglementează doar dezvoltatorii de AI,
+    ci și companiile care <strong>folosesc</strong> AI, în calitate de <strong>implementatori</strong>
+    („deployers"): de la chatbotul de pe site la instrumentul de triere a CV-urilor și până la ChatGPT
+    folosit intern de echipa de marketing. Acest ghid rezumă ce se aplică deja, ce urmează și ce ai de
+    făcut concret.
+  </p>
+
+  <div class="callout">
+    <p>
+      <strong>Pe scurt:</strong> dacă firma ta folosește orice instrument AI, ai deja două obligații active
+      din februarie 2025 — să nu folosești practici interzise și să asiguri alfabetizarea AI a angajaților
+      care lucrează cu aceste sisteme. Restul obligațiilor depind de <em>ce fel</em> de AI folosești.
+    </p>
+  </div>
+
+  <h2>Calendarul complet, după Digital Omnibus</h2>
+  <p>
+    Regulamentul a intrat în vigoare la 1 august 2024, cu aplicare eșalonată. În iunie 2026, regulamentul
+    „Digital Omnibus on AI" — adoptat de Parlamentul European la 16 iunie și de Consiliu la 29 iunie — a
+    mutat termenele pentru sistemele cu risc înalt. Calendarul rezultat:
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Termen</th><th>Ce se aplică</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>2 februarie 2025</strong><br /><em>în vigoare</em></td>
+          <td>Interdicțiile pentru practicile cu risc inacceptabil (art. 5) și obligația de alfabetizare AI a personalului (art. 4) — pentru orice organizație care folosește sisteme AI</td>
+        </tr>
+        <tr>
+          <td><strong>2 august 2025</strong><br /><em>în vigoare</em></td>
+          <td>Regulile pentru modelele de uz general (GPAI) — obligații de transparență și documentare în sarcina furnizorilor de modele</td>
+        </tr>
+        <tr>
+          <td><strong>2 august 2026</strong></td>
+          <td>Obligațiile de transparență (art. 50): utilizatorii trebuie informați când interacționează cu un chatbot, iar conținutul generat de AI trebuie marcat</td>
+        </tr>
+        <tr>
+          <td><strong>2 decembrie 2026</strong></td>
+          <td>Marcarea machine-readable a conținutului generat, pentru sistemele aflate deja pe piață înainte de 2 august 2026 (art. 50 alin. 2); interdicția nouă introdusă de Omnibus în art. 5 — sistemele AI care creează imagini intime non-consensuale</td>
+        </tr>
+        <tr>
+          <td><strong>2 decembrie 2027</strong><br /><em>amânat</em></td>
+          <td>Obligațiile complete pentru sistemele cu risc înalt din Anexa III — recrutare, evaluarea creditelor, educație, infrastructură critică, aplicarea legii</td>
+        </tr>
+        <tr>
+          <td><strong>august 2028</strong><br /><em>amânat</em></td>
+          <td>AI încorporat în produse care au deja reglementări proprii de siguranță (Anexa I): dispozitive medicale, mașini, jucării</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Citirea corectă a amânării: s-a mutat <strong>blocul cel mai greu</strong>, și doar pentru firmele care
+    au sisteme cu risc înalt. Ce era deja obligatoriu nu s-a mișcat cu o zi. Am detaliat consecințele
+    acestei confuzii, pe cazul instituțiilor publice, în articolul
+    <a href="/ro/blog/cine-verifica-ai-ul-cumparat-de-stat/">„Cine verifică AI-ul pe care îl cumpără statul?"</a>.
+  </p>
+
+  <h2>Cele patru niveluri de risc</h2>
+  <p>
+    AI Act nu tratează toate sistemele la fel. Clasificarea pe risc decide ce obligații ai — și este primul
+    lucru pe care trebuie să-l stabilești pentru fiecare instrument din firmă.
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Nivel de risc</th><th>Exemple</th><th>Ce ți se cere</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Inacceptabil</strong></td>
+          <td>Scoring social, manipulare subliminală, exploatarea vulnerabilităților, anumite utilizări biometrice</td>
+          <td>Interzis. De eliminat imediat, dacă există</td>
+        </tr>
+        <tr>
+          <td><strong>Ridicat</strong></td>
+          <td>Triere CV-uri, evaluare credite, admitere și examinare în educație, infrastructură critică</td>
+          <td>Management de risc, guvernanța datelor, documentație tehnică, supraveghere umană, jurnale, înregistrare în baza de date UE</td>
+        </tr>
+        <tr>
+          <td><strong>Limitat</strong></td>
+          <td>Chatboți, generatoare de imagini și text, sisteme de recunoaștere a emoțiilor</td>
+          <td>Transparență: informarea utilizatorului și marcarea conținutului generat</td>
+        </tr>
+        <tr>
+          <td><strong>Minim</strong></td>
+          <td>Filtre de spam, recomandări de produse, AI în jocuri</td>
+          <td>Fără obligații specifice, dincolo de alfabetizarea AI</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    În firmele obișnuite din România, <strong>recrutarea este de departe cel mai frecvent caz de risc
+    ridicat</strong>. Dacă folosești un instrument care filtrează, punctează sau clasifică automat candidați,
+    ești în Anexa III — chiar dacă decizia finală o ia un om.
+  </p>
+
+  <h2>Ce înseamnă concret: cinci pași de conformare</h2>
+  <p>
+    Pentru o firmă care folosește AI fără să-l dezvolte, programul minim de conformare arată așa:
+  </p>
+  <ol>
+    <li>
+      <strong>Inventarul sistemelor AI</strong> — ce instrumente folosește firma, cine le folosește, pentru
+      ce decizii și cu ce date. Include și instrumentele adoptate informal de echipe, fără aprobare IT:
+      acestea sunt, în practică, cea mai mare sursă de risc necunoscut.
+    </li>
+    <li>
+      <strong>Clasificarea pe risc</strong> — pentru fiecare sistem din inventar, stabilește nivelul. Ce
+      intră la practici interzise se elimină acum; ce intră la risc ridicat intră în plan pentru decembrie 2027.
+    </li>
+    <li>
+      <strong>Politica internă de utilizare</strong> — reguli scrise pentru angajați: ce date se pot și ce
+      date nu se pot introduce în instrumente AI, cine verifică rezultatele înainte de a fi folosite, ce
+      decizii nu se iau niciodată automat.
+    </li>
+    <li>
+      <strong>Instruirea echipei</strong> — acoperă obligația de alfabetizare AI din art. 4, deja în vigoare.
+      Trebuie să fie documentată: cine a participat, când, ce a acoperit.
+    </li>
+    <li>
+      <strong>Transparența față de utilizatori</strong> — până în august 2026, chatboții și conținutul generat
+      de AI trebuie marcate corespunzător pe toate canalele publice ale firmei.
+    </li>
+  </ol>
+  <p>
+    Pentru companiile care vor o structură mai solidă decât un set de politici ad-hoc,
+    <a href="/ro/blog/iso-42001-pregatire-eu-ai-act/">ISO/IEC 42001</a> oferă cadrul de management pe care
+    obligațiile AI Act se sprijină în bună măsură — util mai ales dacă ai deja ISO 27001 și poți extinde
+    sistemul existent.
+  </p>
+
+  <h2>Sancțiunile</h2>
+  <p>
+    Amenzile ajung până la <strong>35 de milioane EUR sau 7% din cifra de afaceri mondială anuală</strong>
+    pentru practicile interzise, și până la <strong>15 milioane EUR sau 3%</strong> pentru încălcarea
+    celorlalte obligații — se aplică valoarea mai mare dintre cele două. Pentru IMM-uri și startup-uri
+    regula se inversează: se aplică plafonul mai mic, tocmai ca sancțiunea să rămână proporțională.
+  </p>
+  <p>
+    În România, cadrul de aplicare a fost stabilit prin memorandumul guvernamental din 12 martie 2026:
+    <strong>ANCOM</strong> este autoritatea de supraveghere a pieței și punctul unic de contact,
+    <strong>ASF</strong> și <strong>BNR</strong> acoperă sectorul financiar, <strong>ANSPDCP</strong>
+    domeniile sensibile, iar <strong>ADR</strong> este autoritatea de notificare.
+  </p>
+
+  <h2>De ce merită început acum</h2>
+  <p>
+    Pentru că partea costisitoare nu este documentația — este <em>schimbarea instrumentelor</em>. O firmă
+    care descoperă în 2027 că platforma ei de recrutare nu poate furniza documentația tehnică cerută de
+    Anexa III are de ales între o migrare în criză și o neconformitate asumată. Aceeași firmă, dacă pune
+    întrebarea la achiziție, o rezolvă cu o clauză contractuală.
+  </p>
+  <p>
+    Inventarul și clasificarea — pașii 1 și 2 — se fac o dată și răspund la aproape toate întrebările
+    ulterioare. Sunt și singurele care nu pot fi externalizate complet: nimeni din afară nu știe ce
+    instrumente folosesc efectiv echipele tale.
+  </p>
+
+  <h2>Cum te putem ajuta</h2>
+  <p>
+    Speed Flow oferă consultanță de <a href="/ro/consultanta-ai/guvernanta/">guvernanță AI</a>: inventarul și
+    clasificarea sistemelor, politici de utilizare, instruirea echipei și pregătirea pentru termenele AI Act.
+    Dacă vrei să începi cu o imagine clară a situației actuale,
+    <a href="/ro/consultanta-ai/diagnostic/">diagnosticul AI</a> este punctul natural de plecare.
+  </p>
+</ArticleLayout>
