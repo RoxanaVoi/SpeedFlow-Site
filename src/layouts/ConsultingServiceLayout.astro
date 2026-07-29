@@ -13,9 +13,14 @@ interface Props {
   deliverables: string[];
   steps: { title: string; desc: string }[];
   why: string;
+  /** Related blog guides, rendered as a callout after the hero. */
+  guideLinks?: { href: string; label: string }[];
 }
 
-const { title, description, altPath, heroTitle, positioning, problem, deliverables, steps, why } = Astro.props;
+const {
+  title, description, altPath, heroTitle, positioning, problem, deliverables, steps, why,
+  guideLinks = [],
+} = Astro.props;
 const locale = getLocaleFromUrl(Astro.url);
 
 const site = Astro.site ?? new URL('https://www.speed-flow.ai');
@@ -70,6 +75,22 @@ const schemas = [
       </p>
     </div>
   </section>
+
+  {guideLinks.length > 0 && (
+    <section class="pb-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-5 lg:p-6 space-y-2">
+          {guideLinks.map(link => (
+            <p class="text-text">
+              <a href={link.href} class="text-primary font-medium underline underline-offset-2 hover:text-primary-dark">
+                {link.label}
+              </a>
+            </p>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Problem -->
   <section class="py-16 bg-surface">

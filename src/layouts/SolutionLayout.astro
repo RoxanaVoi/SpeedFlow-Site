@@ -19,12 +19,17 @@ interface Props {
   demoAvailable?: boolean;
   demoLabel?: string;
   demoUrl?: string;
+  /** Adds a Service schema alongside the SoftwareApplication one, for pages where the service angle matters for search. */
+  serviceSchema?: { name: string; description: string };
+  /** Related blog guides, rendered as a callout after the hero and linked in JSON-LD. */
+  guideLinks?: { href: string; label: string }[];
 }
 
 const {
   title, description, altPath, heroTitle, heroProblem, heroResult,
   forWhom, forWhomItems, processes, howItWorks, outputs, faq,
   demoAvailable = false, demoLabel, demoUrl,
+  serviceSchema, guideLinks = [],
 } = Astro.props;
 
 const locale = getLocaleFromUrl(Astro.url);
@@ -56,6 +61,18 @@ const schemas: Record<string, unknown>[] = [
     ],
   },
 ];
+
+if (serviceSchema) {
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: serviceSchema.name,
+    description: serviceSchema.description,
+    provider: { '@type': 'Organization', name: 'Speed Flow' },
+    areaServed: { '@type': 'Country', name: locale === 'ro' ? 'România' : 'Romania' },
+    url: selfUrl,
+  });
+}
 
 if (faq.length > 0) {
   schemas.push({
@@ -104,6 +121,22 @@ if (faq.length > 0) {
       </div>
     </div>
   </section>
+
+  {guideLinks.length > 0 && (
+    <section class="pb-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-5 lg:p-6 space-y-2">
+          {guideLinks.map(link => (
+            <p class="text-text">
+              <a href={link.href} class="text-primary font-medium underline underline-offset-2 hover:text-primary-dark">
+                {link.label}
+              </a>
+            </p>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- For whom -->
   <section class="py-16 bg-surface">

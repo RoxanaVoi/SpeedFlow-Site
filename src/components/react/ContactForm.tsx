@@ -1,5 +1,11 @@
 import { type FormEvent } from 'react';
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 interface ContactFormProps {
   labels: {
     name: string;
@@ -33,6 +39,14 @@ export default function ContactForm({ labels }: ContactFormProps) {
       '',
       message || '(fara mesaj)',
     ].filter(Boolean).join('\n');
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-18356650688/2wV2CI-indgcEMCFkbFE',
+        value: 1.0,
+        currency: 'RON',
+      });
+    }
 
     window.location.href = `mailto:office@speed-flow.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
