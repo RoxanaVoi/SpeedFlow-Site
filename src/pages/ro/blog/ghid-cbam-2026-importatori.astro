@@ -11,6 +11,14 @@ const faq = [
     a: 'Pragul de minimis introdus prin Regulamentul Omnibus 2025/2083 scutește importatorii care rămân sub 50 de tone net pe an, agregat pe fier-oțel, aluminiu, îngrășăminte și ciment. Atenție: pragul nu se aplică electricității și hidrogenului, iar depășirea lui în cursul anului activează integral obligațiile.',
   },
   {
+    q: 'Pot împărți importurile pe mai multe firme ca să rămân sub pragul de 50 de tone?',
+    a: 'Nu. Divizarea artificială a volumelor între entități afiliate, tocmai pentru a rămâne sub prag, intră sub regulile anti-eludare din regulament și atrage sancțiuni. Pragul se calculează oricum pe entitate juridică (număr EORI), cumulat pe toate produsele CBAM — nu per transport și nu per tip de produs.',
+  },
+  {
+    q: 'Cumpăr mărfuri CBAM de la un furnizor din UE. Mă afectează?',
+    a: 'Nu direct — CBAM vizează doar importurile din afara Uniunii. Dacă furnizorul tău european importă el materia primă, obligația de raportare și de certificate este a lui. Costul se va reflecta însă, aproape sigur, în prețul tău de achiziție, deci merită anticipat în bugetare.',
+  },
+  {
     q: 'Când se depune prima declarație CBAM?',
     a: 'Prima declarație CBAM se depune până la 30 septembrie 2027, pentru importurile din anul 2026. Tot atunci se restituie și certificatele aferente. Cumpărarea certificatelor începe însă din 2027, iar din acel an există și obligația de deținere trimestrială de minimum 50%.',
   },
@@ -46,6 +54,7 @@ const sources = [
   altPath="/blog/cbam-guide-2026-importers"
   heroTitle="CBAM în 2026: ghid practic pentru importatori — regim definitiv, termene și costuri"
   publishDate="2026-07-09"
+  updateDate="2026-07-29"
   faq={faq}
   sources={sources}
 >
@@ -101,6 +110,39 @@ const sources = [
       <strong>Pragul de minimis:</strong> importatorii care rămân sub <strong>50 de tone net pe an</strong>
       (agregat pe fier-oțel, aluminiu, îngrășăminte și ciment) sunt scutiți. Pragul <strong>nu</strong> se aplică
       electricității și hidrogenului — acestea intră în mecanism indiferent de cantitate.
+    </p>
+  </div>
+
+  <h2>Capcana pragului: cum se pierde scutirea fără să observi</h2>
+  <p>
+    Pragul de 50 de tone pare simplu, dar mecanica lui produce cele mai scumpe greșeli din tot mecanismul.
+    Trei lucruri de reținut:
+  </p>
+  <ul>
+    <li>
+      <strong>Se calculează cumulat, pe entitate juridică</strong> — pe numărul EORI, agregat pe toate
+      produsele CBAM la un loc, nu per transport și nu per categorie. Zece livrări mici de oțel plus câteva
+      de aluminiu se adună în același cont.
+    </li>
+    <li>
+      <strong>Depășirea activează obligațiile retroactiv</strong>, pentru întregul an calendaristic, de la
+      1 ianuarie — nu de la data la care ai depășit pragul. Nu există o zonă intermediară în care plătești
+      doar pentru surplus.
+    </li>
+    <li>
+      <strong>Nu te anunță nimeni</strong> când te apropii de limită. Monitorizarea cumulului este exclusiv
+      responsabilitatea importatorului.
+    </li>
+  </ul>
+  <div class="callout">
+    <p>
+      <strong>Recomandarea practică:</strong> setează o alertă internă la <strong>40 de tone</strong>, adică
+      80% din prag. Autorizarea ca declarant CBAM durează până la <strong>120 de zile</strong>, deci decizia
+      de a o porni trebuie luată cu luni bune înainte de a atinge limita — nu după.
+    </p>
+    <p>
+      Importurile de mărfuri CBAM peste prag, fără statut de declarant autorizat, riscă penalități de ordinul
+      a <strong>300–500 EUR per tonă de CO2</strong> — de câteva ori costul normal al certificatelor.
     </p>
   </div>
 
@@ -167,6 +209,20 @@ const sources = [
     gratuită ETS încă acordată producătorilor europeni. Factorul CBAM pornește de la 97,5% alocare păstrată în
     2026 și ajunge la 0% în 2034 — cu alte cuvinte, obligația de plată pornește mică și <strong>crește an de an</strong>,
     până devine integrală. Bugetarea multianuală trebuie să reflecte această pantă.
+  </p>
+
+  <h2>Cât costă, orientativ</h2>
+  <p>
+    Costul depinde de emisiile încorporate ale produsului și de prețul certificatelor, corelat cu piața
+    EU ETS. Un ordin de mărime util, din industria auto: un autoturism care încorporează aproximativ o tonă
+    de oțel și 200 kg de aluminiu ajunge la <strong>circa 300 EUR</strong> costuri CBAM. Pentru un importator
+    de profile de aluminiu sau de oțel-beton, unde marfa <em>este</em> materialul, costul devine rapid o
+    componentă a prețului final — iar în 2026 el reprezintă doar 2,5% din obligația integrală, pentru că
+    factorul CBAM încă reflectă alocarea gratuită păstrată de producătorii europeni.
+  </p>
+  <p>
+    Concluzia de bugetare: nu extrapola liniar costul din 2026. Panta de creștere până în 2034 este partea
+    care schimbă calculul de rentabilitate al unui furnizor extra-UE față de unul european.
   </p>
 
   <h2>Capcane frecvente</h2>

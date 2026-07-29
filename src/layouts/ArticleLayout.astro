@@ -13,6 +13,8 @@ interface Props {
   heroTitle: string;
   /** ISO date, e.g. 2026-07-09 */
   publishDate: string;
+  /** ISO date of the last substantive revision. Omit if never revised. */
+  updateDate?: string;
   /** Site-absolute path to the article illustration, e.g. /images/blog/foo.svg */
   heroImage?: string;
   heroImageAlt?: string;
@@ -26,6 +28,7 @@ const {
   altPath,
   heroTitle,
   publishDate,
+  updateDate,
   heroImage,
   heroImageAlt = '',
   faq = [],
@@ -36,9 +39,12 @@ const locale = getLocaleFromUrl(Astro.url);
 const site = Astro.site ?? new URL('https://www.speed-flow.ai');
 const selfUrl = new URL(Astro.url.pathname, site).href;
 const blogUrl = new URL(getLocalizedPath(locale, '/blog/'), site).href;
-const dateLabel = new Date(`${publishDate}T12:00:00`).toLocaleDateString(locale === 'ro' ? 'ro-RO' : 'en-US', {
-  year: 'numeric', month: 'long', day: 'numeric',
-});
+const fmtDate = (d: string) =>
+  new Date(`${d}T12:00:00`).toLocaleDateString(locale === 'ro' ? 'ro-RO' : 'en-US', {
+    year: 'numeric', month: 'long', day: 'numeric',
+  });
+const dateLabel = fmtDate(publishDate);
+const updateLabel = updateDate ? fmtDate(updateDate) : null;
 
 const schemas: Record<string, unknown>[] = [
   {
@@ -49,7 +55,7 @@ const schemas: Record<string, unknown>[] = [
     url: selfUrl,
     mainEntityOfPage: selfUrl,
     datePublished: publishDate,
-    dateModified: publishDate,
+    dateModified: updateDate ?? publishDate,
     inLanguage: locale,
     ...(heroImage ? { image: new URL(heroImage, site).href } : {}),
     author: { '@type': 'Person', name: 'Roxana Voicu' },
@@ -91,6 +97,9 @@ if (faq.length > 0) {
       </h1>
       <p class="text-sm text-text-light">
         {t(locale, 'blog.published')}: <time datetime={publishDate}>{dateLabel}</time>
+        {updateLabel && (
+          <>&nbsp;·&nbsp; {t(locale, 'blog.updated')}: <time datetime={updateDate}>{updateLabel}</time></>
+        )}
         &nbsp;·&nbsp; {t(locale, 'blog.author')} Roxana Voicu
       </p>
     </div>

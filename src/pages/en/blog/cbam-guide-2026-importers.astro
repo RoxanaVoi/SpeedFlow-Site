@@ -11,6 +11,14 @@ const faq = [
     a: 'The de minimis threshold introduced by the Omnibus Regulation 2025/2083 exempts importers who stay below 50 net tonnes per year, aggregated across iron and steel, aluminium, fertilisers and cement. Note: the threshold does not apply to electricity and hydrogen, and exceeding it during the year triggers the full set of obligations.',
   },
   {
+    q: 'Can I split imports across several companies to stay under the 50-tonne threshold?',
+    a: 'No. Artificially dividing volumes between affiliated entities specifically to stay below the threshold falls under the regulation\'s anti-circumvention rules and attracts penalties. The threshold is calculated per legal entity (EORI number) anyway, aggregated across all CBAM goods — not per shipment and not per product type.',
+  },
+  {
+    q: 'I buy CBAM goods from an EU supplier. Does this affect me?',
+    a: 'Not directly — CBAM targets imports from outside the Union only. If your European supplier is the one importing the raw material, the reporting and certificate obligations are theirs. The cost will almost certainly be reflected in your purchase price, though, so it is worth anticipating in your budgeting.',
+  },
+  {
     q: 'When is the first CBAM declaration due?',
     a: 'The first CBAM declaration is due by 30 September 2027, covering imports made in 2026. Certificates for that year are surrendered at the same time. Certificate purchases start in 2027, together with the quarterly obligation to hold at least 50% of the certificates due.',
   },
@@ -46,6 +54,7 @@ const sources = [
   altPath="/blog/ghid-cbam-2026-importatori"
   heroTitle="CBAM in 2026: a practical guide for importers — definitive regime, deadlines and costs"
   publishDate="2026-07-09"
+  updateDate="2026-07-29"
   faq={faq}
   sources={sources}
 >
@@ -101,6 +110,38 @@ const sources = [
       <strong>De minimis threshold:</strong> importers staying below <strong>50 net tonnes per year</strong>
       (aggregated across iron and steel, aluminium, fertilisers and cement) are exempt. The threshold does
       <strong>not</strong> apply to electricity and hydrogen — those are in scope regardless of quantity.
+    </p>
+  </div>
+
+  <h2>The threshold trap: how the exemption is lost without noticing</h2>
+  <p>
+    The 50-tonne threshold looks simple, but its mechanics produce the most expensive mistakes in the whole
+    mechanism. Three things to remember:
+  </p>
+  <ul>
+    <li>
+      <strong>It is cumulative, per legal entity</strong> — tracked against the EORI number and aggregated
+      across all CBAM goods together, not per shipment and not per category. Ten small steel deliveries plus
+      a few aluminium ones all land in the same account.
+    </li>
+    <li>
+      <strong>Crossing it triggers obligations retroactively</strong>, for the entire calendar year from
+      1 January — not from the date you crossed. There is no middle ground where you pay only for the excess.
+    </li>
+    <li>
+      <strong>Nobody warns you</strong> as you approach the limit. Monitoring the running total is entirely
+      the importer's responsibility.
+    </li>
+  </ul>
+  <div class="callout">
+    <p>
+      <strong>Practical recommendation:</strong> set an internal alert at <strong>40 tonnes</strong> — 80% of
+      the threshold. Authorisation as a CBAM declarant takes up to <strong>120 days</strong>, so the decision
+      to start it has to be taken months before you reach the limit, not after.
+    </p>
+    <p>
+      Imports of CBAM goods above the threshold without authorised declarant status risk penalties in the
+      order of <strong>EUR 300–500 per tonne of CO2</strong> — several times the normal cost of certificates.
     </p>
   </div>
 
@@ -167,6 +208,20 @@ const sources = [
     ETS allocation still granted to European producers. The CBAM factor starts at 97.5% retained allocation in
     2026 and reaches 0% in 2034 — in other words, the payment obligation starts small and <strong>grows every
     year</strong> until it becomes full. Multi-year budgeting must reflect that slope.
+  </p>
+
+  <h2>What it costs, roughly</h2>
+  <p>
+    The cost depends on the product's embedded emissions and on the certificate price, which tracks the
+    EU ETS market. A useful order of magnitude from the automotive sector: a car embedding roughly one tonne
+    of steel and 200 kg of aluminium comes to <strong>about EUR 300</strong> in CBAM costs. For an importer of
+    aluminium profiles or rebar, where the goods <em>are</em> the material, the cost quickly becomes a
+    component of the final price — and in 2026 it represents only 2.5% of the full obligation, because the
+    CBAM factor still reflects the free allocation retained by European producers.
+  </p>
+  <p>
+    The budgeting takeaway: do not extrapolate the 2026 cost linearly. The ramp to 2034 is what changes the
+    economics of a non-EU supplier versus a European one.
   </p>
 
   <h2>Common pitfalls</h2>
