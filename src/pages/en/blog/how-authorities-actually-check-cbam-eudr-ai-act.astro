@@ -1,0 +1,335 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'Who actually checks the data — the Commission or the national authority?',
+    a: 'It depends on the regulation, and the difference is large. Under CBAM, the Commission reviews declarations following a review strategy with risk factors, runs risk-based controls on the central registry and sends its findings to the national authority, which may determine on the basis of the Commission\'s preliminary calculation that more certificates must be surrendered. Under EUDR, the Commission provides the satellite reference layer and the country risk classification, but national authorities carry out the checks. Under the AI Act, the Commission provides only the framework of powers; everything from sanctions downwards depends on national law.',
+  },
+  {
+    q: 'What are the odds of being checked under EUDR?',
+    a: 'Article 16 of the regulation sets minimum annual rates tied to the risk classification of the country of origin: at least 1% of operators for low-risk countries, 3% for standard risk and 9% for high risk. These are floors, not ceilings. Read the other way, between 91% and 99% of operators are not checked in a given year — but who is checked is decided by risk analysis, not by lottery.',
+  },
+  {
+    q: 'Are there any accredited CBAM verifiers yet?',
+    a: 'As of 30 July 2026, no. The Commission\'s "State-of-play CBAM accreditation" document dated 24 July 2026 shows 24 national accreditation bodies agreed to provide CBAM accreditation, of which only 13 actually accept applications, and the public list of accredited verifiers is still empty. The Commission expects the first accreditations around September 2026 — even though accredited verification has been mandatory since 1 January 2026.',
+  },
+  {
+    q: 'Why does it matter which ministry the CBAM authority sits in?',
+    a: 'Because it determines the competence of the team that inspects you. From the Commission\'s official list, CBAM is administered by the environment agency in Germany and Sweden, by the environment ministry in France, Italy and Spain, by customs in Austria and Finland, by the tax administration in Greece and Latvia, and in Romania by the Ministry of Finance through a dedicated CBAM and Green Taxation directorate. Four member states split competence between two bodies. Same regulation, entirely different administrative cultures.',
+  },
+  {
+    q: 'Can the Romanian authority sanction AI Act breaches from 2 August 2026?',
+    a: 'No, by its own account. In a statement of 24 July 2026, ANCOM says the competent authorities "will be able to verify and sanction non-compliance with the Regulation only after the entry into force of the national act currently being drafted". The authorities were proposed by a government memorandum in March 2026, but the sanctioning framework had not been adopted when this article was published.',
+  },
+  {
+    q: 'What should I do with this information?',
+    a: 'Reverse the order of preparation. If verification runs against independent data — a satellite layer, a central registry, a Commission preliminary calculation — then what matters is not the file but whether your data survives comparison with a source you do not control. Start with inventory and classification, then map the data gaps, and only then build reporting.',
+  },
+];
+
+const sources = [
+  {
+    text: 'European Commission — updated list of national competent authorities for CBAM (primary source)',
+    url: 'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en',
+  },
+  {
+    text: 'European Commission — "State-of-play CBAM accreditation", 24 July 2026 (primary source)',
+    url: 'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en',
+  },
+  {
+    text: 'European Commission — "CBAM successfully entered into force on 1 January 2026", 14 January 2026: over 12,000 authorisation applications, over 4,100 authorised declarants (primary source)',
+    url: 'https://taxation-customs.ec.europa.eu/news/cbam-successfully-entered-force-1-january-2026-2026-01-14_en',
+  },
+  {
+    text: 'Regulation (EU) 2023/956 (CBAM), Art. 19 — review of declarations by the Commission (primary source)',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R0956',
+  },
+  {
+    text: 'Regulation (EU) 2023/1115 (EUDR), Art. 16 — mandatory check rates, and Art. 25 — penalties (primary source)',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R1115',
+  },
+  {
+    text: 'European Commission — EUDR country risk classification and the JRC Observatory on Deforestation (primary source)',
+    url: 'https://green-forum.ec.europa.eu/deforestation-regulation-implementation_en',
+  },
+  {
+    text: 'European Parliament, EPRS — "Enforcement of the AI Act", PE 785670, March 2026: eight notified single points of contact out of 27 (primary source)',
+    url: 'https://www.europarl.europa.eu/thinktank/en/document/EPRS_ATA(2026)785670',
+  },
+  {
+    text: 'European Commission — market surveillance authorities designated under the AI Act (primary source, last updated 26 September 2025)',
+    url: 'https://digital-strategy.ec.europa.eu/en/policies/market-surveillance-authorities-under-ai-act',
+  },
+  {
+    text: 'ANCOM — "The AI Regulation in Romania: current state of the implementation framework", 24 July 2026 (primary source)',
+    url: 'https://www.ancom.ro/despre-noi/media/comunicate-de-presa/regulamentul-privind-inteligenta-artificiala-in-romania-stadiul-actual-al-cadrului-de-implementare/',
+  },
+  {
+    text: 'Government of Romania — memorandum on designating competent authorities for the AI Act, March 2026 (primary source)',
+    url: 'https://sgg.gov.ro/1/wp-content/uploads/2026/03/MEMO-6.pdf',
+  },
+  'Germany — Gesetz zur Durchführung der Verordnung über künstliche Intelligenz, BGBl. 2026 I Nr. 223, published 28 July 2026, in force 29 July 2026',
+  'Poland — Ustawa z dnia 3 lipca 2026 r. o systemach sztucznej inteligencji, Dz.U. 2026 poz. 1003, published 27 July 2026, in force 11 August 2026',
+  'Italy — Legge 23 settembre 2025, n. 132, in force 10 October 2025; Art. 24 delegates the Art. 99 penalties to the Government, deadline 10 October 2026',
+  'Denmark — LOV nr. 467 af 14/05/2025, in force 2 August 2025, covering only the Art. 5 prohibited practices',
+  'Ireland — S.I. No. 366 of 2025 and the Regulation of Artificial Intelligence Act 2026, signed 21 July 2026',
+  'Spain — Proyecto de Ley Orgánica 121/000096, in the amendment phase, deadline 2 September 2026; AESIA established by Real Decreto 729/2023',
+];
+---
+
+<ArticleLayout
+  title="How authorities actually check: the real tools behind CBAM, EUDR and the AI Act"
+  description="A satellite reference layer, a central registry, mandatory inspection quotas of 1/3/9%, a Commission preliminary calculation. What tools authorities actually have, who uses them, and why the answer differs radically between member states."
+  altPath="/blog/cum-verifica-autoritatile-cbam-eudr-ai-act"
+  heroTitle="Who actually checks you — and with what tools"
+  publishDate="2026-07-31"
+  faq={faq}
+  sources={sources}
+>
+  <p>
+    In an <a href="/en/blog/compliance-2026-from-files-to-data/">earlier article</a> I argued that the
+    compliance standard has moved from "we completed the document" to "the information in the document
+    matches reality". That leaves the question any practical person asks immediately afterwards:
+    <strong>and how exactly will they find out?</strong>
+  </p>
+  <p>
+    The answer is more concrete than most expect — and more uneven. Real tools exist: a satellite reference
+    layer, a central registry on which the Commission runs risk controls, minimum inspection rates imposed by
+    regulation. But they are not distributed evenly, and the people using them work, from one member state to
+    the next, in institutions so different that it is hard to call it the same system.
+  </p>
+
+  <div class="callout">
+    <p>
+      <strong>The pattern, in short:</strong> the Commission supplies the ammunition — data, algorithms,
+      mandatory inspection thresholds. The member state pulls the trigger — inspection and sanction. Where
+      national law is not ready, the ammunition exists without a trigger.
+    </p>
+  </div>
+
+  <h2>CBAM: the Commission calculates, the state executes</h2>
+  <p>
+    The first surprise for many importers: the CBAM declaration is filed with the Commission, not with the
+    national authority. The Commission runs <strong>risk-based controls</strong> on the information and
+    transactions recorded in the central registry and reviews declarations under a review strategy with risk
+    factors (Art. 19). Its findings then go to the national authority.
+  </p>
+  <p>
+    The practical consequence is unusual: the national authority may determine, <strong>on the basis of the
+    Commission's preliminary calculation</strong>, that further certificates must be surrendered. The ministry
+    does not discover the discrepancy — it receives it already calculated and decides whether to enforce it.
+  </p>
+
+  <h3>The layer that does not exist yet</h3>
+  <p>
+    The definitive regime rests on accredited verification of emissions. The Commission's "State-of-play CBAM
+    accreditation" document, dated <strong>24 July 2026</strong>, shows where that infrastructure actually
+    stands: 24 national accreditation bodies agreed to provide CBAM accreditation, but only
+    <strong>13 actually accept applications</strong>. Four states — Ireland, Cyprus, Estonia and Malta —
+    decided not to offer the service at all. Romania's RENAR agreed, but is not yet accepting applications.
+  </p>
+  <div class="callout">
+    <p>
+      And the public list of accredited verifiers is, as this article goes out, <strong>empty</strong>. The
+      Commission expects the first accreditations around September 2026 — even though accredited verification
+      has been mandatory since 1 January 2026. The obligation began nine months ahead of the infrastructure
+      that makes it possible.
+    </p>
+  </div>
+  <p>
+    For a sense of scale: the Commission reported that by 7 January 2026, over <strong>12,000</strong>
+    economic operators had applied for CBAM authorisation and over <strong>4,100</strong> had obtained
+    authorised declarant status.
+  </p>
+
+  <h3>Same rule, ten administrative cultures</h3>
+  <p>
+    This is where the European comparison gets interesting. From the Commission's official list, the CBAM
+    competent authority sits in entirely different types of institution:
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>State</th><th>Competent authority</th><th>Type of institution</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Germany</td><td>DEHSt</td><td>Environment agency</td></tr>
+        <tr><td>Sweden</td><td>Naturvårdsverket</td><td>Environment agency</td></tr>
+        <tr><td>France</td><td>Directorate-General for Energy and Climate</td><td>Environment ministry</td></tr>
+        <tr><td>Italy</td><td>Comitato ETS</td><td>Environment ministry</td></tr>
+        <tr><td>Spain</td><td>MITECO</td><td>Environment ministry</td></tr>
+        <tr><td>Netherlands</td><td>NEa + Customs</td><td>Emissions authority + customs</td></tr>
+        <tr><td>Ireland</td><td>EPA + Revenue</td><td>Environment agency + tax</td></tr>
+        <tr><td>Poland</td><td>KOBiZE + Tax administration</td><td>Environmental institute + tax</td></tr>
+        <tr><td><strong>Romania</strong></td><td><strong>Ministry of Finance — CBAM and Green Taxation Directorate</strong></td><td><strong>Finance ministry</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Extending the list: Austria and Finland assigned it to customs, Greece and Latvia to the tax
+    administration, Denmark to the energy agency. <strong>Romania is the only one of the states above that
+    administers CBAM from a pure finance ministry</strong>, through a dedicated directorate. That is not
+    necessarily a disadvantage — a tax administration reads an import flow better than an environment agency
+    does. But it means the questions you get at inspection will resemble a tax audit more than an
+    environmental one, and your documentation should be built accordingly.
+  </p>
+
+  <h2>EUDR: the only one with a mandatory quota</h2>
+  <p>EUDR carries the most explicit ammunition. The Commission supplies three things at once.</p>
+  <p>
+    <strong>A reference layer.</strong> The JRC Observatory publishes the global forest cover map for 2020 at
+    10-metre resolution. Submitted polygons are compared against this layer, supplemented by Global Forest
+    Watch deforestation alerts.
+  </p>
+  <p>
+    <strong>A country risk classification</strong> — high, standard or low — set by the Commission.
+  </p>
+  <p>
+    <strong>Minimum inspection rates tied to that classification</strong> (Art. 16): at least
+    <strong>1%</strong> of operators for low-risk countries, <strong>3%</strong> for standard risk,
+    <strong>9%</strong> for high risk, every year. A member state cannot choose not to inspect.
+  </p>
+  <div class="callout">
+    <p>
+      <strong>Read the other way, the same figures say something else:</strong> between 91% and 99% of
+      operators are not inspected in a given year. That sounds like a let-off. It is not — because the
+      selection is not random. Who falls into that percentage is decided by risk analysis, and the criteria
+      are exactly the ones the regulation makes available: country of origin, commodity, supplier history,
+      consistency of the submitted data. Whoever has the worst-documented chain has the highest probability
+      of being picked.
+    </p>
+  </div>
+  <p>
+    The penalty, when it comes, has an imposed floor: Art. 25 requires the maximum fine to be at least
+    <strong>4% of annual EU-wide turnover</strong>, plus confiscation and exclusion from the market. In
+    Romania, enforcement falls to the Ministry of Environment through the National Forest Guard and the
+    regional forest guards for wood products, the National Environmental Guard for other relevant products,
+    and ANSVSA for the agri-food side. We covered the obligations in the
+    <a href="/en/blog/eudr-guide-importers/">EUDR guide for importers</a>.
+  </p>
+
+  <h2>The AI Act: where divergence becomes dramatic</h2>
+  <p>
+    If CBAM differs in administrative culture, the AI Act differs in <em>architecture</em>. The deadline for
+    designating national authorities was <strong>2 August 2025</strong>. A European Parliament briefing from
+    March 2026 records that the Commission's list contained, at that point, <strong>eight single points of
+    contact out of 27</strong>.
+  </p>
+  <p>And the states that have legislated chose solutions that are hard to compare with one another:</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>State</th><th>Model</th><th>Status at 31 July 2026</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Germany</strong></td>
+          <td>Centralised on the telecoms regulator (Bundesnetzagentur), with an independent chamber for high-risk systems. <strong>The data protection authority was deliberately excluded.</strong></td>
+          <td>Law in force since 29 July 2026</td>
+        </tr>
+        <tr>
+          <td><strong>Netherlands</strong></td>
+          <td>Decentralised, with the <strong>data protection authority at the centre</strong> — the exact opposite of the German choice</td>
+          <td>Draft at pre-parliamentary stage; consultation closed 1 June 2026</td>
+        </tr>
+        <tr>
+          <td><strong>Poland</strong></td>
+          <td>A new, dedicated collegiate body (KRiBSI), with members nominated by four existing regulators</td>
+          <td>Law published 27 July 2026, in force 11 August 2026</td>
+        </tr>
+        <tr>
+          <td><strong>Italy</strong></td>
+          <td>Two agencies: ACN supervises and sanctions, AgID notifies</td>
+          <td>Law in force since October 2025, but the Art. 99 penalties are only delegated, deadline 10 October 2026</td>
+        </tr>
+        <tr>
+          <td><strong>Ireland</strong></td>
+          <td>Distributed across sectoral authorities, plus a new national Office</td>
+          <td>The AI Office, established as an independent statutory body on 30 July 2026, operational from 2 August</td>
+        </tr>
+        <tr>
+          <td><strong>Denmark</strong></td>
+          <td>Three authorities, covering <strong>only the prohibited practices</strong>; the high-risk model is still undecided</td>
+          <td>Law in force since 2 August 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Spain</strong></td>
+          <td>A dedicated agency (AESIA, established in 2023) plus sectoral authorities</td>
+          <td>Bill before Congress, amendment deadline 2 September 2026 — powers not yet conferred</td>
+        </tr>
+        <tr>
+          <td><strong>France</strong></td>
+          <td>Fully decentralised, no dedicated agency, roughly 17 sectoral bodies</td>
+          <td>Bill adopted by the Senate in February 2026, pending at the National Assembly</td>
+        </tr>
+        <tr>
+          <td><strong>Romania</strong></td>
+          <td>Decentralised across existing regulators: ANCOM, ADR, ASF, BNR, ANSPDCP, plus sectoral authorities</td>
+          <td><strong>Government memorandum, no law</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    The most instructive contrast is Germany versus the Netherlands. Both had to decide who supervises AI
+    systems. Germany centralised on the telecoms regulator and <strong>kept its data protection authority
+    out</strong> of market surveillance. The Netherlands built the exact inverse, putting the data protection
+    authority at the centre of the arrangement. The same European obligation, two opposite philosophies about
+    who is competent to judge an AI system.
+  </p>
+
+  <h3>Where Romania stands</h3>
+  <p>
+    The Romanian authorities were <strong>proposed</strong> by a government memorandum in March 2026 — the
+    verb used in the document is "we propose", not "we designate". The memorandum acknowledges, in its own
+    words, that Romania did not notify the Commission by the 2 August 2025 deadline.
+  </p>
+  <p>
+    The consequence is stated most clearly by the proposed authority itself. In its statement of 24 July
+    2026, ANCOM notes:
+  </p>
+  <div class="callout">
+    <p>
+      "ANCOM or the other competent authorities will be able to verify and sanction non-compliance with the
+      Regulation <strong>only after the entry into force of the national act currently being drafted</strong>."
+    </p>
+  </div>
+  <p>
+    In other words: the Art. 50 transparency obligations apply from 2 August 2026, but the national
+    sanctioning instrument had not been adopted when this article was published. That does not mean the
+    obligations can be ignored — the regulation applies directly, the deadlines run, and the law, when it
+    arrives, will not forgive the preceding period.
+  </p>
+
+  <h2>What this means for a company</h2>
+  <p>Three practical conclusions follow from all of the above.</p>
+  <ol>
+    <li>
+      <strong>Verification runs against data you do not control.</strong> A satellite layer, a central
+      registry, a Commission preliminary calculation. You cannot prepare a file that "looks good" to an
+      independent source — you can only make sure your data survives the comparison.
+    </li>
+    <li>
+      <strong>Who inspects you depends on where you import from and where you are established.</strong> A
+      Romanian steel importer will be dealing with a finance ministry; the same importer established in
+      Germany would be dealing with an environment agency. Documentation should be built for the actual
+      counterpart.
+    </li>
+    <li>
+      <strong>The absence of a sanctioning instrument is not a postponement of the obligation.</strong>
+      European deadlines run independently of the state of national law. The period in which nobody can fine
+      you is exactly the period in which you should be building, not waiting.
+    </li>
+  </ol>
+
+  <h2>How we can help</h2>
+  <p>
+    Speed Flow builds exactly the layer that is usually missing — the verifiable data infrastructure:
+    <a href="/en/solutions/cbam/">CBAM Manager</a> for collecting and validating emissions data,
+    <a href="/en/solutions/eudr/">EUDR Manager</a> for traceability and geolocation verification, and
+    <a href="/en/ai-consulting/governance/">AI governance consulting</a> for system inventory and
+    classification. If you are not sure where you stand, take the
+    <a href="/en/cbam-eudr-test/">quick CBAM / EUDR test</a> — five questions, under a minute.
+  </p>
+</ArticleLayout>
