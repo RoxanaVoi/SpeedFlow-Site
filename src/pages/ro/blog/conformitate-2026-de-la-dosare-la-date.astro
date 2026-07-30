@@ -15,6 +15,14 @@ const faq = [
     a: 'Nu. Prin regulamentul Digital Omnibus, adoptat final în iunie 2026, obligațiile pentru sistemele cu risc ridicat din Anexa III au fost amânate la 2 decembrie 2027, iar cele pentru AI încorporat în produse reglementate (Anexa I) la august 2028. Ce se aplică de la 2 august 2026 sunt obligațiile de transparență din art. 50 — o categorie diferită, care nu a fost amânată.',
   },
   {
+    q: 'La CBAM, cine plătește verificarea emisiilor și cine răspunde pentru ele?',
+    a: 'Sunt două lucruri diferite. Verificarea o aranjează operatorul instalației din afara UE: își angajează un verificator acreditat, îi pune la dispoziție datele de monitorizare și transmite raportul prin registrul CBAM către importatorii pe care îi aprovizionează. Declarația anuală o depune însă declarantul CBAM autorizat — adică importatorul — care semnează și restituie certificatele. Primești un fișier auditat pe care nu l-ai comandat, dar răspunderea pentru ce declari rămâne a ta.',
+  },
+  {
+    q: 'Cum plătesc trimestrial în 2027 dacă raportul auditat vine abia la finalul anului?',
+    a: 'Pe estimare. Din 2027, la finalul fiecărui trimestru trebuie să deții certificate pentru cel puțin 50% din emisiile încorporate ale mărfurilor importate de la începutul anului calendaristic. Pentru acest calcul nu ai nevoie de date auditate: folosești valorile implicite publicate de Comisie, fără majorarea din Anexa IV, sau certificatele restituite anul anterior pentru aceleași coduri NC și țări de origine. Reglarea pe date verificate se face la declarația anuală, depusă până la 30 septembrie a anului următor.',
+  },
+  {
     q: 'Cine răspunde personal pentru o declarație inexactă?',
     a: 'La EUDR, semnatarul declarației de diligență răspunde juridic pentru acuratețea datelor, inclusiv a coordonatelor primite de la furnizor. Directiva (UE) 2024/1203 privind protecția mediului prin dreptul penal, cu termen de transpunere în mai 2026, adaugă răspundere penală pentru încălcările grave — pedepse cu închisoarea pentru persoane fizice și amenzi al căror plafon trebuie să fie de cel puțin 5% din cifra de afaceri mondială pentru persoane juridice.',
   },
@@ -36,6 +44,10 @@ const sources = [
   {
     text: 'Comisia Europeană — proiectul de regulament de punere în aplicare privind prețul carbonului plătit în țări terțe, publicat la 13 mai 2026, consultare până la 10 iunie 2026 (sursă primară)',
     url: 'https://taxation-customs.ec.europa.eu/news/carbon-price-paid-third-countries-2026-05-13_en',
+  },
+  {
+    text: 'Comisia Europeană — verificarea emisiilor CBAM: rolul operatorului instalației, al verificatorului acreditat și stadiul acreditării (sursă primară)',
+    url: 'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en',
   },
   {
     text: 'Regulamentul (UE) 2023/1115 — produsele fără defrișări (EUDR), art. 9 (DDS) și art. 25 (sancțiuni) (sursă primară)',
@@ -143,6 +155,31 @@ const sources = [
     independent. <strong>Declarația furnizorului nu e suficientă.</strong> Dacă furnizorul declară un preț pe
     care nu-l poate proba, importatorul plătește integral.
   </p>
+  <p>
+    Partea care se discută cel mai puțin nu sunt însă certificatele, ci <strong>emisiile</strong>. Pentru a
+    declara valori reale, emisiile încorporate trebuie verificate de un verificator acreditat în UE. Lanțul
+    arată așa: operatorul instalației din afara Uniunii își angajează verificatorul, îi pune la dispoziție
+    datele de monitorizare și transmite raportul de verificare prin registrul CBAM, către toți importatorii
+    pe care îi aprovizionează. Tu primești, o dată pe an, un fișier de emisii auditat — dar nu tu ai ales
+    verificatorul și nu tu controlezi calitatea monitorizării din spatele lui.
+  </p>
+  <p>
+    Declarația anuală o depui însă tu. Declarantul autorizat e cel care o semnează și restituie
+    certificatele, deci <strong>răspunderea rămâne la importator</strong>, indiferent cine a plătit
+    verificarea. Asta e mutarea descrisă mai sus, în forma ei cea mai clară: primești un document formal
+    complet — raport de verificare, acreditat, semnat — și tot tu porți riscul dacă cifrele din el nu rezistă
+    unui control. Un raport de verificare pe care nu l-ai citit critic e un dosar, nu o probă.
+  </p>
+  <p>
+    Peste asta se suprapune un decalaj de calendar cu efect direct pe trezorerie. Din 2027, la finalul
+    fiecărui trimestru trebuie să deții certificate pentru cel puțin <strong>50% din emisiile încorporate ale
+    mărfurilor importate de la începutul anului</strong> — dar raportul auditat vine după închiderea anului,
+    iar declarația se depune pe 30 septembrie a anului următor. Regulamentul acoperă parțial problema:
+    pentru calculul trimestrial folosești valorile implicite publicate de Comisie, fără majorarea din
+    Anexa IV, sau certificatele restituite anul anterior, dacă se potrivesc codurile NC și țara de origine.
+    Practic, <strong>plătești pe estimare tot anul și reglezi pe date auditate la final</strong> — cu riscul
+    de diferență pe care îl presupune.
+  </p>
 
   <h3>EUDR</h3>
   <p>
@@ -238,7 +275,10 @@ const sources = [
       <strong>CBAM:</strong> Comisia a publicat proiectul de regulament privind deducerea prețului carbonului
       abia pe 13 mai 2026, la peste patru luni de la intrarea în faza definitivă, cu consultare până la
       10 iunie. Importatorii au acumulat obligații financiare de la 1 ianuarie fără să știe exact cum se
-      calculează deducerile — iar regulile se vor aplica retroactiv pentru tot anul 2026.
+      calculează deducerile — iar regulile se vor aplica retroactiv pentru tot anul 2026. Mai grav:
+      verificarea acreditată a emisiilor e obligatorie din 1 ianuarie 2026, dar
+      <strong>primii verificatori CBAM sunt așteptați să fie acreditați abia în jurul lui septembrie
+      2026</strong>. Obligația a început cu nouă luni înaintea infrastructurii care o face posibilă.
     </li>
     <li>
       <strong>EUDR:</strong> sistemul informatic a fost în regim restricționat din 16 februarie 2026 până în

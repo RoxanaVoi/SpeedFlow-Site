@@ -15,6 +15,14 @@ const faq = [
     a: 'No. Through the Digital Omnibus regulation, finally adopted in June 2026, obligations for high-risk systems under Annex III were postponed to 2 December 2027, and those for AI embedded in regulated products (Annex I) to August 2028. What applies from 2 August 2026 are the transparency obligations in Art. 50 — a different category, which was not postponed.',
   },
   {
+    q: 'Under CBAM, who pays for emissions verification and who is liable for it?',
+    a: 'These are two different things. The verification is arranged by the non-EU installation operator: it engages an accredited verifier, supplies the monitoring data and transmits the report through the CBAM Registry to the importers it supplies. The annual declaration, however, is filed by the authorised CBAM declarant — the importer — who signs it and surrenders the certificates. You receive an audited file you did not commission, but liability for what you declare remains yours.',
+  },
+  {
+    q: 'How do I pay quarterly in 2027 if the audited report only arrives at year-end?',
+    a: 'On estimates. From 2027, at the end of each quarter you must hold certificates covering at least 50% of the embedded emissions of goods imported since the start of the calendar year. That calculation does not require audited data: you use the Commission\'s official default values, without the Annex IV mark-up, or the certificates surrendered the previous year for the same CN codes and countries of origin. Reconciliation against verified data happens in the annual declaration, filed by 30 September of the following year.',
+  },
+  {
     q: 'Who is personally liable for an inaccurate declaration?',
     a: 'Under EUDR, the signatory of the due diligence statement is legally liable for the accuracy of the data, including coordinates received from suppliers. Directive (EU) 2024/1203 on the protection of the environment through criminal law, with a transposition deadline in May 2026, adds criminal liability for serious breaches — prison sentences for natural persons and, for legal persons, fines whose maximum must be set at no less than 5% of worldwide turnover.',
   },
@@ -36,6 +44,10 @@ const sources = [
   {
     text: 'European Commission — draft implementing regulation on carbon price paid in third countries, published 13 May 2026, consultation open until 10 June 2026 (primary source)',
     url: 'https://taxation-customs.ec.europa.eu/news/carbon-price-paid-third-countries-2026-05-13_en',
+  },
+  {
+    text: 'European Commission — CBAM emissions verification: the role of the installation operator, the accredited verifier and the state of play on accreditation (primary source)',
+    url: 'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en',
   },
   {
     text: 'Regulation (EU) 2023/1115 — deforestation-free products (EUDR), Art. 9 (DDS) and Art. 25 (penalties) (primary source)',
@@ -143,6 +155,31 @@ const sources = [
     certified. <strong>A supplier's declaration is not enough.</strong> If the supplier claims a price it
     cannot prove, the importer pays in full.
   </p>
+  <p>
+    The least-discussed part, though, is not the certificates but <strong>the emissions</strong>. To declare
+    actual values, embedded emissions must be verified by an EU-accredited verifier. The chain works like
+    this: the non-EU installation operator engages the verifier, supplies the monitoring data and transmits
+    the verification report through the CBAM Registry to every importer it supplies. You receive an audited
+    emissions file once a year — but you did not choose the verifier and you do not control the quality of
+    the monitoring behind it.
+  </p>
+  <p>
+    You are the one filing the annual declaration, however. The authorised declarant signs it and surrenders
+    the certificates, so <strong>liability stays with the importer</strong>, regardless of who paid for the
+    verification. This is the shift described above in its clearest form: you receive a formally complete
+    document — a verification report, accredited and signed — and you still carry the risk if its figures do
+    not survive an inspection. A verification report you have not read critically is a file, not evidence.
+  </p>
+  <p>
+    On top of this sits a timing gap that hits cash flow directly. From 2027, at the end of every quarter you
+    must hold certificates covering at least <strong>50% of the embedded emissions of goods imported since
+    the start of the year</strong> — but the audited report arrives after year-end, and the declaration is
+    filed by 30 September of the following year. The regulation partly bridges this: for the quarterly
+    calculation you use the Commission's official default values, without the Annex IV mark-up, or the
+    certificates surrendered the previous year where the CN codes and countries of origin match. In practice
+    you <strong>pay on estimates all year and reconcile against audited data at the end</strong> — with the
+    true-up risk that implies.
+  </p>
 
   <h3>EUDR</h3>
   <p>
@@ -237,7 +274,10 @@ const sources = [
       <strong>CBAM:</strong> the Commission published the draft regulation on carbon price deductions only on
       13 May 2026, more than four months into the definitive phase, with consultation running to 10 June.
       Importers accumulated financial obligations from 1 January without knowing exactly how deductions are
-      calculated — and the rules will apply retroactively across 2026.
+      calculated — and the rules will apply retroactively across 2026. Worse: accredited verification of
+      emissions has been mandatory since 1 January 2026, yet <strong>the first CBAM verifiers are expected to
+      be accredited only around September 2026</strong>. The obligation started nine months ahead of the
+      infrastructure that makes it possible.
     </li>
     <li>
       <strong>EUDR:</strong> the information system ran in restricted mode from 16 February 2026 until July,
