@@ -24,7 +24,7 @@ const faq = [
   },
   {
     q: 'When do the AI Act obligations for high-risk systems apply?',
-    a: 'The date originally set is 2 August 2026 for Annex III high-risk systems. In May 2026 a provisional agreement was reached to postpone this deadline to December 2027, but until formal adoption the original date remains in force. The practical takeaway: the preparation window exists, but it is not a reason to postpone governance.',
+    a: 'The date was originally set for 2 August 2026, but the "Digital Omnibus on AI" regulation — finally adopted by the European Parliament on 16 June and by the Council on 29 June 2026 — moved it to 2 December 2027 for Annex III systems, and to August 2028 for AI embedded in regulated products (Annex I). The postponement is final. What did not move: the prohibitions and the AI literacy duty, in force since February 2025, and the Art. 50 transparency obligations, applicable from 2 August 2026.',
   },
 ];
 
@@ -32,7 +32,10 @@ const sources = [
   'ISO/IEC 42001:2023 — Information technology — Artificial intelligence — Management system (iso.org)',
   'Regulation (EU) 2024/1689 on artificial intelligence (EU AI Act)',
   'EU AI Act Preparation Using ISO 42001: Practical Mapping Guide — Glocert International',
-  'The EU AI Act August 2026 Deadline Has Been Delayed — ISMS.online (analysis of the May 2026 provisional agreement)',
+  {
+    text: 'Council of the EU — press release, 29 June 2026: final adoption of the "Digital Omnibus on AI" regulation (primary source)',
+    url: 'https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/',
+  },
   'CSA Research Note: EU AI Act, prEN 18286 and ISO 42001 — Cloud Security Alliance (April 2026)',
 ];
 ---
@@ -43,6 +46,7 @@ const sources = [
   altPath="/blog/iso-42001-pregatire-eu-ai-act"
   heroTitle="ISO/IEC 42001 and the EU AI Act: building your AI governance before the legal deadlines"
   publishDate="2026-07-09"
+  updateDate="2026-07-31"
   faq={faq}
   sources={sources}
 >
@@ -84,11 +88,18 @@ const sources = [
     <li>a <strong>quality management system</strong> (Art. 17).</li>
   </ul>
   <p>
-    On deadlines: the obligations for Annex III high-risk systems were set for <strong>2 August 2026</strong>.
-    In May 2026 a provisional agreement was reached to postpone them to <strong>December 2027</strong>; until
-    formal adoption, however, the original date remains in force. The practical reading: the preparation
-    window has widened, but governance is not built in the last quarter — assembling documentation, defining
-    roles and instilling data discipline takes months, not weeks.
+    On deadlines: the obligations for Annex III high-risk systems were originally set for 2 August 2026.
+    Through the "Digital Omnibus on AI" regulation — finally adopted by the European Parliament on 16 June
+    and by the Council on 29 June 2026 — the deadline moved to <strong>2 December 2027</strong>, and the one
+    for AI embedded in regulated products (Annex I) to August 2028. The postponement is final, not
+    provisional.
+  </p>
+  <p>
+    What did not move: the prohibitions and the AI literacy duty, applicable since February 2025, and the
+    Art. 50 transparency obligations, applicable from 2 August 2026. The practical reading is unchanged — the
+    preparation window has widened, but governance is not built in the last quarter: assembling
+    documentation, defining roles and instilling data discipline takes months, not weeks. The full timeline
+    is set out in our <a href="/en/blog/eu-ai-act-obligations-guide/">guide to the AI Act obligations</a>.
   </p>
   <div class="callout">
     <p>

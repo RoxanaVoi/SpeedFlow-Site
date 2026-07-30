@@ -24,7 +24,7 @@ const faq = [
   },
   {
     q: 'Who enforces the AI Act in Romania?',
-    a: 'Under the government memorandum of 12 March 2026: ANCOM as market surveillance authority and single point of contact, ASF and BNR for the financial sector, ANSPDCP for sensitive domains, and ADR as notifying authority. National legislation on penalties and procedures was still in preparation when this article was published.',
+    a: 'For now, nobody. A government memorandum of March 2026 proposed ANCOM as market surveillance authority and single point of contact, ASF and BNR for the financial sector, ANSPDCP for sensitive domains and ADR as notifying authority — but the document proposes rather than designates. In its statement of 24 July 2026, ANCOM notes that the authorities will be able to verify and sanction only after the national act, still being drafted, enters into force.',
   },
 ];
 
@@ -42,7 +42,14 @@ const sources = [
     url: 'https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/',
   },
   'Regulation (EU) 2024/1689, Art. 4 (AI literacy), Art. 5 (prohibited practices), Art. 26–27 (deployer obligations), Art. 50 (transparency), Art. 99 (penalties)',
-  'Government of Romania — memorandum of 12 March 2026 designating the national competent authorities',
+  {
+    text: 'Government of Romania — the March 2026 memorandum on the national competent authorities for the AI Act (primary source)',
+    url: 'https://sgg.gov.ro/1/wp-content/uploads/2026/03/MEMO-6.pdf',
+  },
+  {
+    text: 'ANCOM — "The AI Regulation in Romania: current state of the implementation framework", 24 July 2026 (primary source)',
+    url: 'https://www.ancom.ro/despre-noi/media/comunicate-de-presa/regulamentul-privind-inteligenta-artificiala-in-romania-stadiul-actual-al-cadrului-de-implementare/',
+  },
 ];
 ---
 
@@ -52,6 +59,7 @@ const sources = [
   altPath="/blog/ghid-eu-ai-act-obligatii-firme"
   heroTitle="The EU AI Act in brief: what your company must do, and by when"
   publishDate="2026-07-29"
+  updateDate="2026-07-31"
   faq={faq}
   sources={sources}
 >
@@ -199,11 +207,24 @@ const sources = [
     stays proportionate.
   </p>
   <p>
-    In Romania, the enforcement framework was set by the government memorandum of 12 March 2026:
-    <strong>ANCOM</strong> is the market surveillance authority and single point of contact,
-    <strong>ASF</strong> and <strong>BNR</strong> cover the financial sector, <strong>ANSPDCP</strong>
-    sensitive domains, and <strong>ADR</strong> is the notifying authority.
+    In Romania, the authorities were <strong>proposed</strong> by a government memorandum in March 2026 —
+    the verb used in the document is "we propose", not "we designate": <strong>ANCOM</strong> as market
+    surveillance authority and single point of contact, <strong>ASF</strong> and <strong>BNR</strong> for the
+    financial sector, <strong>ANSPDCP</strong> for sensitive domains, and <strong>ADR</strong> as notifying
+    authority. The memorandum acknowledges, in its own words, that Romania did not notify the Commission by
+    the 2 August 2025 deadline.
   </p>
+  <div class="callout">
+    <p>
+      The consequence is stated by the proposed authority itself. In its statement of 24 July 2026, ANCOM
+      notes that the competent authorities "will be able to verify and sanction non-compliance with the
+      Regulation <strong>only after the entry into force of the national act currently being drafted</strong>".
+    </p>
+    <p>
+      That does not mean the obligations can be ignored: the regulation applies directly, the deadlines run,
+      and the national law, once in force, will not retroactively excuse the preceding period.
+    </p>
+  </div>
 
   <h2>Why it pays to start now</h2>
   <p>

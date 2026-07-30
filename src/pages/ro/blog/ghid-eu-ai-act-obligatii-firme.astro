@@ -24,7 +24,7 @@ const faq = [
   },
   {
     q: 'Cine aplică AI Act în România?',
-    a: 'Prin memorandumul din 12 martie 2026: ANCOM ca autoritate de supraveghere a pieței și punct unic de contact, ASF și BNR pentru sectorul financiar, ANSPDCP pentru domeniile sensibile, ADR ca autoritate de notificare. Legea națională privind sancțiunile și procedurile era încă în pregătire la data publicării acestui articol.',
+    a: 'Deocamdată, nimeni. Printr-un memorandum guvernamental din martie 2026 au fost propuse ANCOM ca autoritate de supraveghere a pieței și punct unic de contact, ASF și BNR pentru sectorul financiar, ANSPDCP pentru domeniile sensibile și ADR ca autoritate de notificare — dar documentul propune, nu desemnează. În comunicatul din 24 iulie 2026, ANCOM precizează că autoritățile vor putea verifica și sancționa doar după intrarea în vigoare a actului normativ național, aflat încă în elaborare.',
   },
 ];
 
@@ -42,7 +42,14 @@ const sources = [
     url: 'https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/',
   },
   'Regulamentul (UE) 2024/1689, art. 4 (alfabetizare AI), art. 5 (practici interzise), art. 26–27 (obligațiile implementatorilor), art. 50 (transparență), art. 99 (sancțiuni)',
-  'Guvernul României — memorandumul din 12 martie 2026 privind desemnarea autorităților naționale competente',
+  {
+    text: 'Guvernul României — memorandumul din martie 2026 privind autoritățile naționale competente pentru AI Act (sursă primară)',
+    url: 'https://sgg.gov.ro/1/wp-content/uploads/2026/03/MEMO-6.pdf',
+  },
+  {
+    text: 'ANCOM — „Regulamentul privind inteligența artificială în România: stadiul actual al cadrului de implementare", 24 iulie 2026 (sursă primară)',
+    url: 'https://www.ancom.ro/despre-noi/media/comunicate-de-presa/regulamentul-privind-inteligenta-artificiala-in-romania-stadiul-actual-al-cadrului-de-implementare/',
+  },
 ];
 ---
 
@@ -52,6 +59,7 @@ const sources = [
   altPath="/blog/eu-ai-act-obligations-guide"
   heroTitle="EU AI Act pe scurt: ce obligații are firma ta și de când"
   publishDate="2026-07-29"
+  updateDate="2026-07-31"
   faq={faq}
   sources={sources}
 >
@@ -201,11 +209,25 @@ const sources = [
     regula se inversează: se aplică plafonul mai mic, tocmai ca sancțiunea să rămână proporțională.
   </p>
   <p>
-    În România, cadrul de aplicare a fost stabilit prin memorandumul guvernamental din 12 martie 2026:
-    <strong>ANCOM</strong> este autoritatea de supraveghere a pieței și punctul unic de contact,
-    <strong>ASF</strong> și <strong>BNR</strong> acoperă sectorul financiar, <strong>ANSPDCP</strong>
-    domeniile sensibile, iar <strong>ADR</strong> este autoritatea de notificare.
+    În România, autoritățile au fost <strong>propuse</strong> printr-un memorandum guvernamental din martie
+    2026 — verbul folosit în document este „propunem", nu „desemnăm": <strong>ANCOM</strong> ca autoritate de
+    supraveghere a pieței și punct unic de contact, <strong>ASF</strong> și <strong>BNR</strong> pentru
+    sectorul financiar, <strong>ANSPDCP</strong> pentru domeniile sensibile, <strong>ADR</strong> ca
+    autoritate de notificare. Memorandumul recunoaște, în propriile cuvinte, că statul român nu a notificat
+    Comisia până la termenul din 2 august 2025.
   </p>
+  <div class="callout">
+    <p>
+      Consecința e formulată chiar de autoritatea propusă. În comunicatul din 24 iulie 2026, ANCOM
+      precizează că autoritățile competente „vor putea verifica și sancționa nerespectarea obligațiilor din
+      Regulament <strong>doar ulterior intrării în vigoare a actului normativ național aflat în proces de
+      elaborare</strong>".
+    </p>
+    <p>
+      Ceea ce nu înseamnă că obligațiile pot fi ignorate: regulamentul se aplică direct, termenele curg, iar
+      legea națională, când va intra în vigoare, nu va acoperi retroactiv perioada anterioară.
+    </p>
+  </div>
 
   <h2>De ce merită început acum</h2>
   <p>

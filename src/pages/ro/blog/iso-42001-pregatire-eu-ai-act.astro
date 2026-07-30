@@ -24,7 +24,7 @@ const faq = [
   },
   {
     q: 'De când se aplică obligațiile AI Act pentru sistemele high-risk?',
-    a: 'Termenul stabilit inițial este 2 august 2026 pentru sistemele high-risk din Anexa III. În mai 2026 s-a ajuns la un acord provizoriu de amânare a acestui termen până în decembrie 2027, dar până la adoptarea formală, termenul original rămâne în vigoare. Concluzia practică: fereastra de pregătire există, dar nu este un motiv de amânare a guvernanței.',
+    a: 'Termenul fusese stabilit inițial pentru 2 august 2026, dar regulamentul „Digital Omnibus on AI" — adoptat final de Parlamentul European la 16 iunie și de Consiliu la 29 iunie 2026 — l-a mutat la 2 decembrie 2027 pentru sistemele din Anexa III, iar pentru AI încorporat în produse reglementate (Anexa I) la august 2028. Amânarea este definitivă. Ce nu s-a amânat: interdicțiile și alfabetizarea AI, în vigoare din februarie 2025, și obligațiile de transparență din art. 50, aplicabile din 2 august 2026.',
   },
 ];
 
@@ -32,7 +32,10 @@ const sources = [
   'ISO/IEC 42001:2023 — Information technology — Artificial intelligence — Management system (iso.org)',
   'Regulamentul (UE) 2024/1689 privind inteligența artificială (EU AI Act)',
   'EU AI Act Preparation Using ISO 42001: Practical Mapping Guide — Glocert International',
-  'The EU AI Act August 2026 Deadline Has Been Delayed — ISMS.online (analiza acordului provizoriu din mai 2026)',
+  {
+    text: 'Consiliul UE — comunicat de presă, 29 iunie 2026: adoptarea finală a regulamentului „Digital Omnibus on AI" (sursă primară)',
+    url: 'https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/',
+  },
   'CSA Research Note: EU AI Act, prEN 18286 and ISO 42001 — Cloud Security Alliance (aprilie 2026)',
 ];
 ---
@@ -43,6 +46,7 @@ const sources = [
   altPath="/blog/iso-42001-eu-ai-act-preparation"
   heroTitle="ISO/IEC 42001 și EU AI Act: cum îți construiești guvernanța AI înainte de termenele legale"
   publishDate="2026-07-09"
+  updateDate="2026-07-31"
   faq={faq}
   sources={sources}
 >
@@ -85,11 +89,18 @@ const sources = [
     <li>un <strong>sistem de management al calității</strong> (Art. 17).</li>
   </ul>
   <p>
-    Despre termene: obligațiile pentru sistemele high-risk din Anexa III au fost stabilite pentru
-    <strong>2 august 2026</strong>. În mai 2026 s-a ajuns la un acord provizoriu de amânare până în
-    <strong>decembrie 2027</strong>; până la adoptarea formală, termenul original rămâne însă în vigoare.
-    Lectura practică: fereastra de pregătire s-a lărgit, dar guvernanța nu se construiește în ultimul
-    trimestru — colectarea documentației, definirea rolurilor și disciplina datelor cer luni, nu săptămâni.
+    Despre termene: obligațiile pentru sistemele high-risk din Anexa III fuseseră stabilite inițial pentru
+    2 august 2026. Prin regulamentul „Digital Omnibus on AI" — adoptat final de Parlamentul European la
+    16 iunie și de Consiliu la 29 iunie 2026 — termenul a fost mutat la <strong>2 decembrie 2027</strong>,
+    iar cel pentru AI încorporat în produse reglementate (Anexa I) la august 2028. Amânarea e definitivă, nu
+    provizorie.
+  </p>
+  <p>
+    Ce nu s-a amânat: interdicțiile și alfabetizarea AI, aplicabile din februarie 2025, și obligațiile de
+    transparență din art. 50, aplicabile din 2 august 2026. Lectura practică rămâne aceeași — fereastra de
+    pregătire s-a lărgit, dar guvernanța nu se construiește în ultimul trimestru: colectarea documentației,
+    definirea rolurilor și disciplina datelor cer luni, nu săptămâni. Calendarul complet e detaliat în
+    <a href="/ro/blog/ghid-eu-ai-act-obligatii-firme/">ghidul despre obligațiile AI Act</a>.
   </p>
   <div class="callout">
     <p>
