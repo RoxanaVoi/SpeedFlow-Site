@@ -1,0 +1,324 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'What actually changed in 2026?',
+    a: 'The compliance standard moved from input to outcome. Until now it was enough to show you had completed the required document; CBAM, EUDR and the AI Act each, in their own way, require you to show that the information in the document matches reality. CBAM tests declared emissions against proof of carbon price paid, EUDR automatically checks GPS coordinates against satellite maps, and the Commission guidance on Art. 50 of the AI Act measures transparency by user perception, not by the existence of a notice.',
+  },
+  {
+    q: 'My files are complete. Why would I be exposed?',
+    a: 'Because a complete file is no longer the proof of compliance, only its form. A CBAM report built on an unvalidated emissions declaration, an EUDR statement carrying the cooperative\'s coordinates instead of the actual plot\'s, or a "Powered by AI" banner in the footer are all existing documents and all insufficient. Verification now runs against data, not against the form.',
+  },
+  {
+    q: 'Do the AI Act high-risk obligations apply from August 2026?',
+    a: 'No. Through the Digital Omnibus regulation, finally adopted in June 2026, obligations for high-risk systems under Annex III were postponed to 2 December 2027, and those for AI embedded in regulated products (Annex I) to August 2028. What applies from 2 August 2026 are the transparency obligations in Art. 50 — a different category, which was not postponed.',
+  },
+  {
+    q: 'Who is personally liable for an inaccurate declaration?',
+    a: 'Under EUDR, the signatory of the due diligence statement is legally liable for the accuracy of the data, including coordinates received from suppliers. Directive (EU) 2024/1203 on the protection of the environment through criminal law, with a transposition deadline in May 2026, adds criminal liability for serious breaches — prison sentences for natural persons and, for legal persons, fines whose maximum must be set at no less than 5% of worldwide turnover.',
+  },
+  {
+    q: 'How is this different from GDPR?',
+    a: 'GDPR asked organisations to declare what they do with personal data — a documentation exercise many treated as exactly that. The 2026 regulations demand proof that the declaration matches reality. What also changes is who verifies (automated systems, not just periodic auditors), who is liable (the individual signatory, not only the organisation) and the consequence (operational blocking and criminal liability, not just a fine).',
+  },
+  {
+    q: 'Where do I start if several regulations apply to me?',
+    a: 'With classification, not with reporting. First identify which activities fall under which regulation — importing aluminium means CBAM, placing wood products on the EU market means EUDR, running a chatbot means Art. 50 of the AI Act. Classification costs nothing and is the precondition for any compliance. Then map the data gaps rather than the documentation gaps, and build the data channel before the reporting layer.',
+  },
+];
+
+const sources = [
+  {
+    text: 'Regulation (EU) 2023/956 — Carbon Border Adjustment Mechanism (CBAM), Art. 9: deduction of carbon price paid in third countries (primary source)',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R0956',
+  },
+  {
+    text: 'European Commission — draft implementing regulation on carbon price paid in third countries, published 13 May 2026, consultation open until 10 June 2026 (primary source)',
+    url: 'https://taxation-customs.ec.europa.eu/news/carbon-price-paid-third-countries-2026-05-13_en',
+  },
+  {
+    text: 'Regulation (EU) 2023/1115 — deforestation-free products (EUDR), Art. 9 (DDS) and Art. 25 (penalties) (primary source)',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R1115',
+  },
+  {
+    text: 'Implementing Regulation (EU) 2026/1565 — the EUDR Information System, adopted 13 July 2026 (primary source)',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32026R1565',
+  },
+  {
+    text: 'European Commission — update to the EUDR product scope and supporting tools, 13 July 2026 (primary source)',
+    url: 'https://environment.ec.europa.eu/news/commission-updates-product-scope-and-tools-support-eudr-2026-07-13_en',
+  },
+  {
+    text: 'European Commission — Guidelines on transparency obligations for providers and deployers of AI systems (Art. 50), adopted 20 July 2026 (primary source)',
+    url: 'https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems',
+  },
+  {
+    text: 'Directive (EU) 2024/1203 on the protection of the environment through criminal law — transposition deadline: 21 May 2026 (primary source)',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024L1203',
+  },
+  {
+    text: 'Bird & Bird — analysis of the Commission\'s final guidelines on AI Act Article 50 (22 July 2026)',
+    url: 'https://www.twobirds.com/en/insights/2026/european-commission-adopts-final-guidelines-on-ai-act-article-50-transparency-obligations-first-impr',
+  },
+  {
+    text: 'Fastmarkets — the draft rules on how prices paid abroad affect CBAM (May 2026)',
+    url: 'https://www.fastmarkets.com/insights/eu-draft-lays-down-rules-on-how-prices-paid-abroad-affect-cbam-carbon-price-cap-article-6-credits-at-10/',
+  },
+  {
+    text: 'ICAP — EU CBAM enters its compliance phase (January 2026)',
+    url: 'https://icapcarbonaction.com/en/news/eu-cbam-enters-compliance-phase-and-outlines-path-ahead',
+  },
+  'Regulation (EU) 2024/1689 (AI Act), Art. 50 — transparency obligations; the "Digital Omnibus on AI" regulation, finally adopted in June 2026 — postponement of the high-risk deadlines',
+  'Regulation (EU) 2025/2650 — EUDR postponement and targeted simplification (December 2025)',
+];
+---
+
+<ArticleLayout
+  title="Compliance in 2026: from complete files to verifiable data"
+  description="CBAM, EUDR and the AI Act are simultaneously moving the compliance standard from “you filled in the document” to “the information matches reality”. Why companies with perfect files may be the most exposed, and what the right response looks like."
+  altPath="/blog/conformitate-2026-de-la-dosare-la-date"
+  heroTitle="2026, the year “we are compliant” stopped meaning anything"
+  publishDate="2026-07-30"
+  faq={faq}
+  sources={sources}
+>
+  <p>
+    <em>
+      How three European regulations are simultaneously changing what compliance means — and why the
+      companies with perfect files may be the most exposed.
+    </em>
+  </p>
+
+  <h2>Three compliant companies. Three companies at risk.</h2>
+  <p>
+    A Romanian aluminium importer receives an emissions declaration from its Turkish supplier and includes it
+    in its CBAM reporting. The file is complete. Except nobody checked whether the figures match the
+    installation's actual emissions — and since 1 January 2026, it is the importer who pays the difference.
+  </p>
+  <p>
+    An operator placing wood products on the EU market files a due diligence statement through the
+    Commission's information system. The GPS coordinates of the production plot are the ones the supplier
+    declared. The statement is accepted. Except the supplier declared the cooperative's coordinates, not the
+    actual plot's — and the signatory is legally liable for the accuracy of every GPS point.
+  </p>
+  <p>
+    A software company launches a customer service chatbot and puts “Powered by AI” in the footer. AI Act
+    transparency obligation, ticked. Except the European Commission's guidance, adopted on 20 July 2026,
+    states explicitly: if the information <strong>can easily be overlooked or ignored under normal conditions
+    of use</strong>, the obligation is not met — regardless of the notice technically existing somewhere in
+    the interface.
+  </p>
+  <p>
+    Three companies. Three complete files. Three real exposures. What do they have in common?
+  </p>
+  <div class="callout">
+    <p>
+      <strong>
+        All three treated compliance as a documentation exercise. The 2026 regulations ask for something
+        else.
+      </strong>
+    </p>
+  </div>
+
+  <h2>What changed: from “you filled it in” to “the effect occurred”</h2>
+  <p>
+    Look at CBAM, EUDR and the AI Act separately and you see three regulations in three different domains —
+    carbon, deforestation, artificial intelligence. Look at them together and you see a single legislative
+    design pattern the EU is applying on several fronts at once: <strong>the compliance standard is moving
+    from input to outcome</strong>.
+  </p>
+  <p>
+    It is no longer enough to show you completed the required document. You must show that the information in
+    it matches reality — and that the outcome the regulation targets actually occurred. Concretely:
+  </p>
+
+  <h3>CBAM</h3>
+  <p>
+    Regulation (EU) 2023/956 entered its definitive phase on 1 January 2026. Importers no longer merely
+    report emissions — they accumulate real financial obligations, with certificates purchasable from
+    February 2027. Art. 9 allows deducting the carbon price paid in the country of origin, on one condition:
+    the price must be evidenced through a mandatory carbon pricing mechanism — an emissions trading system or
+    a tax — either at the default value published by the Commission or at the effective value, independently
+    certified. <strong>A supplier's declaration is not enough.</strong> If the supplier claims a price it
+    cannot prove, the importer pays in full.
+  </p>
+
+  <h3>EUDR</h3>
+  <p>
+    Regulation (EU) 2023/1115 starts applying on 30 December 2026 for large and medium operators. Every due
+    diligence statement must carry exact GPS coordinates — a point for plots under 4 hectares, a polygon
+    above 4 hectares, at six decimal places of precision. The data is checked automatically against satellite
+    maps. If it is inaccurate — even through the supplier's error — the statement is rejected, the goods are
+    held at customs, and the signatory carries the legal liability. Art. 25 requires fines whose maximum must
+    be at least 4% of annual EU-wide turnover, plus confiscation and exclusion from the market.
+  </p>
+
+  <h3>AI Act</h3>
+  <p>
+    The transparency obligations in Art. 50 of Regulation (EU) 2024/1689 apply from 2 August 2026. The
+    Commission's final guidance, adopted on 20 July 2026, explicitly shifts the standard: transparency is not
+    measured by the existence of a notice but by <strong>the user's perception</strong>. The information must
+    be visible, distinct and intelligible under real conditions of use — not buried in manuals or terms and
+    conditions. And the “it's obvious you're talking to an AI” exception must be read narrowly: if you cannot
+    show the average user would immediately recognise the AI nature of the interaction, you notify.
+  </p>
+  <p>
+    Three regulations. Three domains. The same message: <strong>a complete file is no longer enough.</strong>
+  </p>
+
+  <h2>Why this differs from everything before it</h2>
+  <p>
+    GDPR was the first generation of this shift. It asked organisations to declare what they do with personal
+    data — privacy policies, legal bases, records of processing. It was a massive documentation exercise, and
+    many organisations treated it as exactly that: policies drafted by lawyers, published on the website,
+    ticked off a checklist.
+  </p>
+  <p>
+    2026 is the second generation. Declaring is no longer enough. You must show the declaration matches
+    reality — and that the intended outcome occurred. The difference is not one of intensity but of kind:
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>First generation (the GDPR model)</th>
+          <th>Second generation (2026)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>What is checked</strong></td>
+          <td>The document exists</td>
+          <td>The information in it is correct</td>
+        </tr>
+        <tr>
+          <td><strong>Who checks</strong></td>
+          <td>The auditor, periodically</td>
+          <td>The system, automatically — plus the auditor</td>
+        </tr>
+        <tr>
+          <td><strong>Who is liable</strong></td>
+          <td>The organisation</td>
+          <td>Including the individual signatory</td>
+        </tr>
+        <tr>
+          <td><strong>The consequence</strong></td>
+          <td>A fine</td>
+          <td>Fine, operational blocking, criminal liability</td>
+        </tr>
+        <tr>
+          <td><strong>The standard</strong></td>
+          <td>You declared it</td>
+          <td>The effect occurred</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    CBAM checks declared emissions against evidence of the price paid. EUDR checks geolocation automatically
+    against satellite maps. The AI Act requires demonstrating perception, not the existence of a notice. And
+    Directive (EU) 2024/1203 on the protection of the environment through criminal law, with a transposition
+    deadline in May 2026, adds personal criminal liability for serious breaches — prison sentences for
+    natural persons and, for legal persons, fines whose maximum must be no less than 5% of worldwide
+    turnover.
+  </p>
+  <p>
+    The move from directives to regulations — directly applicable, with no national transposition — removes
+    the last layer of variation: you can no longer argue that “in our national transposition, the requirement
+    is read differently”.
+  </p>
+
+  <h2>What does not work yet</h2>
+  <p>The legislative pattern is clear. The implementation ecosystem is not.</p>
+  <ul>
+    <li>
+      <strong>CBAM:</strong> the Commission published the draft regulation on carbon price deductions only on
+      13 May 2026, more than four months into the definitive phase, with consultation running to 10 June.
+      Importers accumulated financial obligations from 1 January without knowing exactly how deductions are
+      calculated — and the rules will apply retroactively across 2026.
+    </li>
+    <li>
+      <strong>EUDR:</strong> the information system ran in restricted mode from 16 February 2026 until July,
+      accepting no statements. Implementing Regulation (EU) 2026/1565, formalising the system's
+      functionality, was adopted on 13 July 2026 — five and a half months before the deadline. Meanwhile,
+      most smallholders in the supply chains have never had their land GPS-mapped.
+    </li>
+    <li>
+      <strong>AI Act:</strong> the final Art. 50 guidance was published on 20 July 2026 and the obligations
+      apply from 2 August 2026. Thirteen days between guidance and deadline.
+    </li>
+  </ul>
+  <div class="callout">
+    <p>
+      <strong>A frequently confused point:</strong> for high-risk systems under Annex III, the deadline
+      <em>was postponed</em> to 2 December 2027 by the Digital Omnibus regulation, finally adopted in June
+      2026. What applies from 2 August 2026 are the Art. 50 transparency obligations — a different category,
+      not postponed. The postponement does not help companies that have not even done the classification,
+      though: which of their systems fall under Annex III? Without that answer, the 16 months gained are
+      spent on nothing. We covered the full timeline in
+      <a href="/en/blog/eu-ai-act-obligations-guide/">our guide to the AI Act obligations</a>.
+    </p>
+  </div>
+  <p>
+    If the pattern sounds familiar, it is: complete legislation, absent implementation ecosystem. The law
+    exists. The instrument that makes the law workable does not.
+  </p>
+
+  <h2>What to do concretely — a framework, not a checklist</h2>
+  <p>
+    The natural reaction to the 2026 convergence is to build separate checklists for each regulation. That is
+    wrong — and expensive. All three require, each in its own way, the same thing: <strong>an infrastructure
+    of verifiable data, not completed documents.</strong> Three steps, in order:
+  </p>
+  <ol>
+    <li>
+      <strong>First: classify.</strong> Before any reporting, identify which activities fall under which
+      regulation. Importing aluminium from Turkey? CBAM. Placing wooden furniture on the EU market? EUDR.
+      Running a customer service chatbot? Art. 50 of the AI Act. Using a candidate scoring system? Annex III,
+      high risk. Classification is free, needs no software and is not optional — it is the precondition for
+      any compliance. And it is the step most companies have not taken.
+    </li>
+    <li>
+      <strong>Second: map the data gaps, not the documentation gaps.</strong> Not “do we have the policy?”
+      but “do we have verifiable data?”. On CBAM: do we have the supplier installation's actual emissions, or
+      an unvalidated declaration? On EUDR: do we have plot-level coordinates at six decimals, or the
+      cooperative's name? On the AI Act: do we have evidence the user perceived the notice, or a banner in
+      the footer?
+    </li>
+    <li>
+      <strong>Third: build the data infrastructure before the reporting layer.</strong> Reports and
+      declarations are outputs. The inputs are the data — verified, traceable, auditable. Build reporting
+      without the data channel and you produce files you fill with what you have, not with what is required.
+    </li>
+  </ol>
+
+  <h2>The next 12 months</h2>
+  <p>
+    2026 is the year several major European regulations converge on the same companies, with overlapping
+    deadlines, unsynchronised penalties and no common enforcer. “Compliance fatigue” is not a rhetorical
+    phrase — it describes an operational reality.
+  </p>
+  <p>
+    But the convergence carries an advantage few see: <strong>the data one regulation requires serves the
+    others too.</strong> Emissions verified for CBAM feed sustainability reporting. Traceability built for
+    EUDR satisfies supply chain due diligence requirements. The classification done for the AI Act informs
+    network security risk assessment. Build the data infrastructure once, properly, and you solve several
+    compliance obligations at the same time. Build separate files per regulation and you solve each one
+    individually, incompletely and expensively.
+  </p>
+  <p>
+    The next 12 months will separate the companies that have compliance from those that have files.
+  </p>
+
+  <h2>How we can help</h2>
+  <p>
+    Speed Flow works precisely on the data infrastructure side:
+    <a href="/en/solutions/cbam/">CBAM Manager</a> for collecting and validating emissions data,
+    <a href="/en/solutions/eudr/">EUDR Manager</a> for supply chain traceability and plot geolocation, and
+    <a href="/en/ai-consulting/governance/">AI governance consulting</a> for system inventory and
+    classification. If you are not sure where you stand, take the
+    <a href="/en/cbam-eudr-test/">quick CBAM / EUDR test</a> — five questions, under a minute.
+  </p>
+</ArticleLayout>

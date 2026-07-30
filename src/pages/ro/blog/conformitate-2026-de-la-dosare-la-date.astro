@@ -1,0 +1,325 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'Ce s-a schimbat, de fapt, în 2026?',
+    a: 'Standardul de conformitate s-a mutat de la input la rezultat. Până acum era suficient să demonstrezi că ai completat documentul cerut; CBAM, EUDR și AI Act cer, fiecare în felul lui, să demonstrezi că informația din document corespunde realității. CBAM verifică emisiile declarate, EUDR verifică automat coordonatele GPS contra hărților satelitare, iar Ghidul Comisiei pe art. 50 din AI Act măsoară transparența prin percepția utilizatorului, nu prin existența notificării.',
+  },
+  {
+    q: 'Am dosarele complete. De ce aș fi expus?',
+    a: 'Pentru că dosarul complet nu mai este proba conformității, ci doar forma ei. Un raport CBAM construit pe o declarație de emisii nevalidată, o declarație EUDR cu coordonatele cooperativei în loc de cele ale parcelei, sau un banner „Powered by AI" în footer sunt toate documente existente și toate insuficiente. Verificarea se face acum pe date, nu pe formular.',
+  },
+  {
+    q: 'Obligațiile AI Act pentru sistemele cu risc ridicat se aplică din august 2026?',
+    a: 'Nu. Prin regulamentul Digital Omnibus, adoptat final în iunie 2026, obligațiile pentru sistemele cu risc ridicat din Anexa III au fost amânate la 2 decembrie 2027, iar cele pentru AI încorporat în produse reglementate (Anexa I) la august 2028. Ce se aplică de la 2 august 2026 sunt obligațiile de transparență din art. 50 — o categorie diferită, care nu a fost amânată.',
+  },
+  {
+    q: 'Cine răspunde personal pentru o declarație inexactă?',
+    a: 'La EUDR, semnatarul declarației de diligență răspunde juridic pentru acuratețea datelor, inclusiv a coordonatelor primite de la furnizor. Directiva (UE) 2024/1203 privind protecția mediului prin dreptul penal, cu termen de transpunere în mai 2026, adaugă răspundere penală pentru încălcările grave — pedepse cu închisoarea pentru persoane fizice și amenzi al căror plafon trebuie să fie de cel puțin 5% din cifra de afaceri mondială pentru persoane juridice.',
+  },
+  {
+    q: 'Prin ce diferă asta de GDPR?',
+    a: 'GDPR a cerut organizațiilor să declare ce fac cu datele personale — un exercițiu de documentare pe care multe l-au tratat ca atare. Regulamentele din 2026 cer dovada că declarația corespunde realității. Se schimbă și cine verifică (sisteme automate, nu doar auditori periodici), cine răspunde (persoana fizică semnatară, nu doar organizația) și consecința (blocare operațională și răspundere penală, nu doar amendă).',
+  },
+  {
+    q: 'De unde încep, dacă intru sub mai multe regulamente?',
+    a: 'De la clasificare, nu de la raportare. Identifică întâi ce activități intră sub ce regulament — importuri de aluminiu înseamnă CBAM, produse din lemn pe piața UE înseamnă EUDR, un chatbot înseamnă art. 50 din AI Act. Clasificarea nu costă nimic și este precondiția oricărei conformități. Apoi mapează lacunele de date, nu de documentație, și construiește canalul de date înainte de raportare.',
+  },
+];
+
+const sources = [
+  {
+    text: 'Regulamentul (UE) 2023/956 — mecanismul de ajustare la frontieră a carbonului (CBAM), art. 9: deducerea prețului carbonului plătit în țări terțe (sursă primară)',
+    url: 'https://eur-lex.europa.eu/legal-content/RO/TXT/?uri=CELEX%3A32023R0956',
+  },
+  {
+    text: 'Comisia Europeană — proiectul de regulament de punere în aplicare privind prețul carbonului plătit în țări terțe, publicat la 13 mai 2026, consultare până la 10 iunie 2026 (sursă primară)',
+    url: 'https://taxation-customs.ec.europa.eu/news/carbon-price-paid-third-countries-2026-05-13_en',
+  },
+  {
+    text: 'Regulamentul (UE) 2023/1115 — produsele fără defrișări (EUDR), art. 9 (DDS) și art. 25 (sancțiuni) (sursă primară)',
+    url: 'https://eur-lex.europa.eu/legal-content/RO/TXT/?uri=CELEX%3A32023R1115',
+  },
+  {
+    text: 'Regulamentul de punere în aplicare (UE) 2026/1565 — sistemul de informații EUDR, adoptat la 13 iulie 2026 (sursă primară)',
+    url: 'https://eur-lex.europa.eu/legal-content/RO/TXT/?uri=CELEX%3A32026R1565',
+  },
+  {
+    text: 'Comisia Europeană — actualizarea domeniului de aplicare și a instrumentelor EUDR, 13 iulie 2026 (sursă primară)',
+    url: 'https://environment.ec.europa.eu/news/commission-updates-product-scope-and-tools-support-eudr-2026-07-13_en',
+  },
+  {
+    text: 'Comisia Europeană — Ghid privind obligațiile de transparență ale furnizorilor și implementatorilor de sisteme AI (art. 50), adoptat la 20 iulie 2026 (sursă primară)',
+    url: 'https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems',
+  },
+  {
+    text: 'Directiva (UE) 2024/1203 privind protecția mediului prin dreptul penal — termen de transpunere: 21 mai 2026 (sursă primară)',
+    url: 'https://eur-lex.europa.eu/legal-content/RO/TXT/?uri=CELEX%3A32024L1203',
+  },
+  {
+    text: 'Bird & Bird — analiza Ghidului final al Comisiei pe art. 50 din AI Act (22 iulie 2026)',
+    url: 'https://www.twobirds.com/en/insights/2026/european-commission-adopts-final-guidelines-on-ai-act-article-50-transparency-obligations-first-impr',
+  },
+  {
+    text: 'Fastmarkets — regulile propuse privind efectul prețurilor plătite în afara UE asupra CBAM (mai 2026)',
+    url: 'https://www.fastmarkets.com/insights/eu-draft-lays-down-rules-on-how-prices-paid-abroad-affect-cbam-carbon-price-cap-article-6-credits-at-10/',
+  },
+  {
+    text: 'ICAP — CBAM intră în faza de conformare (ianuarie 2026)',
+    url: 'https://icapcarbonaction.com/en/news/eu-cbam-enters-compliance-phase-and-outlines-path-ahead',
+  },
+  'Regulamentul (UE) 2024/1689 (AI Act), art. 50 — obligații de transparență; regulamentul „Digital Omnibus on AI", adoptat final în iunie 2026 — amânarea termenelor pentru sistemele cu risc ridicat',
+  'Regulamentul (UE) 2025/2650 — amânarea și simplificarea EUDR (decembrie 2025)',
+];
+---
+
+<ArticleLayout
+  title="Conformitate 2026: de la dosare complete la date verificabile"
+  description="CBAM, EUDR și AI Act mută simultan standardul de conformitate de la „ai completat documentul” la „informația corespunde realității”. De ce companiile cu dosare perfecte pot fi cele mai expuse și cum arată răspunsul corect."
+  altPath="/blog/compliance-2026-from-files-to-data"
+  heroTitle="2026, anul în care „suntem conformi” a încetat să mai însemne ceva"
+  publishDate="2026-07-30"
+  faq={faq}
+  sources={sources}
+>
+  <p>
+    <em>
+      Cum trei regulamente europene schimbă simultan ce înseamnă conformitatea — și de ce companiile care
+      au dosare perfecte pot fi cele mai expuse.
+    </em>
+  </p>
+
+  <h2>Trei companii conforme. Trei companii în risc.</h2>
+  <p>
+    Un importator de aluminiu din România primește de la furnizorul turcesc o declarație de emisii. O include
+    în raportarea CBAM. Dosarul e complet. Doar că nimeni n-a verificat dacă cifrele din declarație corespund
+    emisiilor reale ale instalației — iar de la 1 ianuarie 2026, importatorul e cel care plătește diferența.
+  </p>
+  <p>
+    Un operator care plasează produse din lemn pe piața UE depune o declarație de diligență prin sistemul
+    informatic al Comisiei. Coordonatele GPS ale parcelei de producție sunt cele declarate de furnizor.
+    Declarația e acceptată. Doar că furnizorul a declarat coordonatele cooperativei, nu ale parcelei efective
+    — iar semnatarul răspunde juridic pentru acuratețea fiecărui punct GPS.
+  </p>
+  <p>
+    O companie de software lansează un chatbot pentru servicii clienți. Pune în footer „Powered by AI".
+    Obligația de transparență din AI Act, bifată. Doar că Ghidul Comisiei Europene, adoptat pe 20 iulie 2026,
+    spune explicit: dacă informația <strong>poate fi ușor trecută cu vederea sau ignorată în condițiile
+    normale de utilizare</strong>, obligația nu e îndeplinită — indiferent că notificarea există tehnic
+    undeva în interfață.
+  </p>
+  <p>
+    Trei companii. Trei dosare complete. Trei expuneri reale. Ce au în comun?
+  </p>
+  <div class="callout">
+    <p>
+      <strong>
+        Toate trei au tratat conformitatea ca pe un exercițiu de documentare. Iar regulamentele din 2026 cer
+        altceva.
+      </strong>
+    </p>
+  </div>
+
+  <h2>Ce s-a schimbat: de la „ai completat” la „s-a produs efectul”</h2>
+  <p>
+    Dacă privești CBAM, EUDR și AI Act separat, vezi trei regulamente în trei domenii diferite — carbon,
+    defrișare, inteligență artificială. Dacă le privești împreună, vezi un singur tipar de design legislativ
+    pe care UE îl aplică simultan pe mai multe fronturi: <strong>standardul de conformitate se mută de la
+    input la rezultat</strong>.
+  </p>
+  <p>
+    Nu mai e suficient să demonstrezi că ai completat documentul cerut. Trebuie să demonstrezi că informația
+    din document corespunde realității — și că rezultatul urmărit de regulament s-a produs efectiv. Concret:
+  </p>
+
+  <h3>CBAM</h3>
+  <p>
+    Regulamentul (UE) 2023/956 a intrat în faza definitivă la 1 ianuarie 2026. Importatorii nu mai doar
+    raportează emisiile — acumulează obligații financiare reale, iar certificatele se cumpără din februarie
+    2027. Art. 9 permite deducerea prețului carbonului plătit în țara de origine, dar cu o condiție: prețul
+    trebuie demonstrat printr-un mecanism obligatoriu de tarifare a carbonului — sistem de comercializare a
+    emisiilor sau taxă — fie la valoarea implicită publicată de Comisie, fie la valoarea efectivă, certificată
+    independent. <strong>Declarația furnizorului nu e suficientă.</strong> Dacă furnizorul declară un preț pe
+    care nu-l poate proba, importatorul plătește integral.
+  </p>
+
+  <h3>EUDR</h3>
+  <p>
+    Regulamentul (UE) 2023/1115 devine aplicabil la 30 decembrie 2026 pentru operatorii mari și mijlocii.
+    Fiecare declarație de diligență trebuie să conțină coordonate GPS exacte — punct pentru parcelele sub
+    4 hectare, poligon peste 4 hectare, la șase zecimale de precizie. Datele sunt verificate automat contra
+    hărților satelitare. Dacă sunt inexacte — chiar și din eroarea furnizorului — declarația e respinsă,
+    marfa e blocată la vamă, iar semnatarul poartă răspunderea juridică. Art. 25 impune amenzi al căror
+    plafon trebuie să fie de cel puțin 4% din cifra de afaceri anuală în UE, plus confiscare și interdicție
+    de acces pe piață.
+  </p>
+
+  <h3>AI Act</h3>
+  <p>
+    Obligațiile de transparență din art. 50 al Regulamentului (UE) 2024/1689 se aplică din 2 august 2026.
+    Ghidul final al Comisiei, adoptat pe 20 iulie 2026, schimbă explicit standardul: transparența nu se
+    măsoară prin existența notificării, ci prin <strong>percepția utilizatorului</strong>. Informația trebuie
+    să fie vizibilă, distinctă și inteligibilă în condiții reale de utilizare — nu îngropată în manuale sau
+    în termeni și condiții. Iar excepția „e evident că vorbești cu un AI" trebuie interpretată restrictiv:
+    dacă nu poți demonstra că utilizatorul mediu ar recunoaște imediat natura AI a interacțiunii, notifici.
+  </p>
+  <p>
+    Trei regulamente. Trei domenii. Același mesaj: <strong>dosarul complet nu mai e suficient.</strong>
+  </p>
+
+  <h2>De ce e diferit de tot ce a fost înainte</h2>
+  <p>
+    GDPR a fost prima generație a acestei mutări. A cerut organizațiilor să declare ce fac cu datele
+    personale — politici de confidențialitate, baze legale, registre de activități. A fost un exercițiu de
+    documentare masiv, și multe organizații l-au tratat ca atare: politici redactate de avocați, publicate pe
+    site, bifate în checklist.
+  </p>
+  <p>
+    2026 e a doua generație. Nu mai e suficient să declari. Trebuie să demonstrezi că declarația corespunde
+    realității — și că rezultatul urmărit s-a produs. Diferența nu e doar de intensitate, ci de natură:
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Prima generație (modelul GDPR)</th>
+          <th>A doua generație (2026)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ce se verifică</strong></td>
+          <td>Documentul există</td>
+          <td>Informația din document e corectă</td>
+        </tr>
+        <tr>
+          <td><strong>Cine verifică</strong></td>
+          <td>Auditorul, periodic</td>
+          <td>Sistemul, automat — plus auditorul</td>
+        </tr>
+        <tr>
+          <td><strong>Cine răspunde</strong></td>
+          <td>Organizația</td>
+          <td>Inclusiv persoana fizică semnatară</td>
+        </tr>
+        <tr>
+          <td><strong>Consecința</strong></td>
+          <td>Amendă</td>
+          <td>Amendă, blocare operațională, răspundere penală</td>
+        </tr>
+        <tr>
+          <td><strong>Standardul</strong></td>
+          <td>Ai declarat</td>
+          <td>S-a produs efectul</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    CBAM verifică emisiile declarate contra dovezii prețului plătit. EUDR verifică automat geolocalizarea
+    contra hărților satelitare. AI Act cere demonstrarea percepției, nu a existenței notificării. Iar
+    Directiva (UE) 2024/1203 privind protecția mediului prin dreptul penal, cu termen de transpunere în mai
+    2026, adaugă răspundere penală personală pentru încălcările grave — pedepse cu închisoarea pentru
+    persoane fizice și amenzi al căror plafon trebuie să fie de cel puțin 5% din cifra de afaceri mondială
+    pentru persoane juridice.
+  </p>
+  <p>
+    Trecerea de la directive la regulamente — direct aplicabile, fără transpunere națională — elimină și
+    ultimul strat de variație: nu mai poți argumenta că „în transpunerea noastră națională, cerința se
+    interpretează altfel".
+  </p>
+
+  <h2>Ce nu funcționează încă</h2>
+  <p>Tiparul legislativ e clar. Ecosistemul de implementare — nu.</p>
+  <ul>
+    <li>
+      <strong>CBAM:</strong> Comisia a publicat proiectul de regulament privind deducerea prețului carbonului
+      abia pe 13 mai 2026, la peste patru luni de la intrarea în faza definitivă, cu consultare până la
+      10 iunie. Importatorii au acumulat obligații financiare de la 1 ianuarie fără să știe exact cum se
+      calculează deducerile — iar regulile se vor aplica retroactiv pentru tot anul 2026.
+    </li>
+    <li>
+      <strong>EUDR:</strong> sistemul informatic a fost în regim restricționat din 16 februarie 2026 până în
+      iulie, fără a accepta declarații. Regulamentul de punere în aplicare (UE) 2026/1565, care formalizează
+      funcționalitățile sistemului, a fost adoptat pe 13 iulie 2026 — la cinci luni și jumătate de termen.
+      Între timp, majoritatea micilor fermieri din lanțurile de aprovizionare nu au avut niciodată terenul
+      cartografiat GPS.
+    </li>
+    <li>
+      <strong>AI Act:</strong> Ghidul final pe art. 50 a fost publicat pe 20 iulie 2026, iar obligațiile
+      devin aplicabile pe 2 august 2026. Treisprezece zile între ghid și termen.
+    </li>
+  </ul>
+  <div class="callout">
+    <p>
+      <strong>O precizare care se confundă frecvent:</strong> pentru sistemele cu risc ridicat din Anexa III,
+      termenul <em>a fost amânat</em> la 2 decembrie 2027 prin regulamentul Digital Omnibus, adoptat final în
+      iunie 2026. Ce se aplică din 2 august 2026 sunt obligațiile de transparență din art. 50 — altă
+      categorie, neamânată. Amânarea nu ajută însă companiile care nu au făcut nici măcar clasificarea: care
+      dintre sistemele lor intră sub Anexa III? Fără răspunsul ăsta, cele 16 luni câștigate nu se folosesc la
+      nimic. Am detaliat calendarul complet în
+      <a href="/ro/blog/ghid-eu-ai-act-obligatii-firme/">ghidul despre obligațiile AI Act</a>.
+    </p>
+  </div>
+  <p>
+    Dacă tiparul sună familiar, e pentru că este: legislație completă, ecosistem de implementare absent.
+    Legea există. Instrumentul care face legea aplicabilă — nu.
+  </p>
+
+  <h2>Ce faci concret — un cadru, nu un checklist</h2>
+  <p>
+    Reacția naturală la convergența de regulamente din 2026 e să construiești checklist-uri separate pe
+    fiecare. E greșit — și e scump. Cele trei cer, fiecare în felul lui, același lucru:
+    <strong>infrastructură de date verificabile, nu documente completate.</strong> Trei pași, în ordine:
+  </p>
+  <ol>
+    <li>
+      <strong>Întâi: clasifică.</strong> Înainte de orice raportare, identifică ce activități intră sub ce
+      regulament. Imporți aluminiu din Turcia? CBAM. Plasezi mobilier din lemn pe piața UE? EUDR. Ai un
+      chatbot de relații cu clienții? Art. 50 din AI Act. Ai un sistem de punctare a candidaților? Anexa III,
+      risc ridicat. Clasificarea e gratuită, nu necesită software și nu e opțională — e precondiția oricărei
+      conformități. Și e pasul pe care majoritatea companiilor nu l-au făcut.
+    </li>
+    <li>
+      <strong>Al doilea: mapează lacunele de date, nu de documentație.</strong> Nu întrebarea „avem
+      politica?", ci „avem datele verificabile?". Pe CBAM: avem emisiile reale ale instalației furnizorului
+      sau o declarație nevalidată? Pe EUDR: avem coordonate la nivel de parcelă, la șase zecimale, sau numele
+      cooperativei? Pe AI Act: avem dovada că utilizatorul a perceput notificarea sau un banner în footer?
+    </li>
+    <li>
+      <strong>Al treilea: construiește infrastructura de date înainte de cea de raportare.</strong>
+      Rapoartele și declarațiile sunt rezultate. Intrările sunt datele — verificate, trasabile, auditabile.
+      Dacă construiești raportarea fără canalul de date, produci dosare pe care le completezi cu ce ai, nu cu
+      ce trebuie.
+    </li>
+  </ol>
+
+  <h2>Următoarele 12 luni</h2>
+  <p>
+    2026 e anul în care mai multe regulamente europene majore converg pe aceleași companii, cu termene
+    suprapuse, sancțiuni nesincronizate și niciun organism comun de aplicare. „Oboseala de conformitate" nu e
+    o expresie retorică — e descrierea unei realități operaționale.
+  </p>
+  <p>
+    Dar convergența are și un avantaj pe care puțini îl văd: <strong>datele cerute de un regulament servesc
+    și altora.</strong> Emisiile verificate pentru CBAM alimentează și raportarea de sustenabilitate.
+    Trasabilitatea construită pentru EUDR satisface și cerințele de diligență din lanțul de aprovizionare.
+    Clasificarea făcută pentru AI Act informează și evaluarea de risc pe securitatea rețelelor. Cine
+    construiește infrastructura de date o dată, corect, rezolvă mai multe conformități simultan. Cine
+    construiește dosare separate pe fiecare regulament le rezolvă pe fiecare individual, incomplet și scump.
+  </p>
+  <p>
+    Următoarele 12 luni vor separa companiile care au conformitate de cele care au dosare.
+  </p>
+
+  <h2>Cum te putem ajuta</h2>
+  <p>
+    Speed Flow lucrează exact pe partea de infrastructură de date: <a href="/ro/solutii/cbam/">CBAM Manager</a>
+    pentru colectarea și validarea datelor de emisii, <a href="/ro/solutii/eudr/">EUDR Manager</a> pentru
+    trasabilitatea și geolocalizarea parcelelor, și <a href="/ro/consultanta-ai/guvernanta/">consultanță de
+    guvernanță AI</a> pentru inventarul și clasificarea sistemelor. Dacă nu ești sigur unde te afli, fă
+    <a href="/ro/test-cbam-eudr/">testul rapid CBAM / EUDR</a> — cinci întrebări, sub un minut.
+  </p>
+</ArticleLayout>
