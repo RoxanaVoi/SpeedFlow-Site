@@ -4,7 +4,7 @@ import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 const faq = [
   {
     q: 'Ce s-a schimbat, de fapt, în 2026?',
-    a: 'Standardul de conformitate s-a mutat de la input la rezultat. Până acum era suficient să demonstrezi că ai completat documentul cerut; CBAM, EUDR și AI Act cer, fiecare în felul lui, să demonstrezi că informația din document corespunde realității. CBAM verifică emisiile declarate, EUDR verifică automat coordonatele GPS contra hărților satelitare, iar Ghidul Comisiei pe art. 50 din AI Act măsoară transparența prin percepția utilizatorului, nu prin existența notificării.',
+    a: 'Standardul de conformitate s-a mutat de la input la rezultat. Până acum era suficient să demonstrezi că ai completat documentul cerut; CBAM, EUDR și AI Act cer, fiecare în felul lui, să demonstrezi că informația din document corespunde realității. CBAM verifică emisiile declarate contra dovezii prețului plătit, EUDR confruntă coordonatele GPS cu un strat satelitar de referință, iar Ghidul Comisiei pe art. 50 din AI Act măsoară transparența prin percepția utilizatorului, nu prin existența notificării.',
   },
   {
     q: 'Am dosarele complete. De ce aș fi expus?',
@@ -28,7 +28,7 @@ const faq = [
   },
   {
     q: 'Prin ce diferă asta de GDPR?',
-    a: 'GDPR a cerut organizațiilor să declare ce fac cu datele personale — un exercițiu de documentare pe care multe l-au tratat ca atare. Regulamentele din 2026 cer dovada că declarația corespunde realității. Se schimbă și cine verifică (sisteme automate, nu doar auditori periodici), cine răspunde (persoana fizică semnatară, nu doar organizația) și consecința (blocare operațională și răspundere penală, nu doar amendă).',
+    a: 'GDPR a cerut organizațiilor să declare ce fac cu datele personale — un exercițiu de documentare pe care multe l-au tratat ca atare. Regulamentele din 2026 cer dovada că declarația corespunde realității. Se schimbă și cine verifică (autorități care compară declarația cu date independente, nu doar auditori periodici), cine răspunde (persoana fizică semnatară, nu doar organizația) și consecința (blocare operațională și răspundere penală, nu doar amendă).',
   },
   {
     q: 'De unde încep, dacă intru sub mai multe regulamente?',
@@ -92,6 +92,7 @@ const sources = [
   altPath="/blog/compliance-2026-from-files-to-data"
   heroTitle="2026, anul în care „suntem conformi” a încetat să mai însemne ceva"
   publishDate="2026-07-30"
+  updateDate="2026-07-31"
   faq={faq}
   sources={sources}
 >
@@ -185,11 +186,18 @@ const sources = [
   <p>
     Regulamentul (UE) 2023/1115 devine aplicabil la 30 decembrie 2026 pentru operatorii mari și mijlocii.
     Fiecare declarație de diligență trebuie să conțină coordonate GPS exacte — punct pentru parcelele sub
-    4 hectare, poligon peste 4 hectare, la șase zecimale de precizie. Datele sunt verificate automat contra
-    hărților satelitare. Dacă sunt inexacte — chiar și din eroarea furnizorului — declarația e respinsă,
-    marfa e blocată la vamă, iar semnatarul poartă răspunderea juridică. Art. 25 impune amenzi al căror
-    plafon trebuie să fie de cel puțin 4% din cifra de afaceri anuală în UE, plus confiscare și interdicție
-    de acces pe piață.
+    4 hectare, poligon peste 4 hectare, la șase zecimale de precizie. Coordonatele se confruntă cu stratul de
+    referință al Observatorului JRC — harta acoperirii forestiere din 2020, la rezoluție de 10 metri — și cu
+    alertele de defrișare Global Forest Watch.
+  </p>
+  <p>
+    Verificarea nu e însă o poartă automată la depunere. Declarația primește număr de referință, iar
+    confruntarea propriu-zisă se face prin <strong>controalele bazate pe risc</strong> ale autorităților
+    naționale, în cote obligatorii de 1%, 3% sau 9% din operatori pe an, în funcție de clasificarea de risc a
+    țării de origine stabilită de Comisie. La vamă te oprește absența numărului de referință; discrepanța
+    dintre coordonate și hartă te ajunge la control. Răspunderea juridică o poartă semnatarul, chiar dacă
+    eroarea vine de la furnizor, iar art. 25 impune amenzi al căror plafon trebuie să fie de cel puțin 4% din
+    cifra de afaceri anuală în UE, plus confiscare și interdicție de acces pe piață.
   </p>
 
   <h3>AI Act</h3>
@@ -234,7 +242,7 @@ const sources = [
         <tr>
           <td><strong>Cine verifică</strong></td>
           <td>Auditorul, periodic</td>
-          <td>Sistemul, automat — plus auditorul</td>
+          <td>Autoritatea, pe date independente — plus auditorul</td>
         </tr>
         <tr>
           <td><strong>Cine răspunde</strong></td>
@@ -255,8 +263,8 @@ const sources = [
     </table>
   </div>
   <p>
-    CBAM verifică emisiile declarate contra dovezii prețului plătit. EUDR verifică automat geolocalizarea
-    contra hărților satelitare. AI Act cere demonstrarea percepției, nu a existenței notificării. Iar
+    CBAM verifică emisiile declarate contra dovezii prețului plătit. EUDR confruntă geolocalizarea cu un
+    strat satelitar de referință. AI Act cere demonstrarea percepției, nu a existenței notificării. Iar
     Directiva (UE) 2024/1203 privind protecția mediului prin dreptul penal, cu termen de transpunere în mai
     2026, adaugă răspundere penală personală pentru încălcările grave — pedepse cu închisoarea pentru
     persoane fizice și amenzi al căror plafon trebuie să fie de cel puțin 5% din cifra de afaceri mondială

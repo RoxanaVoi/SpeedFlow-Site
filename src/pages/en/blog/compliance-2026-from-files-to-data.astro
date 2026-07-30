@@ -4,7 +4,7 @@ import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 const faq = [
   {
     q: 'What actually changed in 2026?',
-    a: 'The compliance standard moved from input to outcome. Until now it was enough to show you had completed the required document; CBAM, EUDR and the AI Act each, in their own way, require you to show that the information in the document matches reality. CBAM tests declared emissions against proof of carbon price paid, EUDR automatically checks GPS coordinates against satellite maps, and the Commission guidance on Art. 50 of the AI Act measures transparency by user perception, not by the existence of a notice.',
+    a: 'The compliance standard moved from input to outcome. Until now it was enough to show you had completed the required document; CBAM, EUDR and the AI Act each, in their own way, require you to show that the information in the document matches reality. CBAM tests declared emissions against proof of carbon price paid, EUDR matches GPS coordinates against a satellite reference layer, and the Commission guidance on Art. 50 of the AI Act measures transparency by user perception, not by the existence of a notice.',
   },
   {
     q: 'My files are complete. Why would I be exposed?',
@@ -28,7 +28,7 @@ const faq = [
   },
   {
     q: 'How is this different from GDPR?',
-    a: 'GDPR asked organisations to declare what they do with personal data — a documentation exercise many treated as exactly that. The 2026 regulations demand proof that the declaration matches reality. What also changes is who verifies (automated systems, not just periodic auditors), who is liable (the individual signatory, not only the organisation) and the consequence (operational blocking and criminal liability, not just a fine).',
+    a: 'GDPR asked organisations to declare what they do with personal data — a documentation exercise many treated as exactly that. The 2026 regulations demand proof that the declaration matches reality. What also changes is who verifies (authorities comparing your declaration against independent data, not just periodic auditors), who is liable (the individual signatory, not only the organisation) and the consequence (operational blocking and criminal liability, not just a fine).',
   },
   {
     q: 'Where do I start if several regulations apply to me?',
@@ -92,6 +92,7 @@ const sources = [
   altPath="/blog/conformitate-2026-de-la-dosare-la-date"
   heroTitle="2026, the year “we are compliant” stopped meaning anything"
   publishDate="2026-07-30"
+  updateDate="2026-07-31"
   faq={faq}
   sources={sources}
 >
@@ -185,10 +186,18 @@ const sources = [
   <p>
     Regulation (EU) 2023/1115 starts applying on 30 December 2026 for large and medium operators. Every due
     diligence statement must carry exact GPS coordinates — a point for plots under 4 hectares, a polygon
-    above 4 hectares, at six decimal places of precision. The data is checked automatically against satellite
-    maps. If it is inaccurate — even through the supplier's error — the statement is rejected, the goods are
-    held at customs, and the signatory carries the legal liability. Art. 25 requires fines whose maximum must
-    be at least 4% of annual EU-wide turnover, plus confiscation and exclusion from the market.
+    above 4 hectares, at six decimal places of precision. Those coordinates are matched against the JRC
+    Observatory reference layer — the 2020 forest cover map at 10-metre resolution — and against Global
+    Forest Watch deforestation alerts.
+  </p>
+  <p>
+    That check is not an automatic gate at submission, though. The statement receives a reference number, and
+    the actual comparison happens through national authorities' <strong>risk-based controls</strong>, at
+    mandatory rates of 1%, 3% or 9% of operators per year, depending on the Commission's risk classification
+    of the country of origin. What stops you at customs is a missing reference number; a mismatch between
+    coordinates and map catches up with you at inspection. Legal liability sits with the signatory even when
+    the error came from the supplier, and Art. 25 requires fines whose maximum must be at least 4% of annual
+    EU-wide turnover, plus confiscation and exclusion from the market.
   </p>
 
   <h3>AI Act</h3>
@@ -233,7 +242,7 @@ const sources = [
         <tr>
           <td><strong>Who checks</strong></td>
           <td>The auditor, periodically</td>
-          <td>The system, automatically — plus the auditor</td>
+          <td>The authority, against independent data — plus the auditor</td>
         </tr>
         <tr>
           <td><strong>Who is liable</strong></td>
@@ -254,8 +263,8 @@ const sources = [
     </table>
   </div>
   <p>
-    CBAM checks declared emissions against evidence of the price paid. EUDR checks geolocation automatically
-    against satellite maps. The AI Act requires demonstrating perception, not the existence of a notice. And
+    CBAM checks declared emissions against evidence of the price paid. EUDR matches geolocation against a
+    satellite reference layer. The AI Act requires demonstrating perception, not the existence of a notice. And
     Directive (EU) 2024/1203 on the protection of the environment through criminal law, with a transposition
     deadline in May 2026, adds personal criminal liability for serious breaches — prison sentences for
     natural persons and, for legal persons, fines whose maximum must be no less than 5% of worldwide
