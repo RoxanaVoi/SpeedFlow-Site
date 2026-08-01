@@ -23,13 +23,15 @@ interface Props {
   serviceSchema?: { name: string; description: string };
   /** Related blog guides, rendered as a callout after the hero and linked in JSON-LD. */
   guideLinks?: { href: string; label: string }[];
+  /** Consulting offer block, for visitors looking for a service rather than software. */
+  consulting?: { title: string; text: string; ctaLabel: string };
 }
 
 const {
   title, description, altPath, heroTitle, heroProblem, heroResult,
   forWhom, forWhomItems, processes, howItWorks, outputs, faq,
   demoAvailable = false, demoLabel, demoUrl,
-  serviceSchema, guideLinks = [],
+  serviceSchema, guideLinks = [], consulting,
 } = Astro.props;
 
 const locale = getLocaleFromUrl(Astro.url);
@@ -217,6 +219,26 @@ if (faq.length > 0) {
       </div>
     </div>
   </section>
+
+  <!-- Consulting -->
+  {consulting && (
+    <section class="py-16 bg-surface">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl border border-gray-100 p-8 lg:p-10">
+          <h2 class="font-heading text-2xl lg:text-3xl font-bold text-navy mb-5">
+            {consulting.title}
+          </h2>
+          <p class="text-text-light leading-relaxed mb-7">{consulting.text}</p>
+          <a
+            href={getLocalizedPath(locale, '/contact')}
+            class="inline-block px-7 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition-colors"
+          >
+            {consulting.ctaLabel}
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Demo -->
   {demoUrl && (

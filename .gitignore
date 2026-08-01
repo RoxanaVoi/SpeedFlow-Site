@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # Claude Code local settings (machine-specific permissions)
 .claude/settings.local.json
+
+# IndexNow submission snapshot
+.indexnow-state.json

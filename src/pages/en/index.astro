@@ -7,11 +7,13 @@ import ConsultingServices from '../../components/ConsultingServices.astro';
 import SolutionShowcase from '../../components/SolutionShowcase.astro';
 import TrustCredentials from '../../components/TrustCredentials.astro';
 import CTAFinal from '../../components/CTAFinal.astro';
+import { professionalServiceSchema } from '../../i18n/orgSchema';
 ---
 
 <Layout
-  title="AI adoption consulting — strategy, data, governance, agents"
-  description="AI adoption consulting: process diagnostic, data preparation, governance and agents in production. Our products are the proof that the methodology works."
+  title="CBAM, EUDR and AI governance consulting"
+  description="A Romanian consulting and software firm for compliance: CBAM, EUDR and AI governance. Consulting, automation platforms and implementation."
+  schemas={[professionalServiceSchema('en')]}
 >
   <Hero />
   <UrgencyBand />
