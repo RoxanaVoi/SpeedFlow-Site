@@ -8,12 +8,35 @@ import CTAFinal from '../../../components/CTAFinal.astro';
 import { getLocaleFromUrl, t, getLocalizedPath } from '../../../i18n/utils';
 
 const locale = getLocaleFromUrl(Astro.url);
+const site = Astro.site ?? new URL('https://www.speed-flow.ai');
+const selfUrl = new URL(Astro.url.pathname, site).href;
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Consultanță AI, strategie și guvernanță',
+    description: 'Consultanță pentru strategie AI, guvernanță AI și adoptarea responsabilă a inteligenței artificiale în companii.',
+    serviceType: 'Consultanță AI și strategie AI',
+    provider: { '@id': `${site.origin}/#organization` },
+    areaServed: { '@type': 'Country', name: 'România' },
+    url: selfUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Speed Flow', item: new URL('/ro/', site).href },
+      { '@type': 'ListItem', position: 2, name: 'Consultanță AI', item: selfUrl },
+    ],
+  },
+];
 ---
 
 <Layout
-  title="Consultanță AI — de la strategie la agenți în producție"
-  description="Cinci servicii de consultanță în adoptarea AI: diagnostic, pregătirea datelor, guvernanță și reguli de operare, design de agenți, adoptare și scalare."
+  title="Consultanță AI, strategie și guvernanță"
+  description="Consultanță AI în România pentru strategie AI, guvernanță, pregătirea datelor și implementarea agenților în procesele companiei."
   altPath="/ai-consulting"
+  schemas={schemas}
 >
   <!-- Hero -->
   <section class="pt-28 pb-16 lg:pt-36 lg:pb-20">

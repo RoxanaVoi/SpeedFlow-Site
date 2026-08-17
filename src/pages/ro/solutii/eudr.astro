@@ -3,12 +3,12 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
 ---
 
 <SolutionLayout
-  title="EUDR: consultanță și trasabilitate pentru operatori"
+  title="Software EUDR și consultanță pentru operatori"
   altPath="/solutions/eudr"
-  description="Consultanță EUDR în România și platformă de trasabilitate: geolocalizarea parcelelor, datele de la furnizori și depunerea declarațiilor de diligență."
-  heroTitle="Consultanță și automatizare EUDR"
+  description="Software EUDR și consultanță EUDR în România: geolocalizarea parcelelor, evaluarea riscului și pregătirea declarațiilor de diligență."
+  heroTitle="Software EUDR și consultanță pentru operatori"
   heroProblem="Regulamentul EUDR impune trasabilitate pe lanțul de aprovizionare și documentație complexă pentru produsele vizate."
-  heroResult="Oferim consultanță EUDR și organizăm datele, documentele și trasabilitatea necesară pentru conformare."
+  heroResult="Oferim software EUDR și consultanță pentru organizarea datelor, documentelor și trasabilității necesare conformării."
   forWhom="Companii care importă sau comercializează produse vizate de regulamentul EUDR și au nevoie de trasabilitate documentată."
   forWhomItems={[
     "Importatori de lemn, cauciuc, cafea, cacao, soia, ulei de palmier, bovine",
@@ -23,23 +23,25 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
     "Evaluare automată de risc pe țară, furnizor, marfă și documentație",
     "Colectare și organizare documente de trasabilitate",
     "Validare conformitate pe fiecare lot / livrare",
-    "Generare declarație de due diligence și export către TRACES",
+    "Generare și transmitere automată a declarației de diligență în TRACES, cu preluarea numărului de referință DDS",
     "Monitorizare și actualizare date, inclusiv rescreening sancțiuni furnizori",
   ]}
   howItWorks={[
     { title: "Mapare furnizori", desc: "Identificăm și structurăm informațiile despre furnizorii și originea produselor." },
     { title: "Colectare documente", desc: "Centralizăm documentele de trasabilitate, certificate și declarații." },
     { title: "Validare conformitate", desc: "Verificăm completitudinea și corectitudinea documentației pentru fiecare lot." },
-    { title: "Generare rapoarte", desc: "Pregătim declarațiile și rapoartele necesare pentru autorități." },
+    { title: "Transmitere în TRACES", desc: "Generăm și transmitem automat declarația de diligență, apoi preluăm numărul de referință DDS." },
   ]}
   outputs={[
     "Registru structurat de trasabilitate, cu hartă interactivă a parcelelor",
     "Scor de risc per lot, aliniat la concluzia Art. 10(2) — neglijabil/non-neglijabil",
-    "Declarații de due diligence, cu export XML validat și integrare TRACES",
+    "Declarații de diligență transmise automat în TRACES, cu preluarea numărului de referință DDS",
     "Dashboard stare conformitate per furnizor",
     "Alerte pentru documente lipsă sau expirate, și pentru sancțiuni furnizori",
   ]}
   faq={[
+    { q: "Ce face software-ul EUDR?", a: "Software-ul EUDR centralizează furnizorii și geolocalizările, verifică documentele, evaluează riscul și pregătește declarațiile de diligență necesară pentru sistemul EUDR." },
+    { q: "Cum obțin numărul DDS prin platforma Speed Flow?", a: "EUDR Manager validează datele și geolocalizările, generează și transmite automat declarația de diligență în TRACES, apoi preia numărul de referință DDS pentru utilizarea în fluxul de conformitate." },
     { q: "Ce produse sunt vizate?", a: "Lemn, cauciuc, cafea, cacao, soia, ulei de palmier și bovine, inclusiv produse derivate." },
     { q: "Când intră în vigoare EUDR?", a: "Regulamentul se aplică operatorilor mari și medii din 30 decembrie 2026, iar micro și micilor întreprinderi din 30 iunie 2027." },
     { q: "Cum se calculează riscul?", a: "Printr-un motor automat de scoring pe 4 componente (țară, furnizor, marfă, documentație), cu reguli de blocare automată pentru cazurile de risc ridicat sau documentație lipsă." },
@@ -49,8 +51,8 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
   demoLabel="Demo disponibil"
   demoUrl="https://app.speed-flow.ai/login"
   serviceSchema={{
-    name: "EUDR Manager — conformitate și trasabilitate EUDR",
-    description: "Platformă și consultanță pentru conformitatea EUDR: colectarea geolocalizărilor de la furnizori, evaluarea riscului și generarea declarațiilor de diligență necesară.",
+    name: "Software EUDR și consultanță — conformitate și trasabilitate",
+    description: "Software EUDR și consultanță pentru validarea geolocalizărilor, evaluarea riscului, transmiterea automată în TRACES și preluarea numărului DDS.",
   }}
   guideLinks={[
     { href: "/ro/blog/ghid-eudr-importatori/", label: "Nu ești sigur dacă te afectează? Citește ghidul complet despre EUDR →" },
