@@ -1,0 +1,234 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'Automatizarea proceselor înseamnă că nu mai e nevoie de oameni pe partea de conformare?',
+    a: 'Nu. Automatizarea preia operațiunile repetitive — colectarea datelor, verificarea formatului, transformarea lor în raport, urmărirea termenelor. Rămân la om tocmai lucrurile care cer judecată: decizia, relația cu furnizorul, interpretarea unei situații atipice și semnătura. Un proces automatizat bine făcut reduce volumul de muncă manuală și mută atenția spre excepții.',
+  },
+  {
+    q: 'Cât durează până se vede un rezultat?',
+    a: 'Depinde de volumul de date și de cât de omogene sunt ele astăzi. Primul ciclu de raportare este de regulă cel mai costisitor, pentru că include și configurarea fluxului. Câștigul devine vizibil din al doilea și al treilea ciclu, când datele se reutilizează în loc să fie reconstruite de la zero. De aceea evaluarea se face pe 12 luni, nu pe prima lună.',
+  },
+  {
+    q: 'Trebuie să renunțăm la ERP-ul sau la sistemele actuale?',
+    a: 'Nu. Într-un proces de conformare, sistemele existente rămân sursa de adevăr pentru datele operaționale. Ce se adaugă deasupra sunt validarea, trasabilitatea și raportarea. Cea mai scumpă greșeală de evaluare este să pornești de la premisa că toate datele trebuie mutate într-un instrument nou înainte de a produce prima valoare.',
+  },
+  {
+    q: 'Ce ne facem dacă datele de la furnizori vin în formate diferite?',
+    a: 'Asta este regula, nu excepția. Fluxul se construiește cu reguli de normalizare și de validare, iar ce nu se poate normaliza automat ajunge ca sarcină explicită la o persoană, cu motivul și termenul afișate. Diferența față de munca manuală nu este că dispar problemele, ci că ele devin vizibile înainte de termenul de raportare.',
+  },
+  {
+    q: 'Cum estimăm ROI-ul dacă nu avem măsurători de dinainte?',
+    a: 'Se pot reconstitui. Ia ultimele două-trei cicluri încheiate și măsoară retroactiv: orele consumate per raport, numărul de retururi sau corecții, întârzierile față de termen și costul lor. Un baseline aproximativ, dar documentat, este suficient ca să compari ofertele între ele — și mult mai util decât o medie din industrie care nu are legătură cu volumul tău.',
+  },
+];
+---
+
+<ArticleLayout
+  title="Automatizarea proceselor în firmele reglementate: unde se pierde timpul și cum se calculează ROI-ul"
+  description="Cele patru operațiuni care consumă cel mai mult timp în procesele reglementate, ce înseamnă automatizarea dincolo de slogan și un cadru de calcul al ROI-ului, pas cu pas."
+  altPath="/blog/process-automation-benefits-roi"
+  heroTitle="Automatizarea proceselor în firmele reglementate: unde se pierde timpul și cum se calculează ROI-ul"
+  publishDate="2026-10-08"
+  faq={faq}
+>
+  <p>
+    În firmele care lucrează cu procese reglementate, timpul nu se pierde, de regulă, în decizii greșite. Se pierde
+    în operațiuni care nu cer nicio judecată: aceleași date cerute de trei ori, aceeași informație copiată din
+    e-mail în foaie de calcul și din foaie de calcul în raport, aceleași termene urmărite din memorie sau din
+    calendare personale. Acesta este terenul pe care automatizarea produce valoare — și tot aici se consumă cea
+    mai mare parte din bugetul de conformare al unei firme.
+  </p>
+
+  <h2>Provocarea: procese reglementate, executate manual</h2>
+  <p>
+    De la 1 ianuarie 2026, CBAM a intrat în regimul definitiv: importatorii care depășesc pragul de 50 de tone
+    trebuie să calculeze emisiile încorporate, iar prima declarație se depune până la 30 septembrie 2027. EUDR
+    cere geolocația parcelelor și o declarație de due diligence până la 30 decembrie 2026. AI Act adaugă un
+    inventar al sistemelor AI folosite și obligații care se eșalonează în timp. Trei reglementări diferite, dar
+    un singur tipar de proces:
+  </p>
+  <ol>
+    <li><strong>Colectare</strong> — date de la furnizori, din facturi, din registre externe, în formate care nu seamănă între ele.</li>
+    <li><strong>Validare</strong> — verificarea completitudinii, a unităților de măsură, a corespondenței cu realitatea.</li>
+    <li><strong>Transformare în raport</strong> — agregare, calcul, generare a documentului cerut de autoritate.</li>
+    <li><strong>Urmărire de termene</strong> — depuneri, praguri, alerte, dovada că ai făcut ce trebuia, când trebuia.</li>
+  </ol>
+  <p>
+    Executat manual, acest tipar funcționează până la un anumit volum. După aceea, nu mai scalează: numărul de
+    furnizori crește, termenele rămân fixe, iar erorile se descoperă cel mai des în cel mai prost moment posibil —
+    la un control. Problema nu este că oamenii nu muncesc destul, ci că munca lor este consumată de transcriere.
+  </p>
+  <div class="callout">
+    <p>
+      <strong>Testul cel mai simplu:</strong> ia un raport încheiat recent și măsoară cât timp s-a consumat pe
+      colectarea și recopierea datelor, separat de timpul consumat pe analiză. În majoritatea firmelor, proporția
+      este inversă față de cea dorită.
+    </p>
+  </div>
+
+  <h2>Ce înseamnă automatizare, de fapt, într-un proces de conformare</h2>
+  <p>
+    Automatizarea nu înlocuiește raționamentul din spatele unui dosar de conformare. Ea mută munca de la
+    transcriere la excepții. Concret, un flux automatizat are patru straturi:
+  </p>
+  <ul>
+    <li><strong>Sursa de date</strong> — de unde intră informația (furnizori, ERP, facturi, registre, formulare).</li>
+    <li><strong>Regulile</strong> — ce este valid, ce este incomplet, ce trebuie recalculat, ce se respinge automat.</li>
+    <li><strong>Trasabilitatea</strong> — cine a introdus o valoare, când, din ce sursă, și ce versiune a raportului a folosit-o.</li>
+    <li><strong>Alertarea</strong> — cine află, cât de repede, că lipsește ceva, înainte ca termenul să devină o problemă.</li>
+  </ul>
+  <p>
+    Rămân la om tocmai lucrurile pentru care un om este necesar: decizia, relația cu furnizorul, interpretarea unei
+    situații atipice și semnătura. Diferența este că atenția se consumă pe cele câteva cazuri care contează, nu pe
+    cele câteva sute care se rezolvă identic.
+  </p>
+
+  <h2>Unde se câștigă timpul și unde se câștigă bani</h2>
+  <p>
+    Beneficiile se împart în categorii care se măsoară separat — de aceea merită ținute separat și în calculul de
+    investiție:
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Dimensiune</th><th>Cum arată manual</th><th>Cum arată automatizat</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Timp</strong></td>
+          <td>Date recopiate între fișiere; raportul se reconstruiește de la zero la fiecare ciclu</td>
+          <td>Datele se colectează o dată și se reutilizează; raportul se generează din ce există deja</td>
+        </tr>
+        <tr>
+          <td><strong>Cost</strong></td>
+          <td>Ore de muncă repetitive, greu de redistribuit când crește volumul</td>
+          <td>Munca se mută pe excepții; costul marginal al unui furnizor sau al unei livrări noi scade</td>
+        </tr>
+        <tr>
+          <td><strong>Conformitate</strong></td>
+          <td>Termenele se urmăresc manual; lipsurile se descoperă târziu</td>
+          <td>Alerte la praguri și la termene; dovada versiunii folosite există în flux</td>
+        </tr>
+        <tr>
+          <td><strong>Robustețe</strong></td>
+          <td>Cunoașterea procesului stă la una-două persoane</td>
+          <td>Regulile sunt explicite, deci procesul nu depinde de memoria unui om</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Câștigul cel mai mare nu apare la primul raport, ci la al doilea și la al treilea: atunci se vede diferența
+    dintre „am refăcut munca" și „am reutilizat datele". De aceea comparația onestă dintre varianta manuală și
+    cea automatizată se face pe un ciclu complet, nu pe o singură lună.
+  </p>
+
+  <h2>Rezultate măsurabile: ce măsori la tine, înainte de a alege ceva</h2>
+  <p>
+    Cifrele nu se preiau de la altcineva — depind de volumul tău, de cât de omogene sunt datele și de cât de mult
+    a fost automatizat deja. Ce se poate împrumuta este metoda de măsurare. Patru măsurători de bază, luate
+    înainte de orice achiziție, sunt suficiente pentru o comparație serioasă:
+  </p>
+  <ul>
+    <li><strong>Ore per raport încheiat</strong> — măsurate pe ultimele două-trei cicluri, defalcate pe colectare, validare și redactare.</li>
+    <li><strong>Rata de corecție</strong> — de câte ori un raport sau un dosar a fost returnat, refăcut sau completat ulterior.</li>
+    <li><strong>Respectarea termenelor</strong> — câte depuneri au fost făcute în ultima săptămână sau zi, și de ce.</li>
+    <li><strong>Costul unei erori</strong> — nu doar penalitatea, ci și orele consumate cu remedierea și efectul asupra relației cu autoritatea sau cu clientul.</li>
+  </ul>
+  <div class="callout">
+    <p>
+      <strong>Atenție la măsurătoarea care lipsește cel mai des:</strong> costul pregătirii pentru un control.
+      Este un cost real, dar apare neregulat, deci nu intră în niciun buget lunar — și tocmai el justifică cel mai
+      bine trasabilitatea.
+    </p>
+  </div>
+
+  <h2>Integrarea cu sistemele existente</h2>
+  <p>
+    Principiul sănătos este simplu: sistemele pe care le folosești deja rămân sursa de adevăr pentru datele
+    operaționale. Ce se adaugă deasupra sunt validarea, trasabilitatea și raportarea. În practică, legăturile se fac
+    în trei zone:
+  </p>
+  <ul>
+    <li><strong>Datele de intrare</strong> — facturi, comenzi, articole, liste de furnizori, mesaje și fișiere primite de la terți.</li>
+    <li><strong>Referințele externe</strong> — coduri de produs, nomenclatoare, identificatori de entitate, informații din registre publice.</li>
+    <li><strong>Ieșirile</strong> — documentul de raportare, dosarul de susținere și exportul cerut de portalul autorității.</li>
+  </ul>
+  <p>
+    La evaluarea unei soluții, întrebările utile nu sunt „câte integrări are", ci: unde ajung datele, cine le poate
+    vedea, ce se întâmplă când o informație lipsește și cum se reia fluxul după o eroare. Costul ascuns al oricărei
+    implementări nu este licența, ci migrarea — de aceea un instrument care produce prima valoare fără să-ți mute
+    toate datele într-un loc nou este, aproape întotdeauna, mai ieftin decât pare.
+  </p>
+
+  <h2>Cadru de calcul al ROI-ului</h2>
+  <p>Formula nu este complicată; greu este să nu numeri de două ori aceiași bani. Punctul de plecare:</p>
+  <div class="callout">
+    <p>
+      <strong>ROI = (timp salvat × cost orar real + costuri de eroare evitate + costuri de întârziere evitate
+      − cost total al soluției) ÷ cost total al soluției</strong>
+    </p>
+    <p>
+      „Cost orar real" înseamnă costul complet al persoanei care executa munca, nu doar salariul brut. „Cost total
+      al soluției" include licența, implementarea, instruirea și operarea pe perioada evaluată.
+    </p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Componentă</th><th>Cum se estimează</th><th>Greșeala frecventă</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Timp salvat</td>
+          <td>Ore per raport × număr de cicluri pe an × reducerea realistă obținută</td>
+          <td>Se presupune că timpul salvat devine automat economie, când el este doar redistribuit</td>
+        </tr>
+        <tr>
+          <td>Erori evitate</td>
+          <td>Rata de corecție × costul de remediere per incident</td>
+          <td>Se numără doar penalitatea, nu și orele de remediere</td>
+        </tr>
+        <tr>
+          <td>Întârzieri evitate</td>
+          <td>Probabilitatea unei întârzieri × costul ei, inclusiv cel de relație</td>
+          <td>Se consideră zero, pentru că „nu s-a întâmplat niciodată"</td>
+        </tr>
+        <tr>
+          <td>Costul soluției</td>
+          <td>Licență + implementare + instruire + operare, pe 12–24 de luni</td>
+          <td>Se compară doar licența, ignorând costul intern al implementării</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Regula de prudență: dacă rezultatul calculului depinde decisiv de un singur termen pe care nu îl poți
+    documenta, tratează-l ca pe o ipoteză, nu ca pe un rezultat. Un ROI calculat cu un baseline măsurat, chiar și
+    aproximativ, este mai credibil — și mai util în discuția cu conducerea — decât o medie preluată din industrie.
+  </p>
+
+  <h2>Checklist înainte de a alege o soluție</h2>
+  <ol>
+    <li>Măsoară baseline-ul pe ultimele două-trei cicluri, chiar dacă trebuie reconstituit retroactiv.</li>
+    <li>Separă cele două tipuri de muncă: ce se execută identic de fiecare dată și ce cere judecată.</li>
+    <li>Stabilește unde rămâne sursa de adevăr și ce nu se mută nicăieri.</li>
+    <li>Identifică punctele de intrare a datelor de la furnizori și cine răspunde de ele.</li>
+    <li>Definește ce înseamnă „dată validă" și cine decide în cazul unui conflict.</li>
+    <li>Cere o probă pe datele tale, pe un ciclu real, înainte de a semna un contract anual.</li>
+  </ol>
+  <p>
+    Colectarea datelor de la furnizori, validarea lor și pregătirea raportării sunt exact genul de proces repetitiv
+    în care automatizarea își arată valoarea — la fel cum se întâmplă în fluxurile CBAM, EUDR și AI Act pe care le
+    construim pentru clienții noștri.
+  </p>
+  <p>
+    <strong>Vrei să vezi cum ar arăta fluxul pe datele tale?</strong> Începe cu
+    <a href="/ro/test-cbam-eudr/">testul rapid CBAM / EUDR</a> dacă nu ești sigur dacă ești vizat de reglementări,
+    sau <a href="/ro/contact/">programează o discuție</a> pentru o evaluare a procesului tău actual. Dacă vrei
+    întâi să mapezi procesul și abia apoi să decizi ce se automatizează,
+    <a href="/ro/consultanta-ai/">consultanța noastră</a> pornește exact de acolo.
+  </p>
+</ArticleLayout>

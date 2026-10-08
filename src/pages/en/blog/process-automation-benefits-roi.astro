@@ -1,0 +1,234 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'Does process automation mean we no longer need people for compliance work?',
+    a: 'No. Automation takes over the repetitive operations — collecting data, checking formats, turning that data into a report, tracking deadlines. What stays with people is exactly what requires judgement: the decision, the relationship with the supplier, the interpretation of an unusual case and the signature. A well-built automated process reduces manual workload and moves attention to exceptions.',
+  },
+  {
+    q: 'How long until we see a result?',
+    a: 'It depends on your data volume and on how consistent your inputs are today. The first reporting cycle is usually the most expensive one, because it also includes setting up the flow. The gain becomes visible in the second and third cycles, when data is reused instead of rebuilt from scratch. That is why the assessment is made over 12 months, not over the first month.',
+  },
+  {
+    q: 'Do we have to give up our ERP or our current systems?',
+    a: 'No. In a compliance process, existing systems remain the source of truth for operational data. What gets added on top is validation, traceability and reporting. The most expensive evaluation mistake is starting from the premise that all data has to be moved into a new tool before it can produce any value.',
+  },
+  {
+    q: 'What do we do when supplier data arrives in different formats?',
+    a: 'That is the rule, not the exception. The flow is built with normalisation and validation rules, and whatever cannot be normalised automatically becomes an explicit task for a person, with the reason and the deadline displayed. The difference from manual work is not that the problems disappear, but that they become visible before the reporting deadline.',
+  },
+  {
+    q: 'How do we estimate ROI if we have no measurements from before?',
+    a: 'They can be reconstructed. Take the last two or three completed cycles and measure them retroactively: hours spent per report, the number of returns or corrections, the delays against the deadline and what they cost. An approximate but documented baseline is enough to compare offers — and far more useful than an industry average that has nothing to do with your volume.',
+  },
+];
+---
+
+<ArticleLayout
+  title="Process automation in regulated companies: where the time goes and how to calculate ROI"
+  description="The four operations that consume the most time in regulated processes, what automation actually means beyond the slogan, and a step-by-step framework for calculating ROI."
+  altPath="/blog/automatizare-procese-beneficii-roi"
+  heroTitle="Process automation in regulated companies: where the time goes and how to calculate ROI"
+  publishDate="2026-10-08"
+  faq={faq}
+>
+  <p>
+    In companies that work with regulated processes, time is rarely lost to bad decisions. It is lost to operations
+    that require no judgement at all: the same data requested three times, the same piece of information copied
+    from an email into a spreadsheet and from the spreadsheet into a report, the same deadlines tracked from memory
+    or from personal calendars. That is where automation earns its keep — and that is also where the largest part
+    of a company's compliance budget is consumed.
+  </p>
+
+  <h2>The challenge: regulated processes, executed by hand</h2>
+  <p>
+    Since 1 January 2026, CBAM has been in its definitive regime: importers above the 50-tonne threshold must
+    calculate embedded emissions, with the first declaration due by 30 September 2027. EUDR requires plot
+    geolocation and a due diligence statement by 30 December 2026. The AI Act adds an inventory of the AI systems
+    in use and obligations phased over time. Three different regulations, one single process pattern:
+  </p>
+  <ol>
+    <li><strong>Collection</strong> — data from suppliers, invoices and external registries, in formats that do not resemble each other.</li>
+    <li><strong>Validation</strong> — checking completeness, units of measure, and whether the figures match reality.</li>
+    <li><strong>Turning it into a report</strong> — aggregation, calculation, generating the document the authority asks for.</li>
+    <li><strong>Deadline tracking</strong> — filings, thresholds, alerts, and proof that you did what was required, when it was required.</li>
+  </ol>
+  <p>
+    Done by hand, this pattern works up to a certain volume. Beyond that it stops scaling: the number of suppliers
+    grows, the deadlines stay fixed, and errors surface most often at the worst possible moment — during an
+    inspection. The problem is not that people do not work hard enough; it is that their work is consumed by
+    transcription.
+  </p>
+  <div class="callout">
+    <p>
+      <strong>The simplest test:</strong> take a recently completed report and measure how much time went into
+      collecting and re-entering data, separately from the time that went into analysis. In most companies the
+      ratio is the opposite of the one they want.
+    </p>
+  </div>
+
+  <h2>What automation actually means in a compliance process</h2>
+  <p>
+    Automation does not replace the reasoning behind a compliance file. It moves the work from transcription to
+    exceptions. Concretely, an automated flow has four layers:
+  </p>
+  <ul>
+    <li><strong>The data source</strong> — where the information enters (suppliers, ERP, invoices, registries, forms).</li>
+    <li><strong>The rules</strong> — what is valid, what is incomplete, what must be recalculated, what is rejected automatically.</li>
+    <li><strong>Traceability</strong> — who entered a value, when, from which source, and which version of the report used it.</li>
+    <li><strong>Alerting</strong> — who finds out, and how fast, that something is missing, before the deadline becomes a problem.</li>
+  </ul>
+  <p>
+    What stays with people is exactly what needs a person: the decision, the relationship with the supplier, the
+    interpretation of an unusual case and the signature. The difference is that attention is spent on the few cases
+    that matter, rather than on the few hundred that are resolved identically.
+  </p>
+
+  <h2>Where time is saved and where money is saved</h2>
+  <p>
+    The benefits fall into categories that are measured separately — which is why they are worth keeping separate in
+    the investment calculation too:
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Dimension</th><th>What it looks like manually</th><th>What it looks like automated</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Time</strong></td>
+          <td>Data re-keyed between files; the report is rebuilt from scratch every cycle</td>
+          <td>Data is collected once and reused; the report is generated from what already exists</td>
+        </tr>
+        <tr>
+          <td><strong>Cost</strong></td>
+          <td>Repetitive hours, hard to redistribute as volume grows</td>
+          <td>Work moves to exceptions; the marginal cost of a new supplier or shipment drops</td>
+        </tr>
+        <tr>
+          <td><strong>Compliance</strong></td>
+          <td>Deadlines tracked by hand; gaps discovered late</td>
+          <td>Alerts at thresholds and deadlines; the proof of the version used lives in the flow</td>
+        </tr>
+        <tr>
+          <td><strong>Robustness</strong></td>
+          <td>Knowledge of the process sits with one or two people</td>
+          <td>Rules are explicit, so the process does not depend on one person's memory</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    The largest gain does not appear on the first report, but on the second and third: that is when the difference
+    between "we redid the work" and "we reused the data" becomes visible. That is why an honest comparison between
+    the manual and the automated route is made over a full cycle, not over a single month.
+  </p>
+
+  <h2>Measurable results: what to measure at your own company, before choosing anything</h2>
+  <p>
+    The numbers cannot be borrowed from someone else — they depend on your volume, on how consistent your data is
+    and on how much has already been automated. What can be borrowed is the method. Four baseline measurements,
+    taken before any purchase, are enough for a serious comparison:
+  </p>
+  <ul>
+    <li><strong>Hours per completed report</strong> — measured across the last two or three cycles, split into collection, validation and writing.</li>
+    <li><strong>Correction rate</strong> — how often a report or a file was returned, redone or completed afterwards.</li>
+    <li><strong>Deadline performance</strong> — how many filings were made in the final week or the final day, and why.</li>
+    <li><strong>The cost of an error</strong> — not just the penalty, but the hours spent fixing it and the effect on the relationship with the authority or the client.</li>
+  </ul>
+  <div class="callout">
+    <p>
+      <strong>Watch the measurement that is most often missing:</strong> the cost of preparing for an inspection.
+      It is a real cost, but it appears irregularly, so it never enters a monthly budget — and it is precisely the
+      one that justifies traceability best.
+    </p>
+  </div>
+
+  <h2>Integration with existing systems</h2>
+  <p>
+    The sound principle is simple: the systems you already use remain the source of truth for operational data.
+    What is added on top is validation, traceability and reporting. In practice, the connections fall into three
+    areas:
+  </p>
+  <ul>
+    <li><strong>Inbound data</strong> — invoices, orders, items, supplier lists, messages and files received from third parties.</li>
+    <li><strong>External references</strong> — product codes, nomenclatures, entity identifiers, information from public registries.</li>
+    <li><strong>Outputs</strong> — the reporting document, the supporting file, and the export the authority's portal asks for.</li>
+  </ul>
+  <p>
+    When evaluating a solution, the useful questions are not "how many integrations does it have", but: where does
+    the data end up, who can see it, what happens when a piece of information is missing, and how does the flow
+    resume after an error. The hidden cost of any implementation is not the licence, it is the migration — which is
+    why a tool that produces its first value without moving all your data somewhere new is almost always cheaper
+    than it looks.
+  </p>
+
+  <h2>An ROI calculation framework</h2>
+  <p>The formula is not complicated; the hard part is not counting the same money twice. The starting point:</p>
+  <div class="callout">
+    <p>
+      <strong>ROI = (time saved × real hourly cost + error costs avoided + delay costs avoided − total cost of the
+      solution) ÷ total cost of the solution</strong>
+    </p>
+    <p>
+      "Real hourly cost" means the full cost of the person who did the work, not just gross salary. "Total cost of
+      the solution" includes the licence, implementation, training and operation over the period assessed.
+    </p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Component</th><th>How to estimate it</th><th>The common mistake</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Time saved</td>
+          <td>Hours per report × cycles per year × the realistic reduction achieved</td>
+          <td>Assuming saved time automatically becomes saving, when in fact it is only redistributed</td>
+        </tr>
+        <tr>
+          <td>Errors avoided</td>
+          <td>Correction rate × remediation cost per incident</td>
+          <td>Counting only the penalty, not the hours spent remediating</td>
+        </tr>
+        <tr>
+          <td>Delays avoided</td>
+          <td>Probability of a delay × its cost, including the relationship cost</td>
+          <td>Treating it as zero because "it never happened"</td>
+        </tr>
+        <tr>
+          <td>Cost of the solution</td>
+          <td>Licence + implementation + training + operation, over 12–24 months</td>
+          <td>Comparing only the licence and ignoring the internal cost of implementation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    The prudence rule: if the result depends decisively on a single term you cannot document, treat it as an
+    assumption, not as a result. An ROI calculated on a measured — even approximate — baseline is more credible,
+    and more useful in a conversation with management, than an industry average pulled from elsewhere.
+  </p>
+
+  <h2>Checklist before choosing a solution</h2>
+  <ol>
+    <li>Measure the baseline over the last two or three cycles, even if it has to be reconstructed retroactively.</li>
+    <li>Separate the two kinds of work: what is executed identically every time, and what requires judgement.</li>
+    <li>Decide where the source of truth stays, and what is not moved anywhere.</li>
+    <li>Map the points where supplier data enters, and who is accountable for them.</li>
+    <li>Define what "a valid record" means, and who decides when two sources conflict.</li>
+    <li>Ask for a trial on your own data, over a real cycle, before signing an annual contract.</li>
+  </ol>
+  <p>
+    Collecting supplier data, validating it and preparing reporting are exactly the kind of repetitive process where
+    automation proves its value — just as it does in the CBAM, EUDR and AI Act flows we build for our clients.
+  </p>
+  <p>
+    <strong>Want to see what the flow would look like on your data?</strong> Start with the
+    <a href="/en/cbam-eudr-test/">quick CBAM / EUDR test</a> if you are not sure the regulations apply to you, or
+    <a href="/en/contact/">book a conversation</a> for an assessment of your current process. If you would rather
+    map the process first and decide afterwards what gets automated,
+    <a href="/en/ai-consulting/">our consulting work</a> starts exactly there.
+  </p>
+</ArticleLayout>
