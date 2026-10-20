@@ -50,8 +50,8 @@ Contact: office@speed-flow.ai
 
 ## Soluții software (Română)
 
-- [CBAM Manager](https://www.speed-flow.ai/ro/solutii/cbam/): Automatizare pentru raportare, validare și conformitate CBAM pentru importatori.
-- [EUDR Manager](https://www.speed-flow.ai/ro/solutii/eudr/): Suport pentru procese EUDR, trasabilitate documentară și organizarea datelor necesare conformării.
+- [CBAM Manager](https://www.speed-flow.ai/ro/solutii/cbam/): Software CBAM în limba română pentru importatorii din România: pragul de 50 t, datele de emisii de la furnizori, costul certificatelor CBAM și declarația anuală. Preț de la 250 € pe an.
+- [EUDR Manager](https://www.speed-flow.ai/ro/solutii/eudr/): Software EUDR în limba română: datele furnizorilor, geolocalizarea parcelelor, riscul pe lot, transmiterea declarației de diligență în TRACES și numărul DDS pentru vamă. Preț de la 500 € pe an.
 - [ePaap](https://www.speed-flow.ai/ro/solutii/epaap/): Flux digital pentru achiziții publice — referate, dosar de achiziție și PAAP.
 - [TenderCraft](https://www.speed-flow.ai/ro/solutii/tendercraft/): Generare de oferte pentru proceduri de achiziții publice — extrage cerințele din documentație și construiește oferta.
 - [FindEquip](https://www.speed-flow.ai/ro/solutii/findequip/): Identificarea echipamentelor conforme pentru participarea la proceduri, după cerințe tehnice.
@@ -59,6 +59,8 @@ Contact: office@speed-flow.ai
 
 ## Ghiduri și articole (Română)
 
+- [Numărul DDS în declarația vamală (EUDR)](https://www.speed-flow.ai/ro/blog/numar-dds-declaratie-vamala-eudr/): Ce este numărul de referință al declarației de diligență, cine îl obține (importatorul din UE, nu furnizorul din afara UE), când trebuie să existe (înainte de vămuire), codul TARIC C716 și ce faceți dacă furnizorul nu trimite date.
+- [Cât costă certificatele CBAM pentru importurile din 2026](https://www.speed-flow.ai/ro/blog/cost-certificate-cbam-2026-calcul/): Prețurile trimestriale publicate de Comisie (75,36 €, 75,28 €, 82,32 €), cumpărarea din 1 februarie 2027, formula cu valoarea de referință și factorul CBAM, exemplu pentru 1.000 t de oțel cu date reale față de valori implicite.
 - [CBAM în 2026: ghid practic pentru importatori](https://www.speed-flow.ai/ro/blog/ghid-cbam-2026-importatori/): Regimul definitiv CBAM, pragul de minimis de 50 t, autorizarea ca declarant, calculul emisiilor, certificatele, termenele și capcanele frecvente.
 - [EUDR: ghid pentru importatori](https://www.speed-flow.ai/ro/blog/ghid-eudr-importatori/): Obligațiile EUDR de la 30 decembrie 2026 — cele trei interdicții, due diligence (Art. 9–11), geolocația parcelelor, DDS în TRACES și checklistul de pregătire.
 - [ISO/IEC 42001 și EU AI Act](https://www.speed-flow.ai/ro/blog/iso-42001-pregatire-eu-ai-act/): Cum se mapează standardul de management AI pe obligațiile EU AI Act pentru sisteme high-risk, cele 38 de controale din Anexa A și ce nu rezolvă certificarea.

@@ -3,63 +3,87 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
 ---
 
 <SolutionLayout
-  title="Software EUDR și consultanță pentru operatori"
+  title="EUDR Manager: software EUDR, număr DDS și geolocalizare"
   altPath="/solutions/eudr"
-  description="Software EUDR și consultanță EUDR în România: geolocalizarea parcelelor, evaluarea riscului și pregătirea declarațiilor de diligență."
-  heroTitle="Software EUDR și consultanță pentru operatori"
-  heroProblem="Regulamentul EUDR impune trasabilitate pe lanțul de aprovizionare și documentație complexă pentru produsele vizate."
-  heroResult="Oferim software EUDR și consultanță pentru organizarea datelor, documentelor și trasabilității necesare conformării."
-  forWhom="Companii care importă sau comercializează produse vizate de regulamentul EUDR și au nevoie de trasabilitate documentată."
+  description="De la 30 decembrie 2026, fără numărul DDS lemnul, mobila sau soia nu se vămuiesc. EUDR Manager ține datele furnizorilor, riscul și dosarul lotului. Test gratuit."
+  heroTitle="Software EUDR în română: fără numărul DDS, marfa nu trece de vamă"
+  heroProblem="De la 30 decembrie 2026, lemnul, mobila, hârtia, soia, cafeaua și celelalte produse EUDR intră pe piața UE doar după declarația de diligență (DDS). Numărul ei de referință se trece în declarația vamală."
+  heroResult="EUDR Manager ține într-un singur loc datele de la furnizori, geolocalizarea parcelelor, riscul și dosarul fiecărui lot, până la numărul DDS."
+  countdown={{ date: '2026-12-30', before: 'Mai sunt', after: 'zile până la EUDR (30 decembrie 2026)' }}
+  secondaryCta={{ href: '/ro/test-cbam-eudr/', label: 'Testul gratuit: vă privește EUDR?' }}
+  lead="De la 30 decembrie 2026, lemnul, mobila, hârtia, soia, cafeaua, cacaoa, cauciucul și celelalte produse din Regulamentul EUDR intră pe piața UE doar după declarația de diligență (DDS). Importatorul o depune în sistemul de informații al UE înainte de vămuire, iar numărul de referință primit se trece în declarația vamală. Fără el, marfa nu este pusă în liberă circulație. EUDR Manager, software EUDR dezvoltat în România, ține într-un singur loc datele de la furnizori, verificarea riscului și dosarul fiecărui lot, în limba română."
+  forWhom="Cine are ce de făcut sub EUDR depinde de rol. Atenție: dacă marfa este vămuită pe numele firmei dumneavoastră, chiar cu factură de la o firmă din UE, sunteți importator."
   forWhomItems={[
-    "Importatori de lemn, cauciuc, cafea, cacao, soia, ulei de palmier, bovine",
-    "Companii cu lanțuri de aprovizionare complexe",
-    "Departamente de conformitate și sustenabilitate",
-    "Operatori și comercianți vizați de EUDR",
+    "Importați din afara UE (placaj, PAL, MDF, parchet, mobilier, peleți, soia, cafea): depuneți DDS înainte de import, iar numărul intră în declarația vamală",
+    "Cumpărați de la importatorul din UE: primiți de la el numărul DDS și îl păstrați cel puțin 5 ani, legat de lot",
+    "Recoltați lemn sau îl puneți primii pe piață în România: depuneți DDS sau, ca firmă micro sau mică, declarația simplificată; termenul de 30 decembrie 2026 se aplică și firmelor micro și mici din lemn",
+    "Fabrici de furaje, producători de mobilă cu export, departamente de achiziții și conformitate",
   ]}
   processes={[
-    "Mapare lanț de aprovizionare și furnizori",
-    "Geolocalizare parcele (poligon/punct), cu verificare arii protejate și suprapunere furnizori",
-    "Extragere asistată de AI a datelor și coordonatelor GPS din documente, cu validare manuală",
-    "Evaluare automată de risc pe țară, furnizor, marfă și documentație",
-    "Colectare și organizare documente de trasabilitate",
-    "Validare conformitate pe fiecare lot / livrare",
-    "Generare și transmitere automată a declarației de diligență în TRACES, cu preluarea numărului de referință DDS",
-    "Monitorizare și actualizare date, inclusiv rescreening sancțiuni furnizori",
+    "Maparea lanțului de aprovizionare și a furnizorilor",
+    "Geolocalizarea parcelelor (poligon sau punct), cu verificarea ariilor protejate și a suprapunerilor",
+    "Extragerea asistată de AI a datelor și coordonatelor GPS din documente, cu validare manuală",
+    "Evaluarea automată a riscului pe țară, furnizor, marfă și documentație",
+    "Colectarea și organizarea documentelor de trasabilitate",
+    "Validarea conformității pe fiecare lot sau livrare",
+    "Generarea și transmiterea declarației de diligență în TRACES, cu preluarea numărului de referință DDS",
+    "Monitorizarea și actualizarea datelor, inclusiv verificarea periodică a sancțiunilor pentru furnizori",
   ]}
   howItWorks={[
-    { title: "Mapare furnizori", desc: "Identificăm și structurăm informațiile despre furnizorii și originea produselor." },
-    { title: "Colectare documente", desc: "Centralizăm documentele de trasabilitate, certificate și declarații." },
-    { title: "Validare conformitate", desc: "Verificăm completitudinea și corectitudinea documentației pentru fiecare lot." },
-    { title: "Transmitere în TRACES", desc: "Generăm și transmitem automat declarația de diligență, apoi preluăm numărul de referință DDS." },
+    { title: "Furnizori și produse", desc: "Introduceți produsele pe coduri NC și furnizorii. Aplicația marchează ce intră în EUDR." },
+    { title: "Date și documente", desc: "Strângem specia, țara și parcelele de recoltare, perioada recoltării și dovezile de legalitate." },
+    { title: "Risc pe lot", desc: "Evaluăm riscul pe fiecare lot și îl marcăm: date complete, de clarificat sau blocat." },
+    { title: "DDS în TRACES", desc: "Generăm și transmitem declarația de diligență, apoi preluăm numărul DDS pentru brokerul vamal." },
   ]}
   outputs={[
-    "Registru structurat de trasabilitate, cu hartă interactivă a parcelelor",
-    "Scor de risc per lot, aliniat la concluzia Art. 10(2) — neglijabil/non-neglijabil",
-    "Declarații de diligență transmise automat în TRACES, cu preluarea numărului de referință DDS",
-    "Dashboard stare conformitate per furnizor",
-    "Alerte pentru documente lipsă sau expirate, și pentru sancțiuni furnizori",
+    "Registru de trasabilitate, cu hartă a parcelelor",
+    "Scor de risc pe lot, cu concluzia neglijabil sau non-neglijabil (Art. 10 alin. 2)",
+    "Declarații de diligență transmise în TRACES, cu numărul de referință DDS legat de lot",
+    "Situația conformității pe fiecare furnizor",
+    "Alerte pentru documente lipsă sau expirate și pentru sancțiuni ale furnizorilor",
+    "Dosarul lotului păstrat 5 ani, gata de prezentat la control",
   ]}
+  pricing={{
+    title: "Prețuri EUDR Manager",
+    intro: "Preț de lansare, garantat 12 luni, pe firmă, fără TVA.",
+    rows: [
+      { tier: "Start", price: "500 €", includes: "până la 10 furnizori activi, declarații nelimitate" },
+      { tier: "Standard", price: "1.000 €", includes: "până la 30 de furnizori activi" },
+      { tier: "Pro", price: "2.000 €", includes: "până la 100 de furnizori activi" },
+      { tier: "Ofertă", price: "de la 3.500 €", includes: "peste 100 de furnizori" },
+    ],
+    notes: [
+      "Configurare inițială: 500 € (o singură dată).",
+      "Asistat: software plus colectarea datelor de la furnizori, de la 3.500 € pe an.",
+      "Cont de probă: 30 de zile, gratuit.",
+      "CBAM Manager și EUDR Manager împreună: 20% reducere.",
+    ],
+  }}
+  offerPrice="500"
   faq={[
-    { q: "Ce face software-ul EUDR?", a: "Software-ul EUDR centralizează furnizorii și geolocalizările, verifică documentele, evaluează riscul și pregătește declarațiile de diligență necesară pentru sistemul EUDR." },
-    { q: "Cum obțin numărul DDS prin platforma Speed Flow?", a: "EUDR Manager validează datele și geolocalizările, generează și transmite automat declarația de diligență în TRACES, apoi preia numărul de referință DDS pentru utilizarea în fluxul de conformitate." },
-    { q: "Ce produse sunt vizate?", a: "Lemn, cauciuc, cafea, cacao, soia, ulei de palmier și bovine, inclusiv produse derivate." },
-    { q: "Când intră în vigoare EUDR?", a: "Regulamentul se aplică operatorilor mari și medii din 30 decembrie 2026, iar micro și micilor întreprinderi din 30 iunie 2027." },
-    { q: "Cum se calculează riscul?", a: "Printr-un motor automat de scoring pe 4 componente (țară, furnizor, marfă, documentație), cu reguli de blocare automată pentru cazurile de risc ridicat sau documentație lipsă." },
-    { q: "Există demo disponibil?", a: "Da. Poți deschide demo-ul direct din această pagină sau ne poți contacta pentru un tur ghidat." },
+    { q: "Ce este numărul DDS?", a: "Este numărul de referință pe care sistemul de informații EUDR îl atribuie declarației de diligență după depunere. Se trece în declarația vamală la import sau la export." },
+    { q: "Unde se trece numărul DDS în declarația vamală?", a: "La documentele prezentate, împreună cu codul de certificat TARIC corespunzător: de regulă C716 pentru declarația de diligență. Pentru alte situații există coduri separate, actualizate de Comisie în septembrie 2026. Brokerul vamal are nevoie de număr înainte să depună declarația vamală." },
+    { q: "Când se aplică EUDR?", a: "De la 30 decembrie 2026 pentru firmele mari și mijlocii și pentru firmele micro și mici din lemn care intrau deja sub vechiul regulament EUTR. Pentru firmele micro și mici din celelalte sectoare, de la 30 iunie 2027." },
+    { q: "Pot folosi numărul DDS al furnizorului din afara UE?", a: "Nu. Furnizorul din afara UE nu depune DDS în sistemul UE. Declarația o depune importatorul din UE." },
+    { q: "Avem FSC sau PEFC. Mai trebuie ceva?", a: "Da. Certificarea ajută la evaluarea riscului, dar nu înlocuiește geolocalizarea parcelelor și declarația de diligență." },
+    { q: "Comandăm cantități mici. Ne privește EUDR?", a: "Da. EUDR nu are prag minim de cantitate." },
+    { q: "Lemnul românesc e risc scăzut. Suntem scutiți?", a: "Nu. Riscul scăzut permite o diligență simplificată, dar datele și declarația rămân obligatorii, după rol." },
   ]}
+  disclaimer="Informațiile au caracter general și nu țin loc de analiză pe cazul concret."
   demoAvailable={true}
   demoLabel="Demo disponibil"
   demoUrl="https://app.speed-flow.ai/login"
   serviceSchema={{
-    name: "Software EUDR și consultanță — conformitate și trasabilitate",
-    description: "Software EUDR și consultanță pentru validarea geolocalizărilor, evaluarea riscului, transmiterea automată în TRACES și preluarea numărului DDS.",
+    name: "Software EUDR și consultanță EUDR în România",
+    description: "EUDR Manager: date de la furnizori, geolocalizarea parcelelor, evaluarea riscului, transmiterea declarației de diligență în TRACES și preluarea numărului DDS.",
   }}
   guideLinks={[
-    { href: "/ro/blog/ghid-eudr-importatori/", label: "Nu ești sigur dacă te afectează? Citește ghidul complet despre EUDR →" },
+    { href: "/ro/blog/numar-dds-declaratie-vamala-eudr/", label: "Numărul DDS în declarația vamală: ce este, cine îl obține și ce se întâmplă fără el →" },
+    { href: "/ro/blog/ghid-eudr-importatori/", label: "EUDR: ghid pentru importatori →" },
   ]}
   consulting={{
-    title: "Ai nevoie de consultanță, nu doar de software?",
-    text: "Echipa Speed Flow oferă consultanță EUDR pentru operatorii și comercianții din România: cartografierea lanțului de aprovizionare, colectarea geolocalizărilor de la furnizori, evaluarea riscului pe țară și furnizor și depunerea declarațiilor de diligență necesară în sistemul de informații EUDR. Lucrăm atât cu firme care vor doar platforma, cât și cu firme care preferă să externalizeze complet procesul.",
+    title: "Aveți nevoie de consultanță, nu doar de software?",
+    text: "Echipa Speed Flow oferă consultanță EUDR pentru operatorii și comercianții din România: maparea lanțului de aprovizionare, colectarea geolocalizărilor de la furnizori, evaluarea riscului pe țară și furnizor și depunerea declarațiilor de diligență în sistemul de informații EUDR. Lucrăm cu firme care vor doar platforma și cu firme care preferă să externalizeze tot procesul.",
     ctaLabel: "Solicită o discuție",
   }}
 />

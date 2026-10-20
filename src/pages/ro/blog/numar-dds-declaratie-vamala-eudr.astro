@@ -1,0 +1,138 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'Ce este numărul DDS?',
+    a: 'Este numărul de referință pe care sistemul de informații EUDR îl atribuie declarației de diligență (due diligence statement) după ce operatorul o depune. Se trece în declarația vamală la import sau la export.',
+  },
+  {
+    q: 'Pot folosi numărul DDS al furnizorului din Turcia sau din Ucraina?',
+    a: 'Nu. Furnizorul din afara UE nu depune DDS în sistemul UE. Declarația o depune importatorul din UE, adică firma pe numele căreia se vămuiește marfa.',
+  },
+  {
+    q: 'Unde se trece numărul DDS în declarația vamală?',
+    a: 'La documentele prezentate, împreună cu un cod de certificat TARIC. Pentru declarația de diligență obișnuită codul este, de regulă, C716. Pentru declarația simplificată, reimport, mostre, ambalaje sau produse second-hand există coduri separate, actualizate de Comisie în septembrie 2026.',
+  },
+  {
+    q: 'Avem certificare FSC. Mai avem nevoie de DDS?',
+    a: 'Da. Certificarea ajută la evaluarea riscului, dar nu înlocuiește geolocalizarea parcelelor și declarația de diligență.',
+  },
+  {
+    q: 'Un DDS poate acoperi mai multe transporturi?',
+    a: 'Da, dacă le cuprinde efectiv. Iar o singură declarație vamală poate conține mai multe numere DDS.',
+  },
+  {
+    q: 'Cât timp păstrăm numărul DDS și documentele?',
+    a: 'Cel puțin 5 ani, legate de lotul la care se referă.',
+  },
+];
+
+const sources = [
+  'Regulamentul (UE) 2023/1115 privind produsele fără defrișări (EUDR), cu modificările din Regulamentul (UE) 2025/2650',
+  { text: 'Comisia Europeană: documentul TARIC actualizat pentru EUDR (25 septembrie 2026)', url: 'https://ec.europa.eu/newsroom/env/items/957352/' },
+  'Comisia Europeană: întrebări frecvente EUDR și ghidul de utilizare al sistemului de informații EUDR',
+];
+---
+
+<ArticleLayout
+  title="Numărul DDS în declarația vamală EUDR: cine îl obține"
+  description="Din 30 decembrie 2026, lemnul, mobila sau soia din import nu se vămuiesc fără numărul DDS. Cine depune declarația, când și unde se trece în vamă."
+  altPath="/blog/"
+  translated={false}
+  heroTitle="Numărul DDS în declarația vamală: ce este, cine îl obține și ce se întâmplă fără el"
+  publishDate="2026-10-21"
+  faq={faq}
+  sources={sources}
+>
+  <div class="callout">
+    <p>
+      <strong>Pe scurt:</strong> de la 30 decembrie 2026, importul de produse EUDR cere numărul de referință al
+      declarației de diligență (DDS) în declarația vamală. Numărul îl obține importatorul, după ce depune
+      declarația în sistemul de informații al UE, înainte de vămuire. Fără el, marfa nu este pusă în liberă
+      circulație.
+    </p>
+  </div>
+
+  <h2>Ce este numărul DDS</h2>
+  <p>
+    DDS înseamnă declarația de diligență (în engleză, <em>due diligence statement</em>). Operatorul o depune
+    în sistemul de informații EUDR al Comisiei Europene și confirmă că a verificat originea produsului și că
+    riscul de defrișare este neglijabil. După depunere, sistemul atribuie declarației un număr de referință.
+    Acesta este „numărul DDS”.
+  </p>
+  <p>
+    Operatorii primari micro și mici care folosesc regimul simplificat primesc un identificator de declarație,
+    nu un număr DDS obișnuit. Pentru vamă, are același rol.
+  </p>
+
+  <h2>Cine depune declarația și obține numărul</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Situația firmei</th><th>Cine depune DDS</th><th>Ce aveți de făcut</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Importați direct din afara UE (Turcia, Ucraina, China, Brazilia etc.)</td><td>Dumneavoastră, ca operator</td><td>Depuneți DDS înainte de vămuire și dați numărul brokerului</td></tr>
+        <tr><td>Cumpărați de la importatorul din UE</td><td>Importatorul</td><td>Cereți numărul DDS și îl păstrați 5 ani, legat de lot</td></tr>
+        <tr><td>Cumpărați de la un distribuitor din UE</td><td>Primul operator din lanț</td><td>Păstrați datele despre furnizori și clienți 5 ani</td></tr>
+        <tr><td>Recoltați sau puneți primii pe piață lemn românesc</td><td>Dumneavoastră</td><td>Diligență și DDS sau, pentru firmele micro și mici, declarația simplificată</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    <strong>Capcana frecventă:</strong> dacă marfa este vămuită pe numele firmei dumneavoastră, sunteți
+    importator, chiar dacă factura vine de la o firmă din UE.
+  </p>
+
+  <h2>Când trebuie să aveți numărul</h2>
+  <p>Înainte ca brokerul să depună declarația vamală. Ordinea corectă:</p>
+  <ol>
+    <li>strângeți datele de la furnizor: specia, țara și coordonatele parcelelor de recoltare, perioada recoltării, dovezile de legalitate;</li>
+    <li>evaluați riscul și, dacă e cazul, îl reduceți;</li>
+    <li>depuneți DDS și primiți numărul;</li>
+    <li>transmiteți numărul brokerului vamal;</li>
+    <li>brokerul îl trece în declarația vamală.</li>
+  </ol>
+  <p>
+    Dacă pașii 1–3 nu sunt gata la sosirea mărfii, aceasta așteaptă în vamă, cu costurile de depozitare
+    aferente.
+  </p>
+
+  <h2>Unde se trece numărul în declarația vamală</h2>
+  <p>
+    Numărul DDS se trece la documentele prezentate, împreună cu un cod de certificat TARIC. Pentru declarația de
+    diligență obișnuită, codul este de regulă <strong>C716</strong>. Pentru alte situații (declarație
+    simplificată, reimport, mostre, ambalaje, produse second-hand) există coduri separate, actualizate de Comisie
+    în septembrie 2026.
+  </p>
+  <p>
+    Un singur DDS poate acoperi mai multe transporturi, dacă le cuprinde efectiv. O declarație vamală poate
+    conține și mai multe numere DDS. Verificați codul exact cu brokerul vamal pentru fiecare tip de operațiune.
+  </p>
+
+  <h2>Ce faceți dacă furnizorul nu trimite datele</h2>
+  <p>Fără geolocalizarea parcelelor nu puteți depune DDS. Trei lucruri ajută:</p>
+  <ul>
+    <li>cereți datele în scris, cu termen, și păstrați istoricul cererilor;</li>
+    <li>puneți obligația de a furniza datele EUDR în contractele și comenzile noi;</li>
+    <li>pentru furnizorii care nu răspund până la jumătatea lui noiembrie, căutați o alternativă pentru loturile din ianuarie.</li>
+  </ul>
+
+  <h2>Cum vă ajută EUDR Manager</h2>
+  <p>
+    <a href="/ro/solutii/eudr/">EUDR Manager</a> trimite cererile de date către furnizori, ține evidența
+    răspunsurilor, evaluează riscul pe fiecare lot, transmite declarația de diligență în TRACES și leagă
+    numărul DDS de lot, gata pentru broker și pentru control.
+  </p>
+  <div class="callout">
+    <p>
+      <strong>Nu știți ce rol are firma dumneavoastră?</strong> Faceți
+      <a href="/ro/test-cbam-eudr/">testul gratuit CBAM / EUDR</a> sau
+      <a href="/ro/solutii/eudr/">vedeți EUDR Manager și prețurile</a>.
+    </p>
+  </div>
+  <p>
+    Pentru obligațiile complete, citiți și <a href="/ro/blog/ghid-eudr-importatori/">ghidul EUDR pentru importatori</a>.
+  </p>
+</ArticleLayout>

@@ -1,0 +1,150 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+const faq = [
+  {
+    q: 'Cât costă un certificat CBAM în 2026?',
+    a: 'Cât prețul mediu al certificatelor ETS din trimestrul importului. Comisia a publicat 75,36 € pentru trimestrul I, 75,28 € pentru trimestrul II și 82,32 € pentru trimestrul III 2026, pe tona de CO₂. Prețul pentru trimestrul IV se publică pe 4 ianuarie 2027.',
+  },
+  {
+    q: 'Pot cumpăra certificatele CBAM acum, în 2026?',
+    a: 'Nu. Vânzarea certificatelor pentru importurile din 2026 începe la 1 februarie 2027, pe platforma centrală a UE.',
+  },
+  {
+    q: 'Certificatele CBAM se plătesc la vamă?',
+    a: 'Nu. Costul se plătește prin cumpărarea certificatelor de către declarantul autorizat CBAM, separat de taxele vamale.',
+  },
+  {
+    q: 'Ce se întâmplă dacă nu am date de emisii de la furnizor?',
+    a: 'Se folosesc valorile implicite, de regulă mai mari decât emisiile reale, deci mai multe certificate. Partea de emisii peste valoarea de referință a UE se plătește integral încă din 2026.',
+  },
+  {
+    q: 'Plătesc certificate pentru toate emisiile încorporate?',
+    a: 'Nu în primii ani. Din obligație se scade alocarea gratuită pe care o primesc încă producătorii din UE (valoarea de referință înmulțită cu factorul CBAM al anului) și prețul carbonului plătit efectiv în țara de origine. Alocarea scade în fiecare an până la zero în 2034.',
+  },
+];
+
+const sources = [
+  'Regulamentul (UE) 2023/956 de instituire a CBAM, cu modificările din Regulamentul (UE) 2025/2083',
+  { text: 'GMK Center: prețul certificatelor CBAM pentru trimestrul III 2026 (5 octombrie 2026)', url: 'https://gmk.center/en/news/the-european-commission-has-announced-the-price-of-cbam-certificates-for-q3-2026/' },
+  { text: 'PwC Austria: prețul certificatelor CBAM pentru trimestrul I 2026', url: 'https://www.pwc.at/de/insights/austrian-tax-news/cbam-certificates-eu-commission-price.html' },
+  'Regulamentul de punere în aplicare (UE) 2025/486 privind statutul de declarant autorizat CBAM',
+];
+---
+
+<ArticleLayout
+  title="Cost certificate CBAM 2026: preț, calcul și exemplu"
+  description="Prețul certificatelor CBAM în 2026 (75–82 € pe tona de CO₂), cum se calculează numărul lor și de ce valorile implicite pot multiplica costul."
+  altPath="/blog/"
+  translated={false}
+  heroTitle="Cât costă certificatele CBAM pentru importurile din 2026"
+  publishDate="2026-10-21"
+  faq={faq}
+  sources={sources}
+>
+  <div class="callout">
+    <p>
+      <strong>Pe scurt:</strong> un certificat CBAM acoperă o tonă de CO₂ și costă cât prețul mediu al
+      certificatelor ETS din perioada importului. Pentru 2026, primele trei trimestre au avut prețuri între 75 și
+      83 €. Certificatele se cumpără de la 1 februarie 2027. Numărul lor nu este un procent fix din emisii:
+      depinde de cât de mult depășesc emisiile produsului valoarea de referință a UE. De aceea, datele reale de la
+      furnizor fac cea mai mare diferență.
+    </p>
+  </div>
+
+  <h2>Prețul certificatelor CBAM în 2026</h2>
+  <p>Pentru importurile din 2026, Comisia publică un preț pe trimestru, calculat din licitațiile ETS:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Trimestrul importului</th><th>Preț pe certificat</th></tr></thead>
+      <tbody>
+        <tr><td>I (ianuarie–martie)</td><td>75,36 €</td></tr>
+        <tr><td>II (aprilie–iunie)</td><td>75,28 €</td></tr>
+        <tr><td>III (iulie–septembrie)</td><td>82,32 €</td></tr>
+        <tr><td>IV (octombrie–decembrie)</td><td>se publică pe 4 ianuarie 2027</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Se aplică prețul trimestrului în care a avut loc importul. Din 2027, prețul se publică săptămânal.</p>
+
+  <h2>Când și cum se plătesc</h2>
+  <ul>
+    <li><strong>1 februarie 2027:</strong> începe vânzarea certificatelor pentru importurile din 2026, pe platforma centrală a UE.</li>
+    <li><strong>30 septembrie 2027:</strong> declarația anuală pentru 2026 și predarea certificatelor.</li>
+    <li><strong>Din 2027, la sfârșitul fiecărui trimestru:</strong> trebuie să dețineți certificate pentru cel puțin 50% din emisiile importate de la începutul anului.</li>
+  </ul>
+  <p>
+    Certificatele le cumpără declarantul autorizat CBAM. În România, statutul îl acordă Ministerul Finanțelor,
+    pe baza unei cereri depuse electronic în registrul CBAM.
+  </p>
+
+  <h2>Cum se calculează numărul de certificate</h2>
+  <p>Pe scurt, pentru fiecare tonă de produs:</p>
+  <p><strong>certificate = emisii încorporate − (valoarea de referință UE × factorul CBAM al anului)</strong></p>
+  <p>Din rezultat se scade și prețul carbonului plătit efectiv în țara de origine, dacă există.</p>
+  <p>
+    Factorul CBAM reflectă alocarea gratuită pe care o primesc încă producătorii din UE. Scade în fiecare an,
+    așa că partea plătită crește:
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>An</th><th>Factor CBAM</th><th>Partea plătită pentru emisiile la nivelul referinței</th></tr></thead>
+      <tbody>
+        <tr><td>2026</td><td>97,5%</td><td>2,5%</td></tr>
+        <tr><td>2027</td><td>95%</td><td>5%</td></tr>
+        <tr><td>2028</td><td>90%</td><td>10%</td></tr>
+        <tr><td>2029</td><td>77,5%</td><td>22,5%</td></tr>
+        <tr><td>2030</td><td>51,5%</td><td>48,5%</td></tr>
+        <tr><td>2034</td><td>0%</td><td>100%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    <strong>Consecința importantă:</strong> dacă produsul are emisii la nivelul valorii de referință, în 2026
+    plătiți circa 2,5% din emisii. Orice tonă de CO₂ peste referință se plătește integral, încă din 2026.
+  </p>
+
+  <h2>Exemplu: 1.000 t de țevi din oțel importate în 2026</h2>
+  <p>
+    <em>Exemplu cu valori ipotetice, ca să arate mecanismul. Valorile de referință reale depind de codul NC.</em>
+    Presupunem o valoare de referință de 1,5 t CO₂ pe tona de produs și un preț de 80 € pe certificat.
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Situație</th><th>Emisii pe tonă</th><th>Certificate 2026</th><th>Cost 2026</th><th>Cost 2030, la același preț</th></tr></thead>
+      <tbody>
+        <tr><td>Date reale, furnizor eficient</td><td>1,6 t</td><td>138</td><td>circa 11.000 €</td><td>circa 66.200 €</td></tr>
+        <tr><td>Valori implicite (fără date)</td><td>2,4 t</td><td>938</td><td>circa 75.000 €</td><td>circa 130.200 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Aceeași marfă poate costa de aproape 7 ori mai mult în 2026 doar pentru că furnizorul nu a trimis datele de
+    emisii.
+  </p>
+
+  <h2>Ce puteți face până la 1 februarie 2027</h2>
+  <ol>
+    <li>Verificați dacă depășiți 50 de tone pe an și dacă aveți statut de declarant autorizat sau un broker cu acest statut.</li>
+    <li>Cereți acum datele de emisii de la fiecare furnizor și instalație, pentru importurile din 2026.</li>
+    <li>Calculați costul pe 2026 cu prețurile trimestriale publicate și includeți-l în prețurile de vânzare pentru 2027.</li>
+    <li>Planificați bugetul pentru cumpărarea certificatelor din februarie și pentru obligația trimestrială din 2027.</li>
+  </ol>
+
+  <h2>Cum vă ajută CBAM Manager</h2>
+  <p>
+    <a href="/ro/solutii/cbam/">CBAM Manager</a> urmărește tonele pe coduri NC și pragul de 50 de tone, cere și
+    verifică datele de emisii de la furnizori, calculează certificatele și costul și pregătește declarația anuală.
+  </p>
+  <div class="callout">
+    <p>
+      <strong>Vreți costul pe importurile dumneavoastră?</strong>
+      <a href="/ro/solutii/cbam/">Vedeți CBAM Manager și prețurile</a> sau faceți
+      <a href="/ro/test-cbam-eudr/">testul gratuit CBAM / EUDR</a>.
+    </p>
+  </div>
+  <p>
+    Pentru obligațiile complete, citiți și <a href="/ro/blog/ghid-cbam-2026-importatori/">ghidul CBAM 2026 pentru importatori</a>.
+  </p>
+  <p><em>Estimare orientativă. Costul real depinde de codul NC, de datele furnizorilor și de prețul certificatelor.</em></p>
+</ArticleLayout>
