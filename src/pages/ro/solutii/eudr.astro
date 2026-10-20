@@ -6,17 +6,17 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
   title="EUDR Manager: software EUDR, număr DDS și geolocalizare"
   altPath="/solutions/eudr"
   description="De la 30 decembrie 2026, fără numărul DDS lemnul, mobila sau soia nu se vămuiesc. EUDR Manager ține datele furnizorilor, riscul și dosarul lotului. Test gratuit."
-  heroTitle="Software EUDR în română: fără numărul DDS, marfa nu trece de vamă"
+  heroTitle="Fără numărul DDS, lemnul și mobila din import rămân în vamă"
   heroProblem="De la 30 decembrie 2026, lemnul, mobila, hârtia, soia, cafeaua și celelalte produse EUDR intră pe piața UE doar după declarația de diligență (DDS). Numărul ei de referință se trece în declarația vamală."
-  heroResult="EUDR Manager ține într-un singur loc datele de la furnizori, geolocalizarea parcelelor, riscul și dosarul fiecărui lot, până la numărul DDS."
+  heroResult="EUDR Manager vă ajută de la cererea de date către furnizor până la numărul DDS: coordonatele parcelelor, evaluarea riscului și dosarul fiecărui lot, într-un singur loc."
   countdown={{ date: '2026-12-30', before: 'Mai sunt', after: 'zile până la EUDR (30 decembrie 2026)' }}
-  secondaryCta={{ href: '/ro/test-cbam-eudr/', label: 'Testul gratuit: vă privește EUDR?' }}
-  lead="De la 30 decembrie 2026, lemnul, mobila, hârtia, soia, cafeaua, cacaoa, cauciucul și celelalte produse din Regulamentul EUDR intră pe piața UE doar după declarația de diligență (DDS). Importatorul o depune în sistemul de informații al UE înainte de vămuire, iar numărul de referință primit se trece în declarația vamală. Fără el, marfa nu este pusă în liberă circulație. EUDR Manager, software EUDR dezvoltat în România, ține într-un singur loc datele de la furnizori, verificarea riscului și dosarul fiecărui lot, în limba română."
-  forWhom="Cine are ce de făcut sub EUDR depinde de rol. Atenție: dacă marfa este vămuită pe numele firmei dumneavoastră, chiar cu factură de la o firmă din UE, sunteți importator."
+  secondaryCta={{ href: '/ro/test-cbam-eudr/', label: 'Aflați gratuit dacă vă privește EUDR' }}
+  lead="De la 30 decembrie 2026, lemnul, mobila, hârtia, soia, cafeaua, cacaoa, cauciucul și celelalte produse din Regulamentul EUDR intră pe piața UE doar după declarația de diligență (DDS). Importatorul o depune în sistemul de informații al UE înainte de vămuire, iar numărul de referință primit se trece în declarația vamală. Fără el, marfa nu este pusă în liberă circulație. EUDR Manager este un software EUDR făcut în România, în limba română: datele de la furnizori, evaluarea riscului și dosarul fiecărui lot stau într-un singur loc."
+  forWhom="Obligațiile diferă după rolul firmei în lanțul de aprovizionare. Atenție: dacă marfa este vămuită pe numele firmei dumneavoastră, chiar cu factură de la o firmă din UE, sunteți importator."
   forWhomItems={[
     "Importați din afara UE (placaj, PAL, MDF, parchet, mobilier, peleți, soia, cafea): depuneți DDS înainte de import, iar numărul intră în declarația vamală",
     "Cumpărați de la importatorul din UE: primiți de la el numărul DDS și îl păstrați cel puțin 5 ani, legat de lot",
-    "Recoltați lemn sau îl puneți primii pe piață în România: depuneți DDS sau, ca firmă micro sau mică, declarația simplificată; termenul de 30 decembrie 2026 se aplică și firmelor micro și mici din lemn",
+    "Exploatați lemn în România sau sunteți primii care îl vând: depuneți DDS sau, dacă sunteți firmă micro ori mică, declarația simplificată. Și pentru dumneavoastră termenul este 30 decembrie 2026",
     "Fabrici de furaje, producători de mobilă cu export, departamente de achiziții și conformitate",
   ]}
   processes={[
@@ -31,15 +31,15 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
   ]}
   howItWorks={[
     { title: "Furnizori și produse", desc: "Introduceți produsele pe coduri NC și furnizorii. Aplicația marchează ce intră în EUDR." },
-    { title: "Date și documente", desc: "Strângem specia, țara și parcelele de recoltare, perioada recoltării și dovezile de legalitate." },
-    { title: "Risc pe lot", desc: "Evaluăm riscul pe fiecare lot și îl marcăm: date complete, de clarificat sau blocat." },
-    { title: "DDS în TRACES", desc: "Generăm și transmitem declarația de diligență, apoi preluăm numărul DDS pentru brokerul vamal." },
+    { title: "Date și documente", desc: "Cereți de la furnizori specia, țara și parcelele de recoltare, perioada recoltării și dovezile de legalitate. Răspunsurile intră direct în dosar." },
+    { title: "Risc pe lot", desc: "Fiecare lot primește o evaluare de risc și o stare clară: date complete, de clarificat sau blocat." },
+    { title: "DDS în TRACES", desc: "Declarația de diligență se transmite din aplicație, iar numărul DDS primit rămâne legat de lot, pentru brokerul vamal." },
   ]}
   outputs={[
     "Registru de trasabilitate, cu hartă a parcelelor",
     "Scor de risc pe lot, cu concluzia neglijabil sau non-neglijabil (Art. 10 alin. 2)",
     "Declarații de diligență transmise în TRACES, cu numărul de referință DDS legat de lot",
-    "Situația conformității pe fiecare furnizor",
+    "Ce lipsește de la fiecare furnizor",
     "Alerte pentru documente lipsă sau expirate și pentru sancțiuni ale furnizorilor",
     "Dosarul lotului păstrat 5 ani, gata de prezentat la control",
   ]}
@@ -62,12 +62,12 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
   offerPrice="500"
   faq={[
     { q: "Ce este numărul DDS?", a: "Este numărul de referință pe care sistemul de informații EUDR îl atribuie declarației de diligență după depunere. Se trece în declarația vamală la import sau la export." },
-    { q: "Unde se trece numărul DDS în declarația vamală?", a: "La documentele prezentate, împreună cu codul de certificat TARIC corespunzător: de regulă C716 pentru declarația de diligență. Pentru alte situații există coduri separate, actualizate de Comisie în septembrie 2026. Brokerul vamal are nevoie de număr înainte să depună declarația vamală." },
+    { q: "Unde se trece numărul DDS în declarația vamală?", a: "La documentele prezentate, împreună cu codul de certificat TARIC. Pentru declarația de diligență obișnuită codul este de regulă C716. Pentru alte situații există coduri separate, actualizate de Comisie în septembrie 2026. Brokerul vamal are nevoie de număr înainte să depună declarația vamală." },
     { q: "Când se aplică EUDR?", a: "De la 30 decembrie 2026 pentru firmele mari și mijlocii și pentru firmele micro și mici din lemn care intrau deja sub vechiul regulament EUTR. Pentru firmele micro și mici din celelalte sectoare, de la 30 iunie 2027." },
     { q: "Pot folosi numărul DDS al furnizorului din afara UE?", a: "Nu. Furnizorul din afara UE nu depune DDS în sistemul UE. Declarația o depune importatorul din UE." },
     { q: "Avem FSC sau PEFC. Mai trebuie ceva?", a: "Da. Certificarea ajută la evaluarea riscului, dar nu înlocuiește geolocalizarea parcelelor și declarația de diligență." },
     { q: "Comandăm cantități mici. Ne privește EUDR?", a: "Da. EUDR nu are prag minim de cantitate." },
-    { q: "Lemnul românesc e risc scăzut. Suntem scutiți?", a: "Nu. Riscul scăzut permite o diligență simplificată, dar datele și declarația rămân obligatorii, după rol." },
+    { q: "România este țară cu risc scăzut. Suntem scutiți?", a: "Nu. Riscul scăzut permite o diligență simplificată, dar datele și declarația rămân obligatorii, în funcție de rolul firmei." },
   ]}
   disclaimer="Informațiile au caracter general și nu țin loc de analiză pe cazul concret."
   demoAvailable={true}

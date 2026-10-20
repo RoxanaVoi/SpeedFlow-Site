@@ -6,12 +6,12 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
   title="CBAM Manager: software CBAM și cost certificate 2026"
   altPath="/solutions/cbam"
   description="Certificatele CBAM pentru importurile din 2026 se cumpără din 1 februarie 2027. CBAM Manager calculează emisiile și costul și pregătește declarația anuală."
-  heroTitle="Software CBAM în română: cât vă costă certificatele pentru importurile din 2026"
-  heroProblem="Certificatele CBAM pentru importurile din 2026 se cumpără de la 1 februarie 2027. Fără date reale de emisii de la furnizori, se aplică valorile implicite și costul poate fi de câteva ori mai mare."
-  heroResult="CBAM Manager ține datele de emisii de la furnizori, calculează costul certificatelor pe măsură ce intră importurile și pregătește declarația anuală."
+  heroTitle="Știți cât vă vor costa certificatele CBAM pentru importurile din 2026?"
+  heroProblem="Certificatele CBAM pentru importurile din 2026 se cumpără de la 1 februarie 2027. Dacă furnizorii nu vă trimit datele reale de emisii, se folosesc valorile implicite, iar costul poate ieși de câteva ori mai mare."
+  heroResult="Cu CBAM Manager aveți datele de emisii ale furnizorilor într-un singur loc, vedeți costul certificatelor pe măsură ce intră importurile și primiți declarația anuală pregătită."
   countdown={{ date: '2027-02-01', before: 'Mai sunt', after: 'zile până la vânzarea certificatelor CBAM (1 februarie 2027)' }}
-  secondaryCta={{ href: '/ro/test-cbam-eudr/', label: 'Testul gratuit: vă privește CBAM?' }}
-  lead="Din 1 ianuarie 2026, CBAM este în regim definitiv. Importatorii de fier și oțel, aluminiu, ciment și îngrășăminte cu peste 50 de tone pe an, cumulat, și importatorii de hidrogen și energie electrică, indiferent de cantitate, au nevoie de statutul de declarant autorizat CBAM, acordat în România de Ministerul Finanțelor. Certificatele pentru importurile din 2026 se cumpără de la 1 februarie 2027, iar declarația anuală se depune până la 30 septembrie 2027. CBAM Manager, software CBAM dezvoltat în România, ține datele de emisii de la furnizori, calculează costul pe măsură ce intră importurile și pregătește declarația, în limba română."
+  secondaryCta={{ href: '/ro/test-cbam-eudr/', label: 'Aflați gratuit dacă vă privește CBAM' }}
+  lead="Din 1 ianuarie 2026, CBAM este în regim definitiv. Importatorii de fier și oțel, aluminiu, ciment și îngrășăminte cu peste 50 de tone pe an, cumulat, și importatorii de hidrogen și energie electrică, indiferent de cantitate, au nevoie de statutul de declarant autorizat CBAM, acordat în România de Ministerul Finanțelor. Certificatele pentru importurile din 2026 se cumpără de la 1 februarie 2027, iar declarația anuală se depune până la 30 septembrie 2027. CBAM Manager este un software CBAM făcut în România, în limba română: adună datele de emisii de la furnizori, calculează costul pe măsură ce intră importurile și pregătește declarația."
   forWhom="Importatorii din România care aduc din afara UE fier și oțel, aluminiu, ciment sau îngrășăminte peste pragul de 50 de tone pe an, importatorii de hidrogen și energie electrică, și firmele care fac declarațiile pentru ei."
   forWhomItems={[
     "Importatori de fier, oțel, țevi și profile, aluminiu, ciment, îngrășăminte, hidrogen, energie electrică",
@@ -32,7 +32,7 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
   ]}
   howItWorks={[
     { title: "Importuri și furnizori", desc: "Introduceți importurile pe coduri NC și furnizorii. Aplicația urmărește pragul de 50 de tone." },
-    { title: "Date de emisii", desc: "Cererile pleacă către furnizori, iar răspunsurile sunt verificate pentru completitudine și consistență." },
+    { title: "Date de emisii", desc: "Trimiteți cererile de date către furnizori, iar noi verificăm dacă răspunsurile sunt complete și dacă cifrele se potrivesc între ele." },
     { title: "Cost și certificate", desc: "Calculăm emisiile încorporate, certificatele necesare și costul, cu prețul trimestrial publicat de Comisie." },
     { title: "Declarația anuală", desc: "Pregătim declarația anuală pentru registrul CBAM, cu export XML." },
   ]}
@@ -41,9 +41,9 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
     "Costul certificatelor pe trimestru și pe an",
     "Simulator de cost multi-an, cu scenarii de preț ETS",
     "Registru certificate CBAM: achiziții, inventar, predare",
-    "Situația furnizorilor și a datelor lipsă, cu scor pe furnizor",
+    "Ce date lipsesc și de la ce furnizor",
     "Alerte pentru termene și obligații",
-    "Jurnal de validare și urmă de audit",
+    "Istoricul verificărilor, pentru control",
     "Export de date în format structurat",
   ]}
   pricing={{
@@ -65,12 +65,12 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
   }}
   offerPrice="250"
   faq={[
-    { q: "Cât costă un certificat CBAM în 2026?", a: "Cât prețul mediu al certificatelor ETS din trimestrul importului. Comisia a publicat 75,36 € pentru trimestrul I, 75,28 € pentru trimestrul II și 82,32 € pentru trimestrul III 2026, pe tona de CO₂. Prețul pentru trimestrul IV se publică pe 4 ianuarie 2027. Din 2027, prețul se publică săptămânal." },
-    { q: "Când se cumpără certificatele CBAM pentru importurile din 2026?", a: "De la 1 februarie 2027, pe platforma centrală a UE. Declarația anuală pentru 2026 și predarea certificatelor au termen 30 septembrie 2027. Din 2027, la final de trimestru, trebuie deținute certificate pentru cel puțin 50% din emisiile importate de la începutul anului." },
+    { q: "Cât costă un certificat CBAM în 2026?", a: "Prețul este media prețurilor certificatelor ETS din trimestrul în care ați importat marfa. Comisia a publicat 75,36 € pentru trimestrul I, 75,28 € pentru trimestrul II și 82,32 € pentru trimestrul III 2026, pentru fiecare tonă de CO₂. Prețul pentru trimestrul IV se publică pe 4 ianuarie 2027. Din 2027, prețul se publică săptămânal." },
+    { q: "Când se cumpără certificatele CBAM pentru importurile din 2026?", a: "De la 1 februarie 2027, pe platforma centrală a UE. Declarația anuală pentru 2026 și predarea certificatelor au termen 30 septembrie 2027. Din 2027, la sfârșitul fiecărui trimestru, trebuie să aveți certificate pentru cel puțin 50% din emisiile importate de la începutul anului." },
     { q: "Cine acordă statutul de declarant autorizat CBAM în România?", a: "Ministerul Finanțelor. Cererea se depune electronic, prin registrul CBAM, iar autoritatea decide, de regulă, în 120 de zile calendaristice. Termenul se poate prelungi când autoritatea cere informații suplimentare." },
     { q: "Importăm sub 50 de tone pe an. Ne privește CBAM?", a: "Pentru fier și oțel, aluminiu, ciment și îngrășăminte, sub 50 de tone pe an, cumulat pe aceste mărfuri, nu aveți obligații CBAM. Pragul se urmărește pe tot anul. Pentru hidrogen și energie electrică nu există prag: obligațiile apar de la prima unitate importată." },
-    { q: "Ce se întâmplă dacă furnizorul nu trimite date de emisii?", a: "Se aplică valorile implicite, de regulă mai mari, deci mai multe certificate de cumpărat. CBAM Manager ține evidența cererilor și a răspunsurilor primite de la fiecare furnizor." },
-    { q: "Folosim un broker vamal. Mai avem nevoie de software CBAM?", a: "Brokerul poate fi declarant pentru dumneavoastră, dar datele de emisii de la furnizori și costul certificatelor rămân de gestionat și de bugetat." },
+    { q: "Ce se întâmplă dacă furnizorul nu trimite date de emisii?", a: "Se folosesc valorile implicite, care de regulă sunt mai mari, așa că veți cumpăra mai multe certificate. În CBAM Manager vedeți pentru fiecare furnizor ce i-ați cerut, când și ce a răspuns." },
+    { q: "Folosim un broker vamal. Mai avem nevoie de software CBAM?", a: "Brokerul poate face declarațiile în numele dumneavoastră. Datele de emisii de la furnizori și bugetul pentru certificate rămân însă în sarcina firmei." },
     { q: "Se integrează CBAM Manager cu registrul CBAM?", a: "Aplicația pregătește declarația din regimul definitiv CBAM, inclusiv exportul XML conform schemei oficiale a UE." },
   ]}
   disclaimer="Informațiile au caracter general și nu țin loc de analiză pe cazul concret."
