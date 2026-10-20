@@ -20,7 +20,7 @@ const faq = [
   },
   {
     q: 'Plătesc certificate pentru toate emisiile încorporate?',
-    a: 'Nu în primii ani. Din obligație se scade alocarea gratuită pe care o primesc încă producătorii din UE (valoarea de referință înmulțită cu factorul CBAM al anului) și prețul carbonului plătit efectiv în țara de origine. Alocarea scade în fiecare an până la zero în 2034.',
+    a: 'Nu în primii ani. Din obligație se scade alocarea gratuită pe care o primesc încă producătorii din UE (valoarea de referință înmulțită cu factorul CBAM al anului). Prețul carbonului plătit efectiv într-o țară din afara UE reduce și el numărul de certificate. Alocarea scade în fiecare an până la zero în 2034.',
   },
 ];
 
@@ -81,7 +81,7 @@ const sources = [
   <h2>Cum se calculează numărul de certificate</h2>
   <p>Pe scurt, pentru fiecare tonă de produs:</p>
   <p><strong>certificate = emisii încorporate − (valoarea de referință UE × factorul CBAM al anului)</strong></p>
-  <p>Din rezultat se scade și prețul carbonului plătit efectiv în țara de origine, dacă există.</p>
+  <p>Rezultatul se calculează pe tona de produs, nu poate fi negativ și se înmulțește apoi cu tonele importate. Dacă pentru marfă s-a plătit efectiv un preț al carbonului într-o țară din afara UE, acesta se transformă într-un număr echivalent de certificate și reduce numărul de certificate de predat.</p>
   <p>
     Factorul CBAM reflectă alocarea gratuită pe care o primesc încă producătorii din UE. Scade în fiecare an,
     așa că partea plătită crește:
@@ -125,7 +125,7 @@ const sources = [
 
   <h2>Ce puteți face până la 1 februarie 2027</h2>
   <ol>
-    <li>Verificați dacă depășiți 50 de tone pe an și dacă aveți statut de declarant autorizat sau un broker cu acest statut.</li>
+    <li>Verificați dacă depășiți 50 de tone pe an (pentru fier și oțel, aluminiu, ciment și îngrășăminte; pentru hidrogen și energie electrică nu există prag) și dacă aveți statut de declarant autorizat sau un broker cu acest statut.</li>
     <li>Cereți acum datele de emisii de la fiecare furnizor și instalație, pentru importurile din 2026.</li>
     <li>Calculați costul pe 2026 cu prețurile trimestriale publicate și includeți-l în prețurile de vânzare pentru 2027.</li>
     <li>Planificați bugetul pentru cumpărarea certificatelor din februarie și pentru obligația trimestrială din 2027.</li>
