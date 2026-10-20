@@ -25,6 +25,18 @@ interface Props {
   guideLinks?: { href: string; label: string }[];
   /** Consulting offer block, for visitors looking for a service rather than software. */
   consulting?: { title: string; text: string; ctaLabel: string };
+  /** Plain-text intro paragraph under the hero, visible without JavaScript (AI crawlers do not run scripts). */
+  lead?: string;
+  /** Day counter to a legal deadline. Rendered at build time and refreshed in the browser. */
+  countdown?: { date: string; before: string; after: string };
+  /** Secondary hero call to action, e.g. the free CBAM/EUDR test. */
+  secondaryCta?: { href: string; label: string };
+  /** Price table plus notes, rendered before the FAQ. */
+  pricing?: { title: string; intro: string; rows: { tier: string; price: string; includes: string }[]; notes: string[] };
+  /** Short closing note under the FAQ (e.g. legal disclaimer). */
+  disclaimer?: string;
+  /** Entry price for the SoftwareApplication schema (yearly, EUR, excl. VAT). */
+  offerPrice?: string;
 }
 
 const {
@@ -32,7 +44,12 @@ const {
   forWhom, forWhomItems, processes, howItWorks, outputs, faq,
   demoAvailable = false, demoLabel, demoUrl,
   serviceSchema, guideLinks = [], consulting,
+  lead, countdown, secondaryCta, pricing, disclaimer, offerPrice,
 } = Astro.props;
+
+const daysUntil = (iso: string) =>
+  Math.max(0, Math.ceil((new Date(`${iso}T00:00:00+02:00`).getTime() - Date.now()) / 86400000));
+const buildDays = countdown ? daysUntil(countdown.date) : 0;
 
 const locale = getLocaleFromUrl(Astro.url);
 
@@ -48,6 +65,15 @@ const schemas: Record<string, unknown>[] = [
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
     provider: { '@id': `${site.origin}/#organization` },
+    inLanguage: locale,
+    ...(offerPrice ? {
+      offers: {
+        '@type': 'Offer',
+        price: offerPrice,
+        priceCurrency: 'EUR',
+        url: selfUrl,
+      },
+    } : {}),
   },
   {
     '@context': 'https://schema.org',
@@ -107,6 +133,11 @@ if (faq.length > 0) {
       <p class="text-lg text-text font-medium mb-8 max-w-2xl mx-auto">
         {heroResult}
       </p>
+      {countdown && (
+        <p class="inline-block mb-8 px-5 py-2 bg-amber-50 text-amber-800 font-semibold rounded-full">
+          {countdown.before} <span data-countdown={countdown.date}>{buildDays}</span> {countdown.after}
+        </p>
+      )}
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         {demoUrl && (
           <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition-colors">
@@ -120,9 +151,22 @@ if (faq.length > 0) {
         <a href={getLocalizedPath(locale, '/contact')} class={`inline-block px-7 py-3.5 font-semibold rounded-lg transition-colors ${demoUrl ? 'border-2 border-gray-200 text-navy hover:border-primary hover:text-primary' : 'bg-primary text-white hover:bg-primary-light'}`}>
           {t(locale, 'nav.requestDemo')}
         </a>
+        {secondaryCta && (
+          <a href={secondaryCta.href} class="inline-block px-7 py-3.5 font-semibold rounded-lg border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
+            {secondaryCta.label}
+          </a>
+        )}
       </div>
     </div>
   </section>
+
+  {lead && (
+    <section class="pb-12">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-lg text-text leading-relaxed">{lead}</p>
+      </div>
+    </section>
+  )}
 
   {guideLinks.length > 0 && (
     <section class="pb-16">
@@ -268,6 +312,39 @@ if (faq.length > 0) {
     </section>
   )}
 
+  <!-- Pricing -->
+  {pricing && (
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-heading text-2xl lg:text-3xl font-bold text-navy mb-4">{pricing.title}</h2>
+        <p class="text-text-light mb-6 leading-relaxed">{pricing.intro}</p>
+        <div class="overflow-x-auto rounded-xl border border-gray-100">
+          <table class="w-full text-left">
+            <thead class="bg-surface text-navy">
+              <tr>
+                <th class="p-4 font-heading font-semibold">{locale === 'ro' ? 'Nivel' : 'Tier'}</th>
+                <th class="p-4 font-heading font-semibold">{locale === 'ro' ? 'Preț pe an' : 'Price per year'}</th>
+                <th class="p-4 font-heading font-semibold">{locale === 'ro' ? 'Include' : 'Includes'}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pricing.rows.map(r => (
+                <tr class="border-t border-gray-100">
+                  <td class="p-4 font-medium text-navy">{r.tier}</td>
+                  <td class="p-4 text-text">{r.price}</td>
+                  <td class="p-4 text-text-light">{r.includes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <ul class="mt-6 space-y-2 text-text-light">
+          {pricing.notes.map(n => <li>{n}</li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+
   <!-- FAQ -->
   {faq.length > 0 && (
     <section class="py-16 bg-surface">
@@ -286,9 +363,18 @@ if (faq.length > 0) {
             </details>
           ))}
         </div>
+        {disclaimer && <p class="mt-8 text-sm text-text-light italic">{disclaimer}</p>}
       </div>
     </section>
   )}
 
   <CTAFinal />
 </Layout>
+
+<script>
+  // Refresh the build-time day counter so it stays correct between deploys.
+  document.querySelectorAll<HTMLElement>('[data-countdown]').forEach(el => {
+    const target = new Date(`${el.dataset.countdown}T00:00:00+02:00`).getTime();
+    el.textContent = String(Math.max(0, Math.ceil((target - Date.now()) / 86400000)));
+  });
+</script>

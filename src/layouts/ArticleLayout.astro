@@ -20,6 +20,8 @@ interface Props {
   heroImageAlt?: string;
   faq?: { q: string; a: string }[];
   sources?: Source[];
+  /** False when the article has no version in the other locale (altPath then points to the other blog index). */
+  translated?: boolean;
 }
 
 const {
@@ -33,6 +35,7 @@ const {
   heroImageAlt = '',
   faq = [],
   sources = [],
+  translated = true,
 } = Astro.props;
 const locale = getLocaleFromUrl(Astro.url);
 
@@ -85,7 +88,7 @@ if (faq.length > 0) {
 }
 ---
 
-<Layout title={title} description={description} altPath={altPath} schemas={schemas}>
+<Layout title={title} description={description} altPath={altPath} schemas={schemas} translated={translated}>
   <!-- Hero -->
   <section class="pt-28 pb-12 lg:pt-36 lg:pb-14">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

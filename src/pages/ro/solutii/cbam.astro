@@ -3,66 +3,91 @@ import SolutionLayout from '../../../layouts/SolutionLayout.astro';
 ---
 
 <SolutionLayout
-  title="Software CBAM și consultanță pentru importatori"
+  title="CBAM Manager: software CBAM și cost certificate 2026"
   altPath="/solutions/cbam"
-  description="Software CBAM și consultanță CBAM în România: monitorizarea pragului de 50 de tone, validarea datelor de emisii și pregătirea declarațiilor."
-  heroTitle="Software CBAM și consultanță pentru importatori"
-  heroProblem="Colectarea datelor de la furnizori, calculul emisiilor și pregătirea rapoartelor trimestriale implică pași repetitivi și riscuri de eroare."
-  heroResult="Oferim software CBAM și consultanță pentru colectarea, validarea și pregătirea datelor necesare raportării."
-  forWhom="Importatori de produse care intră sub incidența regulamentului CBAM și trebuie să raporteze emisiile încorporate."
+  description="Certificatele CBAM pentru importurile din 2026 se cumpără din 1 februarie 2027. CBAM Manager calculează emisiile și costul și pregătește declarația anuală."
+  heroTitle="Știți cât vă vor costa certificatele CBAM pentru importurile din 2026?"
+  heroProblem="Certificatele CBAM pentru importurile din 2026 se cumpără de la 1 februarie 2027. Dacă furnizorii nu vă trimit datele reale de emisii, se folosesc valorile implicite, iar costul poate ieși de câteva ori mai mare."
+  heroResult="Cu CBAM Manager aveți datele de emisii ale furnizorilor într-un singur loc, vedeți costul certificatelor pe măsură ce intră importurile și primiți declarația anuală pregătită."
+  countdown={{ date: '2027-02-01', before: 'Mai sunt', after: 'zile până la vânzarea certificatelor CBAM (1 februarie 2027)' }}
+  secondaryCta={{ href: '/ro/test-cbam-eudr/', label: 'Aflați gratuit dacă vă privește CBAM' }}
+  lead="Din 1 ianuarie 2026, CBAM este în regim definitiv. Importatorii de fier și oțel, aluminiu, ciment și îngrășăminte cu peste 50 de tone pe an, cumulat, și importatorii de hidrogen și energie electrică, indiferent de cantitate, au nevoie de statutul de declarant autorizat CBAM, acordat în România de Ministerul Finanțelor. Certificatele pentru importurile din 2026 se cumpără de la 1 februarie 2027, iar declarația anuală se depune până la 30 septembrie 2027. CBAM Manager este un software CBAM făcut în România, în limba română: adună datele de emisii de la furnizori, calculează costul pe măsură ce intră importurile și pregătește declarația."
+  forWhom="Importatorii din România care aduc din afara UE fier și oțel, aluminiu, ciment sau îngrășăminte peste pragul de 50 de tone pe an, importatorii de hidrogen și energie electrică, și firmele care fac declarațiile pentru ei."
   forWhomItems={[
-    "Importatori de fier, oțel, aluminiu, ciment, îngrășăminte, electricitate, hidrogen",
-    "Companii cu volume mari de tranzacții și furnizori multipli",
-    "Departamente de conformitate și raportare",
-    "Reprezentanți vamali autorizați CBAM",
+    "Importatori de fier, oțel, țevi și profile, aluminiu, ciment, îngrășăminte, hidrogen, energie electrică",
+    "Distribuitori cu mulți furnizori și instalații din afara UE",
+    "Departamente financiare și de conformitate care trebuie să bugeteze certificatele",
+    "Brokeri și reprezentanți vamali cu statut de declarant autorizat CBAM",
   ]}
   processes={[
-    "Colectare date de la furnizori (emisii, procese de producție)",
-    "Validare și verificare date primite, cu 44 de reguli aliniate la regulamentul CBAM",
-    "Calcul emisii încorporate pe categorii de produse, cu valori default când datele lipsesc",
-    "Pregătire raport trimestrial și anual CBAM, cu export XML validat",
-    "Simulare cost certificate CBAM pe mai mulți ani, cu scenarii de preț ETS",
-    "Gestiune certificate: achiziție, inventar, predare, anulare automată a celor nepredate",
-    "Calcul alocare gratuită (phase-in) și obligație netă de certificate",
-    "Monitorizare termene și obligații",
-    "Arhivare și trasabilitate documente",
+    "Urmărirea importurilor pe coduri NC și a pragului de 50 de tone pe an",
+    "Colectarea datelor de emisii de la furnizori și instalații",
+    "Validarea datelor primite, cu 44 de reguli aliniate la regulamentul CBAM",
+    "Calculul emisiilor încorporate, cu valori implicite acolo unde datele lipsesc",
+    "Calculul certificatelor de cumpărat, cu alocarea gratuită (factorul CBAM) și obligația netă",
+    "Simularea costului certificatelor pe mai mulți ani, cu scenarii de preț ETS",
+    "Gestiunea certificatelor: achiziție, inventar, predare, anularea celor nepredate",
+    "Pregătirea declarației anuale CBAM, cu export XML validat",
+    "Monitorizarea termenelor și arhivarea documentelor",
   ]}
   howItWorks={[
-    { title: "Import date", desc: "Datele de la furnizori sunt importate automat din formulare, email-uri sau documente structurate." },
-    { title: "Validare AI", desc: "Verificăm completitudinea, consistența și corectitudinea datelor primite." },
-    { title: "Calcul și agregare", desc: "Calculăm emisiile încorporate conform metodologiei CBAM și agregăm pe categorii." },
-    { title: "Generare raport", desc: "Pregătim raportul trimestrial în formatul necesar pentru registrul CBAM." },
+    { title: "Importuri și furnizori", desc: "Introduceți importurile pe coduri NC și furnizorii. Aplicația urmărește pragul de 50 de tone." },
+    { title: "Date de emisii", desc: "Trimiteți cererile de date către furnizori, iar noi verificăm dacă răspunsurile sunt complete și dacă cifrele se potrivesc între ele." },
+    { title: "Cost și certificate", desc: "Calculăm emisiile încorporate, certificatele necesare și costul, cu prețul trimestrial publicat de Comisie." },
+    { title: "Declarația anuală", desc: "Pregătim declarația anuală pentru registrul CBAM, cu export XML." },
   ]}
   outputs={[
-    "Raport trimestrial și anual CBAM, pregătit pentru depunere (Excel + XML)",
+    "Declarația anuală CBAM, pregătită pentru depunere (Excel + XML)",
+    "Costul certificatelor pe trimestru și pe an",
     "Simulator de cost multi-an, cu scenarii de preț ETS",
-    "Registru certificate CBAM: achiziții, inventar, predare, anulare automată",
-    "Reconciliere cu portalul oficial CBAM",
-    "Dashboard monitorizare furnizori și date lipsă, cu scorecard per furnizor",
+    "Registru certificate CBAM: achiziții, inventar, predare",
+    "Ce date lipsesc și de la ce furnizor",
     "Alerte pentru termene și obligații",
-    "Jurnal de validare și audit trail",
-    "Export date în format structurat",
+    "Istoricul verificărilor, pentru control",
+    "Export de date în format structurat",
   ]}
+  pricing={{
+    title: "Prețuri CBAM Manager",
+    intro: "Preț de lansare, garantat 12 luni, pe firmă, fără TVA.",
+    rows: [
+      { tier: "Start", price: "250 €", includes: "până la 500 t pe an" },
+      { tier: "Standard", price: "500 €", includes: "până la 2.000 t pe an" },
+      { tier: "Pro", price: "1.000 €", includes: "până la 10.000 t pe an" },
+      { tier: "Ofertă", price: "de la 2.500 €", includes: "peste 10.000 t pe an" },
+    ],
+    notes: [
+      "Configurare inițială: 300 € (o singură dată).",
+      "Asistat: software plus consultanță, de la 2.500 € pe an.",
+      "Cont de probă: 30 de zile, gratuit.",
+      "CBAM Manager și EUDR Manager împreună: 20% reducere.",
+      "Brokeri vamali: program de parteneriat, scrieți-ne.",
+    ],
+  }}
+  offerPrice="250"
   faq={[
-    { q: "Ce face software-ul CBAM?", a: "Software-ul CBAM centralizează datele de import și de emisii, aplică regulile de validare, calculează emisiile încorporate și pregătește declarațiile și evidența certificatelor." },
-    { q: "Ce tipuri de produse acoperă soluția?", a: "Toate categoriile CBAM: fier și oțel, aluminiu, ciment, îngrășăminte, electricitate și hidrogen." },
-    { q: "Se integrează cu registrul CBAM?", a: "Soluția pregătește datele în formatul necesar pentru declarația din regimul definitiv CBAM (activ din 1 ianuarie 2026), inclusiv export XML conform schemei oficiale EU (QReport)." },
-    { q: "Cum se colectează datele de la furnizori?", a: "Prin formulare digitale trimise furnizorilor, import din Excel sau procesare automată a documentelor primite." },
-    { q: "Ce se întâmplă cu certificatele CBAM?", a: "Aplicația gestionează registrul de achiziții, inventarul și predarea certificatelor, cu anulare automată a celor nepredate la termenul legal." },
+    { q: "Cât costă un certificat CBAM în 2026?", a: "Prețul este media prețurilor certificatelor ETS din trimestrul în care ați importat marfa. Comisia a publicat 75,36 € pentru trimestrul I, 75,28 € pentru trimestrul II și 82,32 € pentru trimestrul III 2026, pentru fiecare tonă de CO₂. Prețul pentru trimestrul IV se publică pe 4 ianuarie 2027. Din 2027, prețul se publică săptămânal." },
+    { q: "Când se cumpără certificatele CBAM pentru importurile din 2026?", a: "De la 1 februarie 2027, pe platforma centrală a UE. Declarația anuală pentru 2026 și predarea certificatelor au termen 30 septembrie 2027. Din 2027, la sfârșitul fiecărui trimestru, trebuie să aveți certificate pentru cel puțin 50% din emisiile importate de la începutul anului." },
+    { q: "Cine acordă statutul de declarant autorizat CBAM în România?", a: "Ministerul Finanțelor. Cererea se depune electronic, prin registrul CBAM, iar autoritatea decide, de regulă, în 120 de zile calendaristice. Termenul se poate prelungi când autoritatea cere informații suplimentare." },
+    { q: "Importăm sub 50 de tone pe an. Ne privește CBAM?", a: "Pentru fier și oțel, aluminiu, ciment și îngrășăminte, sub 50 de tone pe an, cumulat pe aceste mărfuri, nu aveți obligații CBAM. Pragul se urmărește pe tot anul. Pentru hidrogen și energie electrică nu există prag: obligațiile apar de la prima unitate importată." },
+    { q: "Ce se întâmplă dacă furnizorul nu trimite date de emisii?", a: "Se folosesc valorile implicite, care de regulă sunt mai mari, așa că veți cumpăra mai multe certificate. În CBAM Manager vedeți pentru fiecare furnizor ce i-ați cerut, când și ce a răspuns." },
+    { q: "Folosim un broker vamal. Mai avem nevoie de software CBAM?", a: "Brokerul poate face declarațiile în numele dumneavoastră. Datele de emisii de la furnizori și bugetul pentru certificate rămân însă în sarcina firmei." },
+    { q: "Se integrează CBAM Manager cu registrul CBAM?", a: "Aplicația pregătește declarația din regimul definitiv CBAM, inclusiv exportul XML conform schemei oficiale a UE." },
   ]}
+  disclaimer="Informațiile au caracter general și nu țin loc de analiză pe cazul concret."
   demoAvailable={true}
   demoLabel="Demo disponibil"
   demoUrl="https://app.speed-flow.ai/login"
   serviceSchema={{
-    name: "Software CBAM și consultanță — raportare și conformitate",
-    description: "Software CBAM și consultanță pentru monitorizarea pragului de 50 de tone, calculul emisiilor încorporate și pregătirea declarațiilor.",
+    name: "Software CBAM și consultanță CBAM în România",
+    description: "CBAM Manager: urmărirea pragului de 50 de tone, datele de emisii de la furnizori, costul certificatelor CBAM și declarația anuală.",
   }}
   guideLinks={[
-    { href: "/ro/blog/ghid-cbam-2026-importatori/", label: "Nu ești sigur dacă te afectează? Citește ghidul complet despre CBAM în 2026 →" },
+    { href: "/ro/blog/cost-certificate-cbam-2026-calcul/", label: "Cât costă certificatele CBAM pentru importurile din 2026: preț, calcul, exemplu →" },
+    { href: "/ro/blog/ghid-cbam-2026-importatori/", label: "CBAM în 2026: ghid practic pentru importatori →" },
   ]}
   consulting={{
-    title: "Ai nevoie de consultanță, nu doar de software?",
-    text: "Echipa Speed Flow oferă consultanță CBAM pentru importatorii din România: analiza aplicabilității pe codurile tale vamale, verificarea pragului de 50 de tone, obținerea statutului de declarant CBAM autorizat, colectarea și validarea datelor de emisii de la furnizori și pregătirea declarațiilor anuale. Lucrăm atât cu firme care vor doar platforma, cât și cu firme care preferă să externalizeze complet procesul.",
+    title: "Aveți nevoie de consultanță, nu doar de software?",
+    text: "Echipa Speed Flow oferă consultanță CBAM pentru importatorii din România: verificarea aplicabilității pe codurile vamale, a pragului de 50 de tone, obținerea statutului de declarant autorizat CBAM, colectarea și validarea datelor de emisii de la furnizori și pregătirea declarației anuale. Lucrăm cu firme care vor doar platforma și cu firme care preferă să externalizeze tot procesul.",
     ctaLabel: "Solicită o discuție",
   }}
 />
